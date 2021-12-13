@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Dic 08, 2021 alle 15:38
+-- Creato il: Dic 13, 2021 alle 10:47
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.12
 
@@ -122,6 +122,53 @@ INSERT INTO `Metodo_pagamento` (`Id_metodo`, `Descrizione`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `Notifica`
+--
+
+CREATE TABLE `Notifica` (
+  `Id_notifica` int(11) NOT NULL,
+  `Testo` varchar(1000) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `Notifica`
+--
+
+INSERT INTO `Notifica` (`Id_notifica`, `Testo`) VALUES
+(1, 'Consegna prevista oggi nella seguente fascia oraria: 13:30 - 16:15'),
+(2, 'Consegna prevista oggi con ritardo nella seguente fascia oraria: 13:15 - 18:00'),
+(3, 'Pacco spedito'),
+(4, 'Pacco in transito'),
+(5, 'Pacco arrivato allo stabilimento'),
+(6, 'In consegna');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `Notifica_Utente`
+--
+
+CREATE TABLE `Notifica_Utente` (
+  `Id_utente` varchar(16) CHARACTER SET utf8 NOT NULL,
+  `Id_notifica` int(11) NOT NULL,
+  `Letto` int(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `Notifica_Venditore`
+--
+
+CREATE TABLE `Notifica_Venditore` (
+  `Id_notifica` int(11) NOT NULL,
+  `Id_venditore` int(11) NOT NULL,
+  `Letto` int(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `Ordine`
 --
 
@@ -158,21 +205,45 @@ CREATE TABLE `Prodotto` (
   `Id_prodotto` int(11) NOT NULL,
   `Nome` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Url_immagine` varchar(300) NOT NULL,
-  `Id_categoria` int(11) NOT NULL,
   `Id_venditore` int(11) NOT NULL,
   `Unità` int(5) NOT NULL,
   `Prezzo` decimal(10,2) NOT NULL,
   `Sconto_%` int(2) DEFAULT NULL,
-  `Id_magazzino` int(11) NOT NULL
+  `Id_magazzino` int(11) NOT NULL,
+  `Id_sottocategoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `Prodotto`
 --
 
-INSERT INTO `Prodotto` (`Id_prodotto`, `Nome`, `Url_immagine`, `Id_categoria`, `Id_venditore`, `Unità`, `Prezzo`, `Sconto_%`, `Id_magazzino`) VALUES
-(1, 'Far Cry 5', 'http://localhost/06-lab-php/sito/img/html5-js-css3.png', 1, 1, 15, '24.99', NULL, 1),
-(2, 'The Last of Us', 'http://localhost/06-lab-php/sito/img/accessibility.jpg', 3, 1, 10, '19.99', NULL, 1);
+INSERT INTO `Prodotto` (`Id_prodotto`, `Nome`, `Url_immagine`, `Id_venditore`, `Unità`, `Prezzo`, `Sconto_%`, `Id_magazzino`, `Id_sottocategoria`) VALUES
+(1, 'Far Cry 5', 'http://localhost/06-lab-php/sito/img/html5-js-css3.png', 1, 15, '24.99', NULL, 1, 1),
+(2, 'The Last of Us', 'http://localhost/06-lab-php/sito/img/accessibility.jpg', 1, 10, '19.99', NULL, 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `Sotto_categoria`
+--
+
+CREATE TABLE `Sotto_categoria` (
+  `Id_sottocategoria` int(11) NOT NULL,
+  `Descrizione` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `Id_categoria` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `Sotto_categoria`
+--
+
+INSERT INTO `Sotto_categoria` (`Id_sottocategoria`, `Descrizione`, `Id_categoria`) VALUES
+(1, 'PS4', 1),
+(2, 'PS5', 1),
+(3, 'Xbox One', 2),
+(4, 'Xbox 360', 2),
+(5, 'PC', 4),
+(6, 'switch', 3);
 
 -- --------------------------------------------------------
 
@@ -294,6 +365,26 @@ ALTER TABLE `Metodo_pagamento`
   ADD PRIMARY KEY (`Id_metodo`);
 
 --
+-- Indici per le tabelle `Notifica`
+--
+ALTER TABLE `Notifica`
+  ADD PRIMARY KEY (`Id_notifica`);
+
+--
+-- Indici per le tabelle `Notifica_Utente`
+--
+ALTER TABLE `Notifica_Utente`
+  ADD PRIMARY KEY (`Id_utente`,`Id_notifica`),
+  ADD KEY `Id_notifica` (`Id_notifica`);
+
+--
+-- Indici per le tabelle `Notifica_Venditore`
+--
+ALTER TABLE `Notifica_Venditore`
+  ADD PRIMARY KEY (`Id_notifica`,`Id_venditore`),
+  ADD KEY `Id_venditore` (`Id_venditore`);
+
+--
 -- Indici per le tabelle `Ordine`
 --
 ALTER TABLE `Ordine`
@@ -308,9 +399,16 @@ ALTER TABLE `Ordine`
 --
 ALTER TABLE `Prodotto`
   ADD PRIMARY KEY (`Id_prodotto`),
-  ADD KEY `prodotto_categoria_1` (`Id_categoria`),
+  ADD KEY `Id_magazzino` (`Id_magazzino`),
   ADD KEY `Id_venditore` (`Id_venditore`),
-  ADD KEY `Id_magazzino` (`Id_magazzino`);
+  ADD KEY `Id_sottocategoria` (`Id_sottocategoria`);
+
+--
+-- Indici per le tabelle `Sotto_categoria`
+--
+ALTER TABLE `Sotto_categoria`
+  ADD PRIMARY KEY (`Id_sottocategoria`),
+  ADD KEY `Id_categoria` (`Id_categoria`);
 
 --
 -- Indici per le tabelle `Status_ordine`
@@ -368,6 +466,12 @@ ALTER TABLE `Metodo_pagamento`
   MODIFY `Id_metodo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT per la tabella `Notifica`
+--
+ALTER TABLE `Notifica`
+  MODIFY `Id_notifica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT per la tabella `Ordine`
 --
 ALTER TABLE `Ordine`
@@ -378,6 +482,12 @@ ALTER TABLE `Ordine`
 --
 ALTER TABLE `Prodotto`
   MODIFY `Id_prodotto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT per la tabella `Sotto_categoria`
+--
+ALTER TABLE `Sotto_categoria`
+  MODIFY `Id_sottocategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT per la tabella `Status_ordine`
@@ -403,6 +513,20 @@ ALTER TABLE `Dettagli_ordine`
   ADD CONSTRAINT `dettagli_ordine_ibfk_2` FOREIGN KEY (`Id_prodotto`) REFERENCES `Prodotto` (`Id_prodotto`);
 
 --
+-- Limiti per la tabella `Notifica_Utente`
+--
+ALTER TABLE `Notifica_Utente`
+  ADD CONSTRAINT `notifica_utente_ibfk_1` FOREIGN KEY (`Id_notifica`) REFERENCES `Notifica` (`Id_notifica`),
+  ADD CONSTRAINT `notifica_utente_ibfk_2` FOREIGN KEY (`Id_utente`) REFERENCES `Utente` (`Codice Fiscale`);
+
+--
+-- Limiti per la tabella `Notifica_Venditore`
+--
+ALTER TABLE `Notifica_Venditore`
+  ADD CONSTRAINT `notifica_venditore_ibfk_1` FOREIGN KEY (`Id_venditore`) REFERENCES `Venditore` (`Id_venditore`),
+  ADD CONSTRAINT `notifica_venditore_ibfk_2` FOREIGN KEY (`Id_notifica`) REFERENCES `Notifica` (`Id_notifica`);
+
+--
 -- Limiti per la tabella `Ordine`
 --
 ALTER TABLE `Ordine`
@@ -415,9 +539,15 @@ ALTER TABLE `Ordine`
 -- Limiti per la tabella `Prodotto`
 --
 ALTER TABLE `Prodotto`
-  ADD CONSTRAINT `prodotto_categoria_1` FOREIGN KEY (`Id_categoria`) REFERENCES `categoria` (`Id_categoria`),
-  ADD CONSTRAINT `prodotto_ibfk_1` FOREIGN KEY (`Id_venditore`) REFERENCES `Venditore` (`Id_venditore`),
-  ADD CONSTRAINT `prodotto_ibfk_2` FOREIGN KEY (`Id_magazzino`) REFERENCES `Magazzino` (`Id_magazzino`);
+  ADD CONSTRAINT `prodotto_ibfk_2` FOREIGN KEY (`Id_magazzino`) REFERENCES `Magazzino` (`Id_magazzino`),
+  ADD CONSTRAINT `prodotto_ibfk_3` FOREIGN KEY (`Id_venditore`) REFERENCES `Venditore` (`Id_venditore`),
+  ADD CONSTRAINT `prodotto_ibfk_4` FOREIGN KEY (`Id_sottocategoria`) REFERENCES `Sotto_categoria` (`Id_sottocategoria`);
+
+--
+-- Limiti per la tabella `Sotto_categoria`
+--
+ALTER TABLE `Sotto_categoria`
+  ADD CONSTRAINT `sotto_categoria_ibfk_1` FOREIGN KEY (`Id_categoria`) REFERENCES `Categoria` (`Id_categoria`);
 
 --
 -- Limiti per la tabella `Venditore`
