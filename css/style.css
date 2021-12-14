@@ -33,7 +33,7 @@ nav > ul > li{
 
 nav > ul > li > a{
     width: 100%;
-    padding: 4% 0 3%;
+    padding: 5% 0 3%;
     display: inline-block;
 }
 
@@ -65,11 +65,12 @@ ul li{
 
 footer{
     clear: both;
+    
     width: 90%;
     border-radius: 20px 20px 0 0;
     padding: 2% 5%;
     background-color: white;
-    -webkit-box-shadow: inset 0 4px 5px rgba(189, 189, 189, 1);;
+    -webkit-box-shadow: inset 0 4px 5px rgba(189, 189, 189, 1);
 }
 
 footer > ul > li > a{
@@ -82,3 +83,31 @@ footer > ul > li > a > img{
     width: 25px;
     height: 28px;
 }
+
+.ricerca{
+    background-color: #FFF;
+    border: 3px solid #607D8B;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 5% 2% 3% 5%;
+    margin: 6% 6%;
+    width: 80%;
+    -webkit-box-shadow: inset 0 3px 5px rgba(189, 189, 189, 1);   
+}
+
+.ricerca #search {
+    border-style: inset;
+    border-width: 0;
+    color: #607D8B;
+    float: left;
+    font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+    box-sizing: border-box;
+    padding: 2% 2% 2% 3%;
+    width: 78%;
+  }
+
+.ricerca #submit {
+    cursor: pointer;
+    margin-left: 5%;
+    width: 14%;
+  }
