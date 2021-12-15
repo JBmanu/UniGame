@@ -1,3 +1,9 @@
+@font-face{
+    font-family: 'robus';
+    font-weight: bold;
+    src: url('./Robus-BWqOd.otf') format('opentype');
+}
+
 body, h1, ul{
     margin: 0;
     padding: 0;
@@ -7,16 +13,98 @@ body{
     background-color: #FFFFFF
 }
 
-nav ul{
-    list-style: none;
-}
-
 body > header{
-    padding: 20px 0;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'robus';
+    font-size: 250%;
+    color: #00796B;
     -webkit-box-shadow: 0px 8px 4px 0px rgba(189, 189, 189, 1);
     border-radius: 0px 0px 20px 20px;
+}
+
+.ricerca{
+    background-color: #FFF;
+    border: 3px solid #607D8B;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 5% 2% 3% 5%;
+    margin: 6% 6%;
+    width: 80%;
+    -webkit-box-shadow: inset 0 3px 5px rgba(189, 189, 189, 1);   
+}
+
+.ricerca #search {
+    border-style: inset;
+    border-width: 0;
+    color: #607D8B;
+    float: left;
+    font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+    box-sizing: border-box;
+    padding: 2% 2% 2% 3%;
+    width: 78%;
+}
+
+.ricerca #submit {
+    cursor: pointer;
+    margin-left: 5%;
+    width: 14%;
+}
+
+.img-slider{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background: #1D212B;
+    margin: 5% 0;
+}
+  
+.img-slider .slide{
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    padding: 5% 0;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+  
+.img-slider .slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+    height: 100%;
+    transition-property: clip-path;
+}
+  
+.img-slider .slide img{
+    z-index: 1;
+    width: 40%;
+    height: 60%;
+}
+  
+.img-slider .navigation{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+.img-slider .navigation .btn{
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+  
+.img-slider .navigation .btn.active{
+    background: #2696E9;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+nav ul{
+    list-style: none;
 }
 
 nav > ul > li > a >  img{
@@ -57,57 +145,86 @@ nav > ul > li > a{
     border-radius: 15px;
 }
 
-ul li{
-    display: inline-block;
-    text-align: center;
-    width: 25%;
+#footer_bar{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
 }
 
-footer{
-    clear: both;
-    
-    width: 90%;
+#bar_container {
+    background: #FFF;
+    margin: 0 auto;
+    width: 100%;
+    height: 10%;
+    padding: 4% 1% 0;
+    overflow: hidden;
     border-radius: 20px 20px 0 0;
-    padding: 2% 5%;
-    background-color: white;
     -webkit-box-shadow: inset 0 4px 5px rgba(189, 189, 189, 1);
 }
 
-footer > ul > li > a{
-    width: 100%;
-    padding: 5% 0 0;
-    display: inline-block;
+#bar_container ul {
+    list-style: none;
 }
 
-footer > ul > li > a > img{
+#bar_container ul li {
+    float: left;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+}
+    
+#bar_container ul li a {
+    display: block;
+    width: 100%;
+}
+
+#bar_container ul li a img{
     width: 25px;
     height: 28px;
 }
 
-.ricerca{
-    background-color: #FFF;
-    border: 3px solid #607D8B;
-    border-radius: 25px;
-    overflow: hidden;
-    padding: 5% 2% 3% 5%;
-    margin: 6% 6%;
-    width: 80%;
-    -webkit-box-shadow: inset 0 3px 5px rgba(189, 189, 189, 1);   
+@media (max-width: 820px){
+    .img-slider{
+        width: 100%;
+        height: 250px;
+    }
+  
+    .img-slider .navigation{
+        bottom: 25px;
+    }
+  
+    .img-slider .navigation .btn{
+        width: 10px;
+        height: 10px;
+        margin: 8px;
+    }
 }
-
-.ricerca #search {
-    border-style: inset;
-    border-width: 0;
-    color: #607D8B;
-    float: left;
-    font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
-    box-sizing: border-box;
-    padding: 2% 2% 2% 3%;
-    width: 78%;
-  }
-
-.ricerca #submit {
-    cursor: pointer;
-    margin-left: 5%;
-    width: 14%;
-  }
+  
+@media (max-width: 620px){
+    .img-slider{
+        width: 100%;
+        height: 200px;
+    }
+  
+    .img-slider .navigation{
+        bottom: 15px;
+    }
+  
+    .img-slider .navigation .btn{
+        width: 8px;
+        height: 8px;
+        margin: 6px;
+    }
+}
+  
+@media (max-width: 420px){
+    .img-slider{
+        width: 100%;
+        height: 150px;
+    }
+  
+    .img-slider .navigation{
+        bottom: 10px;
+    }
+}
