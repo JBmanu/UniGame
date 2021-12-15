@@ -8,64 +8,48 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-        <script src="./js/click.js" type="text/javascript"></script>
+        <!--<script src="./js/click.js" type="text/javascript"></script>-->
     </head>
-    <body class="body-home">
+    <body class="body-login">
         <header>
             <h1>UniGame</h1>
+            <h2>Login</h2>
         </header>
-        <form class="ricerca">
-            <input name="search" id="search" type="text" value="Search..." required>
-            <input id="submit" type="image" src="./img/search.png" alt="Cerca">
-        </form>
-        <div class="img-slider">
-            <div class="slide active">
-              <img src="./imgGiochi/TheLastOfUsII.jpg" alt="">
-            </div>
-            <div class="slide">
-              <img src="./imgGiochi/FarCry5.jpeg" alt="">
-            </div>
-            <div class="slide">
-              <img src="./img/menu.png" alt="">
-            </div>
-            <div class="slide">
-              <img src="./img/user.png" alt="">
-            </div>
-            <div class="slide">
-              <img src="./img/search.png" alt="">
-            </div>
-            <div class="navigation">
-              <div class="btn active"></div>
-              <div class="btn"></div>
-              <div class="btn"></div>
-              <div class="btn"></div>
-              <div class="btn"></div>
-            </div>
-        </div>
-        <nav class="nav-home">
+        <nav class = "nav-rotondo">
             <ul>
-                <li class="playstation">
+                <li class="playstation-login">
                     <a href="https://www.google.it">
                         <img src="./img/playstation.png" alt="Playstation" title="Playstation" />
                     </a>
                 </li>
-                <li class="xbox">
+                <li class="xbox-login">
                     <a href="https://www.google.it">
                         <img src="./img/xbox.png" alt="Xbox" title="Xbox" />
                     </a>
                 </li>
-                <li class="nintendo">
+                <li class="nintendo-login">
                     <a href="https://www.google.it">
                         <img src="./img/nintendo.png" alt="Nintendo" title="Nintendo" />
                     </a>
                 </li>
-                <li class="pc">
+                <li class="pc-login">
                     <a href="https://www.google.it">
                         <img src="./img/pc.png" alt="PC" title="PC" />
                     </a>
                 </li>
             </ul>
         </nav>
+        <form action="#" method="post">
+            <div class="div-login-imgcontainer">
+                <img src="./img/user.png" alt="Foto Utente" class="avatar-login"/>
+            </div>
+            <div class="div-login-container">
+                <input type="text" value="E-mail" name="email" required>
+                <input type="password" value="Password" name="psw" required>
+            </div>
+            <button type="submit">Registrati</button>
+            <button type="submit">Accedi</button>
+        </form>
         <footer>
             <div id="footer_bar">
                 <div id="bar_container">
