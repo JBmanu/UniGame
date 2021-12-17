@@ -13,7 +13,7 @@
     <body class="body-login">
         <header>
             <h1>UniGame</h1>
-            <h2>Login</h2>
+            <h2>Register</h2>
 
         </header>
         <nav class = "nav-rotondo">
@@ -41,15 +41,17 @@
             </ul>
         </nav>
         <form action="#" method="post" class="form-login">
-            <div class="div-login-imgcontainer">
+            <div class="div-register-imgcontainer">
                 <img src="./img/user.png" alt="Foto Utente" class="avatar-login"/>
             </div>
-            <div class="div-login-container">
-                <input id ="login-mail" class="input-login" type="text" value="E-mail" name="email" required>
-                <input class="input-login" type="password" value="Password" name="psw" required>
+            <div class="div-register-container">
+                <input id ="login-name" class="input-register" type="text" value="Nome" name="nome" required>
+                <input id ="login-surname" class="input-register" type="text" value="Cognome" name="cognome" required>
+                <input id ="login-mail" class="input-register" type="text" value="E-mail" name="email" required>
+                <input id ="login-psw" class="input-register" type="password" value="Password" name="psw" required>
+                <input id ="login-psw" class="input-register" type="password" value="Password" name="repeat-psw" required>
             </div>
-            <a href="./register.html"><input class="registrati-login" type="button" value="Registrati"></input></a>
-            <input class="accedi-login" type="submit" value="Accedi"></input>
+            <input class="accedi-register" type="submit" value="Accedi"></input>
         </form>
         <footer>
             <div id="footer_bar">

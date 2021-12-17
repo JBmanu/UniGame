@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+  var slides = document.querySelectorAll('.slide');
+  var btns = document.querySelectorAll('.btn');
+  let currentSlide = 1;
+
     $("#submit").click(function() {
         if ($("#search").val() === "Search...")
         {
@@ -12,17 +17,48 @@ $(document).ready(function(){
             this.value = 'Search...';
         }
     });
-    
+
+    $("#login-name").blur(function() {
+        if(this.value == ''){ 
+            this.value = 'Nome';
+        }
+    });
+
+    $("#login-surname").blur(function() {
+        if(this.value == ''){ 
+            this.value = 'Cognome';
+        }
+    });
+
+    $("#login-mail").blur(function() {
+        if(this.value == ''){ 
+            this.value = 'E-mail';
+        }
+    });
+
     $("#search").focus(function() {
         if (this.value == 'Search...') {
             this.value = ''; 
         }
     });
 
+    $("#login-name").focus(function() {
+        if (this.value == 'Nome') {
+            this.value = ''; 
+        }
+    });
 
-    var slides = document.querySelectorAll('.slide');
-    var btns = document.querySelectorAll('.btn');
-    let currentSlide = 1;
+    $("#login-surname").focus(function() {
+        if (this.value == 'Cognome') {
+            this.value = ''; 
+        }
+    });
+
+    $("#login-mail").focus(function() {
+        if (this.value == 'E-mail') {
+            this.value = ''; 
+        }
+    });
 
     var manualNav = function(manual){
         slides.forEach((slide) => {
