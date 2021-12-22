@@ -1,7 +1,7 @@
 @font-face{
     font-family: 'robus';
     font-weight: bold;
-    src: url('./Robus-BWqOd.otf') format('opentype');
+    src: url('../font/Robus-BWqOd.otf') format('opentype');
 }
 
 body, h1, ul{
