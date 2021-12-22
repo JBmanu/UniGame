@@ -118,19 +118,26 @@ header{
     right: 5px;
 }
 
+
+
+
+
+
+
+
 .img-slider{
     position: relative;
     width: 100%;
     height: 350px;
     background: #FFF;
-    margin: 5% 0;
+    margin: 10px 0;
 }
   
 .img-slider .slide{
     z-index: 1;
     position: absolute;
     text-align: center;
-    padding: 5% 0;
+    padding: 10px 0;
     width: 100%;
     clip-path: circle(0% at 0 50%);
 }
@@ -144,8 +151,8 @@ header{
   
 .img-slider .slide img{
     z-index: 1;
-    width: 20%;
-    height: 60%;
+    width: 13%;
+    height: 80%;
 }
 
 .img-slider p{
@@ -159,7 +166,7 @@ header{
     z-index: 2;
     position: absolute;
     display: flex;
-    bottom: 30px;
+    bottom: 1px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -177,6 +184,14 @@ header{
     background: #2696E9;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
+
+
+
+
+
+
+
+
 
 .nav-home ul{
     list-style: none;
@@ -404,14 +419,16 @@ header{
         height: 250px;
     }
   
-    .img-slider .navigation{
-        bottom: 25px;
-    }
-  
     .img-slider .navigation .btn{
         width: 10px;
         height: 10px;
         margin: 8px;
+    }
+
+    .img-slider .slide img{
+        z-index: 1;
+        width: 25%;
+        height: 80%;
     }
 
     .input-login[type=text], .input-login[type=password], .input-register[type=password], .input-register[type=text]{
@@ -465,8 +482,10 @@ header{
         height: 200px;
     }
   
-    .img-slider .navigation{
-        bottom: 15px;
+    .img-slider .slide img{
+        z-index: 1;
+        width: 30%;
+        height: 80%;
     }
   
     .img-slider .navigation .btn{
@@ -482,19 +501,6 @@ header{
 }
   
 @media (max-width: 420px){
-    /*.ricerca #search {
-        font: 20px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
-    }
-
-    .ricerca #submit {
-        width: 20px;
-    }*/
-
-
-    .img-slider p{
-        font-size: small;
-    }
-
     .nav-rotondo ul li:first-child{
         margin-left: 0%;
     }
@@ -513,15 +519,15 @@ header{
         width: 100%;
         height: 150px;
     }
-  
-    .img-slider .navigation{
-        bottom: 10px;
+
+    .img-slider p{
+        font-size: small;
     }
 
     .img-slider .slide img{
         z-index: 1;
-        width: 28%;
-        height: 70%;
+        width: 30%;
+        height: 76%;
     }
 
     .input-login[type=text], .input-login[type=password], .input-register[type=password], .input-register[type=text]{
