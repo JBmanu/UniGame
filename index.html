@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
         <title>Uni-videogame</title>
         <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -12,12 +13,25 @@
     </head>
     <body class="body-home">
         <header>
-            <h1>UniGame</h1>
+            <div class="topnav" id="myTopnav">
+                <a href="./index.html" class="active">UniGame</a>
+                <a href="./login.html"><img src="./img/user.png" alt="Login"> Login</a>
+                <a href="#"><img src="./img/carrello.png" alt="Carrello"> Carrello</a>
+                <a href="#"><img src="./img/promo.png" alt="Promozioni"> Promo</a>
+                <a href="#"><img src="./img/wishlist.png" alt="Wishlist"> Wishlist</a>
+                <a href="#"><img src="./img/ordini.png" alt="Ordini"> Ordini</a>
+                <a href="#"><img src="./img/calendario.png" alt="Calendario"> Calendario</a>
+                <a href="#"><img src="./img/notifiche.png" alt="Notifiche"> Notifiche</a>
+                <a href="#"><img src="./img/logout.png" alt="Logout"> Logout</a>
+                <a href="#" class="icon">
+                    <img src="./img/menu.png" alt="Menu">
+                </a>
+            </div>
         </header>
-        <form class="ricerca">
-            <input name="search" id="search" type="text" value="Search..." required>
+        <div class="ricerca">
+            <input name="search" id="search" type="search" value="Search..." required>
             <input id="submit" type="image" src="./img/search.png" alt="Cerca">
-        </form>
+        </div>
         <div class="img-slider">
             <div class="slide active">
               <img src="./imgGiochi/TheLastOfUsIIps4.jpg" alt="The Last of Us 2">
@@ -71,68 +85,5 @@
                 </li>
             </ul>
         </nav>
-        <div id="menu">
-            <nav class = "nav-menu">
-                <ul>
-                    <li class="rettangolo-menu">
-                        <a href="./index.html">
-                            <img src="./img/homeMenu.png" alt="Home" title="Home" />
-                        </a>
-                        <p>Home</p>
-                    </li>
-                    <li class="rettangolo-menu">
-                        <a href="https://www.google.it">
-                            <img src="./img/promoMenu.png" alt="Promozioni" title="Promo" />
-                        </a>
-                        <p>Promo</p>
-                    </li>
-                    <li class="rettangolo-menu">
-                        <a href="https://www.google.it">
-                            <img src="./img/wishlistMenu.png" alt="Wishlist" title="Wishlist" />
-                        </a>
-                        <p>Wishlist</p>
-                    </li>
-                    <li class="rettangolo-menu">
-                        <a href="https://www.google.it">
-                            <img src="./img/carrelloMenu.png" alt="Carrello" title="Carrello" />
-                        </a>
-                        <p>Carrello</p>
-                    </li>
-                    <li class="rettangolo-menu">
-                        <a href="https://www.google.it">
-                            <img src="./img/ordiniMenu.png" alt="ordini" title="ordini" />
-                        </a>
-                        <p>Ordini</p>
-                    </li>
-                    <li class="rettangolo-menu">
-                        <a href="https://www.google.it">
-                            <img src="./img/calendarioMenu.png" alt="Calendario" title="Calendario" />
-                        </a>
-                        <p>Calendario</p>
-                    </li>
-                    <li class="rettangolo-menu">
-                        <a href="https://www.google.it">
-                            <img src="./img/notificheMenu.png" alt="Notifiche" title="Notifiche" />
-                        </a>
-                        <p>Notifiche</p>
-                    </li>
-                    <li class="rettangolo-menu">
-                        <a href="https://www.google.it">
-                            <img src="./img/logoutMenu.png" alt="Logout" title="Logout" />
-                        </a>
-                        <p>Logout</p>
-                    </li>
-                </ul>
-            </nav>
-          </div>
-        <footer>
-            <div id="footer_bar">
-                <div id="bar_container">
-                    <ul>
-                        <li><a href="./index.html"><img src="./img/home.png" alt="Home" /></a></li><li><a href="./login.html"><img src="./img/user.png" alt="User" /></a></li><li><a href="https://www.google.it"><img src="./img/carrello.png" alt="Carrello" /></a></li><li><a id="menuButton" href="#"><img src="./img/menu.png" alt="Menù" /></a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
     </body>
 </html>

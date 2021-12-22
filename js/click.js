@@ -3,12 +3,24 @@ $(document).ready(function(){
     var btns = document.querySelectorAll('.btn');
     let currentSlide = 1;
   
-    $(document).ready(function(){
+    /*$(document).ready(function(){
         $("#menuButton").click(function(){
           $("#menu").slideToggle();
           document.getElementById("menu").style.position = "relative";
         }); 
+      });*/
+
+      $(".icon").click(function(){
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
       });
+
+
+
 
     $("#submit").click(function() {
         if ($("#search").val() === "Search...")
