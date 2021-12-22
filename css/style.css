@@ -3,6 +3,11 @@
     font-weight: bold;
     src: url('../font/Robus-BWqOd.otf') format('opentype');
 }
+@font-face{
+    font-family: 'bruno';
+    font-weight: bold;
+    src: url('./bruno\ ace\ sc\ regular.otf') format('opentype');
+}
 
 body, h1, ul{
     margin: 0;
@@ -13,13 +18,37 @@ body{
     background-color: #FFFFFF
 }
 
-body > header{
+.body-home > header{
     text-align: center;
     font-family: 'robus';
     font-size: 250%;
     color: #00796B;
     -webkit-box-shadow: 0px 8px 4px 0px rgba(189, 189, 189, 1);
     border-radius: 0px 0px 20px 20px;
+}
+
+.body-login{
+    background-color: #CFD8DC;
+}
+
+.body-login > header{
+    color: #00796B;
+    text-align: center;
+    padding-top: 5%;
+    overflow: hidden;
+}
+
+.body-login > header > h1{
+    font-family: 'robus';
+    font-size: 600%;
+    text-shadow: 0 5px 5px rgb(138, 135, 135);
+}
+
+.body-login > header > h2{
+    font-family: 'bruno';
+    font-size: 200%;
+    margin: 3% 0;
+    text-shadow: 0 2px 2px rgb(138, 135, 135);
 }
 
 .ricerca{
@@ -80,6 +109,13 @@ body > header{
     width: 20%;
     height: 60%;
 }
+
+.img-slider p{
+    display: inline-block;
+    color:yellow;
+    font-size: x-large;
+    background-color: red;
+}
   
 .img-slider .navigation{
     z-index: 2;
@@ -104,26 +140,27 @@ body > header{
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
-nav ul{
+.nav-home ul{
     list-style: none;
+    margin-bottom: 10%;
 }
 
-nav > ul > li > a >  img{
-    width: 45px;
-    height: 38px;
-    float: center;
-}
-
-nav > ul > li{
+.nav-home ul li {
     width: 80%;
     margin: 3% 10% 3% 10%;
     text-align: center;
 }
 
-nav > ul > li > a{
+.nav-home ul li a{
     width: 100%;
     padding: 5% 0 3%;
     display: inline-block;
+}
+
+.nav-home ul li a img{
+    width: 45px;
+    height: 38px;
+    float: center;
 }
 
 .playstation{
@@ -146,6 +183,229 @@ nav > ul > li > a{
     background-color: #E70012;
     border-radius: 15px;
 }
+
+.nav-rotondo{
+    clear: both;
+}
+
+.nav-rotondo > ul > li{
+    display: inline-block;
+    width: 23%;
+    margin: 10px 0 0;
+    text-align: center;
+}
+
+.nav-rotondo ul li:not(:last-child){
+    margin-right: 1%;
+}
+
+.nav-rotondo ul li a{
+    display: inline-block;
+    width:100%;
+    height: 100%;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    padding: 5% 0 ;
+}
+
+.nav-rotondo ul li a img{
+    width: 50px;
+    height: 40px;
+    float: center;
+}
+
+.nav-rotondo ul li:first-child{
+    margin-left: 2%;
+}
+
+.playstation-login{
+    background-color: #00439C;
+    border-radius: 15px;
+}
+
+.xbox-login{
+    background-color: #0F7B0E;
+    border-radius: 15px;
+}
+
+.pc-login{
+    background-color: #000000;
+    border-radius: 15px;
+    margin-bottom: 100px;
+}
+
+.nintendo-login{
+    background-color: #E70012;
+    border-radius: 15px;
+}
+.form-login{
+    background-color: white;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    -webkit-box-shadow: inset 0 7px 5px #009688;
+}
+
+.input-login[type=text], .input-login[type=password]{
+    width: 80%;
+    padding: 10px 20px;
+    height: 80px;
+    font-size:30px;
+    margin: 8px 0;
+    text-align: center;
+    color: #009688;
+    font-weight: bold;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 17px;
+    background-color: #CFD8DC;
+    -webkit-box-shadow: inset 0 7px 5px rgb(170, 167, 167);
+}
+
+.input-register[type=text], .input-register[type=password]{
+    width: 80%;
+    padding: 10px 20px;
+    height: 80px;
+    font-size:30px;
+    margin: 8px 0;
+    text-align: center;
+    color: #009688;
+    font-weight: bold;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 17px;
+    background-color: #CFD8DC;
+    -webkit-box-shadow: inset 0 7px 5px rgb(170, 167, 167);
+}
+
+.registrati-login, .accedi-login {
+    background-color: #009688;
+    color: white;
+    padding: 3% 2%;
+    margin: 10% 5% 12%;
+    font-family:'Times New Roman', Times, serif;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 38%;
+    border-radius: 17px;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.accedi-register {
+    background-color: #009688;
+    color: white;
+    padding: 3% 2%;
+    margin-bottom: 20%;
+    font-family:'Times New Roman', Times, serif;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 38%;
+    border-radius: 17px;
+    text-decoration: none;
+}
+  
+.registrati-login:hover {
+    opacity: 0.8;
+}
+
+.accedi-login:hover {
+    opacity: 0.8;
+}
+
+.div-login-imgcontainer {
+    text-align: center;
+    margin: 20% 0 12px 0;
+}
+
+.div-register-imgcontainer {
+    text-align: center;
+    margin-top: 5%;
+}
+  
+.avatar-login {
+    width: 40%;
+    margin-top: 10%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 3px 1px 0px rgba(189, 189, 189, 1);
+}
+
+.div-login-container {
+    padding: 16px;
+}
+
+.div-register-container {
+    padding: 10px 16px 0;
+}
+
+
+
+
+
+
+
+#menu{
+    display: none;
+    top: -130px;
+    padding-bottom: 10%;
+    background-color: #CFD8DC;
+    border-radius: 20px 20px 0 0;
+    -webkit-box-shadow: inset 0 4px 5px rgb(170, 169, 169);
+}
+
+#menu p{
+    color: white;
+    font-size: small;
+    margin: 0;
+}
+
+.rettangolo-menu{
+    background-color: #607D8B;
+    border-radius: 15px;
+}
+
+.nav-menu{
+    clear: both;
+}
+
+.nav-menu > ul > li{
+    display: inline-block;
+    width: 22%;
+    margin: 10px 0 0;
+    text-align: center;
+}
+
+.nav-menu ul li a{
+    display: inline-block;
+    width:100%;
+    height: 100%;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    padding: 10% 0 0;
+}
+
+.nav-menu ul li a img{
+    width: 40px;
+    height: 40px;
+    float: center;
+}
+
+.nav-menu ul li{
+    margin-left: 2%;
+}
+
+
+
+
+
+
+
+
 
 #footer_bar{
     width: 100%;
@@ -185,9 +445,29 @@ nav > ul > li > a{
 #bar_container ul li a img{
     width: 25px;
     height: 28px;
+    margin-bottom: 5%;
 }
 
 @media (max-width: 820px){
+
+    .nav-rotondo ul li{
+        width: 23%;
+    }
+
+    .nav-rotondo ul li a img{
+        width: 40px;
+        height: 30px;
+        float: center;
+    }
+
+    .nav-rotondo ul li:not(:last-child){
+        margin-right: 1%;
+    }
+
+    .nav-rotondo ul li:last-child{
+        margin-left: 0;
+    }
+
     .img-slider{
         width: 100%;
         height: 250px;
@@ -202,9 +482,33 @@ nav > ul > li > a{
         height: 10px;
         margin: 8px;
     }
+
+    .input-login[type=text], .input-login[type=password], .input-register[type=password], .input-register[type=text]{
+        height: 50px;
+        font-size:medium;
+    }
 }
   
 @media (max-width: 620px){
+
+    .ricerca #search {
+        font: 40px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+    }
+
+    .nav-rotondo ul li:last-child{
+        margin-left: 1%;
+    }
+
+    .nav-rotondo ul li a img{
+        width: 30px;
+        height: 25px;
+        float: center;
+    }
+
+    .nav-rotondo ul li:last-child{
+        margin-left: 0;
+    }
+
     .img-slider{
         width: 100%;
         height: 200px;
@@ -219,19 +523,34 @@ nav > ul > li > a{
         height: 8px;
         margin: 6px;
     }
+
+    .input-login[type=text], .input-login[type=password], .input-register[type=password], .input-register[type=text]{
+        height: 50px;
+        font-size:medium;
+    }
 }
   
 @media (max-width: 420px){
     .ricerca #search {
-        border-style: inset;
-        border-width: 0;
-        color: #607D8B;
-        float: left;
-        font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
-        box-sizing: border-box;
-        display: inline-block;
-        padding: 2% 2% 2% 3%;
-        width: 78%;
+        font: 30px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+    }
+
+    .img-slider p{
+        font-size: small;
+    }
+
+    .nav-rotondo ul li:first-child{
+        margin-left: 0%;
+    }
+
+    .nav-rotondo ul li a img{
+        width: 22px;
+        height: 18px;
+        float: center;
+    }
+
+    nav ul{
+        list-style: none;
     }
     
     .img-slider{
@@ -245,7 +564,16 @@ nav > ul > li > a{
 
     .img-slider .slide img{
         z-index: 1;
-        width: 40%;
+        width: 28%;
         height: 70%;
+    }
+
+    .input-login[type=text], .input-login[type=password], .input-register[type=password], .input-register[type=text]{
+        height: 40px;
+        font-size:medium;
+    }
+
+    .registrati-login, .accedi-login {
+        font-size: medium;
     }
 }
