@@ -2,8 +2,8 @@
 
 
 .search_container {
-    margin: 1% auto auto auto;
-    width: 53.5%;
+    margin: 1% auto;
+    width: 60%;
     padding: 3%;
 }
 
@@ -22,9 +22,8 @@
     transition: all 250ms ease-in-out;
     backface-visibility: hidden;
     transform-style: preserve-3d;
-
-
-    width: 100%;
+    
+    width: 87.5%;
 }
 
 .search_input::placeholder{
