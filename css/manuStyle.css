@@ -51,16 +51,20 @@ img {
     background-position: 100% center;
 }
 
+
+
 .text_item_bar {
+    margin: 0;
     color: #fff;
     font-family: bruno;
 }
 
 .item_bar {
     background-color: #00439C;
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .btn_item_bar {
@@ -68,13 +72,12 @@ img {
     border-radius: 10px;
     padding: 1.5% 1.5%;
     margin: 0 2%;
-    align-self: center;
 }
 
 .btn_item_bar_order {
-    flex: 0 0 22%;
-    text-align: left;
+    flex: 0 0 20%;
     display: flex;
+    justify-content: space-evenly;
 }
 .btn_item_bar_logo {
     background: none;
@@ -83,17 +86,14 @@ img {
 }
 
 .btn_item_bar_filter {
-    flex: 0 0 12%;
-    display: flex;
+    flex: 0 0 10%;
 }
 
 .icon_order {
-    align-self: center;
-    width: 30%;
+    width: 25%;
 }
 .icon_filter {
-    align-self: center;
-    width: 50%;
+    width: 40%;
 }
 
 
@@ -101,116 +101,226 @@ img {
 .container_item{
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
 }
 
 .item {
-    position: relative;
-
-    flex: 0 0 40%; 
-    align-self: center; 
-
-    margin-left: 7%;
-    margin-bottom: 7%;
-    /* margin-left: 4%; */
-
-    border-radius: 20px;
-    border: 2px;
     box-shadow: -2px 8px 3px rgba(0, 0, 0, 0.25);
-    
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 4%;
+    flex: 0 0 40%; 
 }
 
 .img_backround_item {
     border-radius: 20px;
 }
 
-.heart_icon {
-    /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
-    color: red;
-}
-
 .btn_add_cart {
-    position: absolute;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 100%;
+    position: absolute;
     background: #009688;
     width: 25%;
     height: 25%;
     bottom: 4%;
     right: 5%;
-
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .btn_wish {
     position: absolute;
     border-radius: 100%;
-    /* background: #CFD8DC; */
-    width: 30%;
-    height: 30%;
-    bottom: -1%;
-    left: 2%;
-
-    /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    width: 25%;
+    height: 20%;
+    bottom: 4%;
+    left: 5%;
 }
 
 .btn_price {
-    position: absolute;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
+
+    position: absolute;
     background: #CFD8DC;
     width: 35%;
     height: 15%;
-    top: 4%;
+    top: 5%;
     right: 5%;
 
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    text-align: center;
     
-    /* display: flex; */
-    /* align-items: center; */
-    /* text-align: center; */
-
-    padding-top: auto;
-    padding-bottom: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+    .search_container {
+        margin: 3% auto;
+    }
 
+    .item_bar {
+        margin-bottom: 3%;
+    }
 
-/* 
-.heart-shape{
-    position: relative;
-    width: 20px;
-    height: 20px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    background-color: rgba(250,184,66, 1);
+    .btn_item_bar {
+        padding: 0.8% 0.8%;
+    }
+    .btn_item_bar_order {
+        flex: 0 0 24%;
+    }
+    .btn_item_bar_logo {
+        margin: 1.5% auto 1.5% 17%;
+        flex: 0 0 7%;
+    }
+    
+    .btn_item_bar_filter {
+        flex: 0 0 12%;
+    }
 
-    top: -20%;
-    left: 10%;
-  }
-  .heart-shape:before,
-  .heart-shape:after{
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    content: '';
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-    background-color: rgba(250,184,66, 1);
-  }
-  .heart-shape:before{
-    bottom: 0px;
-    left: -17px;
-  }
-  .heart-shape:after{
-    top: -17px;
-    right: 0px;
-  } */
+    .icon_order {
+        margin-left: 5%;
+        width: 25%;
+    }
+
+    .btn_price {
+        font-size: 100%;
+    }
+}
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+    .search_container {
+        margin: 2% auto;
+    }
+
+    .btn_item_bar_order {
+        flex: 0 0 18%;
+    }
+    .btn_item_bar_logo {
+        margin: 1.5% auto 1.5% 25%;
+        flex: 0 0 5%;
+    }
+    
+    .btn_item_bar_filter {
+        flex: 0 0 9%;
+    }
+
+    .item {
+        flex: 0 0 30%; 
+    }
+
+    .btn_price {
+        font-size: 120%;
+    }
+}
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+    .item_bar {
+        margin-bottom: 2.5%;
+    }
+
+    .btn_item_bar_order {
+        flex: 0 0 12%;
+    }
+    .btn_item_bar_logo {
+        margin: 1% auto 1% 30%;
+        flex: 0 0 5%;
+    }
+    
+    .btn_item_bar_filter {
+        flex: 0 0 7%;
+    }
+
+    .btn_price {
+        font-size: 150%;
+    }
+}
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .search_container {
+        margin: 1.4% auto;
+    }
+
+    .item_bar {
+        margin-bottom: 2%;
+    }
+
+    .btn_item_bar_order {
+        flex: 0 0 10%;
+    }
+    .btn_item_bar_logo {
+        margin: 0.8% auto 0.8% 32%;
+        flex: 0 0 4%;
+    }
+    
+    .btn_item_bar_filter {
+        flex: 0 0 5%;
+    }
+
+    .icon_order {
+        width: 30%;
+    }
+
+    .item {
+        flex: 0 0 28%; 
+        margin-bottom: 2.5%;
+    }
+
+    .btn_price {
+        font-size: 180%;
+    }
+}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    .search_container {
+        margin: 1.2% auto;
+    }
+
+    .item_bar {
+        margin-bottom: 1%;
+    }
+
+    .btn_item_bar_order {
+        flex: 0 0 8%;
+    }
+    .btn_item_bar_logo {
+        margin: 0.5% auto 0.5% 35%;
+        flex: 0 0 3%;
+    }
+    
+    .btn_item_bar_filter {
+        flex: 0 0 4%;
+    }
+
+    .item {
+        flex: 0 0 22%; 
+        margin-bottom: 2%;
+    }
+
+    .btn_price {
+        font-size: 150%;
+    }
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ 
+    .btn_item_bar_order {
+        flex: 0 0 6%;
+    }
+    .btn_item_bar_logo {
+        margin: 0% auto 0% 37%;
+        flex: 0 0 3%;
+    }
+    
+    .btn_item_bar_filter {
+        flex: 0 0 3%;
+    }
+
+    .icon_order {
+        margin-left: 7%;
+    }
+
+    .item {
+        flex: 0 0 17%; 
+    }
+
+    .btn_price {
+        font-size: 180%;
+    }
+}
