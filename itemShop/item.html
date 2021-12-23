@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
         <title>Uni-videogame</title>
         <link rel="stylesheet" href="../css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="../css/manuStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/catalogItemStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/itemStyle.css" type="text/css"/>
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -12,9 +14,7 @@
 
         <script src="../js/click.js" type="text/javascript"></script>
     </head>
-
-
-    <body> 
+    <body>
         <header>
             <div class="topnav" id="myTopnav">
                 <a href="../img/menu/index.html" class="active">UniGame</a>
@@ -32,256 +32,21 @@
             </div>
         </header>
 
-        <section class="search_container ">
-            <input class="search_input" type="text" placeholder="Search">
-        </section>
-
-        <section class="item_bar">
-            <div class="btn_item_bar btn_item_bar_order">
-                <p class="text_item_bar">Order</p>
-                <img class="icon_item_bar icon_order" src="../img/itemBar/arrow-down.svg" alt="order">
-            </div>
-            <div class="btn_item_bar btn_item_bar_logo">
-                <img class="icon_item_bar" src="../img/typeGame/ps.svg" alt="iconPs">
-            </div>
-            <div class="btn_item_bar btn_item_bar_filter">
-                <img class="icon_item_bar icon_filter" src="../img/itemBar/filter.svg" alt="filter">
-            </div>
-        </section>
-
-
-        <main class="container_item">
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
+        <main>
+            <article>
+                <section class="container_img_game">
+                    <img src="../img/item/TheLastOfUsIIps4.png" alt="">
                 </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
+
+
+                <section>
+
                 </section>
+
             </article>
 
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-            
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
-
-            <article class="item ">
-                <div>
-                    <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <section class="btn_price">
-                    <p>55.00$</p>
-                </section>
-                <section class="btn_add_cart">
-                    <img src="../img/itemBar/add.svg" alt="add">
-                </section>   
-                <section class="btn_wish">
-                    <img class="heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-                </section>
-            </article>
         </main>
 
 
-
-
-
-    </body> 
-
+    </body>
 </html>
