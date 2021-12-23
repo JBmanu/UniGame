@@ -4,7 +4,8 @@ $(document).ready(function(){
   var btns = document.querySelectorAll('.btn');
   let currentSlide = 1;
 
-  $(".icon").click(function(){
+  //Controlla il menu dell'header delle pagine
+  $(".icon").click(function(){      
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
       x.className += " responsive";
@@ -13,58 +14,53 @@ $(document).ready(function(){
     }
   });
 
+  //Controlla il search, che il campo sia diverso da vuoto
   $("#submit").click(function() {
     if ($("#search").val() === "Search...") {
       alert("Inserire un valore valido");
       return false;
     }
   });
-    
+  
+  //Se il campo è vuoto riscrive search
   $("#search").blur(function() {
     if(this.value == ''){ 
       this.value = 'Search...';
     }
   });
 
+  //Se il campo è vuoto riscrive Nome nel form registrazione
   $("#login-name").blur(function() {
     if(this.value == ''){ 
       this.value = 'Nome';
     }
   });
 
+  //Se il campo è vuoto riscrive Cognome nel form registrazione
   $("#login-surname").blur(function() {
     if(this.value == ''){ 
       this.value = 'Cognome';
     }
   });
 
-  $("#login-mail").blur(function() {
-    if(this.value == ''){ 
-      this.value = 'E-mail';
-    }
-  });
-
+  //Quando si clicca su search, toglie la parola Search
   $("#search").focus(function() {
     if (this.value == 'Search...') {
       this.value = ''; 
     }
   });
 
+  //Quando si clicca su Nome nel form registrazione, toglie la parola Nome
   $("#login-name").focus(function() {
     if (this.value == 'Nome') {
     this.value = ''; 
     }
   });
 
+    //Quando si clicca su Cognome nel form registrazione, toglie la parola Cognome
   $("#login-surname").focus(function() {
     if (this.value == 'Cognome') {
       this.value = ''; 
-    }
-  });
-
-  $("#login-mail").focus(function() {
-    if (this.value == 'E-mail') {
-        this.value = ''; 
     }
   });
 

@@ -54,16 +54,22 @@
                 </li>
             </ul>
         </nav>
-        <form action="#" method="post" class="form-login">
-            <div class="div-login-imgcontainer">
+        <div class="card">
+            <div class="card-imgcontainer">
                 <img src="./img/user.png" alt="Foto Utente" class="avatar-login"/>
             </div>
-            <div class="div-login-container">
-                <input id ="login-mail" class="input-login" type="text" value="E-mail" name="email" required>
-                <input class="input-login" type="password" value="Password" name="psw" required>
+            <form action="#" method="post" class="form">
+                <div>
+                    <input class="form_input" type="email" placeholder="E-mail"/>
+                </div>
+                <div>
+                    <input class="form_input" type="password" placeholder="Password"/>
+                </div>
+                <button class="form_button">Login</button>
+            </form>
+            <div class="card_footer">
+                <a href="./register.html">Create a new account</a>
             </div>
-            <a href="./register.html"><input class="registrati-login" type="button" value="Registrati"></input></a>
-            <input class="accedi-login" type="submit" value="Accedi"></input>
-        </form>
+        </div>
     </body>
 </html>
