@@ -1,12 +1,12 @@
 @font-face{
     font-family: 'robus';
     font-weight: bold;
-    src: url('./bo.otf') format('opentype');
+    src: url('../font/bo.otf') format('opentype');
 }
 @font-face{
     font-family: 'bruno';
     font-weight: bold;
-    src: url('./bruno.otf') format('opentype');
+    src: url('../font/bruno.otf') format('opentype');
 }
 
 body, h1, ul{
