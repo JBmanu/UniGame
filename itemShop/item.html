@@ -15,7 +15,7 @@
         <script src="../js/click.js" type="text/javascript"></script>
     </head>
     <body>
-        <header>
+        <header class="navbar_info_menu">
             <div class="topnav" id="myTopnav">
                 <a href="../img/menu/index.html" class="active">UniGame</a>
                 <a href="../login.html"><img src="../img/menu/user.png" alt="Login"> Login</a>
@@ -33,13 +33,71 @@
         </header>
 
         <main>
-            <article>
+            <article class="container_all_item">
                 <section class="container_img_game">
-                    <img src="../img/item/TheLastOfUsIIps4.png" alt="">
+                    <img class="img_game" src="../img/item/TheLastOfUsIIps4.png" alt="game">
+
+                    <section class="container_price"> 
+                        <p>$50.00</p>
+                    </section>
                 </section>
 
 
-                <section>
+                <section class="container_info_item">
+
+                    <section class="container_btn_item">
+                        <div class="btn_item btn_back">
+                            <img class="item_icon_back" src="../img/back/backPS.svg" alt="back">
+                        </div>
+                        <div class="btn_item circle_info_category">
+                            <img class="item_icon_ps" src="../img/typeGame/ps.svg" alt="back">
+                        </div>
+                        <div class="btn_item btn_cart">
+                            <img class="item_icon_cart" src="../img/menu/cart.svg" alt="back">
+                        </div>
+                    </section>
+
+                    <section class="">
+                        <form class="form_chose" action="">
+                            <label class="l-radio">
+                                <input type="radio" id="usedItem" name="used" value="used"/>
+                                <span>Usato</span> 
+                            </label>
+                            <label class="l-radio">
+                                <input type="radio" id="newItem" name="used" value="new" checked="checked" />
+                                <span>Nuovo</span> 
+                            </label>
+                        </form>
+
+                        <form class="form_chose" action="">
+                            <label class="l-radio">
+                                <input type="radio" id="ps4Item" name="ps" value="ps4"/>
+                                <span>PS4</span> 
+                            </label>
+                            <label class="l-radio">
+                                <input type="radio" id="ps5Item" name="ps" value="ps5" checked="checked"/>
+                                <span>PS5</span> 
+                            </label>
+                        </form>
+                    </section>
+
+                    <section class="container_item_description">
+                        <p>
+                            Cinque anni dopo il loro pericoloso viaggio attraverso gli Stati Uniti post-pandemici, Ellie e Joel si sono stabiliti a Jackson, in Wyoming. Vivere in una fiorente comunità di superstiti ha consentito loro di lavorare in pace e in stabilità, nonostante la costante minaccia degli infetti e di altri superstiti ancora più disperati.
+                        </p>
+                    </section> 
+
+                    <section class="container_footer">
+                        <p>
+                            Data rilascio: 19/06/2020
+                        </p>
+
+                        <div class="btn_read_all">
+                            <p class="text_read_all">
+                                Leggi tutto
+                            </p>
+                        </div>
+                    </section>
 
                 </section>
 

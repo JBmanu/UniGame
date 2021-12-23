@@ -156,7 +156,7 @@ img {
     align-items: center;
 }
 
-@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+@media only screen and (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
     .search_container {
         margin: 3% auto;
     }
@@ -189,7 +189,7 @@ img {
         font-size: 100%;
     }
 }
-@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+@media only screen and (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
     .search_container {
         margin: 2% auto;
     }
@@ -214,7 +214,7 @@ img {
         font-size: 120%;
     }
 }
-@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+@media only screen and (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
     .item_bar {
         margin-bottom: 2.5%;
     }
@@ -235,7 +235,7 @@ img {
         font-size: 150%;
     }
 }
-@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+@media only screen and (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
     .search_container {
         margin: 1.4% auto;
     }
@@ -269,7 +269,7 @@ img {
         font-size: 180%;
     }
 }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+@media only screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
     .search_container {
         margin: 1.2% auto;
     }
@@ -299,7 +299,7 @@ img {
         font-size: 150%;
     }
 }
-@media (min-width:1281px) { /* hi-res laptops and desktops */ 
+@media only screen and (min-width:1281px) { /* hi-res laptops and desktops */ 
     .btn_item_bar_order {
         flex: 0 0 6%;
     }
