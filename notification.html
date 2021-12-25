@@ -10,7 +10,7 @@
         crossorigin="anonymous"></script>
         <script src="./js/click.js" type="text/javascript"></script>
     </head>
-    <body class="body-login">
+    <body class="body-home">
         <header>
             <div class="topnav" id="myTopnav">
                 <a href="./index.html" class="active">UniGame</a>
@@ -27,9 +27,6 @@
                 </a>
             </div>
         </header>
-        <div class="div-login">
-            <p>Register</p>
-        </div>
         <nav class = "nav-rotondo">
             <ul>
                 <li class="playstation">
@@ -54,25 +51,31 @@
                 </li>
             </ul>
         </nav>
-        <div class="card">
-            <div class="card-imgcontainer">
-                <img src="./img/user.png" alt="Foto Utente" class="avatar-login"/>
+        <div class="container">
+            <div class="semicircle">
+                <img src="./img/notifiche.png" alt="Notifiche">
             </div>
-            <form action="#" method="post" class="form">
-                <div>
-                    <input class="form_input" type="text" placeholder="Nome" required/>
-                </div>
-                <div>
-                    <input class="form_input" type="text" placeholder="Cognome" required/>
-                </div>
-                <div>
-                    <input class="form_input" type="email" placeholder="E-mail" required/>
-                </div>
-                <div>
-                    <input class="form_input" type="password" placeholder="Password" required/>
-                </div>
-                <button class="form_button">Accedi</button>
-            </form>
+        </div>
+        <div class="div-notifiche">
+            <div class="notifica-Letto">
+                <h2>Ordine #27490 ricevuto</h2>
+                <p><a href="#">Clicca qui</a> per visualizzarlo</p>
+            </div>
+            <div class="notifica-nonLetto">
+                <h2>Ordine #29479 consegnato</h2>
+                <p><a href="#">Clicca qui</a> per visualizzarlo</p>
+                <p class="scritta-nonLetto">Non letto</p>
+            </div>
+            <div class="notifica-nonLetto">
+                <h2>Ordine #81937 in consegna</h2>
+                <p><a href="#">Clicca qui</a> per visualizzarlo</p>
+                <p class="scritta-nonLetto">Non letto</p>
+            </div>
+            <div class="notifica-nonLetto">
+                <h2 class="status-notifica">Ordine #39584 annullato</h2>
+                <p class="clicca-visualizza-notifica"><a href="#">Clicca qui</a> per visualizzarlo</p>
+                <p class="scritta-nonLetto">Non letto</p>
+            </div>
         </div>
     </body>
 </html>
