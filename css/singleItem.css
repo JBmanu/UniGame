@@ -1,0 +1,42 @@
+@font-face{
+    font-family: 'bruno';
+    font-weight: bolder;
+    src: url('../font/bruno.otf') format('opentype');
+}
+
+p { margin: 0; }
+.navbar_info_menu {
+    background-color: #fff;
+}
+
+
+.item_text_primary {
+    color: white;
+    font: normal bold 160% Roboto, sans-serif;
+}
+.item_text_secondary {
+    color: #CFD8DC;
+    font: normal normal 100% Roboto, sans-serif;
+}
+.item_text_third {
+    color: #5C7885;
+    font: normal bold 160% Roboto, sans-serif;
+}
+
+
+.cntnr_2card {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.ctnr_top_card {
+    flex: 0 0 40%;
+}
+.ctnr_down_card {
+    background-color: #3564A3;
+
+    flex: 0 0 40%;
+    width: 100px;
+}
+
