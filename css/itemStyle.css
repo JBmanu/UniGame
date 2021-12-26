@@ -37,13 +37,12 @@ p {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 5% 0 5%;
-
-    /* position: absolute; */
+    margin: 5% 0 5%;
 }
 .ctnr_top_card {
     flex: 0 0 100%;
     overflow: hidden;
+    position: relative;
 }
 .ctnr_down_card {
     box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
@@ -59,7 +58,7 @@ p {
     top: 8%;
     right: 2%;
     width: 25%;
-    height: 35%;
+    height: 85%;
 
     display: flex;
     flex-flow: row wrap;
@@ -183,16 +182,9 @@ p {
 }
 
 
-@media only screen and (min-width:481px)  { 
-    .cntnr_info_item {
-        height: 45%;
-    }
-}
 @media only screen and (min-width:641px)  {
     .cntnr_info_item {
-        top: 7%;
-        right: 20%;
-        height: 38%;
+        right: 5%;
         width: 20%;
     }
     .ctnr_top_card {
@@ -204,13 +196,10 @@ p {
  }
 @media only screen and (min-width:821px)  { 
     .cntnr_2card {
-        flex-flow: row nowrap;
         justify-content: space-evenly;
-        padding: 30% 0 30%;
     }
     .ctnr_top_card {
         flex: 0 0 45%;
-        border-radius: 30px;
         display: flex;
     }
     .ctnr_down_card {
@@ -222,31 +211,26 @@ p {
         box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
     }
     .cntnr_info_item {
-        top: 35%;
-        right: 52%;
-        height: 36%;
-        width: 15%;
+        top: 18%;
+        right: 5%;
+        height: 66%;
+        width: 20%;
     }
 }
 @media only screen and (min-width:961px)  { 
-    .cntnr_2card {
-        flex-flow: row nowrap;
-        justify-content: space-evenly;
-        padding: 20% 0 30%;
-    }
     .cntnr_info_item {
-        top: 28%;
-        height: 40%;
-        width: 13%;
+        top: 12%;
+        right: 3%;
+        height: 77%;
+        width: 25%;
     }
 }
-@media only screen and (min-width:1025px)  { 
-    .cntnr_info_item {
-        top: 30%;
-        height: 42%;
-    }
-}
+
 @media only screen and (min-width:1281px)  { 
+    .item_text_secondary {
+        font: normal normal 120% Roboto, sans-serif;
+    }
+
     .btn_item_secondary {
         width: 80px;
         height: 80px;
@@ -255,29 +239,10 @@ p {
         width: 100px;
         height: 100px;
     }
-
-    .cntnr_2card {
-        padding: 10% 0 30%;
-    }
-
-    .cntnr_pegi {
-        flex: 0 0 100%;
-    }
-
-    .ctnr_top_card {
-        align-items: center;
-        background-color: #3564A3;
-        box-shadow: 0px 8px 4px rgb(0 0 0 / 25%);
-    }
-
     .cntnr_info_item {
-        position: unset;
-        height: 32%;
-        padding: 0px 3% 0;
-    }
-
-    .icon_background_game {
-        border-radius: 30px;
-        box-shadow: none;
+        top: 5%;
+        right: 0%;
+        height: 90%;
+        width: 30%;
     }
 }
