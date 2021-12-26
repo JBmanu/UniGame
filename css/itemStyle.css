@@ -224,11 +224,21 @@ p {
         height: 77%;
         width: 25%;
     }
+
+    .ctnr_top_card {
+        flex: 0 0 40%;
+    }
 }
 
 @media only screen and (min-width:1281px)  { 
     .item_text_secondary {
         font: normal normal 120% Roboto, sans-serif;
+    }
+    .cntnr_price {
+        font-weight: 200%;
+    }
+    .ctnr_top_card {
+        flex: 0 0 35%;
     }
 
     .btn_item_secondary {
@@ -240,9 +250,9 @@ p {
         height: 100px;
     }
     .cntnr_info_item {
-        top: 5%;
+        top: 15%;
         right: 0%;
-        height: 90%;
+        height: 73%;
         width: 30%;
     }
 }
