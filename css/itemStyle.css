@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'bruno';
-    font-weight: bolder;
-    src: url('../font/bruno.otf') format('opentype');
-}
 
 p {
     margin: 0;
@@ -43,6 +38,8 @@ p {
     flex-flow: row wrap;
     justify-content: center;
     padding: 5% 0 5%;
+
+    /* position: absolute; */
 }
 .ctnr_top_card {
     flex: 0 0 100%;
