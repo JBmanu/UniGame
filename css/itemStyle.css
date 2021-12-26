@@ -10,7 +10,6 @@ p {
 
 .navbar_info_menu {
     background-color: #fff;
-    position: fixed;
     z-index: 1;
     width: 100%;
 }

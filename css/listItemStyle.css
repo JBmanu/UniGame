@@ -11,6 +11,10 @@ img {
     width: 100%;
 }
 
+p {
+    margin: 0;
+}
+
 .space_semi_btn_wish_list {
     margin: 2% 0 0;
 }
