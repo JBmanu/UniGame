@@ -1,3 +1,7 @@
+h2 {
+    margin: 0;
+}
+
 .circle_obj {
     border-radius: 100%;
 }
@@ -8,17 +12,17 @@
 
 .cart_text_primary {
     color: #212121;
-    font: normal normal 140% Average, serif;
+    font: normal normal 100% Average, serif;
     font-feature-settings: 'cpsp' on;
 }
 .cart_text_secondary {
     color: #212121;
-    font: normal normal 100% Average, serif;
+    font: normal normal 120% Average, serif;
     font-feature-settings: 'cpsp' on;
 }
 .cart_text_third {
     color: white;
-    font: normal bold 130% Average, serif;
+    font: normal bold 180% Average, serif;
     font-feature-settings: 'cpsp' on;
 }
 
@@ -126,13 +130,13 @@
 } */
 @media only screen and (min-width:481px)  { 
     .cart_text_primary {
-        font: normal normal 160% Average, serif;
+        font: normal normal 130% Average, serif;
     }
 }
 @media only screen and (min-width:641px)  { 
-    .cart_text_primary {
-        font: normal normal 200% Average, serif;
-    }
+    /* .cart_text_primary {
+        font: normal normal 150% Average, serif;
+    } */
     .cntnr_cart_item {
         margin: 3% 0 0;
     }
@@ -159,11 +163,19 @@
     .cntnr_cart_item {
         flex: 0 0 40%;
     }
+
 }
 @media only screen and (min-width:1281px)  { 
     .cart_text_primary {
+        font: normal normal 88% Average, serif;
+    }
+    .cart_text_secondary {
         font: normal normal 130% Average, serif;
     }
+    .cart_text_third {
+        font: normal bold 200% Average, serif;
+    }
+
     .cntnr_cart_item {
         flex: 0 0 22%;
     }

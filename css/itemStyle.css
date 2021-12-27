@@ -239,6 +239,7 @@ p {
     }
     .ctnr_top_card {
         flex: 0 0 35%;
+        overflow: visible;
     }
 
     .btn_item_secondary {
@@ -251,8 +252,8 @@ p {
     }
     .cntnr_info_item {
         top: 15%;
-        right: 0%;
-        height: 73%;
-        width: 30%;
+        right: 4%;
+        height: 70%;
+        width: 25%;
     }
 }
