@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../css/style.css" type="text/css"/>
         <link rel="stylesheet" href="../css/listItemStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../css/cartStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/manuStyle.css" type="text/css"/>
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -36,22 +37,22 @@
         <nav class = "nav-rotondo">
             <ul>
                 <li class="playstation">
-                    <a href="https://www.google.it">
+                    <a class="force_flex_center" href="https://www.google.it">
                         <img src="../img/typeGame/ps.svg" alt="Playstation" title="Playstation" />
                     </a>
                 </li>
                 <li class="xbox">
-                    <a href="https://www.google.it">
+                    <a class="force_flex_center" href="https://www.google.it">
                         <img src="../img/typeGame/xbox.png" alt="Xbox" title="Xbox" />
                     </a>
                 </li>
                 <li class="nintendo">
-                    <a href="https://www.google.it">
+                    <a class="force_flex_center" href="https://www.google.it">
                         <img src="../img/typeGame/nintendo.png" alt="Nintendo" title="Nintendo" />
                     </a>
                 </li>
                 <li class="pc">
-                    <a href="https://www.google.it">
+                    <a class="force_flex_center" href="https://www.google.it">
                         <img src="../img/typeGame/pc.png" alt="PC" title="PC" />
                     </a>
                 </li>
@@ -64,112 +65,89 @@
             </div>
         </div>
 
-        <main class="container_item">
+        <main class="cntnr_list_card  space_top_margin_medium">
 
-            <section class="cntnr_cart_item curve_obj_h15">
-                <div class="cntnr_left_cart_item">
-                    <h3 class="cntnr_info_used_item_cart  center_content_flex  cart_text_primary  curve_obj_h15">used</h3>
-                    <img class="curve_obj_h15" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+            <section class="card_composed  curve_obj_h20  space_bottom_margin_card">
+                <div class="cntnr_left_card_composed">
+                    <p class="info_left_card_composed  curve_obj_h20  bg_color_highlights  font_secondary  fg_color_secondary">used</p>
+                    <img class="curve_obj_h20" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
                 </div>
-                <div class="cntnr_right_cart_item  cart_text_primary">
-                    <h2 class="center_content_flex">The Last Of Us II</h2>
-                    <p class="cntnr_price_item_cart  center_content_flex  curve_obj_h15  cart_text_secondary">55.00$</p>
-                    <div class="cntnr_cmd_item_cart  cart_text_third"> 
-                        <p class="cntnr_cmd_sott_item_cart  center_content_flex  curve_obj_h15">-</p>
-                        <p class="cntnr_quantity_item_cart  center_content_flex  curve_obj_h15">1</p>
-                        <p class="cntnr_cmd_plus_item_cart  center_content_flex  curve_obj_h15">+</p>
+                <div class="cntnr_right_card_composed">
+                    <h2 class="title_right_card_composed  font_primary  fg_color_secondary"><strong>The Last Of Us II</strong></h2>
+                    <strong class="price_right_card_composed  curve_obj_h15  font_secondary  bg_color_secondary  fg_color_secondary">55.00$</strong>
+                    <div class="cntnr_cmd_card_cart"> 
+                        <p class="less_cmd_card_composed  force_flex_center  curve_obj_h20  fg_color_fourth">-</p>
+                        <p class="quantity_card_composed  force_flex_center  curve_obj_h20  bg_color_secondary  fg_color_third">1</p>
+                        <p class="plus_cmd_card_composed  force_flex_center  curve_obj_h20  bg_color_primary  fg_color_third">+</p>
                     </div>
                 </div>
             </section>
-
-            <section class="cntnr_cart_item curve_obj_h15">
-                <div class="cntnr_left_cart_item">
-                    <h3 class="cntnr_info_used_item_cart  center_content_flex  cart_text_primary  curve_obj_h15">used</h3>
-                    <img class="curve_obj_h15" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+            <section class="card_composed  curve_obj_h20  space_bottom_margin_card">
+                <div class="cntnr_left_card_composed">
+                    <p class="info_left_card_composed  curve_obj_h20  bg_color_highlights  font_secondary  fg_color_secondary">used</p>
+                    <img class="curve_obj_h20" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
                 </div>
-                <div class="cntnr_right_cart_item  cart_text_primary">
-                    <h2 class="center_content_flex">The Last Of Us II</h2>
-                    <p class="cntnr_price_item_cart  center_content_flex  curve_obj_h15  cart_text_secondary">55.00$</p>
-                    <div class="cntnr_cmd_item_cart  cart_text_third"> 
-                        <p class="cntnr_cmd_sott_item_cart  center_content_flex  curve_obj_h15">-</p>
-                        <p class="cntnr_quantity_item_cart  center_content_flex  curve_obj_h15">1</p>
-                        <p class="cntnr_cmd_plus_item_cart  center_content_flex  curve_obj_h15">+</p>
+                <div class="cntnr_right_card_composed">
+                    <h2 class="title_right_card_composed  font_primary  fg_color_secondary"><strong>The Last Of Us II</strong></h2>
+                    <strong class="price_right_card_composed  curve_obj_h15  font_secondary  bg_color_secondary  fg_color_secondary">55.00$</strong>
+                    <div class="cntnr_cmd_card_cart"> 
+                        <p class="less_cmd_card_composed  force_flex_center  curve_obj_h20  fg_color_fourth">-</p>
+                        <p class="quantity_card_composed  force_flex_center  curve_obj_h20  bg_color_secondary  fg_color_third">1</p>
+                        <p class="plus_cmd_card_composed  force_flex_center  curve_obj_h20  bg_color_primary  fg_color_third">+</p>
                     </div>
                 </div>
             </section>
-
-            <section class="cntnr_cart_item curve_obj_h15">
-                <div class="cntnr_left_cart_item">
-                    <h3 class="cntnr_info_used_item_cart  center_content_flex  cart_text_primary  curve_obj_h15">used</h3>
-                    <img class="curve_obj_h15" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+            <section class="card_composed  curve_obj_h20  space_bottom_margin_card">
+                <div class="cntnr_left_card_composed">
+                    <p class="info_left_card_composed  curve_obj_h20  bg_color_highlights  font_secondary  fg_color_secondary">used</p>
+                    <img class="curve_obj_h20" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
                 </div>
-                <div class="cntnr_right_cart_item  cart_text_primary">
-                    <h2 class="center_content_flex">The Last Of Us II</h2>
-                    <p class="cntnr_price_item_cart  center_content_flex  curve_obj_h15  cart_text_secondary">55.00$</p>
-                    <div class="cntnr_cmd_item_cart  cart_text_third"> 
-                        <p class="cntnr_cmd_sott_item_cart  center_content_flex  curve_obj_h15">-</p>
-                        <p class="cntnr_quantity_item_cart  center_content_flex  curve_obj_h15">1</p>
-                        <p class="cntnr_cmd_plus_item_cart  center_content_flex  curve_obj_h15">+</p>
+                <div class="cntnr_right_card_composed">
+                    <h2 class="title_right_card_composed  font_primary  fg_color_secondary"><strong>The Last Of Us II</strong></h2>
+                    <strong class="price_right_card_composed  curve_obj_h15  font_secondary  bg_color_secondary  fg_color_secondary">55.00$</strong>
+                    <div class="cntnr_cmd_card_cart"> 
+                        <p class="less_cmd_card_composed  force_flex_center  curve_obj_h20  fg_color_fourth">-</p>
+                        <p class="quantity_card_composed  force_flex_center  curve_obj_h20  bg_color_secondary  fg_color_third">1</p>
+                        <p class="plus_cmd_card_composed  force_flex_center  curve_obj_h20  bg_color_primary  fg_color_third">+</p>
                     </div>
                 </div>
             </section>
-
-
-            <section class="cntnr_cart_item curve_obj_h15">
-                <div class="cntnr_left_cart_item">
-                    <h3 class="cntnr_info_used_item_cart  center_content_flex  cart_text_primary  curve_obj_h15">used</h3>
-                    <img class="curve_obj_h15" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+            <section class="card_composed  curve_obj_h20  space_bottom_margin_card">
+                <div class="cntnr_left_card_composed">
+                    <p class="info_left_card_composed  curve_obj_h20  bg_color_highlights  font_secondary  fg_color_secondary">used</p>
+                    <img class="curve_obj_h20" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
                 </div>
-                <div class="cntnr_right_cart_item  cart_text_primary">
-                    <h2 class="center_content_flex">The Last Of Us II</h2>
-                    <p class="cntnr_price_item_cart  center_content_flex  curve_obj_h15  cart_text_secondary">55.00$</p>
-                    <div class="cntnr_cmd_item_cart  cart_text_third"> 
-                        <p class="cntnr_cmd_sott_item_cart  center_content_flex  curve_obj_h15">-</p>
-                        <p class="cntnr_quantity_item_cart  center_content_flex  curve_obj_h15">1</p>
-                        <p class="cntnr_cmd_plus_item_cart  center_content_flex  curve_obj_h15">+</p>
+                <div class="cntnr_right_card_composed">
+                    <h2 class="title_right_card_composed  font_primary  fg_color_secondary"><strong>The Last Of Us II</strong></h2>
+                    <strong class="price_right_card_composed  curve_obj_h15  font_secondary  bg_color_secondary  fg_color_secondary">55.00$</strong>
+                    <div class="cntnr_cmd_card_cart"> 
+                        <p class="less_cmd_card_composed  force_flex_center  curve_obj_h20  fg_color_fourth">-</p>
+                        <p class="quantity_card_composed  force_flex_center  curve_obj_h20  bg_color_secondary  fg_color_third">1</p>
+                        <p class="plus_cmd_card_composed  force_flex_center  curve_obj_h20  bg_color_primary  fg_color_third">+</p>
                     </div>
                 </div>
             </section>
-
-
-            <section class="cntnr_cart_item curve_obj_h15">
-                <div class="cntnr_left_cart_item">
-                    <h3 class="cntnr_info_used_item_cart  center_content_flex  cart_text_primary  curve_obj_h15">used</h3>
-                    <img class="curve_obj_h15" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+            <section class="card_composed  curve_obj_h20  space_bottom_margin_card">
+                <div class="cntnr_left_card_composed">
+                    <p class="info_left_card_composed  curve_obj_h20  bg_color_highlights  font_secondary  fg_color_secondary">used</p>
+                    <img class="curve_obj_h20" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
                 </div>
-                <div class="cntnr_right_cart_item  cart_text_primary">
-                    <h2 class="center_content_flex">The Last Of Us II</h2>
-                    <p class="cntnr_price_item_cart  center_content_flex  curve_obj_h15  cart_text_secondary">55.00$</p>
-                    <div class="cntnr_cmd_item_cart  cart_text_third"> 
-                        <p class="cntnr_cmd_sott_item_cart  center_content_flex  curve_obj_h15">-</p>
-                        <p class="cntnr_quantity_item_cart  center_content_flex  curve_obj_h15">1</p>
-                        <p class="cntnr_cmd_plus_item_cart  center_content_flex  curve_obj_h15">+</p>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="cntnr_cart_item curve_obj_h15">
-                <div class="cntnr_left_cart_item">
-                    <h3 class="cntnr_info_used_item_cart  center_content_flex  cart_text_primary  curve_obj_h15">used</h3>
-                    <img class="curve_obj_h15" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                </div>
-                <div class="cntnr_right_cart_item  cart_text_primary">
-                    <h2 class="center_content_flex">The Last Of Us II</h2>
-                    <p class="cntnr_price_item_cart  center_content_flex  curve_obj_h15  cart_text_secondary">55.00$</p>
-                    <div class="cntnr_cmd_item_cart  cart_text_third"> 
-                        <p class="cntnr_cmd_sott_item_cart  center_content_flex  curve_obj_h15">-</p>
-                        <p class="cntnr_quantity_item_cart  center_content_flex  curve_obj_h15">1</p>
-                        <p class="cntnr_cmd_plus_item_cart  center_content_flex  curve_obj_h15">+</p>
+                <div class="cntnr_right_card_composed">
+                    <h2 class="title_right_card_composed  font_primary  fg_color_secondary"><strong>The Last Of Us II</strong></h2>
+                    <strong class="price_right_card_composed  curve_obj_h15  font_secondary  bg_color_secondary  fg_color_secondary">55.00$</strong>
+                    <div class="cntnr_cmd_card_cart"> 
+                        <p class="less_cmd_card_composed  force_flex_center  curve_obj_h20  fg_color_fourth">-</p>
+                        <p class="quantity_card_composed  force_flex_center  curve_obj_h20  bg_color_secondary  fg_color_third">1</p>
+                        <p class="plus_cmd_card_composed  force_flex_center  curve_obj_h20  bg_color_primary  fg_color_third">+</p>
                     </div>
                 </div>
             </section>
 
         </main>
 
-        <section class="cntnr_btn_footer_item_cart  curve_obj_h15  cart_text_third">
+        <section class="cntnr_down_btn  curve_obj_h20  font_primary  fg_color_third">
             <p>Paga ora</p>
-            <p>$ 55,00</p>
+            <strong>$ 55,00</strong>
         </section>
 
 

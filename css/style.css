@@ -42,6 +42,7 @@ header{
 }
 
 .topnav a img{
+    display: inline !important;
     width: 20px;
     height: 20px;
 }

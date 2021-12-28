@@ -6,6 +6,7 @@
         <title>Uni-videogame</title>
         <link rel="stylesheet" href="../css/style.css" type="text/css"/>
         <link rel="stylesheet" href="../css/listItemStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/manuStyle.css" type="text/css"/>
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -16,7 +17,7 @@
 
 
     <body> 
-        <header >
+        <header>
             <div class="topnav" id="myTopnav">
                 <a href="../img/menu/index.html" class="active">UniGame</a>
                 <a href="../login.html"><img src="../img/menu/user.png" alt="Login"> Login</a>
@@ -33,97 +34,90 @@
             </div>
         </header>
 
-        <section class="cntnr_search">
+        <section class="cntnr_search  curve_obj_h50  bg_color_third">
             <input class="input_search" id="Search" type="text" placeholder="Search"/>
             <label class="label_search" for="Search">
-                <img class="icon_search" src="../img/menu/search.svg" alt="search">
+                <img class="icon_big" src="../img/menu/search.svg" alt="search">
             </label>
         </section>
 
-        <section class="item_bar">
-            <div class="btn_item_bar btn_item_bar_order">
-                <p class="text_item_bar">Order</p>
-                <img class="icon_item_bar icon_order" src="../img/itemBar/arrow-down.svg" alt="order">
+        <section class="cntnr_bar_list_card  space_top_margin_small  bg_color_theme">
+            <div class="bar_obj_left  force_flex_center  curve_obj_h15 ">
+                <p class="font_third fg_color_third">Order</p>
+                <img class="icon_big" src="../img/itemBar/arrow-down.svg" alt="order">
             </div>
-            <div class="btn_item_bar btn_item_bar_logo">
-                <img class="icon_item_bar" src="../img/typeGame/ps.svg" alt="iconPs">
+            <div class="bar_obj_center  curve_obj_h15">
+                <img src="../img/typeGame/ps.svg" alt="iconPs">
             </div>
-            <div class="btn_item_bar btn_item_bar_filter">
-                <img class="icon_item_bar icon_filter" src="../img/itemBar/filter.svg" alt="filter">
+            <div class="bar_obj_right  force_flex_center  curve_obj_h15">
+                <img class="icon_medium" src="../img/itemBar/filter.svg" alt="filter">
             </div>
         </section>
 
 
-        <main class="container_item">
+        <main class="cntnr_list_card  space_top_margin_medium">
 
-            <section class="item ">
-                <h3 class="btn_price">55.00$</h3>
-                <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                <img class="btn_add_cart" src="../img/itemBar/add.svg" alt="add">
-                <img class="btn_wish heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-            </section>
-            
-            <section class="item ">
-                <h3 class="btn_price">55.00$</h3>
-                <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                <img class="btn_add_cart" src="../img/itemBar/add.svg" alt="add">
-                <img class="btn_wish heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
+            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
+                <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+                <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
+                <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-full.svg"  alt="heart">
+                <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
             </section>
 
-            <section class="item ">
-                <h3 class="btn_price">55.00$</h3>
-                <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                <img class="btn_add_cart" src="../img/itemBar/add.svg" alt="add">
-                <img class="btn_wish heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-            </section>
-            
-            <section class="item ">
-                <h3 class="btn_price">55.00$</h3>
-                <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                <img class="btn_add_cart" src="../img/itemBar/add.svg" alt="add">
-                <img class="btn_wish heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
+            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
+                <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+                <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
+                <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-full.svg"  alt="heart">
+                <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
             </section>
 
-            <section class="item ">
-                <h3 class="btn_price">55.00$</h3>
-                <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                <img class="btn_add_cart" src="../img/itemBar/add.svg" alt="add">
-                <img class="btn_wish heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-            </section>
-            
-            <section class="item ">
-                <h3 class="btn_price">55.00$</h3>
-                <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                <img class="btn_add_cart" src="../img/itemBar/add.svg" alt="add">
-                <img class="btn_wish heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
+            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
+                <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+                <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
+                <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-full.svg"  alt="heart">
+                <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
             </section>
 
-            <section class="item ">
-                <h3 class="btn_price">55.00$</h3>
-                <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                <img class="btn_add_cart" src="../img/itemBar/add.svg" alt="add">
-                <img class="btn_wish heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
-            </section>
-            
-            <section class="item ">
-                <h3 class="btn_price">55.00$</h3>
-                <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                <img class="btn_add_cart" src="../img/itemBar/add.svg" alt="add">
-                <img class="btn_wish heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
+            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
+                <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+                <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
+                <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-full.svg"  alt="heart">
+                <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
             </section>
 
-            <section class="item ">
-                <h3 class="btn_price">55.00$</h3>
-                <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                <img class="btn_add_cart" src="../img/itemBar/add.svg" alt="add">
-                <img class="btn_wish heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
+            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
+                <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+                <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
+                <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-full.svg"  alt="heart">
+                <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
             </section>
-            
-            <section class="item ">
-                <h3 class="btn_price">55.00$</h3>
-                <img class="img_backround_item" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                <img class="btn_add_cart" src="../img/itemBar/add.svg" alt="add">
-                <img class="btn_wish heart_icon" src="../img/itemBar/heart-full.svg"  alt="heart">
+
+            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
+                <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+                <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
+                <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-full.svg"  alt="heart">
+                <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
+            </section>
+
+            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
+                <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+                <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
+                <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-full.svg"  alt="heart">
+                <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
+            </section>
+
+            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
+                <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+                <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
+                <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-full.svg"  alt="heart">
+                <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
+            </section>
+
+            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
+                <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+                <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
+                <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-full.svg"  alt="heart">
+                <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
             </section>
 
 
