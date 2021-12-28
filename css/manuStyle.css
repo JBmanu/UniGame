@@ -11,7 +11,8 @@ img {
 .curve_obj_h50 { border-radius: 50px; }
 
 .bg_color_highlights { background-color: #F1D646; }
-.bg_color_theme { background-color: #00439C; }
+.bg_color_light_theme { background-color: #00439C; }
+.bg_color_opacity_theme { background-color: #00439C; }
 .bg_color_primary { background-color: #009688; }
 .bg_color_secondary { background-color: #CFD8DC; }
 .bg_color_third { background-color: white; }
@@ -20,6 +21,7 @@ img {
 .fg_color_secondary { color: #212121; }
 .fg_color_third { color: white; }
 .fg_color_fourth { color: #607D8B; }
+.fg_color_fifth { color: #CFD8DC; }
 
 .font_primary { 
     transition: all 200ms ease-in-out;
