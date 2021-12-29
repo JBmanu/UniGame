@@ -70,6 +70,10 @@ img {
     justify-content: center;
 }
 
+.class_hover {}
+.class_hover:hover {
+    opacity: 0.5;
+}
 
 .cntnr_search {
     width: 60%;
@@ -135,14 +139,18 @@ img {
     justify-content: space-around;
 }
 .card_simple {
-    transition: flex 300ms ease-in-out;
+    transition: flex 300ms ease-in-out, transform 200ms ease-in-out;
     box-shadow: -2px 8px 3px rgba(0, 0, 0, 0.25);
     position: relative;
     overflow: hidden;
     flex: 0 0 38%; 
 }
+.card_simple:hover, .card_composed:hover, .btn_item_secondary:hover {
+    transform: scale(1.2, 1.2);
+}
+
 .card_composed {
-    transition: flex 300ms ease-in-out;
+    transition: flex 300ms ease-in-out, transform 200ms ease-in-out;
     background: linear-gradient(270deg, rgba(207, 216, 220, 0.86) -0.53%, rgba(207, 216, 220, 0) 86.2%);
     overflow: hidden;
     flex: 0 0 90%;
@@ -319,7 +327,10 @@ img {
     display: flex;
     align-items: stretch;
     justify-content: center;
+}.radio_btn:hover {
+    transform: scale(1.2, 1.2);
 }
+
 .radio_circle {
     width: 30px;
     height: 30px;
