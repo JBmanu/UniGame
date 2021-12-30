@@ -70,6 +70,30 @@ img {
     justify-content: center;
 }
 
+
+.cntn_master_body {
+    /* filter: blur(10px); */
+}
+.cntnr_pay {
+    position: absolute;
+    z-index: 2;
+    top: 25%;
+    left: 30%;
+    width: 40%;
+    height: 60%;
+    filter: blur(0px);
+    box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.25);
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+}
+.title_pay {
+    font-weight: bold;
+    font-size: 100%;
+}
+
+
 .bar_obj_left:hover, .bar_obj_right:hover {
     opacity: 0.5;
 }
@@ -145,8 +169,9 @@ img {
     flex: 0 0 38%; 
 }
 .card_simple:hover, .btn_item_secondary:hover, .less_cmd_card_composed:hover,
- .plus_cmd_card_composed:hover, .btn_overlay_bottom_left:hover, .btn_overlay_bottom_right:hover {
-    transform: scale(1.2, 1.2);
+ .plus_cmd_card_composed:hover, .btn_overlay_bottom_left:hover, 
+ .btn_overlay_bottom_right:hover, .cntnr_down_btn:hover {
+    transform: scale(1.15, 1.15);
     z-index: 1;
 }
 
@@ -231,11 +256,18 @@ img {
     justify-content: space-evenly;
     font-size: 110%;
 }
-.info_left_card_composed {
+.info_used_left_card_composed {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: absolute;
     padding: 0% 5%;
     top: 8%;
+    right: 10%;
+}
+.info_game_left_card_composed {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    padding: 0.5% 8%;
+    top: 25%;
     right: 10%;
 }
 .title_right_card_composed {
@@ -566,8 +598,15 @@ img {
     .cntnr_form {
         font-size: 280%;
     }
+    .info_game_left_card_composed {
+        top: 30%;
+    }
 }
 @media only screen and (min-width:1281px)  { 
+    .font_secondary {
+        font-size: 125%;
+    }
+
     .card_composed { flex: 0 0 22%; }
     .card_simple {flex: 0 0 18%; }
 
@@ -664,9 +703,15 @@ img {
     transform: translateX(0%) rotateY(0deg);
 }
 
-.transfor_heart {
-    transition: transform 1s;
+.transform_heart {
     animation: heart 4s;
+}
+.transform_card {
+    transition: transform 1s;
+    animation: card_go_to_cart .3s ease-out;
+}
+.transform_btn_add_cart {
+    animation: add_item_cart .25s ease-out;
 }
 
 @keyframes heart {
@@ -674,4 +719,18 @@ img {
     25%  {transform: scale(1.0, 1.0);}
     50%  {transform: scale(1.3, 1.3);}
     100% {transform: scale(1.0, 1.0);}
+}
+
+@keyframes card_go_to_cart {
+    0%  {transform: scale(0.8, 0.8);}
+    30%    {transform: scale(0.6, 0.6);}
+    60% {transform: scale(0.3, 0.3);}
+    100% {transform: scale(0.1, 0.1);}
+}
+
+@keyframes add_item_cart {
+    0%  {transform: scale(0.8, 0.8) translateX(-30%);}
+    30%    {transform: scale(0.6, 0.6) translateX(-50%);}
+    60% {transform: scale(0.3, 0.3) translateX(-90%);}
+    100% {transform: scale(0.1, 0.1) translateX(-120%);}
 }
