@@ -341,6 +341,7 @@ img {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    z-index: 1;
 }
 
 
@@ -579,6 +580,7 @@ img {
     }
     .ctnr_down_card {
         border-radius: 30px;
+        flex: 0 0 45%;
     }
 
     .radio_btn_card {
