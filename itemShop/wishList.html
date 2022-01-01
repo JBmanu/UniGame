@@ -6,6 +6,8 @@
         <title>Uni-videogame</title>
         <link rel="stylesheet" href="../css/style.css" type="text/css"/>
         <link rel="stylesheet" href="../css/manuStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/effectStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/fontColorStyle.css" type="text/css"/>
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -69,14 +71,13 @@
         <main class="cntnr_list_card  space_top_margin_medium">
 
             <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
-                <div class="front_card_flip">
-                    <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                    <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
+                <div class="front_card_flip  curve_obj_h20">
+                    <img class="curve_obj_h20" src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
+                    <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary">55.00$</strong>
                     <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-empty.svg"  alt="heart">
-                    <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
+                    <img class="btn_overlay_bottom_right  circle_obj  bg_third" src="../img/itemBar/add.svg" alt="add">
                 </div>
-    
-                <form class="back_card_flip    form_2_by_list  curve_obj_h20  bg_color_secondary  fg_color_secondary" action="">
+                <form class="back_card_flip  force_flex_center  form_2_by_list  curve_obj_h20  bg_third  fg_text_primary" action="">
                     <label class="radio_btn_card ">
                         <input class="circle_obj  bg_color_third  radio_circle_card" type="radio" id="usedItem" name="used" value="used"/>
                         <span>Usato</span> 
@@ -93,68 +94,10 @@
                         <input class="circle_obj   bg_color_third  radio_circle_card" type="radio" id="ps5Item" name="ps" value="ps5" checked="checked"/>
                         <span>PS5</span> 
                     </label>
-                    <input class="btn_submit_card curve_obj_h15  bg_color_primary  font_primary  fg_color_third" type="submit" value="Aggiungi"/>
+                    <input class="btn_submit_card  space_top_margin_big  curve_obj_h15  bg_primary  font_primary  fg_text_white" type="submit" value="Aggiungi"/>
                 </form>
             </section>
 
-            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
-                <div class="front_card_flip">
-                    <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                    <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
-                    <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-empty.svg"  alt="heart">
-                    <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
-                </div>
-    
-                <form class="back_card_flip    form_2_by_list  curve_obj_h20  bg_color_secondary  fg_color_secondary" action="">
-                    <label class="radio_btn_card ">
-                        <input class="circle_obj  bg_color_third  radio_circle_card" type="radio" id="usedItem" name="used" value="used"/>
-                        <span>Usato</span> 
-                    </label>
-                    <label class="radio_btn_card ">
-                        <input class="circle_obj   bg_color_third  radio_circle_card" type="radio" id="newItem" name="used" value="new" checked="checked" />
-                        <span>Nuovo</span> 
-                    </label>
-                    <label class="radio_btn_card ">
-                        <input class="circle_obj   bg_color_third  radio_circle_card" type="radio" id="ps4Item" name="ps" value="ps4"/>
-                        <span>PS4</span> 
-                    </label>
-                    <label class="radio_btn_card">
-                        <input class="circle_obj   bg_color_third  radio_circle_card" type="radio" id="ps5Item" name="ps" value="ps5" checked="checked"/>
-                        <span>PS5</span> 
-                    </label>
-                    <input class="btn_submit_card curve_obj_h15  bg_color_primary  font_primary  fg_color_third" type="submit" value="Aggiungi"/>
-                </form>
-            </section>
-
-
-            <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
-                <div class="front_card_flip">
-                    <img src="../img/item/TheLastOfUsIIps4.png" alt="TLOU2">
-                    <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  bg_color_secondary  force_flex_center">55.00$</strong>
-                    <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/itemBar/heart-empty.svg"  alt="heart">
-                    <img class="btn_overlay_bottom_right  circle_obj  bg_color_primary" src="../img/itemBar/add.svg" alt="add">
-                </div>
-    
-                <form class="back_card_flip    form_2_by_list  curve_obj_h20  bg_color_secondary  fg_color_secondary" action="">
-                    <label class="radio_btn_card ">
-                        <input class="circle_obj  bg_color_third  radio_circle_card" type="radio" id="usedItem" name="used" value="used"/>
-                        <span>Usato</span> 
-                    </label>
-                    <label class="radio_btn_card ">
-                        <input class="circle_obj   bg_color_third  radio_circle_card" type="radio" id="newItem" name="used" value="new" checked="checked" />
-                        <span>Nuovo</span> 
-                    </label>
-                    <label class="radio_btn_card ">
-                        <input class="circle_obj   bg_color_third  radio_circle_card" type="radio" id="ps4Item" name="ps" value="ps4"/>
-                        <span>PS4</span> 
-                    </label>
-                    <label class="radio_btn_card">
-                        <input class="circle_obj   bg_color_third  radio_circle_card" type="radio" id="ps5Item" name="ps" value="ps5" checked="checked"/>
-                        <span>PS5</span> 
-                    </label>
-                    <input class="btn_submit_card curve_obj_h15  bg_color_primary  font_primary  fg_color_third" type="submit" value="Aggiungi"/>
-                </form>
-            </section>
         </main>
 
     </body>

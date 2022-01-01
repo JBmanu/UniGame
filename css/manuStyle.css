@@ -10,18 +10,6 @@ img {
 .curve_obj_h20 { border-radius: 20px; }
 .curve_obj_h50 { border-radius: 50px; }
 
-.bg_color_highlights { background-color: #F1D646; }
-.bg_color_light_theme { background-color: #00439C; }
-.bg_color_opacity_theme { background-color: #3564A3; }
-.bg_color_primary { background-color: #009688; }
-.bg_color_secondary { background-color: #CFD8DC; }
-.bg_color_third { background-color: white; }
-
-.fg_color_primary { color: #009688; }
-.fg_color_secondary { color: #212121; }
-.fg_color_third { color: white; }
-.fg_color_fourth { color: #607D8B; }
-.fg_color_fifth { color: #CFD8DC; }
 
 .font_primary { 
     transition: all 200ms ease-in-out;
@@ -101,7 +89,7 @@ img {
 .radio_btn_pay {
     transition: all 200ms ease-in-out;
     -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
+    
     display: flex;
     align-items: center;
     justify-content: start;
@@ -110,33 +98,28 @@ img {
     transition: all 200ms ease-in-out;
 
     font-size: 150%;
-    padding: 3% 0%;
-    margin: 5% 10% 0%;
-    background: linear-gradient(180deg, #009688 70.39%, rgba(0, 150, 136, 0.47) 153.03%);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 4% 0%;
+    margin: 0% -30% 0%;
+    background: linear-gradient(180deg, rgba(46,59,102,0.95) 100%, rgba(228,235,245,0.5) 153.03%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: none;
-}.submit_method_pay:hover {
-    /* border: 2px solid #00439C; */
 }
 
-.bar_obj_left:hover, .bar_obj_right:hover {
-    opacity: 0.5;
-}
+
 
 .cntnr_search {
     width: 60%;
-    cursor: pointer;
+    
     overflow: hidden;
     margin: 4% auto 0;
     border: 1px solid #212121;
     display: flex;
     justify-content: space-between;
-}.cntnr_search:hover {
-    border: 2px solid #212121;
 }
+
 .label_search {
     padding: 0% 4% 0% 0%;
-    cursor: pointer;
+    
     display: flex;
     justify-content: end;
 }
@@ -144,7 +127,7 @@ img {
     border: none;
     outline: none;
     background: none;
-    cursor: pointer;
+    
     padding: 3% 0% 3% 4%;
 }
 .input_search::placeholder{
@@ -188,21 +171,14 @@ img {
 }
 .card_simple {
     transition: flex 300ms ease-in-out, transform 200ms ease-in-out;
-    box-shadow: -2px 8px 3px rgba(0, 0, 0, 0.25);
     position: relative;
-    overflow: hidden;
     flex: 0 0 38%; 
 }
-.card_simple:hover, .btn_item_secondary:hover, .less_cmd_card_composed:hover,
- .plus_cmd_card_composed:hover, .btn_overlay_bottom_left:hover, 
- .btn_overlay_bottom_right:hover, .cntnr_down_btn:hover {
-    transform: scale(1.15, 1.15);
-    z-index: 1;
-}
+
 
 .card_composed {
     transition: flex 300ms ease-in-out, transform 200ms ease-in-out;
-    background: linear-gradient(270deg, rgba(207, 216, 220, 0.86) -0.53%, rgba(207, 216, 220, 0) 86.2%);
+    background: linear-gradient(270deg, rgba(228,235,245, 0.8) 20%, rgba(207, 216, 220, 0) 70%);
     overflow: hidden;
     flex: 0 0 90%;
     display: flex;
@@ -244,7 +220,7 @@ img {
 .radio_btn_card {
     transition: all 200ms ease-in-out;
     -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
+    
     flex: 0 0 50%;
     display: flex;
     align-items: end;
@@ -260,12 +236,15 @@ img {
 }.radio_circle_card:focus {
     outline: none;
 }.radio_circle_card:checked {
-    box-shadow: inset 0px 0px 0 4px #009688;
+    box-shadow: inset 0px 0px 0 4px #2e3b66;
 }
 .btn_submit_card {
-    /* margin: auto; */
-    padding: 2% 10%;
+    transition: all 0.1s ease-in-out;
+    padding: 2% 13%;
     font-size: 150%;
+    border: none;
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+        6px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -315,11 +294,13 @@ img {
 .less_cmd_card_composed {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);
     padding: 0% 8%;
-    border: 3px solid #607D8B;
+    border: 3px solid #2e3b66;
+    
 }
 .plus_cmd_card_composed {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);
     padding: 0% 8%;
+    
 }
 .quantity_card_composed {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -330,7 +311,7 @@ img {
 
 .cntnr_down_btn {
     transition: all 200ms ease-in-out;
-    background: linear-gradient(180deg, #009688 70.39%, rgba(0, 150, 136, 0.47) 153.03%);
+    background: linear-gradient(180deg, rgba(46,59,102,0.99) 95%,  rgba(228,235,245,0.5) 153.03%);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     width: 84%;
     padding: 3% 3%;
@@ -391,8 +372,8 @@ img {
 .btn_item_secondary {
     transition: all 200ms ease-in-out;
     box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
 }
 .item_icon_primary {
     transition: all 200ms ease-in-out;
@@ -415,13 +396,11 @@ img {
 .radio_btn {
     transition: all 200ms ease-in-out;
     -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
+    
     flex: 0 0 40%;
     display: flex;
     align-items: stretch;
     justify-content: center;
-}.radio_btn:hover {
-    transform: scale(1.2, 1.2);
 }
 
 .radio_circle {
@@ -433,7 +412,7 @@ img {
 }.radio_circle:focus {
     outline: none;
 }.radio_circle:checked {
-    box-shadow: inset 0px 0px 0 6px #009688;
+    box-shadow: inset 0px 0px 0 6px #2e3b66;
 }
 .cntnr_description {
     margin: 6% 4% 0;
@@ -498,7 +477,7 @@ img {
         height: 25px;
     }
     .radio_circle_card:checked {
-        box-shadow: inset 0px 0px 0 5px #009688;
+        box-shadow: inset 0px 0px 0 5px #2e3b66;
     }
 
     .cntnr_pay {
@@ -542,7 +521,7 @@ img {
         height: 30px;
     }
     .radio_circle_card:checked {
-        box-shadow: inset 0px 0px 0 6px #009688;
+        box-shadow: inset 0px 0px 0 6px #2e3b66;
     }
     .cntnr_pay {
         left: 20%;
@@ -744,14 +723,14 @@ img {
 }
 
 
-
-
 .front_card_flip {
+    box-shadow: -2px 8px 3px rgba(0, 0, 0, 0.25);
     transform-style: preserve-3d;
     transform-origin: center right;
     transition: transform 1s;
 }
 .back_card_flip {
+    box-shadow: -2px 8px 3px rgba(0, 0, 0, 0.25);
     position: absolute;
     backface-visibility: hidden;
     transform: rotateY(180deg);
@@ -775,6 +754,16 @@ img {
 .transform_btn_add_cart {
     animation: add_item_cart .25s ease-out;
 }
+.transform_btn_less_cart {
+    animation: less_item_cart .25s ease-out;
+}
+.transform_btn_back {
+    animation: back_item .25s ease-out;
+}
+.transform_top_card {
+    animation: top_card .25s ease-out;
+}
+
 
 @keyframes heart {
     0%   {transform: scale(1.3, 1.3);}
@@ -795,4 +784,25 @@ img {
     30%    {transform: scale(0.6, 0.6) translateX(-50%);}
     60% {transform: scale(0.3, 0.3) translateX(-90%);}
     100% {transform: scale(0.1, 0.1) translateX(-120%);}
+}
+
+@keyframes less_item_cart {
+    0%  {transform: scale(0.8, 0.8); }
+    30%    {transform: scale(0.6, 0.6);}
+    60% {transform: scale(0.3, 0.3);}
+    100% {transform: scale(0.1, 0.1);}
+}
+
+@keyframes back_item {
+    0%  {transform: scale(0.8, 0.8) translateX(-30%);}
+    30%    {transform: scale(0.6, 0.6) translateX(-50%);}
+    60% {transform: scale(0.3, 0.3) translateX(-90%);}
+    100% {transform: scale(0.1, 0.1) translateX(-120%);}
+}
+
+@keyframes top_card {
+    0%  {transform: scale(0.8, 0.8) translate(30%, 30%) skew(10deg, 10deg);}
+    30%    {transform: scale(0.6, 0.6) translate(50%, 50%)  skew(20deg, 15deg);}
+    60% {transform: scale(0.5, 0.3) translate(90%, 90%)  skew(-25deg, -20deg);}
+    100% {transform: scale(0.5, 0.1) translate(120%, 120%)  skew(-30deg, -20deg);}
 }
