@@ -90,39 +90,43 @@ header{
     text-align: left;
 }
 
-.ricerca{
-    padding: 0;
-    position: relative;
+.search_container {
+    margin: 6% auto;
+    width: 60%;
 }
 
-.ricerca #search {
-    width: 70%;
-    height: 28px;
-    margin: 20px 15% 20px 15%;
-    line-height: 18px;
-    padding: 16px 10px;
-    background: white;
-    border: 3px solid #607D8B;
-    font-size: large;
-    border-radius: 25px;
-    overflow: hidden;
-    text-align: center;
-    -webkit-box-shadow: inset 0 3px 5px rgba(189, 189, 189, 1);
+.search_input {
+    padding: 3% 6%;
+    font-size: 90%;
+    color: #575756;
+
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+    background-position: 260%;
+
+    border-radius: 50px;
+    border: 1px solid #575756;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+
+    width: 87.5%;
 }
 
-.ricerca #submit {
-    outline: none;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    padding: 5px 10px;
-    margin: 20px 15% 20px 0;
-    border: 0;
-    border-left: 1px solid #faa53a;
-    text-indent: -10957px;
-    position: absolute;
-    top: 5px;
-    right: 5px;
+.search_input::placeholder{
+    color: color(#575756 a(0.8));
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.search_container:hover .search_container:focus{
+    padding: 12px 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #575756;
+    border-radius: 0;
+    background-position: 100% center;
 }
 
 .img-slider{
@@ -339,7 +343,6 @@ header{
 .status-notifica{
     margin: 0;
     font-size: medium;
-
     margin-bottom: 5px;
 }
 
@@ -352,6 +355,7 @@ header{
 .scritta-nonLetto{
     float: right;
     color: #CB077C;
+    margin-top: 0;
 }
 
 .card{
@@ -423,6 +427,10 @@ header{
 }
 
 @media screen and (min-width: 820px){
+    .search_container {
+        margin: 1.4% auto;
+    }
+
     .topnav a:not(:first-child){
         display: inline-block;
     }
@@ -502,6 +510,10 @@ header{
 }
   
 @media screen and (min-width: 420px){
+    .search_container {
+        margin: 2% auto;
+    }
+
     .img-slider{
         height: 200px;
     }
