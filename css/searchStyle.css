@@ -1,0 +1,11 @@
+.cntnr_info_type {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    right: 5%;
+    top: 5%;
+}
+
+.icon_info_type {
+    width: 65%;
+}

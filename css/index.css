@@ -1,0 +1,52 @@
+.cntnr_scroll_horizontal_item {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: auto;
+    
+}
+
+.cntnr_scroll_horizontal_item::-webkit-scrollbar {
+    /* display: none; */
+  }
+
+
+.cntnr_item_scroll {
+    margin-left: 3%;
+
+    transition: flex 300ms ease-in-out, transform 200ms ease-in-out;
+    position: relative;
+    flex: 0 0 30%; 
+}
+
+.img_item_scroll {
+    width: 100%;
+}
+
+.discount_price_item {
+    background-color: #FFE900;
+    text-align: center;
+    font-size: 160%;
+    padding: 1% 4%;
+
+    position: absolute;
+    height: 15%;
+    top: 5%;
+    right: 15%;
+}
+
+.real_price_item {
+    background-color: #CFD8DC;
+    text-align: center;
+    font-size: 130%;
+    padding: 0 2%;
+
+    position: absolute;
+    height: 15%;
+    top: 18%;
+    right: 5%;
+
+    text-decoration-line: line-through;
+}

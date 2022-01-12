@@ -8,6 +8,11 @@ body, h1, h2, h3, p, ul {
 .curve_obj_h20 { border-radius: 20px; }
 .curve_obj_h50 { border-radius: 50px; }
 
+.space_top_margin_big { margin-top: 5%; }
+.space_top_margin_medium { margin-top: 3%; }
+.space_top_margin_small { margin-top: 2%; }
+.space_bottom_margin_card { margin-bottom: 4%; }
+
 .icon_big { 
     transition: all 200ms ease-in-out;
     width: 30px; 
@@ -19,6 +24,13 @@ body, h1, h2, h3, p, ul {
 .icon_small { 
     transition: all 200ms ease-in-out;
     width: 0%; 
+}
+
+.force_flex_center {
+    display: flex !important;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
 .topnav a{
