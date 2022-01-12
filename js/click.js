@@ -16,18 +16,12 @@ $(document).ready(function(){
 
   //Controlla il search, che il campo sia diverso da vuoto
   $("#submit").click(function() {
-    if ($("#search").val() === "Search...") {
+    if ($("#search").val() === "Search") {
       alert("Inserire un valore valido");
       return false;
     }
   });
   
-  //Se il campo è vuoto riscrive search
-  $("#search").blur(function() {
-    if(this.value == ''){ 
-      this.value = 'Search...';
-    }
-  });
 
   //Se il campo è vuoto riscrive Nome nel form registrazione
   $("#login-name").blur(function() {

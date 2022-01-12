@@ -1,3 +1,26 @@
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;    
+}
+
+.circle_obj { border-radius: 100%; }
+.curve_obj_h15 { border-radius: 15px; }
+.curve_obj_h20 { border-radius: 20px; }
+.curve_obj_h50 { border-radius: 50px; }
+
+.icon_big { 
+    transition: all 200ms ease-in-out;
+    width: 30px; 
+}
+.icon_medium { 
+    transition: all 200ms ease-in-out;
+    width: 23px; 
+}
+.icon_small { 
+    transition: all 200ms ease-in-out;
+    width: 0%; 
+}
+
 .topnav a{
     float: left;
     display: block;
@@ -61,8 +84,50 @@
 }
 
 
+.cntnr_search {
+    width: 60%;
+    
+    overflow: hidden;
+    margin: 4% auto 0;
+    border: 1px solid #212121;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label_search {
+    padding: 0% 4% 0% 0%;
+    display: flex;
+
+    justify-content: end;
+}
+.input_search {
+    border: none;
+    outline: none;
+    background: none;
+    
+    padding: 3% 0% 3% 4%;
+}
+.input_search::placeholder{
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+
+@media only screen and (min-width:320px)  { 
+
+}
+
 @media screen and (min-width: 420px){
     
+}
+
+@media only screen and (min-width:481px)  { 
+
+}
+
+@media only screen and (min-width:641px)  { 
+
 }
 
 @media screen and (min-width: 620px){
@@ -84,3 +149,12 @@
     }
 }
 
+@media only screen and (min-width:961px)  { 
+
+}
+@media only screen and (min-width:1025px)  { 
+
+}
+@media only screen and (min-width:1281px)  { 
+
+}

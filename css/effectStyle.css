@@ -24,7 +24,7 @@
 .radio_btn_card:hover,  .less_cmd_card_composed:hover,  .plus_cmd_card_composed:hover,
 .radio_btn:hover,  .btn_submit_card:hover,  .btn_overlay_bottom_right:hover,
 .bar_obj_left:hover,  .bar_obj_right:hover,  .cntnr_down_btn:hover,  .submit_method_pay:hover,
-.btn_read_all:hover,  .btn_item_secondary:hover {
+.btn_read_all:hover,  .btn_item_secondary:hover,  .label_search:hover {
     cursor: pointer;
 }
 

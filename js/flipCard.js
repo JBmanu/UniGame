@@ -10,12 +10,12 @@ listCard.forEach(element => {
 
    
     btnWish.addEventListener('click', () => {
-        if (btnWish.src.match("../img/itemBar/heart-empty.svg")) {
-            btnWish.src = '../img/itemBar/heart-full.svg';
+        if (btnWish.src.match("../img/item/heart-empty.svg")) {
+            btnWish.src = '../img/item/heart-full.svg';
             btnWish.classList.toggle('transform_heart');
         } 
         else {
-            btnWish.src = '../img/itemBar/heart-empty.svg';
+            btnWish.src = '../img/item/heart-empty.svg';
             btnWish.classList.remove('transform_heart');
         }
     });

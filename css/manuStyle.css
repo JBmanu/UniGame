@@ -1,14 +1,9 @@
-h2, h3, p, img { margin: 0; }
 
 img {
     display: block;
     width: 100%;
 }
 
-.circle_obj { border-radius: 100%; }
-.curve_obj_h15 { border-radius: 15px; }
-.curve_obj_h20 { border-radius: 20px; }
-.curve_obj_h50 { border-radius: 50px; }
 
 
 .font_primary { 
@@ -32,18 +27,6 @@ img {
 .space_top_margin_small { margin-top: 2%; }
 .space_bottom_margin_card { margin-bottom: 4%; }
 
-.icon_big { 
-    transition: all 200ms ease-in-out;
-    width: 30px; 
-}
-.icon_medium { 
-    transition: all 200ms ease-in-out;
-    width: 23px; 
-}
-.icon_small { 
-    transition: all 200ms ease-in-out;
-    width: 0%; 
-}
 
 .all_transition { 
     transition: all 100ms ease-in-out;
@@ -107,7 +90,7 @@ img {
 
 
 
-.cntnr_search {
+/* .cntnr_search {
     width: 60%;
     
     overflow: hidden;
@@ -134,7 +117,7 @@ img {
     opacity: 0.5;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-}
+} */
 
 
 .cntnr_bar_list_card {
