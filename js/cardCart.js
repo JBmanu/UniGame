@@ -1,4 +1,5 @@
 var cntnBody = document.querySelector('body');
+var cntnrPay = document.querySelector('.cntnr_pay');
 var btnPay = document.querySelector('.cntnr_down_btn');
 var cntnrCard = document.querySelector('.cntnr_list_card');
 var cartlistCard = document.querySelectorAll('.card_composed');
@@ -45,6 +46,5 @@ btnPay.addEventListener('click', () => {
     cntnrCard.style.filter = 'blur(10px)';
     btnPay.style.filter = 'blur(10px)';
     
-    cntnBody.innerHTML += StaticFactoryObj.createCntnrMathodPay();
-
+    cntnrPay.style.display = 'flex';
 });
