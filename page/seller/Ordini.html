@@ -3,31 +3,29 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Uni-videogame</title>
-        <link rel="stylesheet" href="../css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="../css/listItemStyle.css" type="text/css"/>
-        <link rel="stylesheet" href="../css/orderStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="../../css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="../../css/baseStyle.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/orderStyle.css" type="text/css"/>
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
 
-        <script src="../js/click.js" type="text/javascript"></script>
+        <script src="../../js/click.js" type="text/javascript"></script>
     </head>
 
     <body>
         <header class="navbar_info_menu navbar_info_menu">
             <div class="topnav" id="myTopnav">
-                <a href="../img/menu/index.html" class="active">UniGame</a>
-                <a href="../login.html"><img src="../img/menu/user.png" alt="Login"> Login</a>
-                <a href="#"><img src="../img/menu/carrello.png" alt="Carrello"> Carrello</a>
-                <a href="#"><img src="../img/menu/promo.png" alt="Promozioni"> Promo</a>
-                <a href="#"><img src="../img/menu/wishlist.png" alt="Wishlist"> Wishlist</a>
-                <a href="#"><img src="../img/menu/ordini.png" alt="Ordini"> Ordini</a>
-                <a href="#"><img src="../img/menu/calendario.png" alt="Calendario"> Calendario</a>
-                <a href="#"><img src="../img/menu/notifiche.png" alt="Notifiche"> Notifiche</a>
-                <a href="#"><img src="../img/menu/logout.png" alt="Logout"> Logout</a>
+                <a href="../../index.html" class="active">UniGame</a>
+                <a href="../login.html"><img src="../../img/menu/user.svg" alt="Login" /> Login</a>
+                <a href="../listCart.html"><img src="../../img/menu/carrello.svg" alt="Carrello" /> Carrello</a>
+                <a href="../listWish.html"><img src="../../img/menu/wishlist.svg" alt="Wishlist" /> Wishlist</a>
+                <a href="./Ordini.html"><img src="../../img/menu/ordini.svg" alt="Ordini" /> Ordini</a>
+                <a href="../notification.html"><img src="../../img/menu/notifiche.svg" alt="Notifiche" /> Notifiche</a>
+                <a href="../../index.html"><img src="../../img/menu/logout.svg" alt="Logout" /> Logout</a>
                 <a href="#" class="icon">
-                    <img src="../img/menu/menu.png" alt="Menu">
+                    <img src="../../img/menu/menu.svg" alt="Menu" />
                 </a>
             </div>
         </header>
@@ -35,23 +33,23 @@
         <nav class = "nav-rotondo">
             <ul>
                 <li class="playstation">
-                    <a href="https://www.google.it">
-                        <img src="../img/typeGame/ps.svg" alt="Playstation" title="Playstation" />
+                    <a class="force_flex_center" href="../listItem/listItemPS.html">
+                        <img src="../../img/typeGame/ps.svg" alt="Playstation" title="Playstation" />
                     </a>
                 </li>
                 <li class="xbox">
-                    <a href="https://www.google.it">
-                        <img src="../img/typeGame/xbox.png" alt="Xbox" title="Xbox" />
+                    <a class="force_flex_center" href="../listItem/listItemXbox.html">
+                        <img src="../../img/typeGame/xbox.svg" alt="Xbox" title="Xbox" />
                     </a>
                 </li>
                 <li class="nintendo">
-                    <a href="https://www.google.it">
-                        <img src="../img/typeGame/nintendo.png" alt="Nintendo" title="Nintendo" />
+                    <a class="force_flex_center" href="../listItem/listItemSwitch.html">
+                        <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo" />
                     </a>
                 </li>
                 <li class="pc">
-                    <a href="https://www.google.it">
-                        <img src="../img/typeGame/pc.png" alt="PC" title="PC" />
+                    <a class="force_flex_center" href="../listItem/listItemPC.html">
+                        <img src="../../img/typeGame/pc.svg" alt="PC" title="PC" />
                     </a>
                 </li>
             </ul>
@@ -59,7 +57,7 @@
 
         <div class="container">
             <div class="semicircle">
-                <img src="../img/ordini/orders.png" alt="Ordini">
+                <img src="../../img/menu/ordini.svg" alt="Ordini" />
             </div>
         </div>
 
@@ -75,12 +73,14 @@
                 </section>
                 <section class="lower_row  lower_row_text">
                     <section class="date_left">
-                        <img src="../img/ordini/clock.png" alt="Data" title="Data">
+                        <img src="../../img/ordini/clock.png" alt="Data" title="Data">
                         <p>06/12/2021</p>
                     </section>
-                    <button type="button" class="button_order" id="buttonOrder">
-                        <p>Visualizza</p>
-                    </button>
+                    <!-- <button type="button" class="button_order" id="buttonOrder"> -->
+                        <a href="../../saba/dettagliOrdini.html" class="button_order" id="buttonOrder">
+                            <p>Visualizza</p>
+                        </a>
+                    <!-- </button> -->
                 </section>
             </article>
 
@@ -95,12 +95,12 @@
                 </section>
                 <section class="lower_row  lower_row_text">
                     <section class="date_left">
-                        <img src="../img/ordini/clock.png" alt="Data" title="Data">
+                        <img src="../../img/ordini/clock.png" alt="Data" title="Data" />
                         <p>12/12/2021</p>
                     </section>
-                    <button type="button" class="button_order" id="buttonOrder">
+                    <a href="../../saba/dettagliOrdini.html" class="button_order" id="buttonOrder">
                         <p>Visualizza</p>
-                    </button>
+                    </a>
                 </section>
             </article>
 
@@ -115,12 +115,12 @@
                 </section>
                 <section class="lower_row  lower_row_text">
                     <section class="date_left">
-                        <img src="../img/ordini/clock.png" alt="Data" title="Data">
+                        <img src="../../img/ordini/clock.png" alt="Data" title="Data" />
                         <p>02/11/2021</p>
                     </section>
-                    <button type="button" class="button_order" id="buttonOrder">
+                    <a href="../../saba/dettagliOrdini.html" class="button_order" id="buttonOrder">
                         <p>Visualizza</p>
-                    </button>
+                    </a>
                 </section>
             </article>
 

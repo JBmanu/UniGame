@@ -11,11 +11,11 @@ listCard.forEach(element => {
    
     btnWish.addEventListener('click', () => {
         if (btnWish.src.match("../img/item/heart-empty.svg")) {
-            btnWish.src = '../img/item/heart-full.svg';
+            btnWish.src = '../../img/item/heart-full.svg';
             btnWish.classList.toggle('transform_heart');
         } 
         else {
-            btnWish.src = '../img/item/heart-empty.svg';
+            btnWish.src = '../../img/item/heart-empty.svg';
             btnWish.classList.remove('transform_heart');
         }
     });
@@ -36,6 +36,17 @@ listCard.forEach(element => {
 
 });
 
+
+var price = document.querySelector('.cntnr_order_price');
+var left = document.querySelector('.bar_obj_left');
+
+left.addEventListener('click', () => {  
+    if (price.style.display === 'block') {
+        price.style.display = 'none';
+    } else {
+        price.style.display = 'block';
+    }
+});
 
 
 

@@ -1,13 +1,15 @@
 var cntnBody = document.querySelector('body');
+var cntnrPay = document.querySelector('.cntnr_pay');
 var btnPay = document.querySelector('.cntnr_down_btn');
 var cntnrCard = document.querySelector('.cntnr_list_card');
 var cartlistCard = document.querySelectorAll('.card_composed');
 
 
+
 cartlistCard.forEach(el => {
-    var btnLess = el.querySelector('.less_cmd_card_composed');
-    var btnAdd = el.querySelector('.plus_cmd_card_composed');
-    var quantity = el.querySelector('.quantity_card_composed');
+    let btnLess = el.querySelector('.less_cmd_card_composed');
+    let btnAdd = el.querySelector('.plus_cmd_card_composed');
+    let quantity = el.querySelector('.quantity_card_composed');
     
     btnAdd.addEventListener('click', () => {
         quantity.innerHTML = parseInt(quantity.textContent) + 1;
@@ -44,7 +46,9 @@ btnPay.addEventListener('click', () => {
 
     cntnrCard.style.filter = 'blur(10px)';
     btnPay.style.filter = 'blur(10px)';
-    
-    cntnBody.innerHTML += StaticFactoryObj.createCntnrMathodPay();
+    document.querySelector('.container').style.filter = 'blur(10px)';
+    document.querySelector('ul').style.filter = 'blur(10px)';
+    document.querySelector('.navbar_info_menu').style.filter = 'blur(10px)';
 
+    cntnrPay.style.display = 'flex';
 });

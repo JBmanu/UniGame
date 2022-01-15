@@ -16,7 +16,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
 
-        <!-- <script src="../js/click.js" type="text/javascript"></script> -->
+        <script src="../../js/click.js" type="text/javascript"></script>
         <script src="../../js/flipCard.js"  type="text/javascript" defer="defer"></script>
     </head>
 
@@ -25,22 +25,47 @@
         <header>
             <div class="topnav" id="myTopnav">
                 <a href="../../index.html" class="active">UniGame</a>
-                <a href="../../page/login.html"><img src="../../img/menu/user.png" alt="Login"> Login</a>
-                <a href="../../page/listCart.html"><img src="../../img/menu/carrello.png" alt="Carrello"> Carrello</a>
-                <a href="../../page/listWish.html"><img src="../../img/menu/wishlist.png" alt="Wishlist"> Wishlist</a>
-                <a href="#"><img src="../../img/menu/ordini.png" alt="Ordini"> Ordini</a>
-                <a href="../../page/notification.html"><img src="../../img/menu/notifiche.png" alt="Notifiche"> Notifiche</a>
-                <a href="../../index.html"><img src="../../img/menu/logout.png" alt="Logout"> Logout</a>
+                <a href="../../page/login.html"><img src="../../img/menu/user.svg" alt="Login" /> Login</a>
+                <a href="../../page/listCart.html"><img src="../../img/menu/carrello.svg" alt="Carrello" /> Carrello</a>
+                <a href="../../page/listWish.html"><img src="../../img/menu/wishlist.svg" alt="Wishlist" /> Wishlist</a>
+                <a href="#"><img src="../../img/menu/ordini.svg" alt="Ordini" /> Ordini</a>
+                <a href="../../page/notification.html"><img src="../../img/menu/notifiche.svg" alt="Notifiche" /> Notifiche</a>
+                <a href="../../index.html"><img src="../../img/menu/logout.svg" alt="Logout" /> Logout</a>
                 <a href="#" class="icon">
-                    <img src="../../img/menu/menu.png" alt="Menu">
+                    <img src="../../img/menu/menu.svg" alt="Menu" />
                 </a>
             </div>
         </header>
 
+        <nav class = "nav-rotondo">
+            <ul>
+                <li class="playstation">
+                    <a class="force_flex_center" href="./listItemPS.html">
+                        <img src="../../img/typeGame/ps.svg" alt="Playstation" title="Playstation" />
+                    </a>
+                </li>
+                <li class="xbox">
+                    <a class="force_flex_center" href="./listItemXbox.html">
+                        <img src="../../img/typeGame/xbox.svg" alt="Xbox" title="Xbox" />
+                    </a>
+                </li>
+                <li class="nintendo">
+                    <a class="force_flex_center" href="./listItemSwitch.html">
+                        <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo" />
+                    </a>
+                </li>
+                <li class="pc">
+                    <a class="force_flex_center" href="./listItemPC.html">
+                        <img src="../../img/typeGame/pc.svg" alt="PC" title="PC" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
         <section class="cntnr_search  curve_obj_h50  bg_color_third">
             <input class="input_search" id="Search" type="text" placeholder="Search"/>
             <label class="label_search" for="Search">
-                <img class="icon_big" src="../../img/menu/search.svg" alt="search">
+                <img class="icon_big" src="../../img/menu/search.svg" alt="search" />
             </label>
         </section>
 
@@ -48,13 +73,13 @@
         <section class="cntnr_bar_list_card  space_top_margin_small  bg_light_theme_PC">
             <div class="bar_obj_left  force_flex_center  curve_obj_h15 ">
                 <p class="font_third fg_text_white">Order</p>
-                <img class="icon_big" src="../../img/item/arrow-down.svg" alt="order">
+                <img class="icon_big" src="../../img/item/arrow-down.svg" alt="order" />
             </div>
             <div class="bar_obj_center  curve_obj_h15">
-                <img src="../../img/typeGame/pc.svg" alt="iconPs">
+                <img src="../../img/typeGame/pc.svg" alt="iconPc" />
             </div>
             <div class="bar_obj_right  force_flex_center  curve_obj_h15">
-                <img class="icon_medium" src="../../img/item/filter.svg" alt="filter">
+                <img class="icon_medium" src="../../img/item/filter.svg" alt="filter" />
             </div>
         </section>
 
@@ -64,10 +89,10 @@
             <section class="card_simple  curve_obj_h20  space_bottom_margin_card">
 
                 <div class="front_card_flip  curve_obj_h20">
-                    <a href="../item/itemPC.html"><img class="curve_obj_h20" src="../../img/game/TheLastOfUsIIps4.png" alt="TLOU2"></a>
+                    <a href="../item/itemPC.html"><img class="curve_obj_h20" src="../../img/game/TheLastOfUsIIps4.png" alt="The Last of Us 2" /></a>
                     <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary">55.00$</strong>
-                    <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../../img/item/heart-empty.svg"  alt="heart">
-                    <img class="btn_overlay_bottom_right  circle_obj  bg_third" src="../../img/item/add.svg" alt="add">
+                    <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../../img/item/heart-empty.svg"  alt="heart" />
+                    <img class="btn_overlay_bottom_right  circle_obj  bg_third" src="../../img/item/add.svg" alt="add" />
                 </div>
                 <form class="back_card_flip  force_flex_center  form_2_by_list  curve_obj_h20  bg_third  fg_text_primary" action="">
                     <label class="radio_btn_card ">
@@ -89,8 +114,6 @@
                     <input class="btn_submit_card  space_top_margin_big  curve_obj_h15  bg_primary  font_primary  fg_text_white" type="submit" value="Aggiungi"/>
                 </form>
             </section>
-
-            
         </main>
     </body> 
 
