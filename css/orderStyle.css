@@ -15,8 +15,6 @@
     width: 20px;
 }
 
-
-
 .usable_screen{
     margin: 2%;
 }
@@ -75,7 +73,7 @@
     display: flex;
     flex-flow: column wrap;
     padding: 10px 5px;
-    margin: 2% 0 0; 
+    margin: 2% 0 0;
     border: 0.4px solid #6BA8A9;
     box-sizing: border-box;
     border-radius: 8px;
@@ -86,7 +84,7 @@
     display: flex;
     flex-flow: column wrap;
     padding: 10px 5px;
-    margin: 2% 0 0; 
+    margin: 2% 0 0;
 }
 
 .divisore {
@@ -339,9 +337,16 @@
     display: flex;
     flex-flow: column wrap;
     padding: 10px 5px;
-    margin: 2% 0 0; 
+    margin: 2% 0 0;
     box-shadow: inset 0px 6px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px 20px 0px 0px;
+
+    position: fixed;
+    bottom: 0;
+    width: 95%;
+
+    transform-origin: bottom;
+    transform: scale(1, 0);
 }
 
 .tracking_content_row {
