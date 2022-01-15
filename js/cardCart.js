@@ -7,9 +7,9 @@ var cartlistCard = document.querySelectorAll('.card_composed');
 
 
 cartlistCard.forEach(el => {
-    var btnLess = el.querySelector('.less_cmd_card_composed');
-    var btnAdd = el.querySelector('.plus_cmd_card_composed');
-    var quantity = el.querySelector('.quantity_card_composed');
+    let btnLess = el.querySelector('.less_cmd_card_composed');
+    let btnAdd = el.querySelector('.plus_cmd_card_composed');
+    let quantity = el.querySelector('.quantity_card_composed');
     
     btnAdd.addEventListener('click', () => {
         quantity.innerHTML = parseInt(quantity.textContent) + 1;
