@@ -111,7 +111,7 @@ form ul li label{
 }
 
 .usable_screen{
-    margin: 2%;
+    margin: 0%;
 }
 
 .seller_bigtext_black {
@@ -305,11 +305,6 @@ form ul li label{
     float: center;
 }
 
-.cntnr_exit_image {
-    border-radius: 15px;
-    width: 30px;
-    padding: 0% 3%;
-}
 
 .expand_button {
     border-radius: 15px;
@@ -333,16 +328,12 @@ form ul li label{
 .cntnr_btn_footer_exit {
     background-color:#CFD8DC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    padding: 10px 20px;
-    margin: 3% 0 0;
-    flex: 0 0 100px;
+    padding: 2% 10%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items:center;
     cursor: pointer;
-    bottom: 3%;
 }
 
 .cntnr_btn_footer_exit:hover {
@@ -379,7 +370,7 @@ form ul li label{
 .container_seller{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .searchbox {
@@ -665,14 +656,7 @@ form ul li label{
 .cntnr_btn_footer_lista {
     background-color:#CFD8DC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    padding: 10px 20px;
-    margin: 3% 0 0;
-    flex: 0 0 100px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items:center;
+    padding: 2% 20%;
     cursor: pointer;
     position: fixed;
     bottom: 3%

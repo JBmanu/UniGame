@@ -19,7 +19,7 @@
                 <a href="#">UniGame seller</a>
             </div>
         </header>
-        <main class="usable_screen">
+        <main class="space_top_margin_medium">
             <section class="container_seller">
                 <article class="cntnr_whole">
                     <section class="cntnr_seller  seller_bigtext_black">
@@ -73,7 +73,7 @@
                     <section class="cntnr_seller  seller_undertext_green">
                         <section class="center_content_flex">
                             <p>Vendite PS</p>
-                            <section class="cntnr_img_ps">
+                            <section class="cntnr_img_ps force_flex_center">
                                 <img src="../../img/typeGame/ps.svg" alt="Playstation" title="Playstation" /> 
                             </section>
                         </section>
@@ -89,7 +89,7 @@
                     <section class="cntnr_seller  seller_undertext_green">
                         <section class="center_content_flex">
                             <p>Vendite Xbox</p>
-                            <section class="cntnr_img_xbox">
+                            <section class="cntnr_img_xbox  force_flex_center">
                                 <img src="../../img/typeGame/xbox.svg" alt="Xbox" title="Xbox" /> 
                             </section>
                         </section>
@@ -105,7 +105,7 @@
                     <section class="cntnr_seller  seller_undertext_green">
                         <section class="center_content_flex">
                             <p>Vendite Switch</p>
-                            <section class="cntnr_img_nintendo">
+                            <section class="cntnr_img_nintendo  force_flex_center">
                                 <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo" /> 
                             </section>
                         </section>
@@ -121,7 +121,7 @@
                     <section class="cntnr_seller  seller_undertext_green">
                         <section class="center_content_flex">
                             <p>Vendite PC</p>
-                            <section class="cntnr_img_pc">
+                            <section class="cntnr_img_pc  force_flex_center">
                                 <img src="../../img/typeGame/pc.svg" alt="PC" title="PC" /> 
                             </section>
                         </section>
@@ -129,9 +129,11 @@
                 </article>
             </section>
 
-            <section class="cntnr_scritta_lista" id="ButtonLista">
-                <a href="./allProductSeller.html" class="active">Lista Prodotti</a>
-            </section>
+            <a href="./sellerList.html" class="active">
+                <section class="cntnr_scritta_lista" id="ButtonLista">
+                    Lista Prodotti
+                </section>
+            </a>
 
             <div class="card">
                 <section class="container_seller accordion" >
@@ -345,13 +347,15 @@
                 </section>
             </div>
         </main>
-        <footer class="container_seller">
-            <section class="cntnr_btn_footer_exit  seller_footertext">
-                <section class="cntnr_exit_image">
+
+        <footer class="container_seller  space_top_margin_big">
+            <a class="force_flex_center  cntnr_btn_footer_exit  seller_footertext  curve_obj_h15" href="../../index.html">
+                <section class="icon_big  force_flex_center">
                     <img src="../../img/menu_seller/exit.svg" alt="Exit" title="Exit" />
                 </section>
                 <p>Exit</p>
-            </section>
+            </a> 
         </footer>
+
     </body>
 </html>
