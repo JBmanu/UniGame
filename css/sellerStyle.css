@@ -493,27 +493,55 @@ form ul li label{
 }
 
 .right_side2 {
-    flex: 0 0 30%;
+    flex: 0 0 35%;
     display: flex;
     flex-flow: row nowrap;
     align-content: center;
     justify-content: space-between;
     justify-self: left;
-    padding-right: 5%;
+    padding-right: 1%;
+}
+
+.cntnr_lista {
+    margin: 8px;
+    align-content: center;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.cntnr_lista2 {
+    align-content: center;
+    flex-flow: column wrap;
+    justify-content: center;
 }
 
 .cntnr_prodotti {
-    background-color: rgb(165, 160, 141);
+    background-color: #F0F0F0;
     align-content: center;
     display: flex;
     flex-flow: row nowrap;
     flex: 0 0 75%;
-    padding: 2%;
+    padding: 1%;
     margin-top: 5px;
-    border: 0.8px, solid #212121;
-    border-radius: 15px;
-
+    border: 2px solid #CFD8DC;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
+
+.cntnr_prodotti2 {
+    background-color: #F0F0F0;
+    align-content: center;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    flex: 0 0 100%;
+    padding: 1%;
+    margin-top: 5px;
+    border: 2px solid #CFD8DC;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
 .left_side3 {
     flex: 0 0 50%;
     display: flex;
@@ -524,21 +552,80 @@ form ul li label{
 }
 
 .right_side3 {
+    flex: 0 0 40%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    justify-content: space-between;
+    justify-self: left;
+    padding-right: 2%;
+}
+
+.left_side4 {
+    flex: 0 0 70%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    justify-content: space-between;
+    padding-right: 5%;
+}
+
+.right_side4 {
     flex: 0 0 30%;
     display: flex;
     flex-flow: row nowrap;
     align-content: center;
     justify-content: space-between;
     justify-self: left;
-    padding-right: 5%;
+    padding-right: 2%;
 }
 
 .cntnr_typegame {
-    background-color: red;
     height: 20px;
     width: 20px;
     border-radius: 100px;
+    margin-left: 40px;
 } 
+
+.nintendo {
+    background-color: #E70012;
+}
+
+.playstation {
+    background-color: #00439C;
+}
+
+.xbox {
+    background-color: #0F7B0E;
+}
+
+.pc {
+    background-color: #212121;
+}
+
+.cntnr_typegame img {
+    height: 16px;
+    width: 16px;
+    padding: 2px 0 0 2px;
+}
+
+.left_side3 p1 {
+    color: #009688;
+    font: normal normal 120% Average, serif;
+    font-feature-settings: 'cpsp' on;
+}
+
+.left_side3 p2 {
+    color: #212121;
+    font: normal bold 100% Average, serif;
+    font-feature-settings: 'cpsp' on;
+}
+
+.right_side3 {
+    color: #009688;
+    font: normal bold 120% Average, serif;
+    font-feature-settings: 'cpsp' on;
+}
 
 .bottoni_consoles {
     clear: both;
