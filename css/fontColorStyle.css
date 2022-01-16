@@ -13,6 +13,16 @@
 .bg_third { background-color: #e4ebf5; }
 
 
+.bg_light_theme_PS { background-color: #00439C; }
+.bg_light_theme_XBOX { background-color: #0F7B0E; }
+.bg_light_theme_SWITCH { background-color: #E70012; }
+.bg_light_theme_PC { background-color: #212121; }
+
+.bg_opacity_theme_PS { background-color: #3564A3; }
+.bg_opacity_theme_XBOX { background-color: #458E44; }
+.bg_opacity_theme_SWITCH { background-color: #D0414C; }
+.bg_opacity_theme_PC { background-color: #506874; }
+
 
 
 
