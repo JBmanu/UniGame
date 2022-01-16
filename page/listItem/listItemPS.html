@@ -27,7 +27,7 @@
                 <a href="../../page/login.html"><img src="../../img/menu/user.svg" alt="Login" /> Login</a>
                 <a href="../../page/listCart.html"><img src="../../img/menu/carrello.svg" alt="Carrello" /> Carrello</a>
                 <a href="../../page/listWish.html"><img src="../../img/menu/wishlist.svg" alt="Wishlist" /> Wishlist</a>
-                <a href="#"><img src="../../img/menu/ordini.svg" alt="Ordini" /> Ordini</a>
+                <a href="../seller/Ordini.html"><img src="../../img/menu/ordini.svg" alt="Ordini" /> Ordini</a>
                 <a href="../../page/notification.html"><img src="../../img/menu/notifiche.svg" alt="Notifiche" /> Notifiche</a>
                 <a href="../../index.html"><img src="../../img/menu/logout.svg" alt="Logout" /> Logout</a>
                 <a href="#" class="icon">
@@ -35,6 +35,31 @@
                 </a>
             </div>
         </header>
+
+        <nav class = "nav-rotondo">
+            <ul>
+                <li class="playstation">
+                    <a class="force_flex_center" href="./listItemPS.html">
+                        <img src="../../img/typeGame/ps.svg" alt="Playstation" title="Playstation" />
+                    </a>
+                </li>
+                <li class="xbox">
+                    <a class="force_flex_center" href="./listItemXbox.html">
+                        <img src="../../img/typeGame/xbox.svg" alt="Xbox" title="Xbox" />
+                    </a>
+                </li>
+                <li class="nintendo">
+                    <a class="force_flex_center" href="./listItemSwitch.html">
+                        <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo" />
+                    </a>
+                </li>
+                <li class="pc">
+                    <a class="force_flex_center" href="./listItemPC.html">
+                        <img src="../../img/typeGame/pc.svg" alt="PC" title="PC" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
         <section class="cntnr_search  curve_obj_h50  bg_color_third">
             <input class="input_search" id="Search" type="text" placeholder="Search"/>
@@ -45,18 +70,29 @@
 
         
         <section class="cntnr_bar_list_card  space_top_margin_small  bg_light_theme">
-            <div class="bar_obj_left  force_flex_center  curve_obj_h15 ">
-                <p class="font_third fg_text_white">Order</p>
-                <img class="icon_big" src="../../img/item/arrow-down.svg" alt="order" />
+            <div class="bar_obj_left  curve_obj_h15 ">
+                <form action="" class="">
+                    <select class="minimal" name="order" id="order">
+                        <option value="crescente">Prezzo Crescente</option>
+                        <option value="decrescente">Prezzo Decrescente</option>
+                    </select>
+                </form>
             </div>
-            <div class="bar_obj_center  curve_obj_h15">
-                <img src="../../img/typeGame/ps.svg" alt="iconPs" />
+
+            <div class="bar_obj_center  force_flex_center  curve_obj_h15">
+                <img class="icon_theme" src="../../img/typeGame/ps.svg" alt="iconPs" />
             </div>
+
             <div class="bar_obj_right  force_flex_center  curve_obj_h15">
-                <img class="icon_medium" src="../../img/item/filter.svg" alt="filter" />
+                <form action="" class="">
+                    <select class="minimal" name="order" id="order">
+                        <option value="crescente">Tutti</option>
+                        <option value="crescente">Da €10 a €50</option>
+                        <option value="decrescente">Da €50 a €100</option>
+                    </select>
+                </form>
             </div>
         </section>
-
 
         <main class="cntnr_list_card  space_top_margin_medium">
 
