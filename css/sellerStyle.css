@@ -29,16 +29,6 @@ header{
     font-size: 22px;
 }
 
-.card{
-    background-color: white;
-    border-radius: 15px;
-    max-width: 450px;
-    width: 80%;
-    padding: 20px;
-    margin-right:auto; 
-    margin-top: 20px;
-    margin-left:auto;
-}
 
 section.accordion > button{
     background-color: #eee;
@@ -152,7 +142,7 @@ form ul li label{
 .cntnr_whole {
     background: #F9F6F6;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 1% 1%;
+    margin: 0% 1%;
     padding: 5px;
     flex: 0 0 20%;
     display: flex;
@@ -168,9 +158,8 @@ form ul li label{
     border-radius: 10px;
     font-weight: bold;
     font-size: 200%;
-    padding: 3% 3%;
-    margin: 1%;
-    padding: 10px;
+    padding: 3% 0%;
+    margin: 0% 2%;
     flex: 0 0 100%;
     display: flex;
     flex-flow: row nowrap;
