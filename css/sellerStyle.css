@@ -303,7 +303,7 @@ a {
     display: flex;
     flex-flow: row nowrap;
     align-content: center;
-    justify-content: start;
+    justify-content: flex-end;
 }
 
 /* .right_side {
@@ -329,7 +329,7 @@ a {
 
 .searchbox #search {
     display: flex;
-    flex: 0 0 85%;
+
     height: 35px;
     margin: 20px 8% 20px 8%;
     line-height: 18px;
@@ -349,7 +349,7 @@ a {
     width: 43px;
     height: 40px;
     align-content: center;
-    justify-self: flex-start;
+    justify-self: end;
     border: none;
     outline: none;
     margin-top: 15px;
@@ -753,6 +753,7 @@ a {
     flex: 0 0 50%;
     font-size: 160%;
 }
+
 .cntnr_typeIcons{
     display: flex;
     flex-flow: row nowrap;
