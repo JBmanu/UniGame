@@ -143,7 +143,7 @@ form ul li label{
     background: #F9F6F6;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 0% 1%;
-    padding: 5px;
+    padding: 2% 1%;
     flex: 0 0 20%;
     display: flex;
     flex-flow: row wrap;
@@ -155,16 +155,14 @@ form ul li label{
 .cntnr_scritta_lista {
     background-color: #CFD8DC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
     font-weight: bold;
     font-size: 200%;
     padding: 3% 0%;
     margin: 0% 2%;
-    flex: 0 0 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    cursor: pointer;
-    justify-content: center;
+}
+
+a {
+    text-decoration: none;
 }
 
 .cntnr_scritta_lista a{
@@ -181,9 +179,7 @@ form ul li label{
 .cntnr_long_buttons {
     background-color: #F0F0F0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
     flex: 0 0 95%;
-    margin: 2% 5% 0; 
     padding: 15px 0;
     display: flex;
     flex-flow: row wrap;
@@ -213,19 +209,19 @@ form ul li label{
 
 
 .left_long_button {
-    flex: 0 0 60%;
+    /* flex: 0 0 60%; */
     display: flex;
     flex-flow: row nowrap;
-    align-content: center;
-    justify-content: start;
+    /* align-content: center;
+    justify-content: start; */
 }
 
 .right_long_button {
-    flex: 0 0 40%;
+    /* flex: 0 0 40%; */
     display: flex;
     flex-flow: row nowrap;
-    align-content: center;
-    justify-content: right;
+    /* align-content: center;
+    justify-content: right; */
 }
 
 .cntnr_long_buttons p{
@@ -260,9 +256,8 @@ form ul li label{
 
 
 .expand_button {
-    border-radius: 15px;
     width: 30px;
-    padding: 0% 3%;
+    transition: all 150ms ease-in-out;
 }
 
 .expand_button img{
@@ -287,6 +282,7 @@ form ul li label{
     justify-content: space-around;
     align-items:center;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .cntnr_btn_footer_exit:hover {
@@ -304,20 +300,18 @@ form ul li label{
 }
 
 .left_side {
-    flex: 0 0 60%;
     display: flex;
     flex-flow: row nowrap;
     align-content: center;
     justify-content: start;
 }
 
-.right_side {
-    flex: 0 0 40%;
+/* .right_side {
     display: flex;
     flex-flow: row nowrap;
     align-content: center;
     justify-content: center;
-}
+} */
 
 
 .container_seller{

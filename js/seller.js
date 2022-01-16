@@ -5,8 +5,26 @@ function hideElement(element){
 }
 
 $(document).ready(function(){
-    $("button").click(function(){
 
+    let bntsSeller = document.querySelectorAll('.accordion > button');
+    let arrowExpanse = document.querySelectorAll('button > .expand_button');
+
+
+    bntsSeller.forEach(el => {
+        let indexArrow = 0;
+        el.onclick = () => {
+            console.log("cliccooo");
+
+            if( arrowExpanse[indexArrow].style.transform == 'rotate(90deg)' ) {
+                arrowExpanse[indexArrow].style.transform = 'rotate(0deg)';
+            } else {
+                arrowExpanse[indexArrow].style.transform = 'rotate(90deg)';
+            }
+            indexArrow += 1;
+        }; 
+    });
+
+    $("button").click(function(){
         if($(this).hasClass("selected")){
             //bottone già cliccato, allora lo nascondo
             hideElement($(this));
