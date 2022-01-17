@@ -10,6 +10,7 @@ body, h1, h2, h3, p, ul {
 .curve_obj_h50 { border-radius: 50px; }
 
 
+.margin_top_max { margin-top: 35px; }
 .margin_top_big { margin-top: 25px; }
 .margin_top_medium { margin-top: 15px; }
 .margin_top_small { margin-top: 5px; }
