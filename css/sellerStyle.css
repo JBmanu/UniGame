@@ -34,8 +34,8 @@ main.accordion > button{
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 2% 2%;
-    max-width: 80%;
+    padding: 20px;
+    max-width: 70%;
 }
 
 main.accordion > main:hover, main.accordion > button.selected{
@@ -257,8 +257,6 @@ a {
     padding: 2% 10%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items:center;
     cursor: pointer;
     text-decoration: none;
 }
