@@ -233,8 +233,7 @@ a {
     flex: 0 0 100% ;
     display: flex;
     flex-flow: row wrap;
-    align-content: center;
-    justify-content: space-evenly;
+    column-gap: 5px;
 }
 
 .cntnr_icon_theme{
