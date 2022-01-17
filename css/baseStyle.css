@@ -4,6 +4,7 @@ body, h1, h2, h3, p, ul {
 }
 
 .circle_obj { border-radius: 100%; }
+.curve_obj_h8 { border-radius: 8px; }
 .curve_obj_h15 { border-radius: 15px; }
 .curve_obj_h20 { border-radius: 20px; }
 .curve_obj_h50 { border-radius: 50px; }

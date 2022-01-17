@@ -47,10 +47,6 @@ section.accordion > div {
     overflow: hidden;
 }
 
-.label_name_product, .label_price_product{
-    margin-top: 20px;
-}
-
 .label_img_product{
     padding-right: 20px;
 }
@@ -296,21 +292,19 @@ a {
 }
 
 .list_nav {
-    flex: 0 0 100%;
-    margin: 2% 1% 0;
-    padding: 15px 0;
     display: flex;
     flex-flow: row wrap;
     align-content: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.left_side {
+/* .left_side {
     display: flex;
     flex-flow: row nowrap;
+    align-items: center;
     align-content: center;
     justify-content: flex-end;
-}
+} */
 
 /* .right_side {
     display: flex;
@@ -328,37 +322,28 @@ a {
 
 .searchbox {
     display: flex;
-    flex: 0 0 70%;
-    padding: 0;
-    position: relative;
+    flex-flow: column wrap;
 }
 
 .searchbox #search {
     display: flex;
-
     height: 35px;
-    margin: 20px 8% 20px 8%;
     line-height: 18px;
     background: #F9F6F6;
     border: 3px solid #CFD8DC;
     font-size: large;
     border-radius: 5px;
-    overflow: hidden;
     text-align: left;
 }
 
 .search_button {
     background-color: #CFD8DC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    display: flex;
-    width: 43px;
-    height: 40px;
-    align-content: center;
-    justify-self: end;
+    height: 60%;
     border: none;
-    outline: none;
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-left: 5px;
+    cursor: pointer;
 }
 
 .search_button img {
@@ -368,26 +353,16 @@ a {
 }
 
 .search_button #submit {
-    outline: none;
-    cursor: pointer;
-    display: flex;
-    flex: 0 0 100%;
-    border: none;
-    text-indent: -10957px;
     width: 30px;
     height: 25px;
-    padding-top: 20%;
 }
 
 .cntnr_ID {
-    background: #009688;
-    border-radius: 15px;
-    margin: 1% 1% 0;
+    margin: 0% 0% 0% 1%;
     padding: 5px;
-    flex: 0 0 50%;
+    flex: 0 0 40%;
     display: flex;
     flex-flow: column nowrap;
-    overflow: hidden;
 }
 
 .ID_text_1 {
@@ -407,11 +382,7 @@ a {
     color: #607D8B;
     font: italic bold 200% Average, serif;
     font-feature-settings: 'cpsp' on;
-    justify-content: center;
-    align-content: center;
-    display: flex;
-    flex: 0 0 100%;
-    padding: 2%;
+    padding: 15px;
 }
 
 .cntnr_scritta_prodotti2 {
@@ -419,38 +390,25 @@ a {
     color: #607D8B;
     font: italic bold 120% Average, serif;
     font-feature-settings: 'cpsp' on;
-    align-content: center;
     display: flex;
-    flex-flow: row nowrap;
-    flex: 0 0 100%;
-    padding: 2%;
+    padding: 15px;
     margin-top: 5px;
 }
 
-.left_side2 {
-    flex: 0 0 50%;
+.cntnr_column_type {
+    flex: 0 0 45%;
     display: flex;
     flex-flow: row nowrap;
-    align-content: center;
     justify-content: space-between;
-    padding-right: 5%;
-}
-
-.right_side2 {
-    flex: 0 0 35%;
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
-    justify-content: space-between;
-    justify-self: left;
-    padding-right: 1%;
+    margin: 0 auto 0;
 }
 
 .cntnr_lista {
     margin: 8px;
-    align-content: center;
+    display: flex;
     flex-flow: column wrap;
-    justify-content: center;
+    overflow-y: scroll;
+    height: 50%;
 }
 
 .cntnr_lista2 {
@@ -461,15 +419,11 @@ a {
 
 .cntnr_prodotti {
     background-color: #F0F0F0;
-    align-content: center;
     display: flex;
     flex-flow: row nowrap;
-    flex: 0 0 75%;
-    padding: 1%;
     margin-top: 5px;
     border: 2px solid #CFD8DC;
-    box-sizing: border-box;
-    border-radius: 5px;
+    align-items: center;
 }
 
 .cntnr_prodotti2 {
@@ -525,32 +479,15 @@ a {
 }
 
 .cntnr_typegame {
-    height: 20px;
-    width: 20px;
-    border-radius: 100px;
-    margin-left: 40px;
+    height: 25px;
+    width: 25px;
+    margin-left: 25px;
 }
 
-.nintendo {
-    background-color: #E70012;
-}
-
-.playstation {
-    background-color: #00439C;
-}
-
-.xbox {
-    background-color: #0F7B0E;
-}
-
-.pc {
-    background-color: #212121;
-}
 
 .cntnr_typegame img {
     height: 16px;
     width: 16px;
-    padding: 2px 0 0 2px;
 }
 
 .left_side3 p1 {
