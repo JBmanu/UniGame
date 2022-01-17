@@ -209,21 +209,14 @@ a {
 }
 
 
-
 .left_long_button {
-    /* flex: 0 0 60%; */
     display: flex;
     flex-flow: row nowrap;
-    /* align-content: center;
-    justify-content: start; */
 }
 
 .right_long_button {
-    /* flex: 0 0 40%; */
     display: flex;
     flex-flow: row nowrap;
-    /* align-content: center;
-    justify-content: right; */
 }
 
 .cntnr_long_buttons p{
@@ -297,22 +290,6 @@ a {
     align-content: center;
     justify-content: center;
 }
-
-/* .left_side {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    align-content: center;
-    justify-content: flex-end;
-} */
-
-/* .right_side {
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
-    justify-content: center;
-} */
-
 
 .container_seller{
     display: flex;
@@ -406,9 +383,12 @@ a {
 .cntnr_lista {
     margin: 8px;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     overflow-y: scroll;
-    height: 50%;
+    scroll-behavior: smooth;
+    height: 580px;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .cntnr_lista2 {
@@ -418,11 +398,14 @@ a {
 }
 
 .cntnr_prodotti {
+    flex: 0 0 98%;
     background-color: #F0F0F0;
+    border: 2px solid #CFD8DC;
+
     display: flex;
     flex-flow: row nowrap;
     margin-top: 5px;
-    border: 2px solid #CFD8DC;
+    padding: 5px 0px;
     align-items: center;
 }
 
