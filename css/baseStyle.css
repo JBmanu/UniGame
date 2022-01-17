@@ -9,6 +9,16 @@ body, h1, h2, h3, p, ul {
 .curve_obj_h20 { border-radius: 20px; }
 .curve_obj_h50 { border-radius: 50px; }
 
+
+.margin_top_big { margin-top: 25px; }
+.margin_top_medium { margin-top: 15px; }
+.margin_top_small { margin-top: 5px; }
+
+.margin_bottom_big { margin-bottom: 25px; }
+.margin_bottom_medium { margin-bottom: 15px; }
+.margin_bottom_small { margin-bottom: 5px; }
+
+
 .space_top_margin_big { margin-top: 5%; }
 .space_top_margin_medium { margin-top: 3%; }
 .space_top_margin_small { margin-top: 2%; }

@@ -14,7 +14,7 @@ $(document).ready(function(){
 
             $(this).children(".expand_button").css("transform", "rotate(0deg)");
             
-            $(this).addClass("space_bottom_margin_card");
+            $(this).addClass("margin_bottom_medium");
         }
         else{
             //bottone non cliccato, nascondere eventualmente elemento precedentemente cliccato e visulizzare contenuto div che segue
@@ -30,9 +30,9 @@ $(document).ready(function(){
 
 
             document.querySelectorAll('.cntnr_long_buttons').forEach(btn => {
-                btn.classList.add('space_bottom_margin_card');
+                btn.classList.add('margin_bottom_medium');
             });
-            $(this).removeClass("space_bottom_margin_card");
+            $(this).removeClass("margin_bottom_medium");
 
         }
     });

@@ -30,7 +30,7 @@ header{
 }
 
 
-section.accordion > button{
+main.accordion > button{
     background-color: #eee;
     color: #444;
     cursor: pointer;
@@ -38,11 +38,11 @@ section.accordion > button{
     max-width: 80%;
 }
 
-section.accordion > button:hover, section.accordion > button.selected{
+main.accordion > main:hover, main.accordion > button.selected{
     background-color: #ccc;
 }
 
-section.accordion > div {
+main.accordion > div {
     display: none;
     overflow: hidden;
 }
@@ -129,9 +129,8 @@ form ul li label{
 .cntnr_whole {
     background: #F9F6F6;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 0% 1%;
+    margin: 0.5% 1%;
     padding: 2% 1%;
-    flex: 0 0 20%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -144,8 +143,8 @@ form ul li label{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-weight: bold;
     font-size: 200%;
-    padding: 3% 0%;
-    margin: 0% 2%;
+    padding: 20px 0%;
+    width: 90%;
 }
 
 a {
@@ -407,44 +406,6 @@ a {
     border-radius: 5px;
 }
 
-.left_side3 {
-    flex: 0 0 50%;
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
-    justify-content: space-between;
-    padding-right: 5%;
-}
-
-.right_side3 {
-    flex: 0 0 40%;
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
-    justify-content: space-between;
-    justify-self: left;
-    padding-right: 2%;
-}
-
-.left_side4 {
-    flex: 0 0 70%;
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
-    justify-content: space-between;
-    padding-right: 5%;
-}
-
-.right_side4 {
-    flex: 0 0 30%;
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
-    justify-content: space-between;
-    justify-self: left;
-    padding-right: 2%;
-}
-
 .cntnr_typegame {
     height: 25px;
     width: 25px;
@@ -456,23 +417,6 @@ a {
     width: 16px;
 }
 
-.left_side3 p1 {
-    color: #009688;
-    font: normal normal 120% Average, serif;
-    font-feature-settings: 'cpsp' on;
-}
-
-.left_side3 p2 {
-    color: #212121;
-    font: normal bold 100% Average, serif;
-    font-feature-settings: 'cpsp' on;
-}
-
-.right_side3 {
-    color: #009688;
-    font: normal bold 120% Average, serif;
-    font-feature-settings: 'cpsp' on;
-}
 
 .bottoni_consoles {
     clear: both;
@@ -514,7 +458,7 @@ a {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 2% 8%;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 

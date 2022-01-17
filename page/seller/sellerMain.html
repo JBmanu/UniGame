@@ -23,7 +23,7 @@
         </header>
 
 
-        <div class="container_seller  space_top_margin_medium">
+        <div class="container_seller  margin_top_big">
             <div class="cntnr_whole  curve_obj_h15">
                 <p class="force_flex_center  seller_bigtext_black">385 €</p>
                 <p class="force_flex_center  cntnr_text_btn" >Guadagno Giornaliero</p>
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <div class="container_seller  space_top_margin_small">
+        <div class="container_seller  margin_top_small">
             <div class="cntnr_whole  curve_obj_h15">
                 <p class="force_flex_center  seller_bigtext_black">385</p>
                 <div class="cntnr_seller  seller_undertext_green  force_flex_center">
@@ -82,218 +82,214 @@
             </div>
         </div>
 
-        <main class="space_top_margin_medium">
-
-            <a href="./sellerList.html" class="active">
-                <div class="cntnr_scritta_lista  force_flex_center  curve_obj_h15" id="ButtonLista">
-                    Lista Prodotti
-                </div>
+        <div class=" force_flex_center  margin_top_medium">          
+            <a href="./sellerList.html" class="cntnr_scritta_lista  force_flex_center  curve_obj_h15  active">
+                Lista Prodotti
             </a>
+        </div>
 
+        <main class="container_seller accordion  margin_top_medium">
 
-            <section class="container_seller accordion  space_top_margin_medium" >
-
-                <button type="button" class="cntnr_long_buttons  space_bottom_margin_card  curve_obj_h15" id="longButtons">
-                    <div class="left_long_button">
-                        <img src="../../img/menu_seller/add.svg" alt="Add Product" title="Add Product" />
-                        <p>Aggiungi un Prodotto</p>
-                    </div>
-                    <div class="expand_button">
-                        <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
-                    </div>
-                </button>
-                
-                <div class="cntnr_bottom_btn  space_bottom_margin_card">
-                    <form action="#" method="post">
-                        <section class="insert_name_product">
-                            <label class="label_name_product" for="name_product">Nome prodotto</label>
-                            <input name="name_product" id="product" type="text" placeholder="Nome" required>
-                        </section>
-                        <section class="cntnr_checkbox  checkbox_font">
-                            <input type="checkbox" id="1" name="categoria_1">
-                            <label class="check_container" for="1">PS4</label>
-                            <input type="checkbox" id="2" name="categoria_2">
-                            <label class="check_container" for="2">PS5</label>
-                            <input type="checkbox" id="3" name="categoria_3">
-                            <label class="check_container" for="3">Xbox 360</label>
-                            <input type="checkbox" id="4" name="categoria_4">
-                            <label class="check_container" for="4">Xbox One</label>
-                            <input type="checkbox" id="5" name="categoria_5">
-                            <label class="check_container" for="5">Nintendo</label>
-                            <input type="checkbox" id="6" name="categoria_6">
-                            <label class="check_container" for="6">PC</label>
-                        </section>
-                        <section class="insert_name_product">
-                            <label class="force_flex_center" for="price_product">Prezzo</label>
-                            <input name="price_product" id="product" type="text" placeholder="Inserire prezzo" required>
-                        </section>
-                        <section class="insert_name_product">
-                            <label class="label_img_product" for="img_articolo">Immagine articolo</label>
-                            <input name="img_articolo" id="img_articolo" type="file">
-                        </section>
-                        <button class="conferma_button">Conferma</button>
-                    </form>
+            <button type="button" class="cntnr_long_buttons  margin_bottom_medium  curve_obj_h15" id="longButtons">
+                <div class="left_long_button">
+                    <img src="../../img/menu_seller/add.svg" alt="Add Product" title="Add Product" />
+                    <p>Aggiungi un Prodotto</p>
                 </div>
-
-
-                <button type="button" class="cntnr_long_buttons  space_bottom_margin_card  curve_obj_h15" id="longButtons">
-                    <div class="left_long_button">
-                        <img src="../../img/menu_seller/add.svg" alt="Add Product" title="Add Product" />
-                        <p>Elimina un Prodotto</p>
-                    </div>
-                    <div class="expand_button">
-                        <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
-                    </div>
-                </button>
-
-                <div class="cntnr_bottom_btn  space_bottom_margin_card">
-                    <form action="#" method="post">
-                        <section class="insert_name_product">
-                            <label class="label_name_product" for="id_product">Id prodotto</label>
-                            <input name="id_product" id="product" type="text" placeholder="Id" required>
-                        </section>
-                        <section class="cntnr_checkbox  checkbox_font">
-                            <input type="checkbox" id="1" name="categoria_1">
-                            <label class="check_container" for="1">PS4</label>
-                            <input type="checkbox" id="2" name="categoria_2">
-                            <label class="check_container" for="2">PS5</label>
-                            <input type="checkbox" id="3" name="categoria_3">
-                            <label class="check_container" for="3">Xbox 360</label>
-                            <input type="checkbox" id="4" name="categoria_4">
-                            <label class="check_container" for="4">Xbox One</label>
-                            <input type="checkbox" id="5" name="categoria_5">
-                            <label class="check_container" for="5">Nintendo</label>
-                            <input type="checkbox" id="6" name="categoria_6">
-                            <label class="check_container" for="6">PC</label>
-                        </section>
-                        <button class="conferma_button">Conferma</button>
-                    </form>
+                <div class="expand_button">
+                    <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
                 </div>
+            </button>
+            
+            <div class="cntnr_bottom_btn  margin_bottom_medium">
+                <form action="#" method="post">
+                    <section class="insert_name_product">
+                        <label class="label_name_product" for="name_product">Nome prodotto</label>
+                        <input name="name_product" id="product" type="text" placeholder="Nome" required>
+                    </section>
+                    <section class="cntnr_checkbox  checkbox_font">
+                        <input type="checkbox" id="1" name="categoria_1">
+                        <label class="check_container" for="1">PS4</label>
+                        <input type="checkbox" id="2" name="categoria_2">
+                        <label class="check_container" for="2">PS5</label>
+                        <input type="checkbox" id="3" name="categoria_3">
+                        <label class="check_container" for="3">Xbox 360</label>
+                        <input type="checkbox" id="4" name="categoria_4">
+                        <label class="check_container" for="4">Xbox One</label>
+                        <input type="checkbox" id="5" name="categoria_5">
+                        <label class="check_container" for="5">Nintendo</label>
+                        <input type="checkbox" id="6" name="categoria_6">
+                        <label class="check_container" for="6">PC</label>
+                    </section>
+                    <section class="insert_name_product">
+                        <label class="force_flex_center" for="price_product">Prezzo</label>
+                        <input name="price_product" id="product" type="text" placeholder="Inserire prezzo" required>
+                    </section>
+                    <section class="insert_name_product">
+                        <label class="label_img_product" for="img_articolo">Immagine articolo</label>
+                        <input name="img_articolo" id="img_articolo" type="file">
+                    </section>
+                    <button class="conferma_button">Conferma</button>
+                </form>
+            </div>
 
 
-                <button type="button" class="cntnr_long_buttons  space_bottom_margin_card  curve_obj_h15" id="longButtons">
-                    <div class="left_long_button">
-                        <img src="../../img/menu_seller/offers.svg" alt="Add Product" title="Add Product" />
-                        <p>Aggiungi un prodotto in offerta</p>
-                    </div>
-                    <div class="expand_button">
-                        <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
-                    </div>
-                </button>
-                <div class="cntnr_bottom_btn  space_bottom_margin_card">
-                    <form action="#" method="post">
-                        <section class="insert_name_product">
-                            <label class="label_name_product" for="id_product">Id prodotto</label>
-                            <input name="id_product" id="product" type="text" placeholder="Id" required>
-                        </section>
-                        <section class="insert_name_product">
-                            <label class="label_name_product" for="sconto_product">Sconto</label>
-                            <input name="sconto_product" id="product" type="text" placeholder="Sconto" required>
-                        </section>
-                        <section class="cntnr_checkbox  checkbox_font">
-                            <input type="checkbox" id="1" name="categoria_1">
-                            <label class="check_container" for="1">PS4</label>
-                            <input type="checkbox" id="2" name="categoria_2">
-                            <label class="check_container" for="2">PS5</label>
-                            <input type="checkbox" id="3" name="categoria_3">
-                            <label class="check_container" for="3">Xbox 360</label>
-                            <input type="checkbox" id="4" name="categoria_4">
-                            <label class="check_container" for="4">Xbox One</label>
-                            <input type="checkbox" id="5" name="categoria_5">
-                            <label class="check_container" for="5">Nintendo</label>
-                            <input type="checkbox" id="6" name="categoria_6">
-                            <label class="check_container" for="6">PC</label>
-                        </section>
-                        <button class="conferma_button">Conferma</button>
-                    </form>
+            <button type="button" class="cntnr_long_buttons  margin_bottom_medium  curve_obj_h15" id="longButtons">
+                <div class="left_long_button">
+                    <img src="../../img/menu_seller/add.svg" alt="Add Product" title="Add Product" />
+                    <p>Elimina un Prodotto</p>
                 </div>
+                <div class="expand_button">
+                    <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
+                </div>
+            </button>
+
+            <div class="cntnr_bottom_btn  margin_bottom_medium">
+                <form action="#" method="post">
+                    <section class="insert_name_product">
+                        <label class="label_name_product" for="id_product">Id prodotto</label>
+                        <input name="id_product" id="product" type="text" placeholder="Id" required>
+                    </section>
+                    <section class="cntnr_checkbox  checkbox_font">
+                        <input type="checkbox" id="1" name="categoria_1">
+                        <label class="check_container" for="1">PS4</label>
+                        <input type="checkbox" id="2" name="categoria_2">
+                        <label class="check_container" for="2">PS5</label>
+                        <input type="checkbox" id="3" name="categoria_3">
+                        <label class="check_container" for="3">Xbox 360</label>
+                        <input type="checkbox" id="4" name="categoria_4">
+                        <label class="check_container" for="4">Xbox One</label>
+                        <input type="checkbox" id="5" name="categoria_5">
+                        <label class="check_container" for="5">Nintendo</label>
+                        <input type="checkbox" id="6" name="categoria_6">
+                        <label class="check_container" for="6">PC</label>
+                    </section>
+                    <button class="conferma_button">Conferma</button>
+                </form>
+            </div>
 
 
-                <button type="button" class="cntnr_long_buttons  space_bottom_margin_card  curve_obj_h15" id="longButtons">
-                    <div class="left_long_button">
-                        <img src="../../img/menu_seller/inventory.svg" alt="Add Product" title="Add Product" />
-                        <p>Allerte di inventario</p>
-                    </div>
-                    <div class="expand_button">
-                        <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
-                    </div>
-                </button>
+            <button type="button" class="cntnr_long_buttons  margin_bottom_medium  curve_obj_h15" id="longButtons">
+                <div class="left_long_button">
+                    <img src="../../img/menu_seller/offers.svg" alt="Add Product" title="Add Product" />
+                    <p>Aggiungi un prodotto in offerta</p>
+                </div>
+                <div class="expand_button">
+                    <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
+                </div>
+            </button>
+            <div class="cntnr_bottom_btn  margin_bottom_medium">
+                <form action="#" method="post">
+                    <section class="insert_name_product">
+                        <label class="label_name_product" for="id_product">Id prodotto</label>
+                        <input name="id_product" id="product" type="text" placeholder="Id" required>
+                    </section>
+                    <section class="insert_name_product">
+                        <label class="label_name_product" for="sconto_product">Sconto</label>
+                        <input name="sconto_product" id="product" type="text" placeholder="Sconto" required>
+                    </section>
+                    <section class="cntnr_checkbox  checkbox_font">
+                        <input type="checkbox" id="1" name="categoria_1">
+                        <label class="check_container" for="1">PS4</label>
+                        <input type="checkbox" id="2" name="categoria_2">
+                        <label class="check_container" for="2">PS5</label>
+                        <input type="checkbox" id="3" name="categoria_3">
+                        <label class="check_container" for="3">Xbox 360</label>
+                        <input type="checkbox" id="4" name="categoria_4">
+                        <label class="check_container" for="4">Xbox One</label>
+                        <input type="checkbox" id="5" name="categoria_5">
+                        <label class="check_container" for="5">Nintendo</label>
+                        <input type="checkbox" id="6" name="categoria_6">
+                        <label class="check_container" for="6">PC</label>
+                    </section>
+                    <button class="conferma_button">Conferma</button>
+                </form>
+            </div>
 
-                <div class="cntnr_bottom_btn  space_bottom_margin_card cntn_all_allert">
-                    <div class="cntnr_allert">
-                        <p class="nameGame">Nome prodotto !!</p>
-                        <div class="cntnr_typeIcons"> 
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
+
+            <button type="button" class="cntnr_long_buttons  margin_bottom_medium  curve_obj_h15" id="longButtons">
+                <div class="left_long_button">
+                    <img src="../../img/menu_seller/inventory.svg" alt="Add Product" title="Add Product" />
+                    <p>Allerte di inventario</p>
+                </div>
+                <div class="expand_button">
+                    <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
+                </div>
+            </button>
+
+            <div class="cntnr_bottom_btn  margin_bottom_medium cntn_all_allert">
+                <div class="cntnr_allert">
+                    <p class="nameGame">Nome prodotto !!</p>
+                    <div class="cntnr_typeIcons"> 
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
                         </div>
                     </div>
-
-                    <div class="cntnr_allert">
-                        <p class="nameGame">Nome prodotto !!</p>
-                        <div class="cntnr_typeIcons"> 
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cntnr_allert">
-                        <p class="nameGame">Nome prodotto !!</p>
-                        <div class="cntnr_typeIcons"> 
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cntnr_allert">
-                        <p class="nameGame">Nome prodotto !!</p>
-                        <div class="cntnr_typeIcons"> 
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                            <div class="cntnr_icon  force_flex_center">
-                                <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </section>
+
+                <div class="cntnr_allert">
+                    <p class="nameGame">Nome prodotto !!</p>
+                    <div class="cntnr_typeIcons"> 
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cntnr_allert">
+                    <p class="nameGame">Nome prodotto !!</p>
+                    <div class="cntnr_typeIcons"> 
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cntnr_allert">
+                    <p class="nameGame">Nome prodotto !!</p>
+                    <div class="cntnr_typeIcons"> 
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
 
         <div class="container_seller  space_top_margin_big">
