@@ -34,11 +34,8 @@ section.accordion > button{
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
+    padding: 2% 2%;
+    max-width: 80%;
 }
 
 section.accordion > button:hover, section.accordion > button.selected{
@@ -46,17 +43,19 @@ section.accordion > button:hover, section.accordion > button.selected{
 }
 
 section.accordion > div {
-    padding: 0 18px;
     display: none;
     overflow: hidden;
 }
 
-.label_name_product, .label_price_product{
-    margin-top: 20px;
-}
-
 .label_img_product{
     padding-right: 20px;
+}
+
+.cntnr_bottom_btn {
+    background-color: #eee;
+    padding: 0% 4% 3%;
+    margin-top: 1%;
+    border-radius: 0 0 15px 15px ;
 }
 
 .conferma_button{
@@ -89,7 +88,10 @@ form ul li label{
 
 
 
-
+.cntn_all_allert {
+    margin-left: 5%;
+    margin-right: 5%;
+}
 
 
 
@@ -200,28 +202,21 @@ a {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     flex: 0 0 95%;
-    margin: 2% 5% 0; 
+    margin: 2% 5% 0;
     padding: 15px 0;
     display: none;
-    
-}
 
+}
 
 
 .left_long_button {
-    /* flex: 0 0 60%; */
     display: flex;
     flex-flow: row nowrap;
-    /* align-content: center;
-    justify-content: start; */
 }
 
 .right_long_button {
-    /* flex: 0 0 40%; */
     display: flex;
     flex-flow: row nowrap;
-    /* align-content: center;
-    justify-content: right; */
 }
 
 .cntnr_long_buttons p{
@@ -290,29 +285,11 @@ a {
 }
 
 .list_nav {
-    flex: 0 0 100%;
-    margin: 2% 1% 0; 
-    padding: 15px 0;
     display: flex;
     flex-flow: row wrap;
     align-content: center;
-    justify-content: space-between;
-}
-
-.left_side {
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
-    justify-content: flex-end;
-}
-
-/* .right_side {
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
     justify-content: center;
-} */
-
+}
 
 .container_seller{
     display: flex;
@@ -322,37 +299,28 @@ a {
 
 .searchbox {
     display: flex;
-    flex: 0 0 70%;
-    padding: 0;
-    position: relative;
+    flex-flow: column wrap;
 }
 
 .searchbox #search {
     display: flex;
-
     height: 35px;
-    margin: 20px 8% 20px 8%;
     line-height: 18px;
     background: #F9F6F6;
     border: 3px solid #CFD8DC;
     font-size: large;
     border-radius: 5px;
-    overflow: hidden;
     text-align: left;
 }
 
 .search_button {
     background-color: #CFD8DC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    display: flex;
-    width: 43px;
-    height: 40px;
-    align-content: center;
-    justify-self: end;
+    height: 60%;
     border: none;
-    outline: none;
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-left: 5px;
+    cursor: pointer;
 }
 
 .search_button img {
@@ -362,26 +330,16 @@ a {
 }
 
 .search_button #submit {
-    outline: none;
-    cursor: pointer;
-    display: flex;
-    flex: 0 0 100%;
-    border: none;
-    text-indent: -10957px;
     width: 30px;
     height: 25px;
-    padding-top: 20%;
 }
 
 .cntnr_ID {
-    background: #009688;
-    border-radius: 15px;
-    margin: 1% 1% 0;
+    margin: 0% 0% 0% 1%;
     padding: 5px;
-    flex: 0 0 50%;
+    flex: 0 0 40%;
     display: flex;
     flex-flow: column nowrap;
-    overflow: hidden;
 }
 
 .ID_text_1 {
@@ -401,11 +359,7 @@ a {
     color: #607D8B;
     font: italic bold 200% Average, serif;
     font-feature-settings: 'cpsp' on;
-    justify-content: center;
-    align-content: center;
-    display: flex;
-    flex: 0 0 100%;
-    padding: 2%;
+    padding: 15px;
 }
 
 .cntnr_scritta_prodotti2 {
@@ -413,38 +367,28 @@ a {
     color: #607D8B;
     font: italic bold 120% Average, serif;
     font-feature-settings: 'cpsp' on;
-    align-content: center;
     display: flex;
-    flex-flow: row nowrap;
-    flex: 0 0 100%;
-    padding: 2%;
+    padding: 15px;
     margin-top: 5px;
 }
 
-.left_side2 {
-    flex: 0 0 50%;
+.cntnr_column_type {
+    flex: 0 0 45%;
     display: flex;
     flex-flow: row nowrap;
-    align-content: center;
     justify-content: space-between;
-    padding-right: 5%;
-}
-
-.right_side2 {
-    flex: 0 0 35%;
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
-    justify-content: space-between;
-    justify-self: left;
-    padding-right: 1%;
+    margin: 0 auto 0;
 }
 
 .cntnr_lista {
     margin: 8px;
-    align-content: center;
-    flex-flow: column wrap;
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 580px;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .cntnr_lista2 {
@@ -454,16 +398,15 @@ a {
 }
 
 .cntnr_prodotti {
+    flex: 0 0 98%;
     background-color: #F0F0F0;
-    align-content: center;
+    border: 2px solid #CFD8DC;
+
     display: flex;
     flex-flow: row nowrap;
-    flex: 0 0 75%;
-    padding: 1%;
     margin-top: 5px;
-    border: 2px solid #CFD8DC;
-    box-sizing: border-box;
-    border-radius: 5px;
+    padding: 5px 0px;
+    align-items: center;
 }
 
 .cntnr_prodotti2 {
@@ -519,32 +462,15 @@ a {
 }
 
 .cntnr_typegame {
-    height: 20px;
-    width: 20px;
-    border-radius: 100px;
-    margin-left: 40px;
-} 
-
-.nintendo {
-    background-color: #E70012;
+    height: 25px;
+    width: 25px;
+    margin-left: 25px;
 }
 
-.playstation {
-    background-color: #00439C;
-}
-
-.xbox {
-    background-color: #0F7B0E;
-}
-
-.pc {
-    background-color: #212121;
-}
 
 .cntnr_typegame img {
     height: 16px;
     width: 16px;
-    padding: 2px 0 0 2px;
 }
 
 .left_side3 p1 {
@@ -682,7 +608,7 @@ a {
     font: normal normal 20% Average, serif;
     font-feature-settings: 'cpsp' on;
   }
-  
+
   /* Hide the browser's default checkbox */
   .container input {
     position: absolute;
@@ -691,7 +617,7 @@ a {
     height: 0;
     width: 0;
   }
-  
+
   /* Create a custom checkbox */
   .checkmark {
     position: absolute;
@@ -701,29 +627,29 @@ a {
     width: 25px;
     background-color: #eee;
   }
-  
+
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark {
     background-color: #ccc;
   }
-  
+
   /* When the checkbox is checked, add a blue background */
   .container input:checked ~ .checkmark {
     background-color: #2196F3;
   }
-  
+
   /* Create the checkmark/indicator (hidden when not checked) */
   .checkmark:after {
     content: "";
     position: absolute;
     display: none;
   }
-  
+
   /* Show the checkmark when checked */
   .container input:checked ~ .checkmark:after {
     display: block;
   }
-  
+
   /* Style the checkmark/indicator */
   .container .checkmark:after {
     left: 9px;

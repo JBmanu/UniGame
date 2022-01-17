@@ -6,6 +6,7 @@
         <title>Uni-videogame</title>
         <link rel="icon" href="../../img/unigame.jpeg" type="image/jpeg">
         <link rel="stylesheet" href="../../css/baseStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="../../css/fontColorStyle.css" type="text/css">
         <link rel="stylesheet" href="../../css/listItemStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/sellerStyle.css" type="text/css"/>
         <script
@@ -24,174 +25,273 @@
             </div>
         </header>
 
-        <main class="usable_screen">
-            <article class="list_nav">
-                <section class="left_side">
-                    <section class="searchbox">
-                        <label class="label_name_product" for="search">Cerca prodotto</label>
-                        <input name="search" id="search" type="text" placeholder="Search" required>
-                    </section>
-                    <button type="button" class="search_button">
-                        <input id="submit" type="image" src="../../img/menu_seller/search.svg" alt="Cerca">
-                    </button>
-                </section>
-                <section class="right_side">
-                    <section class="cntnr_ID">
-                        <section class="center_content_flex  ID_text_1">
-                            <p>ID</p>
-                        </section>
-                        <section class="center_content_flex  ID_text_2">
-                            <p>32233</p>
-                        </section>
-                    </section>
-                </section>
+        <div class="list_nav  space_top_margin_medium">
 
-            </article>
-
-            <article class="cntnr_scritta_prodotti1  center_content_flex">
-                <p>Lista dei Prodotti</p>
-            </article>
-
-            <article class="cntnr_scritta_prodotti2">
-                <section class="left_side2">
-                    <p>Nome Prodotto</p>
-                    <p>Sconto</p>
-                </section>
-                <section class="right_side2">
-                    <p>Categoria</p>
-                    <p>ID</p>
-                </section>
-            </article>
-
-            <article class="cntnr_lista">
-                <section class="cntnr_prodotti">
-                    <section class="left_side3">
-                        <p1>Nome Prodotto</p1>
-                        <p2>100%</p2>
-                    </section>
-                    <section class="right_side3">
-                        <section class="cntnr_typegame  nintendo">
-                            <img src="../../img/typeGame/nintendo.svg">
-                        </section>
-                        <p>32342424</p>
-                    </section>
-                </section>
-
-                <section class="cntnr_prodotti">
-                    <section class="left_side3">
-                        <p1>Nome Prodotto</p1>
-                        <p2>100%</p2>
-                    </section>
-                    <section class="right_side3">
-                        <section class="cntnr_typegame  playstation">
-                            <img src="../../img/typeGame/ps.svg">
-                        </section>
-                        <p>32342424</p>
-                    </section>
-                </section>
-
-                <section class="cntnr_prodotti">
-                    <section class="left_side3">
-                        <p1>Nome Prodotto</p1>
-                        <p2>100%</p2>
-                    </section>
-                    <section class="right_side3">
-                        <section class="cntnr_typegame  pc">
-                            <img src="../../img/typeGame/pc.svg">
-                        </section>
-                        <p>32342424</p>
-                    </section>
-                </section>
-
-                <section class="cntnr_prodotti">
-                    <section class="left_side3">
-                        <p1>Nome Prodotto</p1>
-                        <p2>100%</p2>
-                    </section>
-                    <section class="right_side3">
-                        <section class="cntnr_typegame  xbox">
-                            <img src="../../img/typeGame/xbox.svg">
-                        </section>
-                        <p>32342424</p>
-                    </section>
-                </section>
-
-                <section class="cntnr_prodotti">
-                    <section class="left_side3">
-                        <p1>Nome Prodotto</p1>
-                        <p2>100%</p2>
-                    </section>
-                    <section class="right_side3">
-                        <section class="cntnr_typegame  nintendo">
-                            <img src="../../img/typeGame/nintendo.svg">
-                        </section>
-                        <p>32342424</p>
-                    </section>
-                </section>
-
-                <section class="cntnr_prodotti">
-                    <section class="left_side3">
-                        <p1>Nome Prodotto</p1>
-                        <p2>100%</p2>
-                    </section>
-                    <section class="right_side3">
-                        <section class="cntnr_typegame  xbox">
-                            <img src="../../img/typeGame/xbox.svg">
-                        </section>
-                        <p>32342424</p>
-                    </section>
-                </section>
-
-                <section class="cntnr_prodotti">
-                    <section class="left_side3">
-                        <p1>Nome Prodotto</p1>
-                        <p2>100%</p2>
-                    </section>
-                    <section class="right_side3">
-                        <section class="cntnr_typegame  playstation">
-                            <img src="../../img/typeGame/ps.svg">
-                        </section>
-                        <p>32342424</p>
-                    </section>
-                </section>
-
-                <section class="cntnr_prodotti">
-                    <section class="left_side3">
-                        <p1>Nome Prodotto</p1>
-                        <p2>100%</p2>
-                    </section>
-                    <section class="right_side3">
-                        <section class="cntnr_typegame  nintendo">
-                            <img src="../../img/typeGame/nintendo.svg">
-                        </section>
-                        <p>32342424</p>
-                    </section>
-                </section>
-
-                <section class="cntnr_prodotti">
-                    <section class="left_side3">
-                        <p1>Nome Prodotto</p1>
-                        <p2>100%</p2>
-                    </section>
-                    <section class="right_side3">
-                        <section class="cntnr_typegame  pc">
-                            <img src="../../img/typeGame/pc.svg">
-                        </section>
-                        <p>32342424</p>
-                    </section>
-                </section>
-            </article>
-
+            <div class="force_flex_center">
+                <div class="searchbox">
+                    <label class="force_flex_center  font_primary  fg_text_accent" for="search">Cerca prodotto</label>
+                    <input name="search" id="search" type="text" placeholder="Search" required>
+                </div>
+                <button type="button" class="search_button  force_flex_center  curve_obj_h8">
+                    <input id="submit" type="image" src="../../img/menu_seller/search.svg" alt="Cerca">
+                </button>
+            </div>
             
+            <div class="force_flex_center cntnr_ID  curve_obj_h15  bg_primary">
+                <p class="center_content_flex  ID_text_1">ID</p>
+                <p class="center_content_flex  ID_text_2">32233</p>
+            </div>
+        </div>
+
+
+        <div class="cntnr_scritta_prodotti1  force_flex_center  space_top_margin_small">
+            <p>Lista dei Prodotti</p>
+        </div>
+
+        <div class="cntnr_scritta_prodotti2">
+            <div class="cntnr_column_type">
+                <p>Nome Prodotto</p>
+                <p>Sconto</p>
+            </div>
+            <div class="cntnr_column_type">
+                <p>Categoria</p>
+                <p>ID</p>
+            </div>
+        </div>
+
+
+        <main class="cntnr_lista">
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+
+            <section class="cntnr_prodotti  curve_obj_h8">
+                <section class="cntnr_column_type  font_primary">
+                    <p class="fg_text_accent">Nome Prodotto</p>
+                    <p class="fg_text_primary">100%</p>
+                </section>
+                <section class="cntnr_column_type">
+                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
+                        <img src="../../img/typeGame/nintendo.svg">
+                    </section>
+                    <p class="font_primary  fg_text_accent">32342424</p>
+                </section>
+            </section>
+                
         </main>
 
-        <footer class="container_seller">
+        <div class="container_seller">
             <a class="force_flex_center" href="./sellerMain.html">
-                <section class="cntnr_btn_footer_lista  curve_obj_h15">
+                <div class="cntnr_btn_footer_lista  curve_obj_h15">
                     <img src="../../img/menu_seller/back.svg" alt="Go Back" title="Go Back" />
-                </section>
+                </div>
             </a> 
-        </footer>
+        </div>
     
     </body>
 
