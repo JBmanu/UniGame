@@ -130,11 +130,10 @@ form ul li label{
     background: #F9F6F6;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 0.5% 1%;
-    padding: 2% 1%;
+    padding: 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    overflow: hidden;
 }
 
 
