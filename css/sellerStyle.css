@@ -49,7 +49,8 @@ main.accordion > section > div {
 
 .cntnr_bottom_btn {
     background-color: #eee;
-    border-radius: 0 0 15px 15px ;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .conferma_button{
@@ -80,10 +81,11 @@ form ul li label{
 }
 
 .cntn_all_allert {
-    margin-left: 5%;
-    margin-right: 5%;
     overflow-y: scroll !important;
     height: 350px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 85%;
 }
 
 
@@ -198,7 +200,7 @@ a {
 
 .left_long_button {
     display: flex;
-    flex-flow: row nowrap;
+    column-gap: 5px;
 }
 
 .right_long_button {
@@ -487,6 +489,7 @@ a {
 .insert_name_product {
     display: flex;
     column-gap: 10px;
+    flex-flow: row wrap;
 }
 
 .insert_name_product #product {
@@ -592,29 +595,39 @@ a {
 
 .cntnr_allert {
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     border: 3px solid #C4C4C4;
-    padding: 1% 2%;
-    border-radius: 15px;
+    padding: 5px 8px;
 }
 
 .nameGame{
-    flex: 0 0 50%;
-    font-size: 160%;
+    flex: 0 0 60%;
+    font-size: 130%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .cntnr_typeIcons{
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
+    align-items: center;
+    flex: 0 0 35%;
+    column-gap: 1%;
 }
 
 .cntnr_icon {
     background-color: #00439C;
-    border-radius: 999px;
-    margin-right: 2%;
-    flex: 0 0 15%;
+    padding: 10px;
 }
 
 .type_icon {
-    width: 55%
+    width: 26px;
+}
+
+.cntn_insert_img {
+    display: flex;
+    flex-flow: column wrap;
 }
