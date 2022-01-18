@@ -170,8 +170,6 @@ a {
 
     display: flex;
     flex-flow: row wrap;
-    overflow: hidden;
-
 }
 
 .cntnr_long_buttons {
@@ -601,8 +599,6 @@ a {
 
 .cntnr_allert {
     display: flex;
-    margin-top: 3%;
-
     border: 3px solid #C4C4C4;
     padding: 1% 2%;
     border-radius: 15px;
