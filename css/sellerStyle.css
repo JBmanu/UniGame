@@ -41,7 +41,8 @@ main.accordion > main:hover, main.accordion > button.selected{
     background-color: #ccc;
 }
 
-main.accordion > div {
+/* camviare da  */
+main.accordion > section > div {
     display: none;
     overflow: hidden;
 }
@@ -160,19 +161,29 @@ a {
     background-color: #b6a43f;
 }
 
-.cntnr_long_buttons {
+
+.cntnr_all_btn {
     background-color: #F0F0F0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
     flex: 0 0 85%;
-    padding: 15px 0;
+
     display: flex;
     flex-flow: row wrap;
-    align-content: center;
+    overflow: hidden;
+
+}
+
+.cntnr_long_buttons {
+    flex: 0 0 100%;
+    padding: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    text-decoration: none;
-    outline: none;
     border: none;
+    margin: 0;
 }
 
 
