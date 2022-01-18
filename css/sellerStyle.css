@@ -47,10 +47,6 @@ main.accordion > section > div {
     overflow: hidden;
 }
 
-.label_img_product{
-    padding-right: 20px;
-}
-
 .cntnr_bottom_btn {
     background-color: #eee;
     border-radius: 0 0 15px 15px ;
@@ -490,7 +486,7 @@ a {
 
 .insert_name_product {
     display: flex;
-
+    column-gap: 10px;
 }
 
 .insert_name_product #product {
