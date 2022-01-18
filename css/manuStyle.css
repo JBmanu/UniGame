@@ -772,5 +772,15 @@ img {
 /* Select style here */
 
 
-  
+@media only screen and (max-width: 300px)  {
+
+    .bar_obj_center {
+        height: 28%;
+    }
+    .cntnr_bar_list_card {
+        flex-flow: row wrap;
+        justify-content: center;
+        padding-top: 10%;
+    }
+}
   
