@@ -53,14 +53,12 @@ main.accordion > section > div {
 
 .cntnr_bottom_btn {
     background-color: #eee;
-    padding: 0% 4% 3%;
-    margin-top: 1%;
     border-radius: 0 0 15px 15px ;
 }
 
 .conferma_button{
     width: 50%;
-    margin: 5% 0 0 25%;
+    margin-left: 25%;
     padding: 10px 0px;
     border: none;
     background-color: #4f46e5;
@@ -88,6 +86,8 @@ form ul li label{
 .cntn_all_allert {
     margin-left: 5%;
     margin-right: 5%;
+    overflow-y: scroll !important;
+    height: 350px;
 }
 
 
@@ -181,7 +181,7 @@ a {
     justify-content: space-between;
     cursor: pointer;
     border: none;
-    margin: 0;
+    /* margin: 0; */
 }
 
 
@@ -490,29 +490,27 @@ a {
 
 .insert_name_product {
     display: flex;
-    flex: 0 0 50%;
-    padding: 0;
-    position: center;
+
 }
 
 .insert_name_product #product {
     display: flex;
-    flex: 0 0 55%;
     height: 35px;
-    margin: 10px 8% 10px 8%;
-    line-height: 18px;
     background: #F9F6F6;
     border: 3px solid #CFD8DC;
     font-size: large;
     border-radius: 5px;
     overflow: hidden;
-    text-align: left;
+}
+
+.cntnr_checkbox_family {
+    display: flex;
 }
 
 .cntnr_checkbox {
     display: flex;
     flex: 0 0 70%;
-    flex: row wrap;
+    flex-flow: column wrap;
 }
 
 .checkbox_font {
@@ -523,7 +521,6 @@ a {
 /* Customize the label (the container) */
 .check_container {
     display: block;
-    position: relative;
     padding-right: 5px;
     margin-bottom: 0px;
     cursor: pointer;

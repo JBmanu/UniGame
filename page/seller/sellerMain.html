@@ -101,35 +101,48 @@
                     </div>
                 </button>
                 
-                <div class="cntnr_bottom_btn ">
+                <div class="cntnr_bottom_btn  margin_bottom_medium  margin_top_small">
                     <form action="#" method="post">
-                        <section class="insert_name_product">
-                            <label class="label_name_product" for="name_product">Nome prodotto</label>
+                        <div class="insert_name_product">
+                            <label class="force_flex_center" for="name_product">Nome prodotto</label>
                             <input name="name_product" id="product" type="text" placeholder="Nome" required>
-                        </section>
-                        <section class="cntnr_checkbox  checkbox_font">
-                            <input type="checkbox" id="1" name="categoria_1">
-                            <label class="check_container" for="1">PS4</label>
-                            <input type="checkbox" id="2" name="categoria_2">
-                            <label class="check_container" for="2">PS5</label>
-                            <input type="checkbox" id="3" name="categoria_3">
-                            <label class="check_container" for="3">Xbox 360</label>
-                            <input type="checkbox" id="4" name="categoria_4">
-                            <label class="check_container" for="4">Xbox One</label>
-                            <input type="checkbox" id="5" name="categoria_5">
-                            <label class="check_container" for="5">Nintendo</label>
-                            <input type="checkbox" id="6" name="categoria_6">
-                            <label class="check_container" for="6">PC</label>
-                        </section>
-                        <section class="insert_name_product">
+                        </div>
+
+                        <div class="cntnr_checkbox  checkbox_font  margin_top_small">
+                            <div class="cntnr_checkbox_family">
+                                <label class="check_container" for="1">
+                                    <input type="checkbox" id="1" name="categoria_1">PS4
+                                </label>
+                                <label class="check_container" for="2">
+                                    <input type="checkbox" id="2" name="categoria_2">PS5
+                                </label>
+                            </div>
+                            <div class="cntnr_checkbox_family">
+                                <label class="check_container" for="3">
+                                    <input type="checkbox" id="3" name="categoria_3">Xbox 360
+                                </label>
+                                <label class="check_container" for="4">
+                                    <input type="checkbox" id="4" name="categoria_4">Xbox One
+                                </label>
+                            </div>
+                            <label class="check_container" for="5">
+                                <input type="checkbox" id="5" name="categoria_5">Nintendo
+                            </label>
+                            <label class="check_container" for="6">
+                                <input type="checkbox" id="6" name="categoria_6">PC
+                            </label>
+                        </div>
+
+                        <div class="insert_name_product  margin_top_medium">
                             <label class="force_flex_center" for="price_product">Prezzo</label>
                             <input name="price_product" id="product" type="text" placeholder="Inserire prezzo" required>
-                        </section>
-                        <section class="insert_name_product">
+                        </div>
+
+                        <div class="insert_name_product margin_top_medium">
                             <label class="label_img_product" for="img_articolo">Immagine articolo</label>
                             <input name="img_articolo" id="img_articolo" type="file">
-                        </section>
-                        <button class="conferma_button">Conferma</button>
+                        </div>
+                        <button class="conferma_button  margin_top_medium">Conferma</button>
                     </form>
                 </div>
             </section>
@@ -148,25 +161,35 @@
 
             <div class="cntnr_bottom_btn  margin_bottom_medium">
                 <form action="#" method="post">
-                    <section class="insert_name_product">
-                        <label class="label_name_product" for="id_product">Id prodotto</label>
+                    <div class="insert_name_product  margin_top_small">
+                        <label class="label_name_product  force_flex_center" for="id_product">Id prodotto</label>
                         <input name="id_product" id="product" type="text" placeholder="Id" required>
-                    </section>
-                    <section class="cntnr_checkbox  checkbox_font">
-                        <input type="checkbox" id="1" name="categoria_1">
-                        <label class="check_container" for="1">PS4</label>
-                        <input type="checkbox" id="2" name="categoria_2">
-                        <label class="check_container" for="2">PS5</label>
-                        <input type="checkbox" id="3" name="categoria_3">
-                        <label class="check_container" for="3">Xbox 360</label>
-                        <input type="checkbox" id="4" name="categoria_4">
-                        <label class="check_container" for="4">Xbox One</label>
-                        <input type="checkbox" id="5" name="categoria_5">
-                        <label class="check_container" for="5">Nintendo</label>
-                        <input type="checkbox" id="6" name="categoria_6">
-                        <label class="check_container" for="6">PC</label>
-                    </section>
-                    <button class="conferma_button">Conferma</button>
+                    </div>
+                    <div class="cntnr_checkbox  checkbox_font  margin_top_small">
+                        <div class="cntnr_checkbox_family">
+                            <label class="check_container" for="1">
+                                <input type="checkbox" id="1" name="categoria_1">PS4
+                            </label>
+                            <label class="check_container" for="2">
+                                <input type="checkbox" id="2" name="categoria_2">PS5
+                            </label>
+                        </div>
+                        <div class="cntnr_checkbox_family">
+                            <label class="check_container" for="3">
+                                <input type="checkbox" id="3" name="categoria_3">Xbox 360
+                            </label>
+                            <label class="check_container" for="4">
+                                <input type="checkbox" id="4" name="categoria_4">Xbox One
+                            </label>
+                        </div>
+                        <label class="check_container" for="5">
+                            <input type="checkbox" id="5" name="categoria_5">Nintendo
+                        </label>
+                        <label class="check_container" for="6">
+                            <input type="checkbox" id="6" name="categoria_6">PC
+                        </label>
+                    </div>
+                    <button class="conferma_button  margin_top_medium">Conferma</button>
                 </form>
             </div>
             </section>
@@ -184,29 +207,39 @@
             </button>
             <div class="cntnr_bottom_btn  margin_bottom_medium">
                 <form action="#" method="post">
-                    <section class="insert_name_product">
-                        <label class="label_name_product" for="id_product">Id prodotto</label>
+                    <section class="insert_name_product  margin_top_small">
+                        <label class="label_name_product  force_flex_center" for="id_product">Id prodotto</label>
                         <input name="id_product" id="product" type="text" placeholder="Id" required>
                     </section>
-                    <section class="insert_name_product">
-                        <label class="label_name_product" for="sconto_product">Sconto</label>
+                    <section class="insert_name_product  margin_top_small">
+                        <label class="label_name_product  force_flex_center" for="sconto_product">Sconto</label>
                         <input name="sconto_product" id="product" type="text" placeholder="Sconto" required>
                     </section>
-                    <section class="cntnr_checkbox  checkbox_font">
-                        <input type="checkbox" id="1" name="categoria_1">
-                        <label class="check_container" for="1">PS4</label>
-                        <input type="checkbox" id="2" name="categoria_2">
-                        <label class="check_container" for="2">PS5</label>
-                        <input type="checkbox" id="3" name="categoria_3">
-                        <label class="check_container" for="3">Xbox 360</label>
-                        <input type="checkbox" id="4" name="categoria_4">
-                        <label class="check_container" for="4">Xbox One</label>
-                        <input type="checkbox" id="5" name="categoria_5">
-                        <label class="check_container" for="5">Nintendo</label>
-                        <input type="checkbox" id="6" name="categoria_6">
-                        <label class="check_container" for="6">PC</label>
-                    </section>
-                    <button class="conferma_button">Conferma</button>
+                    <div class="cntnr_checkbox  checkbox_font  margin_top_small">
+                        <div class="cntnr_checkbox_family">
+                            <label class="check_container" for="1">
+                                <input type="checkbox" id="1" name="categoria_1">PS4
+                            </label>
+                            <label class="check_container" for="2">
+                                <input type="checkbox" id="2" name="categoria_2">PS5
+                            </label>
+                        </div>
+                        <div class="cntnr_checkbox_family">
+                            <label class="check_container" for="3">
+                                <input type="checkbox" id="3" name="categoria_3">Xbox 360
+                            </label>
+                            <label class="check_container" for="4">
+                                <input type="checkbox" id="4" name="categoria_4">Xbox One
+                            </label>
+                        </div>
+                        <label class="check_container" for="5">
+                            <input type="checkbox" id="5" name="categoria_5">Nintendo
+                        </label>
+                        <label class="check_container" for="6">
+                            <input type="checkbox" id="6" name="categoria_6">PC
+                        </label>
+                    </div>
+                    <button class="conferma_button  margin_top_medium">Conferma</button>
                 </form>
             </div>
             </section>
@@ -223,7 +256,116 @@
                 </div>
             </button>
 
-            <div class="cntnr_bottom_btn  margin_bottom_medium cntn_all_allert">
+            <div class="cntn_all_allert cntnr_bottom_btn  margin_bottom_medium ">
+                
+                <div class="cntnr_allert  margin_bottom_small">
+                    <p class="nameGame">Nome prodotto !!</p>
+                    <div class="cntnr_typeIcons"> 
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cntnr_allert  margin_bottom_small">
+                    <p class="nameGame">Nome prodotto !!</p>
+                    <div class="cntnr_typeIcons"> 
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cntnr_allert  margin_bottom_small">
+                    <p class="nameGame">Nome prodotto !!</p>
+                    <div class="cntnr_typeIcons"> 
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cntnr_allert  margin_bottom_small">
+                    <p class="nameGame">Nome prodotto !!</p>
+                    <div class="cntnr_typeIcons"> 
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cntnr_allert  margin_bottom_small">
+                    <p class="nameGame">Nome prodotto !!</p>
+                    <div class="cntnr_typeIcons"> 
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cntnr_allert  margin_bottom_small">
+                    <p class="nameGame">Nome prodotto !!</p>
+                    <div class="cntnr_typeIcons"> 
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                        <div class="cntnr_icon  force_flex_center">
+                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
                 <div class="cntnr_allert  margin_bottom_small">
                     <p class="nameGame">Nome prodotto !!</p>
                     <div class="cntnr_typeIcons"> 
