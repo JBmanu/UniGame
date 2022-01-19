@@ -5,7 +5,7 @@ function hideElement(element){
 
 $(document).ready(function(){
 
-    $("button").click(function(){
+    $("section").click(function(){
         if($(this).hasClass("selected")){
             //bottone già cliccato, allora lo nascondo
             hideElement($(this));
@@ -14,7 +14,7 @@ $(document).ready(function(){
         }
         else{
             //bottone non cliccato, nascondere eventualmente elemento precedentemente cliccato e visulizzare contenuto div che segue
-            hideElement($("button.selected"));
+            hideElement($("section.selected"));
             $(this).addClass("selected");
             $(this).next().slideDown();
 
