@@ -7,11 +7,13 @@
         <link rel="stylesheet" href="../../css/style.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/baseStyle.css" type="text/css" />
         <link rel="stylesheet" href="../../css/orderStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script src="../../js/notify.js" type="text/javascript"></script>
         <script src="../../js/click.js" type="text/javascript"></script>
     </head>
 
@@ -62,66 +64,23 @@
             </div>
         </div>
 
-        <main class="usable_screen">
-            <article class="cntnr_order">
-                <section class="top_row  top_row_text">
-                    <p>Ordine #2947215</p>
-                    <span> </span>
-                    <p>| 1 oggetto</p>
-                </section>
-                <section class="middle_row  middle_row_text">
-                    <p>Consegna</p>
-                </section>
-                <section class="lower_row  lower_row_text">
-                    <section class="date_left">
+        <main class="cntnr_all_order  force_flex_center  margin_top_medium  margin_bottom_medium">
+            
+            <article class="cntnr_order  curve_obj_h8">
+                <strong class="top_row  top_row_text" >Ordine #2947215 | 1 oggetto</strong>
+                <p class="top_row  middle_row_text">Consegna</p>
+
+                <div class="lower_row  lower_row_text">
+                    <div class="force_flex_center">
                         <img src="../../img/ordini/clock.png" alt="Data" title="Data">
                         <p>06/12/2021</p>
-                    </section>
-                        <a href="./dettagliOrdini.html" class="button_order" id="buttonOrder">
-                            <p>Visualizza</p>
-                        </a>
-                </section>
+                    </div>
+                    <a href="./dettagliOrdini.html" class="button_order curve_obj_h8" id="buttonOrder">Visualizza</a>
+                </div>
             </article>
 
-            <article class="cntnr_order">
-                <section class="top_row  top_row_text">
-                    <p>Ordine #2972311</p>
-                    <span> </span>
-                    <p>| 2 oggetti</p>
-                </section>
-                <section class="middle_row  middle_row_text">
-                    <p>Consegna</p>
-                </section>
-                <section class="lower_row  lower_row_text">
-                    <section class="date_left">
-                        <img src="../../img/ordini/clock.png" alt="Data" title="Data" />
-                        <p>12/12/2021</p>
-                    </section>
-                    <a href="./dettagliOrdini.html" class="button_order" id="buttonOrder">
-                        <p>Visualizza</p>
-                    </a>
-                </section>
-            </article>
 
-            <article class="cntnr_order">
-                <section class="top_row  top_row_text">
-                    <p>Ordine #2185111</p>
-                    <span> </span>
-                    <p>| 1 oggetto</p>
-                </section>
-                <section class="middle_row  middle_row_text">
-                    <p>Consegna</p>
-                </section>
-                <section class="lower_row  lower_row_text">
-                    <section class="date_left">
-                        <img src="../../img/ordini/clock.png" alt="Data" title="Data" />
-                        <p>02/11/2021</p>
-                    </section>
-                    <a href="./dettagliOrdini.html" class="button_order" id="buttonOrder">
-                        <p>Visualizza</p>
-                    </a>
-                </section>
-            </article>
+
 
         </main>
         
