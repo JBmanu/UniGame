@@ -30,4 +30,9 @@
     font-feature-settings: 'cpsp' on;
 }
 
+.font_legend {
+    font: normal bold 30px Average, serif;
+    font-feature-settings: 'cpsp' on;
+}
+
 
