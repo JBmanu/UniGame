@@ -1,0 +1,33 @@
+
+.fg_text_white { color: #fff; }
+.fg_text_primary { color: #212121; }
+.fg_text_secondary { color: #565d67; }
+.fg_text_accent { color: #009688; }
+
+
+.bg_highlights { background-color: #F1D646; }
+.bg_light_theme { background-color: #00439C; }
+.bg_opacity_theme { background-color: #3564A3; }
+
+.bg_primary { background-color: #009688; }
+.bg_secondary { background-color: #565d67; }
+.bg_third { background-color: #e4ebf5; }
+
+
+.bg_light_theme_PS { background-color: #00439C; }
+.bg_light_theme_XBOX { background-color: #0F7B0E; }
+.bg_light_theme_SWITCH { background-color: #E70012; }
+.bg_light_theme_PC { background-color: #212121; }
+
+.bg_opacity_theme_PS { background-color: #3564A3; }
+.bg_opacity_theme_XBOX { background-color: #458E44; }
+.bg_opacity_theme_SWITCH { background-color: #D0414C; }
+.bg_opacity_theme_PC { background-color: #506874; }
+
+
+.font_primary {
+    font: normal bold 120% Average, serif;
+    font-feature-settings: 'cpsp' on;
+}
+
+

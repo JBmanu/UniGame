@@ -1,0 +1,786 @@
+img {
+    display: block;
+    width: 100%;
+}
+
+
+.font_primary {
+    transition: all 200ms ease-in-out;
+    font: normal normal 120% Average, serif;
+    font-feature-settings: 'cpsp' on;
+}
+.font_secondary {
+    transition: all 200ms ease-in-out;
+    font: normal normal 120% Roboto, serif;
+    font-feature-settings: 'cpsp' on;
+}
+.font_third {
+    transition: all 200ms ease-in-out;
+    font: normal normal 120% bruno, serif;
+    font-feature-settings: 'cpsp' on;
+}
+
+
+
+.all_transition {
+    transition: all 100ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+
+
+.cntnr_pay {
+    transition: all 200ms ease-in-out;
+    position: absolute;
+    z-index: 2;
+    top: 25%;
+    left: 30%;
+    width: 40%;
+    height: 50%;
+    filter: blur(0px);
+    box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.25);
+    text-align: center;
+
+    display: none;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+.title_pay {
+    transition: all 200ms ease-in-out;
+    font-weight: bold;
+    font-size: 100%;
+    align-self: center;
+}
+.cntnr_form_method_pay {
+    display: flex;
+    flex-flow: column wrap;
+    align-self: center;
+}
+.radio_btn_pay {
+    transition: all 200ms ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.submit_method_pay {
+    transition: all 200ms ease-in-out;
+
+    font-size: 150%;
+    padding: 4% 0%;
+    margin: 0% -30% 0%;
+    background: linear-gradient(180deg, rgba(46,59,102,0.95) 100%, rgba(228,235,245,0.5) 153.03%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+
+
+.cntnr_bar_list_card {
+    position: relative;
+    padding: 2% 2%;
+    display: flex;
+    justify-content: space-between;
+
+    font-weight: bold;
+}
+.bar_obj_left {
+    transition: flex 200ms ease-in-out;
+    background: rgba(64, 114, 181);
+    z-index: 1;
+}
+.bar_obj_center {
+    transition: all 200ms ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+}
+.bar_obj_right {
+    transition: flex 200ms ease-in-out;
+    background: rgba(255, 255, 255, 0.25);
+    z-index: 1;
+}
+.icon_theme{
+    width: 7%;
+}
+
+
+.cntnr_list_card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.card_simple {
+    transition: flex 300ms ease-in-out, transform 200ms ease-in-out;
+    position: relative;
+    flex: 0 0 38%;
+}
+
+
+.card_composed {
+    transition: flex 300ms ease-in-out, transform 200ms ease-in-out;
+    background: linear-gradient(270deg, rgba(228,235,245, 0.8) 20%, rgba(207, 216, 220, 0) 70%);
+    overflow: hidden;
+    flex: 0 0 90%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+.btn_overlay_bottom_right {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    bottom: 4%;
+    right: 5%;
+}
+.btn_overlay_bottom_left {
+    position: absolute;
+    width: 25%;
+    height: 20%;
+    bottom: 4%;
+    left: 5%;
+}
+.btn_overlay_top_right {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    width: 35%;
+    height: 15%;
+    top: 5%;
+    right: 5%;
+}
+
+
+.form_2_by_list {
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 100%;
+}
+.radio_btn_card {
+    transition: all 200ms ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+
+    flex: 0 0 50%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    font-size: 200%;
+}
+.radio_circle_card {
+    width: 20px;
+    height: 20px;
+    transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
+    pointer-events: none;
+    appearance: none;
+}.radio_circle_card:focus {
+    outline: none;
+}.radio_circle_card:checked {
+    box-shadow: inset 0px 0px 0 4px #2e3b66;
+}
+.btn_submit_card {
+    transition: all 0.1s ease-in-out;
+    padding: 2% 13%;
+    font-size: 150%;
+    border: none;
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+        6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.cntnr_left_card_composed {
+    flex: 0 0 40% ;
+    position: relative;
+}
+.cntnr_right_card_composed {
+    flex: 0 0 60% ;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    font-size: 110%;
+}
+.info_used_left_card_composed {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    padding: 0% 5%;
+    top: 8%;
+    right: 10%;
+}
+.info_game_left_card_composed {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    padding: 0.5% 8%;
+    top: 25%;
+    right: 10%;
+}
+.title_right_card_composed {
+    transition: font-size 200ms ease-in-out;
+    font-size: 140%;
+}
+.price_right_card_composed {
+    transition: font-size 200ms ease-in-out;
+    padding: 2% 3%;
+    align-self: center;
+    font-size: 120%;
+}
+.cntnr_cmd_card_cart {
+    transition: font-size 200ms ease-in-out;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    font-size: 200%;
+}
+.less_cmd_card_composed {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);
+    padding: 0% 8%;
+    border: 3px solid #2e3b66;
+
+}
+.plus_cmd_card_composed {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);
+    padding: 0% 8%;
+
+}
+.quantity_card_composed {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0% 5%;
+    padding: 0% 14%;
+}
+
+
+.cntnr_down_btn {
+    transition: all 200ms ease-in-out;
+    background: linear-gradient(180deg, rgba(46,59,102,0.99) 95%,  rgba(228,235,245,0.5) 153.03%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: 84%;
+    padding: 3% 3%;
+    font-size: 180%;
+    position: fixed;
+    bottom: 3%;
+    left: 5%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+
+.cntnr_2card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 5% 0 5%;
+}
+.ctnr_top_card {
+    transition: flex 200ms ease-in-out, transform 450ms ease-in-out;
+    flex: 0 0 100%;
+    overflow: hidden;
+    position: relative;
+}
+.ctnr_down_card {
+    transition: flex 200ms ease-in-out;
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 30px 30px;
+    flex: 0 0 100%;
+    padding: 0 0 5%;
+}
+.pegi {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 25%;
+}
+.price_singol_item {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    padding: 2% 3%;
+}
+.ctnr_btn_item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.btn_item_primary {
+    transition: all 200ms ease-in-out;
+    box-shadow: inset 0px 10px 4px rgba(0, 0, 0, 0.25);
+    width: 90px;
+    height: 90px;
+}
+.btn_item_secondary {
+    transition: all 200ms ease-in-out;
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    width: 70px;
+    height: 70px;
+}
+.item_icon_primary {
+    transition: all 200ms ease-in-out;
+    width: 60%;
+}
+.item_icon_secondary {
+    transition: all 200ms ease-in-out;
+    width: 65%;
+}
+.item_title{
+    transition: all 200ms ease-in-out;
+    font-size: 200%;
+}
+.cntnr_form {
+    transition: all 200ms ease-in-out;
+    flex-flow: row wrap;
+    font-size: 200%;
+    font-family: sans-serif;
+}
+.radio_btn {
+    transition: all 200ms ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+
+    flex: 0 0 40%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.radio_circle {
+    width: 30px;
+    height: 30px;
+    transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
+    pointer-events: none;
+    appearance: none;
+}.radio_circle:focus {
+    outline: none;
+}.radio_circle:checked {
+    box-shadow: inset 0px 0px 0 6px #2e3b66;
+}
+.cntnr_description {
+    margin: 6% 4% 0;
+}
+.text_description {
+    text-align: center;
+}
+.cntnr_footer_description {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+.btn_read_all {
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    font-size: 80%;
+    padding: 1% 3%;
+    font-weight: bold;
+}
+
+@media only screen and (min-width:320px)  {
+    .icon_big { width: 20px; }
+    .icon_medium { width: 18px; }
+
+    .font_secondary { font-size: 90%; }
+    .price_singol_item { font-size: 140%; }
+    .cntnr_form { font-size: 200%; }
+
+    .bar_obj_center {
+        height: 48%;
+    }
+    .cntnr_bar_list_card {
+        justify-content: space-evenly;
+        padding-top: 10%;
+    }
+
+    select {
+        padding: 0.5em 3em 0.5em 1em;
+    }
+
+    .radio_btn_card {
+        flex: 0 0 40%;
+        font-size: 110%;
+    }
+
+    .cntnr_pay {
+        left: 7.5%;
+        width: 85%;
+        height: 40%;
+    }
+}
+@media only screen and (min-width:481px)  {
+    .font_secondary { font-size: 100%; }
+    .price_singol_item { font-size: 140%; }
+    .cntnr_form { font-size: 200%; }
+
+    /* .bar_obj_center {
+        margin: auto auto auto 21.5%;
+        flex: 0 0 6%;
+    } */
+    .title_right_card_composed { font-size: 160%; }
+    .price_right_card_composed { font-size: 140%; }
+    .cntnr_cmd_card_cart { font-size: 220%; }
+    .radio_btn_card {
+        flex: 0 0 45%;
+        font-size: 140%;
+    }
+    .radio_circle_card {
+        width: 25px;
+        height: 25px;
+    }
+    .radio_circle_card:checked {
+        box-shadow: inset 0px 0px 0 5px #2e3b66;
+    }
+
+    .cntnr_pay {
+        left: 10%;
+        width: 80%;
+    }
+}
+@media only screen and (min-width:641px)  {
+    .font_secondary { font-size: 140%; }
+    .font_third { font-size: 120%; }
+    .cntnr_form { font-size: 200%; }
+
+    .icon_big { width: 22px; }
+    .icon_medium { width: 20px; }
+
+    .btn_read_all{ font-size: 105%; }
+
+    .cntnr_search { margin: 3% auto 0; }
+
+    .cntnr_bar_list_card {
+        padding: 2% 2%;
+        justify-content: space-between;
+    }
+
+    .bar_obj_center{
+        height: 100%;
+    }
+
+    .title_right_card_composed { font-size: 200%; }
+    .price_right_card_composed { font-size: 180%; }
+    .cntnr_cmd_card_cart { font-size: 260%; }
+
+    .cntnr_info_item {
+        right: 5%;
+        width: 20%;
+    }
+    .ctnr_top_card, .ctnr_down_card {
+        flex: 0 0 70%;
+    }
+    .radio_btn_card {
+        font-size: 200%;
+    }
+    .radio_circle_card {
+        width: 30px;
+        height: 30px;
+    }
+    .radio_circle_card:checked {
+        box-shadow: inset 0px 0px 0 6px #2e3b66;
+    }
+    .cntnr_pay {
+        left: 20%;
+        width: 60%;
+        height: 50%;
+    }
+}
+@media only screen and (min-width:820px) {
+    .card_composed { flex: 0 0 45%; }
+    .card_simple {flex: 0 0 28%; }
+    .cntnr_form { font-size: 200%; }
+
+    .text_description { font-size: 90%; }
+    .btn_read_all{ font-size: 85%; }
+
+    .cntnr_list_card { justify-content: space-evenly; }
+    .title_right_card_composed { font-size: 140%; }
+    .price_right_card_composed { font-size: 120%; }
+    .cntnr_cmd_card_cart { font-size: 200%; }
+    .cntnr_down_btn {
+        width: 70%;
+        padding: 2% 2%;
+        left: 12%;
+    }
+
+    .icon_theme{ width: 4%; }
+
+    .cntnr_bar_list_card {
+        padding: 1% 2%;
+    }
+
+    .cntnr_2card {
+        justify-content: space-evenly;
+    }
+    .ctnr_top_card {
+        transform: rotate(360deg);
+        flex: 0 0 45%;
+        display: flex;
+        border-radius: 30px;
+        box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    }
+    .ctnr_down_card {
+        border-radius: 30px;
+        flex: 0 0 45%;
+    }
+
+    .radio_btn_card {
+        font-size: 180%;
+    }
+
+    .cntnr_pay {
+        left: 25%;
+        width: 50%;
+    }
+
+}
+@media only screen and (min-width:961px)  {
+    .font_third { font-size: 130%; }
+    .font_secondary { font-size: 160%; }
+    .cntnr_cmd_card_cart { font-size: 230%; }
+
+    .btn_read_all{ font-size: 90%; }
+
+
+    .space_top_margin_big { margin-top: 5%; }
+    .space_top_margin_medium { margin-top: 2%; }
+    .space_top_margin_small { margin-top: 1%; }
+    .space_bottom_margin_card { margin-bottom: 3%; }
+
+    .title_right_card_composed { font-size: 160%; }
+    .price_right_card_composed { font-size: 140%; }
+    .cntnr_cmd_card_cart { font-size: 200%; }
+
+    .card_simple {flex: 0 0 21%; }
+
+    .cntnr_search { margin: 2% auto 0; }
+        .cntnr_form {
+        font-size: 250%;
+    }
+    .radio_btn_card {
+        font-size: 150%;
+    }
+}
+@media only screen and (min-width:1025px)  {
+    .space_bottom_margin_card { margin-bottom: 2%; }
+    .cntnr_cmd_card_cart { font-size: 250%; }
+
+    .card_composed { flex: 0 0 40%; }
+
+    .icon_theme{ width: 2.5%; }
+
+    .radio_btn { align-items: inherit; }
+    .cntnr_form {
+        font-size: 280%;
+    }
+    .info_game_left_card_composed {
+        top: 30%;
+    }
+    .cntnr_pay {
+        left: 30%;
+        width: 40%;
+    }
+}
+@media only screen and (min-width:1281px)  {
+    .font_secondary {
+        font-size: 125%;
+    }
+
+    .card_composed { flex: 0 0 22%; }
+    .card_simple {flex: 0 0 18%; }
+
+    .icon_big { width: 30px; }
+    .icon_medium { width: 25px; }
+    .cntnr_search { margin: 1% auto 0; }
+
+    .space_top_margin_medium { margin-top: 1%; }
+
+    /* .bar_obj_right, .bar_obj_left{
+        padding: 1% 1%;
+    } */
+
+    /* .bar_obj_center {
+        margin: auto auto auto 35.5%;
+        flex: 0 0 3.5%;
+    } */
+
+    .title_right_card_composed { font-size: 120%; }
+    .price_right_card_composed { font-size: 100%; }
+    .cntnr_cmd_card_cart { font-size: 160%; }
+    .cntnr_down_btn {
+        width: 60%;
+        left: 19%;
+        padding: 1.5% 1.5%;
+    }
+
+    .btn_item_secondary {
+        width: 90px;
+        height: 90px;
+    }
+    .btn_item_primary {
+        width: 110px;
+        height: 110px;
+    }
+    .item_title {
+        font-size: 250%;
+    }
+
+    .radio_btn_card {
+        font-size: 190%;
+    }
+
+    .cntnr_pay {
+        left: 35%;
+        width: 30%;
+    }
+}
+
+
+/*Portrait IphoneX*/
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .space_top_margin_big { margin-top: 5%; }
+    .font_third { font-size: 100%; }
+
+    .icon_big { width: 20px; }
+    .icon_medium { width: 18px; }
+
+    /* .bar_obj_center {
+        margin: auto auto auto 19.5%;
+        flex: 0 0 7%;
+    } */
+
+    .card_simple {
+        box-shadow: -2px 8px 3px rgba(0, 0, 0, 0.25);
+        position: relative;
+        flex: 0 0 40%;
+    }
+    .radio_btn_card {
+        flex: 0 0 40%;
+        font-size: 110%;
+    }
+
+    .cntnr_pay {
+        left: 7.5%;
+        width: 85%;
+        height: 50%;
+    }
+}
+
+
+.front_card_flip {
+    box-shadow: -2px 8px 3px rgba(0, 0, 0, 0.25);
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
+}
+.back_card_flip {
+    box-shadow: -2px 8px 3px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+.flipped_front {
+    transform: translateX(-100%) rotateY(-180deg);
+    backface-visibility: hidden;
+}
+.flipped_back {
+    top: 0;
+    transition: transform 1s;
+    transform: translateX(0%) rotateY(0deg);
+}
+
+.transform_heart {
+    animation: heart 4s;
+}
+.transform_card {
+    animation: card_go_to_cart .3s ease-out;
+}
+.transform_btn_add_cart {
+    animation: add_item_cart .25s ease-out;
+}
+.transform_btn_less_cart {
+    animation: less_item_cart .25s ease-out;
+}
+.transform_btn_back {
+    animation: back_item .25s ease-out;
+}
+.transform_top_card {
+    animation: top_card .25s ease-out;
+}
+
+
+@keyframes heart {
+    0%   {transform: scale(1.3, 1.3);}
+    25%  {transform: scale(1.0, 1.0);}
+    50%  {transform: scale(1.3, 1.3);}
+    100% {transform: scale(1.0, 1.0);}
+}
+
+@keyframes card_go_to_cart {
+    0%  {transform: scale(0.8, 0.8);}
+    30%    {transform: scale(0.6, 0.6);}
+    60% {transform: scale(0.3, 0.3);}
+    100% {transform: scale(0.1, 0.1);}
+}
+
+@keyframes add_item_cart {
+    0%  {transform: scale(0.8, 0.8) translateX(-30%);}
+    30%    {transform: scale(0.6, 0.6) translateX(-50%);}
+    60% {transform: scale(0.3, 0.3) translateX(-90%);}
+    100% {transform: scale(0.1, 0.1) translateX(-120%);}
+}
+
+@keyframes less_item_cart {
+    0%  {transform: scale(0.8, 0.8); }
+    30%    {transform: scale(0.6, 0.6);}
+    60% {transform: scale(0.3, 0.3);}
+    100% {transform: scale(0.1, 0.1);}
+}
+
+@keyframes back_item {
+    0%  {transform: scale(0.8, 0.8) translateX(-30%);}
+    30%    {transform: scale(0.6, 0.6) translateX(-50%);}
+    60% {transform: scale(0.3, 0.3) translateX(-90%);}
+    100% {transform: scale(0.1, 0.1) translateX(-120%);}
+}
+
+@keyframes top_card {
+    0%  {transform: scale(0.8, 0.8) translate(30%, 30%) skew(10deg, 10deg);}
+    30%    {transform: scale(0.6, 0.6) translate(50%, 50%)  skew(20deg, 15deg);}
+    60% {transform: scale(0.5, 0.3) translate(90%, 90%)  skew(-25deg, -20deg);}
+    100% {transform: scale(0.5, 0.1) translate(120%, 120%)  skew(-30deg, -20deg);}
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-ms-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+}
+
+
+
+
+/* Select style here */
+
+
+@media only screen and (max-width: 300px)  {
+
+    .bar_obj_center {
+        height: 28%;
+    }
+    .cntnr_bar_list_card {
+        flex-flow: row wrap;
+        justify-content: center;
+        padding-top: 10%;
+    }
+}
+  

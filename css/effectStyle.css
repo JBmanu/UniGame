@@ -1,0 +1,42 @@
+.card_simple:hover,  .btn_item_secondary:hover,  .less_cmd_card_composed:hover,
+ .plus_cmd_card_composed:hover,  .btn_overlay_bottom_left:hover, 
+ .btn_overlay_bottom_right:hover,  .cntnr_down_btn:hover,  .radio_btn_card:hover, 
+ .btn_read_all:hover {
+    transform: scale(1.15, 1.15);
+    z-index: 1;
+}
+
+
+.radio_btn:hover,  .submit_method_pay:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.btn_submit_card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.bar_obj_left:hover, .bar_obj_right:hover {
+    opacity: 0.5;
+}
+
+
+.radio_btn_pay:hover, .cntnr_search:hover,  .label_search.hover,  .input_search:hover,
+.radio_btn_card:hover,  .less_cmd_card_composed:hover,  .plus_cmd_card_composed:hover,
+.radio_btn:hover,  .btn_submit_card:hover,  .btn_overlay_bottom_right:hover,
+.bar_obj_left:hover,  .bar_obj_right:hover,  .cntnr_down_btn:hover,  .submit_method_pay:hover,
+.btn_read_all:hover,  .btn_item_secondary:hover,  .label_search:hover {
+    cursor: pointer;
+}
+
+
+.cntnr_search:hover {
+    border: 2px solid #212121;
+}
+
+
+
+.btn_submit_card:active, .cntnr_down_btn:active, .submit_method_pay:active {
+    opacity: 1;
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.5),
+      inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+}
