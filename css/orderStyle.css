@@ -15,8 +15,10 @@
     width: 20px;
 }
 
-.usable_screen{
-    margin: 2%;
+.cntnr_all_order{
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 10px;
 }
 
 .top_row_text {
@@ -69,14 +71,12 @@
 
 
 .cntnr_order {
-    background-color: #FFFFFF;
+    flex: 0 0 85%;
     display: flex;
-    flex-flow: column wrap;
-    padding: 10px 5px;
-    margin: 2% 0 0;
+    flex-flow: row wrap;
+    padding: 10px;
     border: 0.4px solid #6BA8A9;
-    box-sizing: border-box;
-    border-radius: 8px;
+    row-gap: 10px;
 }
 
 .cntnr_top_details {
@@ -113,49 +113,21 @@
 
 
 .top_row {
+    flex: 0 0 100%;
     display: flex;
-    flex-flow: row;
     align-content: flex-start;
-}
-
-.top_row span {
-    display: inline-block;
-    width: 15px;
 }
 
 .middle_row {
     display: flex;
-    flex-flow: row;
     align-content: flex-start;
-    padding-left: 15px;
-    padding-top: 7px;
 }
 
 .lower_row {
     display: flex;
-    flex-flow: row;
-    align-content: flex-start;
+    flex: 0 0 100%;
     justify-content: space-between;
-}
-
-.lower_row span {
-    display: inline-block;
-    width: 15px;
-}
-
-.date_left {
-    display: flex;
-    padding-left: 5px;
-    padding-top: 10px;
-    flex-flow: row;
-    justify-content: start;
-    float: left;
-    align-content: center;
-}
-
-.date_left img {
-    width: 25px;
-    height: 25px;
+    flex-flow: row wrap;
 }
 
 .game_left {
@@ -308,24 +280,14 @@
 .button_order {
     background-color: #E5E5E5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-    display: flex;
-    flex: 0 0 20%;
-    justify-content: center;
-    align-content: center;
     cursor: pointer;
     text-decoration: none;
     outline: none;
     border: none;
-    padding-top: 10px;
-    margin: 0 10px 0;
-
-}
-
-.button_order p {
     color: #212121;
     font: normal bold 100% Average, serif;
     font-feature-settings: 'cpsp' on;
+    padding: 10px;
 }
 
 .button_order:hover {
