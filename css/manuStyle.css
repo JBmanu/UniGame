@@ -681,6 +681,7 @@ img {
     position: absolute;
     backface-visibility: hidden;
     transform: rotateY(180deg);
+    width: 100%;
 }
 .flipped_front {
     transform: translateX(-100%) rotateY(-180deg);
