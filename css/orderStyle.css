@@ -82,9 +82,9 @@
 .cntnr_top_details {
     background-color: #FFFFFF;
     display: flex;
-    flex-flow: column wrap;
-    padding: 10px 5px;
-    margin: 2% 0 0;
+    flex-flow: row wrap;
+    row-gap: 10px;
+    margin-left: 15px;
 }
 
 .divisore {
@@ -128,37 +128,23 @@
     flex: 0 0 100%;
     justify-content: space-between;
     flex-flow: row wrap;
+    align-items: center;
 }
 
-.game_left {
-    display: flex;
-    padding-left: 5px;
-    padding-top: 10px;
-    flex-flow: row;
-    justify-content: start;
-    float: left;
-    align-content: center;
-}
-
-.game_left img {
+.game_left_img {
     width: 85px;
     height: 85px;
     border-radius: 15px;
-    margin-right: 15px;
+    margin: 0 15px;
 }
 
 .info_left {
     display: flex;
     padding-left: 5px;
-    padding-top: 10px;
     flex-flow: row;
     justify-content: start;
     float: left;
     align-content: center;
-}
-
-.info_left p {
-    margin: 15px 0 0 5px;
 }
 
 .img_cntnr {
@@ -168,7 +154,6 @@
     height: 64px;
     justify-items: center;
     align-items: center;
-    margin-right: 10px;
 }
 
 .img_cntnr2 {
@@ -198,59 +183,34 @@
     height: 64px;
     justify-items: center;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 
 .img_cntnr img {
     width: 48px;
     height: 48px;
-    padding-top: 7px;
-}
-
-.img_cntnr2 img {
-    width: 48px;
-    height: 48px;
-    padding-top: 7px;
-}
-
-.img_cntnr3 img {
-    width: 48px;
-    height: 48px;
-    padding-top: 7px;
 }
 
 .img_cntnr4 img {
     width: 40px;
     height: 40px;
-    padding-top: 7px;
 }
 
 .image_right {
-    display: flex;
-    padding-left: 5px;
-    padding-top: 10px;
-    flex-flow: row;
-    justify-content: end;
-    float: right;
-    align-content: center;
+    margin-right: 5%;
 }
 
 .image_right img {
     width: 32px;
     height: 32px;
-    padding: 7px 10px 0 0;
 }
 
 .button_tracking {
     background-color: #FFFFFF;
     height: 50px;
     width: 50px;
-    border-radius: 200px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-left: 10px;
-    padding: 7px 10px 0 0;
-    justify-content: center;
-    align-items: center;
+    margin-right: 4%;
     border:  0.8px solid #FFB257;
     box-sizing: border-box;
     cursor: pointer;
@@ -261,20 +221,11 @@
 .button_tracking img {
     width: 33px;
     height: 18px;
-    margin-left: 5px;
 }
 
 .button_tracking:hover {
     background-color: rgb(205, 218, 89);
     transform: scale(1.5);
-}
-
-.price_section {
-    display: flex;
-    flex-flow: row;
-    align-content: center;
-    justify-content: space-between;
-    margin-top: 10px;
 }
 
 .button_order {
@@ -299,14 +250,13 @@
     display: flex;
     flex-flow: column wrap;
     padding: 10px 5px;
-    margin: 2% 0 0;
     box-shadow: inset 0px 6px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px 20px 0px 0px;
 
     position: fixed;
     bottom: 0;
     width: 95%;
-
+    left: 2.5%;
     transform-origin: bottom;
     transform: scale(1, 0);
 }
@@ -355,7 +305,6 @@
 .img_tracking_cntnr img {
     width: 39px;
     height: 38px;
-    padding-top: 13px;
 }
 
 .img_tracking_cntnr2 {
@@ -369,7 +318,6 @@
 .img_tracking_cntnr2 img {
     width: 15px;
     height: 15px;
-    padding-top: 21px;
 }
 
 .divisore_linea_tracking {
