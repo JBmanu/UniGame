@@ -10,11 +10,13 @@
         <link rel="stylesheet" href="../../css/manuStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/effectStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/fontColorStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script src="../../js/notify.js" type="text/javascript"></script>
         <script src="../../js/click.js" type="text/javascript"></script>
         <script src="../../js/item.js" type="text/javascript" defer="defer"></script>
     </head>
@@ -58,23 +60,26 @@
 
                 <h2 class="item_title  force_flex_center  space_top_margin_big  font_primary  fg_text_white"><strong>The Last Of Us II</strong></h2>
 
-                <form class="cntnr_form  force_flex_center  space_top_margin_big  font_secondary  fg_text_white" action="">
-                    <label class="radio_btn ">
-                        <input class="circle_obj  space_bottom_margin_card bg_third  radio_circle" type="radio" id="usedItem" name="used" value="used"/>
-                        <span>Usato</span> 
-                    </label>
-                    <label class="radio_btn">
-                        <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="newItem" name="used" value="new" checked="checked" />
-                        <span>Nuovo</span> 
-                    </label>
-                    <label class="radio_btn">
-                        <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="ps4Item" name="ps" value="ps4"/>
-                        <span>PS4</span> 
-                    </label>
-                    <label class="radio_btn">
-                        <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="ps5Item" name="ps" value="ps5" checked="checked"/>
-                        <span>PS5</span> 
-                    </label>
+                <form class="cntnr_form  force_flex_center  space_top_margin_big  font_secondary  fg_text_white" action="#" method="post">
+                    <fieldset>
+                        <legend>Tipo:</legend>
+                        <label class="radio_btn " for="usedItem">
+                            <input class="circle_obj  space_bottom_margin_card bg_third  radio_circle" type="radio" id="usedItem" name="used" value="used"/>
+                            <span>Usato</span> 
+                        </label>
+                        <label class="radio_btn" for="newItem">
+                            <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="newItem" name="used" value="new" checked="checked" />
+                            <span>Nuovo</span> 
+                        </label>
+                        <label class="radio_btn" for="ps4Item">
+                            <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="ps4Item" name="ps" value="ps4"/>
+                            <span>PS4</span> 
+                        </label>
+                        <label class="radio_btn" for="ps5Item">
+                            <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="ps5Item" name="ps" value="ps5" checked="checked"/>
+                            <span>PS5</span> 
+                        </label>
+                    </fieldset>
                 </form>
 
                 <div class="cntnr_description  font_secondary  fg_text_white">

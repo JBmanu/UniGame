@@ -11,11 +11,13 @@
         <link rel="stylesheet" href="../../css/manuStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/effectStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/fontColorStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script src="../../js/notify.js" type="text/javascript"></script>
         <script src="../../js/click.js" type="text/javascript"></script>
         <script src="../../js/flipCard.js"  type="text/javascript" defer="defer"></script>
     </head>
@@ -71,11 +73,13 @@
 
         <section class="cntnr_bar_list_card  space_top_margin_small  bg_light_theme_PC">
             <div class="bar_obj_left  curve_obj_h15 ">
-                <form action="" class="">
-                    <select class="minimal" name="order" id="order">
-                        <option value="crescente">Prezzo Crescente</option>
-                        <option value="decrescente">Prezzo Decrescente</option>
-                    </select>
+                <form action="#" method="post">
+                    <label for="order">
+                        <select class="minimal" name="order" id="order">
+                            <option value="crescente">Prezzo Crescente</option>
+                            <option value="decrescente">Prezzo Decrescente</option>
+                        </select>
+                    </label>
                 </form>
             </div>
 
@@ -84,12 +88,14 @@
             </div>
 
             <div class="bar_obj_right  force_flex_center  curve_obj_h15">
-                <form action="" class="">
-                    <select class="minimal" name="order" id="order">
-                        <option value="crescente">Tutti</option>
-                        <option value="crescente">Da €10 a €50</option>
-                        <option value="decrescente">Da €50 a €100</option>
-                    </select>
+                <form action="#" method="post">
+                    <label for="order1">
+                        <select class="minimal" name="order" id="order1">
+                            <option value="crescente">Tutti</option>
+                            <option value="crescente">Da €10 a €50</option>
+                            <option value="decrescente">Da €50 a €100</option>
+                        </select>
+                    </label>
                 </form>
             </div>
         </section>
@@ -105,24 +111,19 @@
                     <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../../img/item/heart-empty.svg"  alt="heart" />
                     <img class="btn_overlay_bottom_right  circle_obj  bg_third" src="../../img/item/add.svg" alt="add" />
                 </div>
-                <form class="back_card_flip  force_flex_center  form_2_by_list  curve_obj_h20  bg_third  fg_text_primary" action="">
-                    <label class="radio_btn_card ">
-                        <input class="circle_obj  radio_circle_card" type="radio" id="usedItem" name="used" value="used"/>
-                        <span>Usato</span> 
-                    </label>
-                    <label class="radio_btn_card ">
-                        <input class="circle_obj  radio_circle_card" type="radio" id="newItem" name="used" value="new" checked="checked" />
-                        <span>Nuovo</span> 
-                    </label>
-                    <label class="radio_btn_card ">
-                        <input class="circle_obj  radio_circle_card" type="radio" id="ps4Item" name="ps" value="ps4"/>
-                        <span>PS4</span> 
-                    </label>
-                    <label class="radio_btn_card">
-                        <input class="circle_obj  radio_circle_card" type="radio" id="ps5Item" name="ps" value="ps5" checked="checked"/>
-                        <span>PS5</span> 
-                    </label>
-                    <input class="btn_submit_card  space_top_margin_big  curve_obj_h15  bg_primary  font_primary  fg_text_white" type="submit" value="Aggiungi"/>
+                <form class="back_card_flip  force_flex_center  form_2_by_list  curve_obj_h20  bg_third  fg_text_primary" action="#" method="post">
+                    <fieldset>
+                        <legend>Tipo:</legend>
+                        <label class="radio_btn_card " for="usedItem">
+                            <input class="circle_obj  radio_circle_card" type="radio" id="usedItem" name="used" value="used"/>
+                            <span>Usato</span> 
+                        </label>
+                        <label class="radio_btn_card " for="newItem">
+                            <input class="circle_obj  radio_circle_card" type="radio" id="newItem" name="used" value="new" checked="checked" />
+                            <span>Nuovo</span> 
+                        </label>
+                        <input class="btn_submit_card  space_top_margin_big  curve_obj_h15  bg_primary  font_primary  fg_text_white" type="submit" value="Aggiungi"/>
+                    </fieldset>
                 </form>
             </section>
         </main>
