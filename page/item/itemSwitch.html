@@ -61,23 +61,18 @@
 
                 <h2 class="item_title  force_flex_center  space_top_margin_big  font_primary  fg_text_white"><strong>The Last Of Us II</strong></h2>
 
-                <form class="cntnr_form  force_flex_center  space_top_margin_big  font_secondary  fg_text_white" action="">
-                    <label class="radio_btn ">
-                        <input class="circle_obj  space_bottom_margin_card bg_third  radio_circle" type="radio" id="usedItem" name="used" value="used"/>
-                        <span>Usato</span> 
-                    </label>
-                    <label class="radio_btn">
-                        <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="newItem" name="used" value="new" checked="checked" />
-                        <span>Nuovo</span> 
-                    </label>
-                    <label class="radio_btn">
-                        <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="ps4Item" name="ps" value="ps4"/>
-                        <span>PS4</span> 
-                    </label>
-                    <label class="radio_btn">
-                        <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="ps5Item" name="ps" value="ps5" checked="checked"/>
-                        <span>PS5</span> 
-                    </label>
+                <form class="cntnr_form  force_flex_center  space_top_margin_big  font_secondary  fg_text_white" action="#" method="post">
+                    <fieldset>
+                        <legend>Tipo:</legend>
+                        <label class="radio_btn " for="usedItem">
+                            <input class="circle_obj  space_bottom_margin_card bg_third  radio_circle" type="radio" id="usedItem" name="used" value="used"/>
+                            <span>Usato</span> 
+                        </label>
+                        <label class="radio_btn" for="newItem">
+                            <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="newItem" name="used" value="new" checked="checked" />
+                            <span>Nuovo</span> 
+                        </label>
+                    </fieldset>
                 </form>
 
                 <div class="cntnr_description  font_secondary  fg_text_white">
