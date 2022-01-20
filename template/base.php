@@ -54,21 +54,36 @@
                     <p class="real_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo"]; ?>€</p>
                     <strong class="discount_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo_scontato"]; ?>€</strong>
             
-                    <div class="cntnr_info_used curve_obj_h15  bg_new  force_flex_center">
-                        <p class="fg_text_white  font_primary"><?php 
-                        if($gioco_scontato["Nuovo"]==1){
-                            echo "Nuovo";
-                        } else{
-                            echo "Usato";
-                        } 
-                        ?></p>
+                    <div class="cntnr_info_used curve_obj_h15  bg_new force_flex_center">
+                        <p class="fg_text_white  font_primary">
+                            <?php 
+                                if($gioco_scontato["Nuovo"]==1){
+                                    echo "Nuovo";
+                                } else{
+                                    echo "Usato";
+                                } 
+                            ?>
+                        </p>
                     </div>
 
-                    <div class="cntnr_info_type  circle_obj  bg_light_theme_PS  force_flex_center">
-                        <img class="icon_info_type" src="<?php 
-                            $array=$dbh->getCategorybySub($gioco_scontato["Id_sottocategoria"]);
-                            foreach($array as $array_gioco):
-                                var_dump($array_gioco);
+                    <?php  
+                    $array=$dbh->getCategorybySub($gioco_scontato["Id_sottocategoria"]);
+                    foreach($array as $array_gioco):
+                    ?>
+
+                    <div class="cntnr_info_type  circle_obj  <?php 
+                        if($array_gioco["Icona"]=="pc.svg"){
+                            echo "bg_light_theme_PC";
+                        } else if($array_gioco["Icona"]=="ps.svg"){
+                            echo "bg_light_theme_PS";
+                        } else if($array_gioco["Icona"]=="xbox.svg"){
+                            echo "bg_light_theme_XBOX";
+                        } else if($array_gioco["Icona"]=="nintendo.svg"){
+                            echo "bg_light_theme_SWITCH";
+                        } ?> force_flex_center">
+                        <img class="icon_info_type" src="
+                        <?php
+                                echo UPLOAD_DIR_TIPO_DEVICE_INDEX.$array_gioco["Icona"];
                             endforeach;
                         ?>" alt="Playstation">
                     </div>
