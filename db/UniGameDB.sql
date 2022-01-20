@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Dic 13, 2021 alle 10:47
+-- Creato il: Gen 20, 2022 alle 16:48
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.12
 
@@ -38,10 +38,10 @@ CREATE TABLE `Categoria` (
 --
 
 INSERT INTO `Categoria` (`Id_categoria`, `Nome`, `Icona`) VALUES
-(1, 'Playstation', 'http://localhost/07-lab-php/html/img/accessibility.jpg'),
-(2, 'Xbox', 'http://localhost/07-lab-php/html/img/php.png'),
-(3, 'Nintendo Switch', 'http://localhost/07-lab-php/html/img/html5-js-css3.png'),
-(4, 'PC', 'http://localhost/06-lab-php/sito/img/html5-js-css3.png');
+(1, 'Playstation', 'img/typeGame/ps.svg'),
+(2, 'Xbox', 'img/typeGame/xbox.svg'),
+(3, 'Nintendo Switch', 'img/typeGame/nintendo.svg'),
+(4, 'PC', 'img/typeGame/pc.svg');
 
 -- --------------------------------------------------------
 
@@ -198,6 +198,25 @@ INSERT INTO `Ordine` (`Id_ordine`, `Data_ordine`, `Id_utente`, `Id_corriere`, `D
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `Pegi`
+--
+
+CREATE TABLE `Pegi` (
+  `Id_pegi` int(11) NOT NULL,
+  `Url_immagine` varchar(300) CHARACTER SET utf16 NOT NULL,
+  `Nome` varchar(50) CHARACTER SET utf16 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `Pegi`
+--
+
+INSERT INTO `Pegi` (`Id_pegi`, `Url_immagine`, `Nome`) VALUES
+(1, './/akd.jpeg', 'Pegi 12');
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `Prodotto`
 --
 
@@ -208,18 +227,25 @@ CREATE TABLE `Prodotto` (
   `Id_venditore` int(11) NOT NULL,
   `Unità` int(5) NOT NULL,
   `Prezzo` decimal(10,2) NOT NULL,
-  `Sconto_%` int(2) DEFAULT NULL,
+  `Sconto` decimal(10,2) NOT NULL DEFAULT 0.00,
   `Id_magazzino` int(11) NOT NULL,
-  `Id_sottocategoria` int(11) NOT NULL
+  `Id_sottocategoria` int(11) NOT NULL,
+  `Id_pegi` int(11) NOT NULL,
+  `Data_rilascio` date NOT NULL,
+  `prezzo_scontato` decimal(10,2) NOT NULL,
+  `Nuovo` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `Prodotto`
 --
 
-INSERT INTO `Prodotto` (`Id_prodotto`, `Nome`, `Url_immagine`, `Id_venditore`, `Unità`, `Prezzo`, `Sconto_%`, `Id_magazzino`, `Id_sottocategoria`) VALUES
-(1, 'Far Cry 5', 'http://localhost/06-lab-php/sito/img/html5-js-css3.png', 1, 15, '24.99', NULL, 1, 1),
-(2, 'The Last of Us', 'http://localhost/06-lab-php/sito/img/accessibility.jpg', 1, 10, '19.99', NULL, 1, 3);
+INSERT INTO `Prodotto` (`Id_prodotto`, `Nome`, `Url_immagine`, `Id_venditore`, `Unità`, `Prezzo`, `Sconto`, `Id_magazzino`, `Id_sottocategoria`, `Id_pegi`, `Data_rilascio`, `prezzo_scontato`, `Nuovo`) VALUES
+(1, 'Far Cry 5', 'FarCry5ps4.jpeg', 1, 15, '24.99', '0.00', 1, 1, 1, '2020-01-14', '24.99', 1),
+(2, 'The Last of Us II', 'TheLastOfUs2pc.jpeg', 1, 10, '19.99', '0.20', 1, 5, 1, '2017-11-18', '15.99', 1),
+(3, 'Call of Duty Black Ops II', 'BO2ps4.jpeg', 1, 5, '19.99', '0.00', 1, 1, 1, '2014-07-19', '19.99', 1),
+(4, 'Fifa 22', 'Fifa22ps4.jpeg', 1, 20, '49.99', '0.30', 1, 1, 1, '2021-09-24', '34.99', 0),
+(5, 'GTA V', 'GTAVps4.jpg', 1, 7, '29.99', '0.00', 1, 1, 1, '2016-10-21', '29.99', 1);
 
 -- --------------------------------------------------------
 
@@ -395,13 +421,20 @@ ALTER TABLE `Ordine`
   ADD KEY `Id_status` (`Id_status`);
 
 --
+-- Indici per le tabelle `Pegi`
+--
+ALTER TABLE `Pegi`
+  ADD PRIMARY KEY (`Id_pegi`);
+
+--
 -- Indici per le tabelle `Prodotto`
 --
 ALTER TABLE `Prodotto`
   ADD PRIMARY KEY (`Id_prodotto`),
   ADD KEY `Id_magazzino` (`Id_magazzino`),
   ADD KEY `Id_venditore` (`Id_venditore`),
-  ADD KEY `Id_sottocategoria` (`Id_sottocategoria`);
+  ADD KEY `Id_sottocategoria` (`Id_sottocategoria`),
+  ADD KEY `Id_pegi` (`Id_pegi`);
 
 --
 -- Indici per le tabelle `Sotto_categoria`
@@ -478,10 +511,16 @@ ALTER TABLE `Ordine`
   MODIFY `Id_ordine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT per la tabella `Pegi`
+--
+ALTER TABLE `Pegi`
+  MODIFY `Id_pegi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT per la tabella `Prodotto`
 --
 ALTER TABLE `Prodotto`
-  MODIFY `Id_prodotto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_prodotto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT per la tabella `Sotto_categoria`
@@ -541,7 +580,8 @@ ALTER TABLE `Ordine`
 ALTER TABLE `Prodotto`
   ADD CONSTRAINT `prodotto_ibfk_2` FOREIGN KEY (`Id_magazzino`) REFERENCES `Magazzino` (`Id_magazzino`),
   ADD CONSTRAINT `prodotto_ibfk_3` FOREIGN KEY (`Id_venditore`) REFERENCES `Venditore` (`Id_venditore`),
-  ADD CONSTRAINT `prodotto_ibfk_4` FOREIGN KEY (`Id_sottocategoria`) REFERENCES `Sotto_categoria` (`Id_sottocategoria`);
+  ADD CONSTRAINT `prodotto_ibfk_4` FOREIGN KEY (`Id_sottocategoria`) REFERENCES `Sotto_categoria` (`Id_sottocategoria`),
+  ADD CONSTRAINT `prodotto_ibfk_5` FOREIGN KEY (`Id_pegi`) REFERENCES `Pegi` (`Id_pegi`);
 
 --
 -- Limiti per la tabella `Sotto_categoria`
