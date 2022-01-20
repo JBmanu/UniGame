@@ -38,14 +38,14 @@
             </div>
         </header>
 
-        <section class="cntnr_search  curve_obj_h50  bg_color_third">
+        <section class="cntnr_search  curve_obj_h50  bg_color_third margin_top_big">
             <input class="input_search" id="Search" type="text" placeholder="Search"/>
             <label class="label_search" for="Search">
                 <img class="icon_big" src="./img/menu/search.svg" alt="search" />
             </label>
         </section>
 
-        <div class="cntnr_scroll_horizontal_item  space_top_margin_medium">
+        <div class="cntnr_scroll_horizontal_item margin_top_medium">
           
             <?php foreach($templateParams["giochi_scontati"] as $gioco_scontato): ?>
 
