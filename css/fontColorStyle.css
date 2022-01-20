@@ -4,6 +4,8 @@
 .fg_text_secondary { color: #565d67; }
 .fg_text_accent { color: #009688; }
 
+.bg_used { background-color: #F1D646; }
+.bg_new { background-color: #D0414C; }
 
 .bg_highlights { background-color: #F1D646; }
 .bg_light_theme { background-color: #00439C; }
