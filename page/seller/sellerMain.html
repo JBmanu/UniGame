@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../../css/baseStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/sellerStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/fontColorStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="../../css/effectStyle.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
         <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -111,6 +112,15 @@
                             <input name="name_product" id="product_1" type="text" placeholder="Nome" required>
                         </div>
 
+                        <div class="margin_top_small">
+                            <label for="add_nuovo">
+                            <input type="radio" id="add_nuovo" name="type_used" value="Nuovo">Nuovo
+                            </label>
+                            <label for="add_usato">
+                            <input type="radio" id="add_usato" name="type_used" value="Usato">Usato
+                            </label>
+                        </div>
+
                         <div class="cntnr_checkbox  checkbox_font  margin_top_small">
                             <div class="cntnr_checkbox_family">
                                 <label class="check_container" for="1">
@@ -168,10 +178,20 @@
                         <label class="label_name_product  force_flex_center" for="product_3">Id prodotto</label>
                         <input name="id_product" id="product_3" type="text" placeholder="Id" required>
                     </div>
+
+                    <div class="margin_top_small">
+                        <label for="del_nuovo">
+                        <input type="radio" id="del_nuovo" name="type_used" value="Nuovo">Nuovo
+                        </label>
+                        <label for="del_usato">
+                        <input type="radio" id="del_usato" name="type_used" value="Usato">Usato
+                        </label>
+                    </div>
+
                     <div class="cntnr_checkbox  checkbox_font  margin_top_small">
                         <div class="cntnr_checkbox_family">
-                            <label class="check_container" for="1_3">PS4
-                                <input type="checkbox" id="1_3" name="categoria_1">
+                            <label class="check_container" for="1_3">
+                                <input type="checkbox" id="1_3" name="categoria_1">PS4
                             </label>
                             <label class="check_container" for="2_3">
                                 <input type="checkbox" id="2_3" name="categoria_2">PS5
@@ -219,6 +239,12 @@
                         <label class="label_name_product  force_flex_center" for="product_5">Sconto</label>
                         <input name="sconto_product" id="product_5" type="text" placeholder="Sconto" required>
                     </section>
+                    
+                    <div class="margin_top_small">
+                        <input type="radio" id="nuovo" name="type_used" value="Nuovo" checked>
+                        <label for="nuovo">Nuovo</label>
+                    </div>
+
                     <div class="cntnr_checkbox  checkbox_font  margin_top_small">
                         <div class="cntnr_checkbox_family">
                             <label class="check_container" for="1_2">
@@ -265,6 +291,7 @@
                 <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
                     <p class="nameGame">Nome prodotto !!</p>
                     <div class="cntnr_typeIcons"> 
+                        <strong  class="cntnr_icon_used bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                         <div class="cntnr_icon  force_flex_center  circle_obj">
                             <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
                         </div>
@@ -280,239 +307,7 @@
                     </div>
                 </div>
 
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame">Nome prodotto !!</p>
-                    <div class="cntnr_typeIcons"> 
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                        <div class="cntnr_icon  force_flex_center  circle_obj">
-                            <img class="type_icon" src="../../img/typeGame/ps.svg" alt="">
-                        </div>
-                    </div>
-                </div>
+               
                 
             </div>
             </section>
