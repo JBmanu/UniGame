@@ -38,41 +38,68 @@
             </div>
         </header>
 
-        <section class="cntnr_2card">
+        <nav class = "nav-rotondo">
+            <ul>
+                <li class="playstation">
+                    <a class="force_flex_center" href="../listItem/listItemPS.html">
+                        <img src="../../img/typeGame/ps.svg" alt="Playstation" title="Playstation" />
+                    </a>
+                </li>
+                <li class="xbox">
+                    <a class="force_flex_center" href="../listItem/listItemXbox.html">
+                        <img src="../../img/typeGame/xbox.svg" alt="Xbox" title="Xbox" />
+                    </a>
+                </li>
+                <li class="nintendo">
+                    <a class="force_flex_center" href="../listItem/listItemSwitch.html">
+                        <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo" />
+                    </a>
+                </li>
+                <li class="pc">
+                    <a class="force_flex_center" href="../listItem/listItemPC.html">
+                        <img src="../../img/typeGame/pc.svg" alt="PC" title="PC" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="cntnr_2card  margin_top_big">
 
             <div class="ctnr_top_card">
                 <img class="" src="../../img/game/TheLastOfUsIIps4.png" alt="The Last of Us 2" />
-                <img class="pegi" src="../../img/pegi/16.jpg" alt="pegi" />
                 <p class="price_singol_item  curve_obj_h20  font_secondary  bg_third  fg_text_primary"><strong>$50.00</strong></p>
             </div>
 
             <div class="ctnr_down_card  bg_opacity_theme_SWITCH">
                 <div class="ctnr_btn_item  space_top_margin_medium">
-                    <div class="circle_obj  force_flex_center  btn_item_secondary  bg_third" id="back">
-                        <a class="force_flex_center" href="../listItem/listItemSwitch.html"><img class="item_icon_secondary" src="../../img/back/backSwitch.svg" alt="back" /></a>
-                    </div>
+                    <a class="circle_obj  force_flex_center  btn_item_back  bg_third" href="../listItem/listItemPS.html">
+                        <img class="item_icon_secondary" src="../../img/back/backSwitch.svg" alt="back" />
+                    </a>
                     <div class="circle_obj  force_flex_center  btn_item_primary  bg_light_theme_SWITCH">
                         <img class="item_icon_primary" src="../../img/typeGame/nintendo.svg" alt="typeGame" />
                     </div>
-                    <div class="circle_obj  force_flex_center  btn_item_secondary  bg_primary" id="cart">
-                        <img class="item_icon_secondary" src="../../img/menu/cart.svg" alt="addCart" />
+                    <div class="force_flex_center  item_pegi">
+                        <img src="../../img/pegi/16.jpg" alt="addCart" />
                     </div>
                 </div>
 
-                <h2 class="item_title  force_flex_center  space_top_margin_big  font_primary  fg_text_white"><strong>The Last Of Us II</strong></h2>
-
                 <form class="cntnr_form  force_flex_center  space_top_margin_big  font_secondary  fg_text_white" action="#" method="post">
-                    <fieldset class="fieldset_form">
-                        <legend class="legend_fieldset font_legend">Tipo :</legend>
-                        <label class="radio_btn " for="usedItem">
-                            <input class="circle_obj  space_bottom_margin_card bg_third  radio_circle" type="radio" id="usedItem" name="used" value="used"/>
+                    <fieldset class="fieldset_radio_form">
+                        <legend class="legend_fieldset font_legend">The Last Of Us II</legend>
+                        <label class="radio_btn force_flex_center" for="usedItem">
+                            <input class="circle_obj bg_third  radio_circle" type="radio" id="usedItem" name="used" value="used"/>
                             <span>Usato</span> 
                         </label>
-                        <label class="radio_btn" for="newItem">
-                            <input class="circle_obj  space_bottom_margin_card  bg_third  radio_circle" type="radio" id="newItem" name="used" value="new" checked="checked" />
+                        <label class="radio_btn force_flex_center" for="newItem">
+                            <input class="circle_obj  bg_third  radio_circle" type="radio" id="newItem" name="used" value="new" checked="checked" />
                             <span>Nuovo</span> 
                         </label>
                     </fieldset>
+
+                    <button class="btn_submit_item  margin_top_medium curve_obj_h15  bg_primary  font_legend  fg_text_white  force_flex_center">
+                        <img class="icon_max" src="../../img/menu/cart.svg" alt="" />
+                        <span>Aggiungi</span>
+                    </button>
                 </form>
 
                 <div class="cntnr_description  font_secondary  fg_text_white">

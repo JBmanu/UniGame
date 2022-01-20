@@ -6,12 +6,7 @@
     flex-flow: row nowrap;
     overflow-x: scroll;
     
-
-    /* -webkit-animation-name: move;
-    -webkit-animation-duration: 4s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: right;
-    -webkit-animation-timing-function: linear; */
+    width: 100%;
 }
 
 .cntnr_scroll_horizontal_item:hover {
@@ -84,7 +79,7 @@
 
 .cntnr_info_used {
   position: absolute;
-  bottom: 8%;
+  bottom: 5%;
   left: 8%;
 
   width: 30%;
