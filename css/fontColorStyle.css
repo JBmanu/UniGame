@@ -13,6 +13,9 @@
 .bg_secondary { background-color: #565d67; }
 .bg_third { background-color: #e4ebf5; }
 
+.bg_used { background-color: #F1D646; }
+.bg_new { background-color: #D0414C; }
+
 
 .bg_light_theme_PS { background-color: #00439C; }
 .bg_light_theme_XBOX { background-color: #0F7B0E; }
@@ -23,6 +26,9 @@
 .bg_opacity_theme_XBOX { background-color: #458E44; }
 .bg_opacity_theme_SWITCH { background-color: #D0414C; }
 .bg_opacity_theme_PC { background-color: #506874; }
+
+
+
 
 
 .font_primary {
