@@ -38,7 +38,6 @@ $(document).ready(function(){
 
 
     btnPay.addEventListener('click', () => {
-        console.log('sto cliccanndo');
         window.scrollTo(0,0);
         disableScroll();
 
