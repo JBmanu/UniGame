@@ -20,7 +20,7 @@
         }
 
         public function getCategorybySub($subcategory){
-            $stmt = $this->db->prepare("SELECT Icona From Categoria, Sotto_categoria Where Categoria.Id_categoria = Sotto_categoria.Id_categoria AND Sotto_categoria.Id_sottocategoria = ?");
+            $stmt = $this->db->prepare("SELECT Icona, Nome From Categoria, Sotto_categoria Where Categoria.Id_categoria = Sotto_categoria.Id_categoria AND Sotto_categoria.Id_sottocategoria = ?");
             $stmt->bind_param("i", $subcategory);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -29,8 +29,12 @@
         }
 
 
-        public function getItemPS() {
-            
+        public function getAllCategories() {
+            $stmt = $this->db->prepare("SELECT Icona, Nome_esteso, Nome FROM Categoria");
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
         }
 
     }
