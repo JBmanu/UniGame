@@ -28,9 +28,30 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function getAllItems() {
+            $stmt = $this->db->prepare("SELECT * FROM Prodotto ");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getWishlist() {
+            $stmt = $this->db->prepare("SELECT * FROM WishList ");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
 
         public function getItemPS() {
-            
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Categoria.Nome, Sotto_categoria.Descrizione
+                FROM Prodotto 
+                INNER JOIN Prodotto ON Prodotto.Id_sottocategoria = Sotto_categoria.Descrizione
+                INNER JOIN Sotto_categoria ON Sotto_categoria.Id_categoria = Categoria.Id_categoria");
+                
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
         }
 
     }

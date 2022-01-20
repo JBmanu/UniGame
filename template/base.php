@@ -38,7 +38,7 @@
             </div>
         </header>
 
-        <section class="cntnr_search  curve_obj_h50  bg_color_third margin_top_big">
+        <section class="cntnr_search  curve_obj_h50  bg_color_third  margin_top_big">
             <input class="input_search" id="Search" type="text" placeholder="Search"/>
             <label class="label_search" for="Search">
                 <img class="icon_big" src="./img/menu/search.svg" alt="search" />
