@@ -31,15 +31,6 @@
     /* display: none; */
 }
 
-.cntnr_info_used {
-  position: absolute;
-  bottom: 8%;
-  left: 8%;
-
-  width: 30%;
-  height: 15%;
-}
-
 .cntnr_item_scroll {
     margin-left: 3%;
 
@@ -89,6 +80,15 @@
 
   width: 30%;
   height: 30%;
+}
+
+.cntnr_info_used {
+  position: absolute;
+  bottom: 8%;
+  left: 8%;
+
+  width: 30%;
+  height: 15%;
 }
 
 .icon_info_type {

@@ -1,11 +1,7 @@
-
 .fg_text_white { color: #fff; }
 .fg_text_primary { color: #212121; }
 .fg_text_secondary { color: #565d67; }
 .fg_text_accent { color: #009688; }
-
-.bg_used { background-color: #F1D646; }
-.bg_new { background-color: #D0414C; }
 
 .bg_highlights { background-color: #F1D646; }
 .bg_light_theme { background-color: #00439C; }
@@ -15,6 +11,8 @@
 .bg_secondary { background-color: #565d67; }
 .bg_third { background-color: #e4ebf5; }
 
+.bg_used { background-color: #F1D646; }
+.bg_new { background-color: #D0414C; }
 
 .bg_light_theme_PS { background-color: #00439C; }
 .bg_light_theme_XBOX { background-color: #0F7B0E; }

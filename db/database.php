@@ -12,7 +12,7 @@
         }
 
         public function getDiscountedGames(){
-            $stmt = $this->db->prepare("SELECT Id_prodotto, Url_immagine, Id_sottocategoria, Prezzo, Prezzo_scontato FROM Prodotto WHERE Prezzo_scontato < Prezzo ORDER BY RAND()");
+            $stmt = $this->db->prepare("SELECT Id_prodotto, Url_immagine, Id_sottocategoria, Prezzo, Prezzo_scontato, Nuovo FROM Prodotto WHERE Prezzo_scontato < Prezzo ORDER BY RAND()");
             $stmt->execute();
             $result = $stmt->get_result();
 
@@ -20,12 +20,14 @@
         }
 
         public function getCategorybySub($subcategory){
-            $stmt = $this->db->prepare("SELECT c.Icona From Categoria c, Sotto_categoria s Where c.Id_categoria = s.Id_categoria AND s.Id_sottocategoria = ?");
+            $stmt = $this->db->prepare("SELECT Icona From Categoria, Sotto_categoria Where Categoria.Id_categoria = Sotto_categoria.Id_categoria AND Sotto_categoria.Id_sottocategoria = ?");
             $stmt->bind_param("i", $subcategory);
             $stmt->execute();
             $result = $stmt->get_result();
 
             return $result->fetch_all(MYSQLI_ASSOC);
         }
+
+
     }
 ?>
