@@ -1,4 +1,4 @@
-.card_simple:hover,  .btn_item_secondary:hover,  .less_cmd_card_composed:hover,
+.card_simple:hover,  .btn_item_back:hover,  .less_cmd_card_composed:hover,
  .plus_cmd_card_composed:hover,  .btn_overlay_bottom_left:hover, 
  .btn_overlay_bottom_right:hover,  .cntnr_down_btn:hover,  .radio_btn_card:hover, 
  .btn_read_all:hover {
@@ -7,7 +7,7 @@
 }
 
 
-.radio_btn:hover,  .submit_method_pay:hover {
+.radio_btn:hover,  .submit_method_pay:hover, .btn_submit_item:hover {
     transform: scale(1.2, 1.2);
 }
 

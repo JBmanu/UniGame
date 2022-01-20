@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    let btnBack = document.querySelector("#back");
-    let btnCart = document.querySelector("#cart");
+    let btnBack = document.querySelector(".btn_item_back");
+    let btnCart = document.querySelector(".btn_submit_item");
     let topCard = document.querySelector('.ctnr_top_card');
 
     btnBack.addEventListener('click', () => {
