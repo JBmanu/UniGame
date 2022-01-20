@@ -446,7 +446,6 @@ img {
     .icon_medium { width: 20px; }
 
 
-    .cntnr_search { margin: 3% auto 0; }
 
     .cntnr_bar_list_card {
         padding: 2% 2%;
@@ -548,8 +547,7 @@ img {
 
     .card_simple {flex: 0 0 21%; }
 
-    .cntnr_search { margin: 2% auto 0; }
-        .cntnr_form {
+    .cntnr_form {
         font-size: 250%;
     }
     .radio_btn_card {
@@ -586,7 +584,6 @@ img {
 
     .icon_big { width: 30px; }
     .icon_medium { width: 25px; }
-    .cntnr_search { margin: 1% auto 0; }
 
     .space_top_margin_medium { margin-top: 1%; }
 
