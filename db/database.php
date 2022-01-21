@@ -37,14 +37,49 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function checkLogin($email, $password){
-            $query = "SELECT Email, Nome, Cognome From Utente WHERE Email = ? AND Password=?";
+        public function checkLoginUserCRIPTATO($email, $password){
+            $query = "SELECT Email, Password, Salt From Utente WHERE Email = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $result = $result->fetch_all(MYSQLI_ASSOC);
+            $password=hash('sha512', $password.$result[0]["Salt"]);
+            if($result[0]["Password"] == $password){
+                return true;
+            }
+            return false;
+        }
+
+        public function checkLoginSellerCRIPTATO($email, $password){
+            $query = "SELECT Email, Salt, Password FROM Venditore WHERE Email = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $result = $result->fetch_all(MYSQLI_ASSOC);
+            $password=hash('sha512', $password.$result[0]["Salt"]);
+            if($result[0]["Password"] == $password){
+                return true;
+            }
+            return false;
+        }
+
+        public function checkLoginSeller($email, $password){
+            $query = "SELECT Email, Nome, Cognome From Venditore WHERE Email = ? AND Password=?";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param("ss", $email, $password);
             $stmt->execute();
             $result = $stmt->get_result();
 
             return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function insertUser($email, $password, $nome, $cognome, $salt){
+            $query = "INSERT INTO Utente (Nome, Cognome, Email, Password, Salt) VALUES (?, ?, ?, ?, ?)";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('sssss',$nome, $cognome, $email, $password, $salt);
+            return $stmt->execute();
         }
     }
 ?>

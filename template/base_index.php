@@ -29,7 +29,7 @@
                 <a href="./page/listWish.php"><img src="./img/menu/wishlist.svg" alt="Wishlist" /> Wishlist</a>
                 <a href="./page/Ordini.php"><img src="./img/menu/ordini.svg" alt="Ordini" /> Ordini</a>
                 <a href="./page/notification.php"><img src="./img/menu/notifiche.svg" alt="Notifiche" /> Notifiche</a>
-                <a href="./index.php"><img src="./img/menu/logout.svg" alt="Logout" /> Logout</a>
+                <a href="./page/logout.php"><img src="./img/menu/logout.svg" alt="Logout" /> Logout</a>
                 <a href="#" class="icon">
                     <img src="./img/menu/menu.svg" alt="Menu" />
                 </a>
@@ -60,14 +60,13 @@
                             ?>
                         </p>
                     </div>
-                    <?php  $array=$dbh->getCategorybySub($gioco_scontato["Id_sottocategoria"]);
-                    foreach($array as $array_gioco):
+                    <?php  
+                        $array=$dbh->getCategorybySub($gioco_scontato["Id_sottocategoria"]);
                     ?>
-                    <div class="cntnr_info_type  circle_obj bg_light_theme_<?php echo $array_gioco["Nome"] ?> force_flex_center">
+                    <div class="cntnr_info_type  circle_obj bg_light_theme_<?php echo $array[0]["Nome"] ?> force_flex_center">
                         <img class="icon_info_type" src="
                         <?php
-                                echo UPLOAD_DIR_TIPO_DEVICE_INDEX.$array_gioco["Icona"];
-                            endforeach;
+                                echo UPLOAD_DIR_TIPO_DEVICE_INDEX.$array[0]["Icona"];
                         ?>" alt="Playstation">
                     </div>
                 </div>

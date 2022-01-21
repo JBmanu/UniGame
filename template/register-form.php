@@ -1,4 +1,7 @@
 <form action="#" method="post" class="form">
+<?php if(isset($templateParams["erroreRegister"])): ?>
+        <p><?php echo $templateParams["erroreRegister"]; ?></p>
+    <?php endif; ?>
                 <div>
                     <label for="nome">Inserire Nome</label>
                     <input name="nome" id="nome" class="form_input" type="text" placeholder="Nome" required/>
@@ -15,5 +18,5 @@
                     <label for="passw">Inserire Password</label>
                     <input name="passw" id="passw" class="form_input" type="password" placeholder="Password" required/>
                 </div>
-                <button class="form_button">Accedi</button>
+                <button type="submit" name="submit" class="form_button" value="Accedi" >Accedi</button>
             </form>

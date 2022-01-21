@@ -1,4 +1,7 @@
 <form action="#" method="post" class="form">
+    <?php if(isset($templateParams["erroreLogin"])): ?>
+        <p><?php echo $templateParams["erroreLogin"]; ?></p>
+    <?php endif; ?>
                 <div>
                     <label for="email">Inserire mail</label>
                     <input name="email" id="email" class="form_input" type="email" placeholder="E-mail" required/>
