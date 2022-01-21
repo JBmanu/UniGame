@@ -65,21 +65,51 @@
             return false;
         }
 
-        public function checkLoginSeller($email, $password){
-            $query = "SELECT Email, Nome, Cognome From Venditore WHERE Email = ? AND Password=?";
+        public function insertUser($email, $password, $nome, $cognome, $salt){
+            $query = "INSERT INTO Utente (Nome, Cognome, Email, Password, Salt) VALUES (?, ?, ?, ?, ?)";
             $stmt = $this->db->prepare($query);
-            $stmt->bind_param("ss", $email, $password);
+            $stmt->bind_param('sssss',$nome, $cognome, $email, $password, $salt);
+            return $stmt->execute();
+        }
+
+        public function getNotifybyID($idNotifica){
+            $query = "SELECT Testo FROM Notifica WHERE Id_notifica = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("i", $idNotifica);
             $stmt->execute();
             $result = $stmt->get_result();
 
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function insertUser($email, $password, $nome, $cognome, $salt){
-            $query = "INSERT INTO Utente (Nome, Cognome, Email, Password, Salt) VALUES (?, ?, ?, ?, ?)";
+        public function getAllNotificationByEmail($email){
+            $query = "SELECT Id_notifica, Id_ordine FROM Notifica_Utente WHERE Id_utente = ?";
             $stmt = $this->db->prepare($query);
-            $stmt->bind_param('sssss',$nome, $cognome, $email, $password, $salt);
-            return $stmt->execute();
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getAllOrdersByEmail($email){
+            $query = "SELECT Id_ordine, Data_consegna FROM Ordine, Utente WHERE Utente.Email = Ordine.Id_utente AND Ordine.Id_utente = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getNumProductbyIdOrdine($Id_ordine){
+            $query = "SELECT count(d.Id_prodotto) as NumProduct FROM Ordine o, Dettagli_ordine d WHERE o.Id_ordine=d.Id_ordine AND o.Id_ordine = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("i", $Id_ordine);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
         }
     }
 ?>

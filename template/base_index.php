@@ -13,7 +13,7 @@
         endforeach;
         endif;
         ?>
-
+        <link rel="icon" href="./img/unigame.jpeg" type="image/jpeg">
         <script src="./js/jquery-3.4.1.min.js"></script>
         <script src="./js/toastr.min.js"></script>
         <script src="./js/notify.js"></script>
@@ -45,8 +45,16 @@
 
         <div class="cntnr_scroll_horizontal_item margin_top_medium">
             <?php foreach($templateParams["giochi_scontati"] as $gioco_scontato): ?>
+                <?php  
+                        $array=$dbh->getCategorybySub($gioco_scontato["Id_sottocategoria"]);
+                    ?>
                 <div class="cntnr_item_scroll">
-                    <a href="./page/item.html"><img class="img_item_scroll  curve_obj_h20" src="<?php echo UPLOAD_DIR_INDEX.$gioco_scontato["Url_immagine"]; ?>" alt="TLOU2" /></a>
+                    <a href="./page/item/item<?php 
+                    if($array[0]["Nome"] == "PS" || $array[0]["Nome"] == "PC"):
+                        echo $array[0]["Nome"]; 
+                    else: 
+                        echo ucfirst(strtolower($array[0]["Nome"])); 
+                    endif; ?>.php?Id_prodotto=<?php echo $gioco_scontato["Id_prodotto"]; ?>"><img class="img_item_scroll  curve_obj_h20" src="<?php echo UPLOAD_DIR_INDEX.$gioco_scontato["Url_immagine"]; ?>" alt="TLOU2" /></a>
                     <p class="real_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo"]; ?>€</p>
                     <strong class="discount_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo_scontato"]; ?>€</strong>
                     <div class="cntnr_info_used curve_obj_h15  bg_new force_flex_center">
@@ -60,9 +68,6 @@
                             ?>
                         </p>
                     </div>
-                    <?php  
-                        $array=$dbh->getCategorybySub($gioco_scontato["Id_sottocategoria"]);
-                    ?>
                     <div class="cntnr_info_type  circle_obj bg_light_theme_<?php echo $array[0]["Nome"] ?> force_flex_center">
                         <img class="icon_info_type" src="
                         <?php

@@ -157,6 +157,10 @@ header{
     margin-left:auto;
 }
 
+.div-notifiche > h3{
+    text-align: center;
+}
+
 .notifica{
     position: relative;
     background-color: #F6FAFB;
