@@ -1,83 +1,15 @@
-<!DOCTYPE html>
-<html lang="it">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="../img/unigame.jpeg" type="image/jpeg">
-        <link rel="stylesheet" href="../css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="../css/baseStyle.css" type="text/css" />
-        <link rel="stylesheet" href="../css/orderStyle.css" type="text/css"/>
-        <link rel="stylesheet" href="../css/animation.css" type="text/css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-        <script src="../js/notify.js" type="text/javascript"></script>
-        <script src="../js/click.js" type="text/javascript"></script>
-        <script src="../js/traking.js" type="text/javascript"></script>
-        <title>Uni-videogame</title>
-    </head>
-
-    <body>
-        <header class="navbar_info_menu navbar_info_menu">
-            <div class="topnav" id="myTopnav">
-                <a href="../index.html" class="active">UniGame</a>
-                <a href="./login.html"><img src="../img/menu/user.svg" alt="Login" /> Login</a>
-                <a href="./listCart.html"><img src="../img/menu/carrello.svg" alt="Carrello" /> Carrello</a>
-                <a href="./listWish.html"><img src="../img/menu/wishlist.svg" alt="Wishlist" /> Wishlist</a>
-                <a href="./Ordini.html"><img src="../img/menu/ordini.svg" alt="Ordini" /> Ordini</a>
-                <a href="./notification.html"><img src="../img/menu/notifiche.svg" alt="Notifiche" /> Notifiche</a>
-                <a href="../index.html"><img src="../img/menu/logout.svg" alt="Logout" /> Logout</a>
-                <a href="#" class="icon">
-                    <img src="../img/menu/menu.svg" alt="Menu" />
-                </a>
-            </div>
-        </header>
-
-        <nav class = "nav-rotondo">
-            <ul>
-                <li class="playstation">
-                    <a class="force_flex_center" href="./listItem/listItemPS.html">
-                        <img src="../img/typeGame/ps.svg" alt="Playstation" title="Playstation" />
-                    </a>
-                </li>
-                <li class="xbox">
-                    <a class="force_flex_center" href="./listItem/listItemXbox.html">
-                        <img src="../img/typeGame/xbox.svg" alt="Xbox" title="Xbox" />
-                    </a>
-                </li>
-                <li class="nintendo">
-                    <a class="force_flex_center" href="./listItem/listItemSwitch.html">
-                        <img src="../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo" />
-                    </a>
-                </li>
-                <li class="pc">
-                    <a class="force_flex_center" href="./listItem/listItemPC.html">
-                        <img src="../img/typeGame/pc.svg" alt="PC" title="PC" />
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="container">
-            <div class="semicircle">
-                <img src="../img/menu/ordini.svg" alt="Ordini" />
-            </div>
-        </div>
-
-        <div class="circle  force_flex_center">
-            <a href="./Ordini.html"><img src="../img/back/backPage.svg" alt="back"></a>
+<div class="circle  force_flex_center">
+            <a href="./Ordini.php"><img src="../img/back/backPage.svg" alt="back"></a>
         </div>
 
         <main class="margin_top_big">
 
             <section class="cntnr_top_details  margin_bottom_medium">
-                <h2 class="top_row  top_row_text" >Ordine #2947215 | 1 oggetto</h2>
+                <h2 class="top_row  top_row_text" >Ordine #<?php echo $templateParams["Id_ordine"]; ?> | <?php echo $dbh->getNumProductbyIdOrdine($templateParams["Id_ordine"])[0]["NumProduct"]; ?> oggetti</h2>
                 <p class="middle_row  middle_row_text_big">Consegna prevista</p>
                 <section class="top_row  lower_row_text_big">
                     <img src="../img/ordini/clock.png" alt="Data" title="Data" />
-                    <p>02/11/2021 09:00</p>
+                    <p><?php echo $templateParams["ordine"][0]["Data_consegna"]; ?> </p>
                 </section>
             </section>
 
@@ -85,17 +17,24 @@
 
             <section class="cntnr_top_details  margin_top_medium margin_bottom_medium">
                 <h2 class="top_row  top_row_text_big">Lista Ordine</h2>
-                <p class="middle_row  middle_row_text_big">Oggetto</p>
-                <div class=" top_row  lower_row_text_big_bold">
-                    <img class="game_left_img" src="../img/game/TheLastOfUsIIps4.png" alt="The Last of Us 2" title="The Last of Us II" />
-                    <p class="force_flex_center">The Last of Us Part II</p>
-                </div>
-                <p class="top_row  lower_row_text_big_bold">Totale 50.00 €</p>
+                <p class="middle_row  middle_row_text_big">Oggetti</p>
+
+                <?php for($i = 0; $i < count($templateParams["prodotti"]); $i++): 
+                        foreach($templateParams["prodotti"][$i] as $prodotto): ?>
+
+                    <div class=" top_row  lower_row_text_big_bold">
+                        <img class="game_left_img" src="<?php echo UPLOAD_DIR_DETAILS_ORDINE.$prodotto["Url_immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" title="<?php echo $prodotto["Nome"]; ?>" />
+                        <p class="force_flex_center"><?php echo $prodotto["Nome"]; ?></p>
+                    </div>
+
+                <?php endforeach; endfor; ?>
+
+                <p class="top_row  lower_row_text_big_bold">Totale <?php echo $templateParams["prezzo_totale_prodotti_ordine"]; ?> €</p>
             </section>
 
             <div class="divisore"></div>
 
-            <section class="cntnr_top_details  margin_top_medium  margin_bottom_medium">
+            <section class="cntnr_top_details  margin_top_medium  margin_bottom_medium status">
                 <h2 class="top_row  top_row_text_big">Info Consegna</h2>
 
                 <div class="lower_row  lower_row_text">
@@ -105,8 +44,9 @@
                         </div>
                         <p class="force_flex_center">Ordine effettuato</p>
                     </div>
-                    <div class="image_right ">
-                        <img src="../img/ordini/bigTick.png" alt="Done" />
+                    <div class="image_right">
+                        <img src="../img/ordini/track1.png" alt="Done" title="Ordine fatto" />
+                        <!-- <img src="../img/ordini/bigTick.png" alt="Done" /> -->
                     </div>
                 </div>
 
@@ -122,7 +62,8 @@
                         <p class="force_flex_center">L'ordine e' in lavorazione</p>
                     </div>
                     <div class="image_right">
-                        <img src="../img/ordini/bigTick.png" alt="Done" />
+                        <img src="../img/ordini/track1.png" alt="Done" title="Ordine in lavorazione" />
+                        <!-- <img src="../img/ordini/bigTick.png" alt="Done" /> -->
                     </div>
                 </div>
 
@@ -138,8 +79,8 @@
                         <p class="force_flex_center">Il tuo ordine e' in arrivo</p>
                     </div>
                     <button type="button" class="button_tracking  circle_obj">
-                        <img src="../img/ordini/truck.png" alt="Tracking" title="Tracking" />
-                    </button>
+                        <img src="../img/ordini/truck.png" alt="Tracking" title="Tracking" /> 
+                    </button> 
                 </div>
 
                 <div class="divisore_linea">
@@ -152,6 +93,10 @@
                             <img src="../img/ordini/bigTick.png" alt="Ordini" title="Ordini" />
                         </div>
                         <p class="force_flex_center">Ordine ricevuto</p>
+                    </div>
+                    <div class="image_right">
+                        <img src="../img/ordini/track1.png" alt="Done" title="Ordine ricevuto" />
+                        <!-- <img src="../img/ordini/bigTick.png" alt="Done" /> -->
                     </div>
                 </div>
             </section>
@@ -166,7 +111,7 @@
                         <p class="force_flex_center">Pacco spedito</p>
                     </div>
 
-                    <p class="right_text">Lunedì 6<br/> 11:35 </p>
+                    <p class="right_text"><!--06/01/2022--></p>
                 </div>
 
                 <div class="divisore_linea_tracking">
@@ -180,7 +125,7 @@
                         </div>
                         <p class="force_flex_center">Pacco in transito</p>
                     </div>
-                    <p class="right_text">Martedì 7<br/>8:30 </p>
+                    <p class="right_text"><!--07/01/2022--></p>
                 </div>
 
                 <div class="divisore_linea_tracking">
@@ -194,7 +139,7 @@
                         </div>
                         <p class="force_flex_center">Pacco arrivato<br/>allo stabilimento</p>
                     </div>
-                    <p class="right_text">Venerdì 10<br/>12:30</p>
+                    <p class="right_text"><!--10/01/2022--></p>
                 </div>
 
                 <div class="divisore_linea_tracking">
@@ -208,7 +153,7 @@
                         </div>
                         <p class="force_flex_center">In consegna</p>
                     </div>
-                    <p class="right_text force_flex_center">alle 13:30</p>
+                    <p class="right_text force_flex_center"><!--11/01/2022--></p>
                 </div>
 
                 <div class="right_text">
@@ -218,5 +163,47 @@
                 </div>
             </section>
         </main>
-    </body>
-</html>
+
+        <?php 
+            $Id_status =  $dbh->getOrderbyId($templateParams["Id_ordine"])[0]["Id_status"];
+            $data_agg =  $dbh->getOrderbyId($templateParams["Id_ordine"])[0]["Data_agg_status"];
+        ?>
+
+        <script> 
+            let stato = <?php echo json_encode($Id_status, JSON_HEX_TAG); ?>;
+            let data = <?php echo json_encode($data_agg, JSON_HEX_TAG); ?>;
+            const divs = document.querySelectorAll("section.status > div > div.image_right");
+            const paragraf = document.querySelectorAll("p.right_text");
+            
+            if(stato<7 && stato>1){
+                for(let i=0; i<2; i++){
+                    let img = divs[i].children[0];
+                    img.setAttribute("src", "../img/ordini/bigTick.png");
+                }
+                switch (stato){
+                    case 3:
+                        paragraf[0].innerText = data;
+                        break;
+                    case 4:
+                        paragraf[1].innerText = data;
+                        break;
+                    case 5:
+                        paragraf[2].innerText = data;
+                        break;
+                    case 6:
+                        paragraf[3].innerText = data;
+                        break;
+                }
+            }else if(stato==0 || stato==1){
+                for(let i=0; i<stato; i++){
+                    let img = divs[i].children[0];
+                    img.setAttribute("src", "../img/ordini/bigTick.png");
+                }
+            }else{
+                for(let i=0; i<3; i++){
+                    let img = divs[i].children[0];
+                    img.setAttribute("src", "../img/ordini/bigTick.png");
+                }
+                    paragraf[3].innerText = data;
+            }               
+        </script>

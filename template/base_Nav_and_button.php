@@ -7,14 +7,14 @@
         <link rel="icon" href="../img/unigame.jpeg" type="image/jpeg">
         <link rel="stylesheet" href="../css/style.css" type="text/css"/>
         <link rel="stylesheet" href="../css/orderStyle.css" type="text/css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-        <script src="./js/notify.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="../css/animation.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/toastr.min.css">
+
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/notify.js" type="text/javascript"></script>
         <script src="../js/click.js" type="text/javascript"></script>
+        <script src="../js/traking.js" type="text/javascript"></script>
     </head>
     <body class="body-home">
         <header>

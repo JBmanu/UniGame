@@ -20,26 +20,29 @@ function getIdNotification($text){
         case "arrivo":
             $idNotifica = 3;
             break;
-        case "ricevuto":
+        case "spedito":
             $idNotifica = 4;
             break;
-        case "spedito":
+        case "transito":
             $idNotifica = 5;
             break;
-        case "transito":
+        case "stabilimento":
             $idNotifica = 6;
             break;
-        case "stabilimento":
+        case "consegna":
             $idNotifica = 7;
             break;
-        case "login":
+        case "consegnato":
             $idNotifica = 8;
             break;
-        case "registrazione":
+        case "login":
             $idNotifica = 9;
             break;
-        case "logout":
+        case "registrazione":
             $idNotifica = 10;
+            break;
+        case "logout":
+            $idNotifica = 11;
             break;
     }
 

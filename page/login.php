@@ -41,4 +41,16 @@
     $templateParams["categorie"]=$dbh->getAllCategories();
 
     require_once("../template/base_logAndReg.php");
+
+    if(isset($_SESSION["reg-fatto"]) && $_SESSION["reg-fatto"]==1 && $_SESSION["notifica-reg-inviata"]==0){
+        $_SESSION["notifica-reg-inviata"]=1;
+        $idNotifica=getIdNotification("registrazione");
+        $testo = $dbh -> getNotifybyID($idNotifica);
+        $testo=$testo[0]["Testo"];
+
+        echo "<script>
+        let stringa='$testo';
+        toastr.info(stringa);
+        </script>";
+    }
 ?>

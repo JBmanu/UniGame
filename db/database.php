@@ -111,5 +111,35 @@
 
             return $result->fetch_all(MYSQLI_ASSOC);
         }
+
+        public function getOrderbyId($Id_ordine){
+            $query="SELECT Data_consegna, Id_status, Data_agg_status FROM Ordine WHERE Id_ordine=?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("i", $Id_ordine);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getProdottibyIdordine($Id_ordine){
+            $query = "SELECT d.Id_prodotto FROM Ordine o, Dettagli_ordine d WHERE o.Id_ordine=d.Id_ordine AND o.Id_ordine = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("i", $Id_ordine);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getProdottibyIdprodotto($Id_prodotto){
+            $query = "SELECT Nome, Url_immagine, Unità, prezzo_scontato FROM Prodotto WHERE Id_prodotto = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("i", $Id_prodotto);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
     }
 ?>

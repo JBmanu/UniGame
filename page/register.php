@@ -16,6 +16,8 @@
             $templateParams["erroreRegister"] = "Errore! Email già utilizzata.";
         }
         else{
+            $_SESSION["notifica-reg-inviata"]=0;
+            $_SESSION["reg-fatto"]=1;
             header("location: ./login.php");
         }
     }
