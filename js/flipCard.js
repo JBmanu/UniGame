@@ -24,6 +24,7 @@ $(document).ready(function(){
 
             btnWish.addEventListener('click', () => {
                 let src = btnWish.getAttribute('src');
+                let click = false;
 
                 if (src == '../img/item/heart-empty.svg') {
                     btnWish.src = '../img/item/heart-full.svg';
@@ -44,7 +45,7 @@ $(document).ready(function(){
                 }
 
                 //dato inviata alla variabile post del php
-                let id = { idGame : element.id, favourite : true, action : 'like' };
+                let id = { idGame : element.id, favourite : click, action : 'like' };
 
 
                 $.ajax({
