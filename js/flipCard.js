@@ -19,15 +19,16 @@ $(document).ready(function(){
         let face1 = element.querySelector('.front_card_flip');
         let face2 = element.querySelector('.back_card_flip');
 
-        
+
         if(btnWish != null) {
+
             btnWish.addEventListener('click', () => {
                 let src = btnWish.getAttribute('src');
-                
+
                 if (src == '../img/item/heart-empty.svg') {
                     btnWish.src = '../img/item/heart-full.svg';
                     btnWish.classList.toggle('transform_heart');
-                } 
+                }
                 else if (src == '../img/item/heart-full.svg') {
                     btnWish.src = '../img/item/heart-empty.svg';
                     btnWish.classList.remove('transform_heart');
@@ -36,14 +37,30 @@ $(document).ready(function(){
                 else if (src == '../../img/item/heart-empty.svg') {
                     btnWish.src = '../../img/item/heart-full.svg';
                     btnWish.classList.toggle('transform_heart');
-                } 
+                }
                 else if (src == '../../img/item/heart-full.svg') {
                     btnWish.src = '../../img/item/heart-empty.svg';
                     btnWish.classList.remove('transform_heart');
                 }
+
+                //dato inviata alla variabile post del php
+                let id = { idGame : element.id, favourite : true, action : 'like' };
+
+
+                $.ajax({
+                    url:"listPS.php",
+                    method: "post",
+                    data: id,
+                    success: function(res) {
+                        console.log("Inviato", res);
+                    }
+                })
+
             });
+
+            
         }
-        
+
 
         if(btnAdd != null) {
             btnAdd.addEventListener('click', () => {
@@ -52,7 +69,7 @@ $(document).ready(function(){
                 face2.classList.toggle('flipped_back');
             });
         }
-        
+
         if(btnSubmit != null) {
             btnSubmit.addEventListener('click', () => {
 

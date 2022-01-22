@@ -34,14 +34,7 @@
             $result = $stmt->get_result();
             return $result->fetch_all(MYSQLI_ASSOC);
         }
-
-        public function getWishlist() {
-            $stmt = $this->db->prepare("SELECT * FROM WishList ");
-            $stmt->execute();
-            $result = $stmt->get_result();
-            return $result->fetch_all(MYSQLI_ASSOC);
-        }
-
+        
         public function getItemPS() {
             $stmt = $this->db->prepare("SELECT Prodotto.*, Categoria.Nome, Sotto_categoria.Descrizione
                 FROM Prodotto 
