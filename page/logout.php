@@ -4,6 +4,7 @@
 
     if(isset($_SESSION["Email"])){
         unset($_SESSION["Email"]);
+        unset($_SESSION["tempo"]);
 
         $_SESSION["login-fatto"]=0;
         $_SESSION["notifica-login-inviata"]=0;

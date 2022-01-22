@@ -8,6 +8,19 @@ function LoggoUtente($user){
     $_SESSION["Email"] = $user;
 }
 
+function checkNotifica(){
+    $prova = nice_time($_SESSION["tempo"]);
+    return $prova;
+}
+
+function nice_time($time) {
+    $delta = time() - $time;
+    var_dump($delta);
+    if($delta > 60 || $delta < 63) {
+      return true;
+    } 
+}
+
 function getIdNotification($text){
     $idNotifica = 0;
     switch($text){
@@ -45,7 +58,6 @@ function getIdNotification($text){
             $idNotifica = 11;
             break;
     }
-
     return $idNotifica;
 }
 

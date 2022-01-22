@@ -18,8 +18,8 @@
             <div class="topnav" id="myTopnav">
                 <a href="../index.php" class="active">UniGame</a>
                 <a href="../page/login.php"><img src="../img/menu/user.svg" alt="Login" /> Login</a>
-                <a href="../page/listCart.php"><img src="../img/menu/carrello.svg" alt="Carrello" /> Carrello</a>
-                <a href="../page/listWish.php"><img src="../img/menu/wishlist.svg" alt="Wishlist" /> Wishlist</a>
+                <a href="../page/cart.php"><img src="../img/menu/carrello.svg" alt="Carrello" /> Carrello</a>
+                <a href="../page/wish.php"><img src="../img/menu/wishlist.svg" alt="Wishlist" /> Wishlist</a>
                 <a href="./Ordini.php"><img src="../img/menu/ordini.svg" alt="Ordini" /> Ordini</a>
                 <a href="../page/notification.php"><img src="../img/menu/notifiche.svg" alt="Notifiche" /> Notifiche</a>
                 <a href="../index.php"><img src="../img/menu/logout.svg" alt="Logout" /> Logout</a>
@@ -35,7 +35,7 @@
             <ul>
                 <?php foreach($templateParams["categorie"] as $categoria): ?>
                 <li class="<?php echo $categoria["Nome_esteso"]; ?>">
-                    <a class="force_flex_center" href="./listItem/listItem<?php 
+                    <a class="force_flex_center" href="./listItem/list<?php 
                     if($categoria["Nome"] == "PS" || $categoria["Nome"] == "PC"):
                         echo $categoria["Nome"]; 
                     else: 

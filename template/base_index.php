@@ -26,7 +26,7 @@
                 <a href="./index.php" class="active">UniGame</a>
                 <a href="./page/login.php"><img src="./img/menu/user.svg" alt="Login" /> Login</a>
                 <a href="./page/cart.php"><img src="./img/menu/carrello.svg" alt="Carrello" /> Carrello</a>
-                <a href="./page/listWish.php"><img src="./img/menu/wishlist.svg" alt="Wishlist" /> Wishlist</a>
+                <a href="./page/wish.php"><img src="./img/menu/wishlist.svg" alt="Wishlist" /> Wishlist</a>
                 <a href="./page/Ordini.php"><img src="./img/menu/ordini.svg" alt="Ordini" /> Ordini</a>
                 <a href="./page/notification.php"><img src="./img/menu/notifiche.svg" alt="Notifiche" /> Notifiche</a>
                 <a href="./page/logout.php"><img src="./img/menu/logout.svg" alt="Logout" /> Logout</a>

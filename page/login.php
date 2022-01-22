@@ -13,6 +13,10 @@
             LoggoUtente($_POST["email"]);
             $user=1;
 
+            if(!isset($_SESSION["tempo"])){
+                $_SESSION["tempo"]=time();
+            }
+
             $_SESSION["notifica-logout-inviata"]=0;
             $_SESSION["logout-fatto"]=0;
             $_SESSION["login-fatto"]=1;
