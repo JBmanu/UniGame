@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
+<<<<<<< HEAD
 -- Creato il: Gen 21, 2022 alle 16:14
+=======
+-- Creato il: Gen 22, 2022 alle 15:44
+>>>>>>> manu
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.12
 
@@ -20,6 +24,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `UniGameDB`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `Carrello`
+--
+
+CREATE TABLE `Carrello` (
+  `Id_utente` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `Id_prodotto` int(11) NOT NULL,
+  `Quantità` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `Carrello`
+--
+
+INSERT INTO `Carrello` (`Id_utente`, `Id_prodotto`, `Quantità`) VALUES
+('gek5800@gmail.com', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -81,7 +104,9 @@ CREATE TABLE `Dettagli_ordine` (
 
 INSERT INTO `Dettagli_ordine` (`Id_ordine`, `Id_prodotto`, `Quantità`, `Prezzo`) VALUES
 (1, 1, 1, '24.99'),
-(1, 2, 2, '19.99');
+(1, 2, 2, '19.99'),
+(2, 3, 1, '49.99'),
+(2, 5, 2, '19.99');
 
 -- --------------------------------------------------------
 
@@ -139,10 +164,21 @@ INSERT INTO `Notifica` (`Id_notifica`, `Testo`) VALUES
 (1, 'effettuato'),
 (2, 'in lavorazione'),
 (3, 'in arrivo'),
+<<<<<<< HEAD
 (4, 'ricevuto'),
 (5, 'spedito'),
 (6, 'in transito'),
 (7, 'arrivato allo stabilimento');
+=======
+(4, 'spedito'),
+(5, 'in transito'),
+(6, 'arrivato allo stabilimento'),
+(7, 'In consegna'),
+(8, 'Consegnato'),
+(9, 'Login effettuato con successo'),
+(10, 'Registrazione effettuata con successo'),
+(11, 'Logout effettuato con successo');
+>>>>>>> manu
 
 -- --------------------------------------------------------
 
@@ -153,8 +189,25 @@ INSERT INTO `Notifica` (`Id_notifica`, `Testo`) VALUES
 CREATE TABLE `Notifica_Utente` (
   `Id_utente` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Id_notifica` int(11) NOT NULL,
+<<<<<<< HEAD
   `Data` date NOT NULL
+=======
+  `Data` date NOT NULL,
+  `Id_ordine` int(11) NOT NULL
+>>>>>>> manu
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `Notifica_Utente`
+--
+
+INSERT INTO `Notifica_Utente` (`Id_utente`, `Id_notifica`, `Data`, `Id_ordine`) VALUES
+('gek5800@gmail.com', 1, '2022-01-13', 1),
+('gek5800@gmail.com', 1, '2022-01-11', 2),
+('gek5800@gmail.com', 2, '2022-01-18', 1),
+('gek5800@gmail.com', 2, '2022-01-13', 2),
+('gek5800@gmail.com', 3, '2022-01-15', 2),
+('gek5800@gmail.com', 4, '2022-01-19', 2);
 
 -- --------------------------------------------------------
 
@@ -172,7 +225,11 @@ CREATE TABLE `Notifica_Venditore` (
 --
 
 INSERT INTO `Notifica_Venditore` (`Email_venditore`, `Id_notifica`) VALUES
+<<<<<<< HEAD
 ('info@unigame.it', 6);
+=======
+('info@unigame.it', 1);
+>>>>>>> manu
 
 -- --------------------------------------------------------
 
@@ -186,23 +243,28 @@ CREATE TABLE `Ordine` (
   `Id_utente` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Id_corriere` int(11) NOT NULL,
   `Data_spedizione` date DEFAULT NULL,
-  `Via` varchar(300) CHARACTER SET utf8 NOT NULL,
-  `Civico` varchar(10) CHARACTER SET utf8 NOT NULL,
-  `Città` varchar(40) CHARACTER SET utf8 NOT NULL,
-  `Provincia` varchar(5) CHARACTER SET utf8 NOT NULL,
-  `CAP` varchar(5) CHARACTER SET utf8 NOT NULL,
-  `Nome_indirizzo` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Id_metodo` int(11) NOT NULL,
   `Id_status` int(11) NOT NULL,
+<<<<<<< HEAD
   `Data_consegna` date NOT NULL
+=======
+  `Data_consegna` date NOT NULL,
+  `Data_agg_status` date NOT NULL
+>>>>>>> manu
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `Ordine`
 --
 
+<<<<<<< HEAD
 INSERT INTO `Ordine` (`Id_ordine`, `Data_ordine`, `Id_utente`, `Id_corriere`, `Data_spedizione`, `Via`, `Civico`, `Città`, `Provincia`, `CAP`, `Nome_indirizzo`, `Id_metodo`, `Id_status`, `Data_consegna`) VALUES
 (1, '2021-12-08', 'gek5800@gmail.com', 1, NULL, 'Via Cesare Pavese', '50', 'Cesena', 'FC', '47521', 'Giacomo Totaro', 1, 1, '2022-02-16');
+=======
+INSERT INTO `Ordine` (`Id_ordine`, `Data_ordine`, `Id_utente`, `Id_corriere`, `Data_spedizione`, `Id_metodo`, `Id_status`, `Data_consegna`, `Data_agg_status`) VALUES
+(1, '2021-12-08', 'gek5800@gmail.com', 1, '2022-01-18', 1, 1, '2022-02-16', '2022-01-20'),
+(2, '2022-01-17', 'gek5800@gmail.com', 1, '2022-01-21', 1, 4, '2022-01-31', '2022-01-19');
+>>>>>>> manu
 
 -- --------------------------------------------------------
 
@@ -296,11 +358,13 @@ CREATE TABLE `Status_ordine` (
 --
 
 INSERT INTO `Status_ordine` (`Id_status`, `Descrizione status`) VALUES
-(1, 'In sospeso'),
+(1, 'effettuato'),
 (2, 'In lavorazione'),
 (3, 'Spedito'),
-(4, 'In transito'),
-(5, 'Consegnato');
+(4, 'Transito'),
+(5, 'Stabilimento'),
+(6, 'In consegna'),
+(7, 'Consegnato');
 
 -- --------------------------------------------------------
 
@@ -321,7 +385,14 @@ CREATE TABLE `Utente` (
 --
 
 INSERT INTO `Utente` (`Nome`, `Cognome`, `Email`, `Password`, `Salt`) VALUES
+<<<<<<< HEAD
 ('Giacomo', 'Totaro', 'gek5800@gmail.com', '389aba55868bc36cb520ba741708d11d98453bc45714895866ccc41b728fb02ed87e4606bc76ce5bbc7c90f49cb000701060e857b68c6694375b01321488b777', 'bcfd9768da4a09e095d08e1758326212c03fd95eda2b35cc1e41dcffb143223ff87708e3cec9cf7454f59073333a64e5cd7489184258ef08d23d6c085127abc7');
+=======
+('Giacomo', 'Totaro', 'efef@xn--fef-j50a', '6eb48619191375e59789e4ec3c236064b530abe47ca6bcb95938ea90af4ec9431673d721c535bd1b30c2e2831765bf60208f2c8ee043df64d66603501e332545', 'a959446699bb8dedfb02917628b60818fbdcfb9e7db66ff7a61fdfb58ed8fcca14ee552728113da78915bb246a850073318b0c1d440e93e050e526f1daf481ce'),
+('Giacomo', 'Totaro', 'ewewe@xn--fdew-fpd3845b', '458a2d60ba4e3bda407e2fb72457e31accc552c4e5c019ee35bd4c52a1bdc81a23faa72e920279f8029b8d49a1b2b335437cd773cd9a177f16db7030678dc319', '91cea8ae26d3945a833057393b9e12a2ebaa75ab7775dec6018ed1e2cbdfee5d13adc0acf8d46005fe7c073ad3ebf7951c4a8923d4ea3ea0bdef0c542645741c'),
+('Giacomo', 'Totaro', 'gek5800@gmail.com', '389aba55868bc36cb520ba741708d11d98453bc45714895866ccc41b728fb02ed87e4606bc76ce5bbc7c90f49cb000701060e857b68c6694375b01321488b777', 'bcfd9768da4a09e095d08e1758326212c03fd95eda2b35cc1e41dcffb143223ff87708e3cec9cf7454f59073333a64e5cd7489184258ef08d23d6c085127abc7'),
+('wdcwdc', 'wcwc', 'wcwdc@wdcw', 'fb240b1057b7d9366c895d8916553b78ce33ee0838a1d450b2c723692295d225cd833d0ad34fef2591398b38f3876242d3dfc9822f08f7faaa71c0f4f79a4b88', 'c94f358459df1fa88ff98b06217354e602295baed9d061807c45b03123405b926f443d28c6a7522971802a88bd522f1f9a0beb04a382fe455fe19a77da65ca73');
+>>>>>>> manu
 
 -- --------------------------------------------------------
 
@@ -344,10 +415,39 @@ CREATE TABLE `Venditore` (
 
 INSERT INTO `Venditore` (`Email`, `Password`, `Salt`, `Nome`, `Cognome`, `Id_corriere`) VALUES
 ('info@unigame.it', 'c424f567641d966c64cc26600487c6fde4d8fdf70c5bbb2a5a06ac1735cc029c6e1e23fcb08ee3a82e937550d7940c9a58dc83d7795600233674ff937190d6cc', '04fbffce85fea47dba020b879dc6ca5a0fa68f8e1e22388418e81b7718b5000754df5505685135bcf1aaa536d0853127e81f80759a8009c45c6809a3c7c98c1a', 'UNI', 'GAME', 1);
+<<<<<<< HEAD
+=======
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `Wishlist`
+--
+
+CREATE TABLE `Wishlist` (
+  `Id_utente` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `Id_prodotto` int(11) NOT NULL,
+  `Piace` int(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `Wishlist`
+--
+
+INSERT INTO `Wishlist` (`Id_utente`, `Id_prodotto`, `Piace`) VALUES
+('gek5800@gmail.com', 1, 1);
+>>>>>>> manu
 
 --
 -- Indici per le tabelle scaricate
 --
+
+--
+-- Indici per le tabelle `Carrello`
+--
+ALTER TABLE `Carrello`
+  ADD PRIMARY KEY (`Id_utente`,`Id_prodotto`),
+  ADD KEY `Id_prodotto` (`Id_prodotto`);
 
 --
 -- Indici per le tabelle `Categoria`
@@ -391,8 +491,9 @@ ALTER TABLE `Notifica`
 -- Indici per le tabelle `Notifica_Utente`
 --
 ALTER TABLE `Notifica_Utente`
-  ADD PRIMARY KEY (`Id_utente`,`Id_notifica`),
-  ADD KEY `Id_notifica` (`Id_notifica`);
+  ADD PRIMARY KEY (`Id_utente`,`Id_notifica`,`Id_ordine`) USING BTREE,
+  ADD KEY `Id_notifica` (`Id_notifica`),
+  ADD KEY `Id_ordine` (`Id_ordine`);
 
 --
 -- Indici per le tabelle `Notifica_Venditore`
@@ -454,6 +555,16 @@ ALTER TABLE `Venditore`
   ADD KEY `Id_corriere` (`Id_corriere`);
 
 --
+<<<<<<< HEAD
+=======
+-- Indici per le tabelle `Wishlist`
+--
+ALTER TABLE `Wishlist`
+  ADD PRIMARY KEY (`Id_utente`,`Id_prodotto`),
+  ADD KEY `Id_prodotto` (`Id_prodotto`);
+
+--
+>>>>>>> manu
 -- AUTO_INCREMENT per le tabelle scaricate
 --
 
@@ -485,13 +596,17 @@ ALTER TABLE `Metodo_pagamento`
 -- AUTO_INCREMENT per la tabella `Notifica`
 --
 ALTER TABLE `Notifica`
+<<<<<<< HEAD
   MODIFY `Id_notifica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+=======
+  MODIFY `Id_notifica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=811;
+>>>>>>> manu
 
 --
 -- AUTO_INCREMENT per la tabella `Ordine`
 --
 ALTER TABLE `Ordine`
-  MODIFY `Id_ordine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_ordine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT per la tabella `Pegi`
@@ -515,11 +630,21 @@ ALTER TABLE `Sotto_categoria`
 -- AUTO_INCREMENT per la tabella `Status_ordine`
 --
 ALTER TABLE `Status_ordine`
-  MODIFY `Id_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Limiti per le tabelle scaricate
+<<<<<<< HEAD
+=======
 --
+
+--
+-- Limiti per la tabella `Carrello`
+>>>>>>> manu
+--
+ALTER TABLE `Carrello`
+  ADD CONSTRAINT `carrello_ibfk_1` FOREIGN KEY (`Id_prodotto`) REFERENCES `Prodotto` (`Id_prodotto`),
+  ADD CONSTRAINT `carrello_ibfk_2` FOREIGN KEY (`Id_utente`) REFERENCES `Utente` (`Email`);
 
 --
 -- Limiti per la tabella `Dettagli_ordine`
@@ -533,7 +658,12 @@ ALTER TABLE `Dettagli_ordine`
 --
 ALTER TABLE `Notifica_Utente`
   ADD CONSTRAINT `notifica_utente_ibfk_1` FOREIGN KEY (`Id_notifica`) REFERENCES `Notifica` (`Id_notifica`),
+<<<<<<< HEAD
   ADD CONSTRAINT `notifica_utente_ibfk_2` FOREIGN KEY (`Id_utente`) REFERENCES `Utente` (`Email`);
+=======
+  ADD CONSTRAINT `notifica_utente_ibfk_2` FOREIGN KEY (`Id_utente`) REFERENCES `Utente` (`Email`),
+  ADD CONSTRAINT `notifica_utente_ibfk_3` FOREIGN KEY (`Id_ordine`) REFERENCES `Ordine` (`Id_ordine`);
+>>>>>>> manu
 
 --
 -- Limiti per la tabella `Notifica_Venditore`
@@ -571,6 +701,16 @@ ALTER TABLE `Sotto_categoria`
 --
 ALTER TABLE `Venditore`
   ADD CONSTRAINT `venditore_ibfk_1` FOREIGN KEY (`Id_corriere`) REFERENCES `Corriere` (`Id_corriere`);
+<<<<<<< HEAD
+=======
+
+--
+-- Limiti per la tabella `Wishlist`
+--
+ALTER TABLE `Wishlist`
+  ADD CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`Id_prodotto`) REFERENCES `Prodotto` (`Id_prodotto`),
+  ADD CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`Id_utente`) REFERENCES `Utente` (`Email`);
+>>>>>>> manu
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

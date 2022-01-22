@@ -1,6 +1,6 @@
 <?php
     require_once("connection.php");
-
+    
     $templateParams["titolo"] = "Uni-videogame";
     $templateParams["giochi_scontati"] = $dbh->getDiscountedGames();
     $templateParams["categorie"]=$dbh->getAllCategories();

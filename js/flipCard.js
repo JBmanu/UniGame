@@ -1,3 +1,13 @@
+function turn(){
+    let listCard = document.querySelectorAll('.card_simple');
+    listCard.forEach(element => {
+        let face1 = element.querySelector('.front_card_flip');
+        let face2 = element.querySelector('.back_card_flip');
+        face2.classList.remove('flipped_back');
+        face1.classList.remove('flipped_front');
+    });
+
+}
 
 $(document).ready(function(){
     let listCard = document.querySelectorAll('.card_simple');
@@ -9,34 +19,70 @@ $(document).ready(function(){
         let face1 = element.querySelector('.front_card_flip');
         let face2 = element.querySelector('.back_card_flip');
 
-    
-        btnWish.addEventListener('click', () => {
-            if (btnWish.src.match("../img/item/heart-empty.svg")) {
-                btnWish.src = '../../img/item/heart-full.svg';
-                btnWish.classList.toggle('transform_heart');
-            } 
-            else {
-                btnWish.src = '../../img/item/heart-empty.svg';
-                btnWish.classList.remove('transform_heart');
-            }
-        });
+
+        if(btnWish != null) {
+
+            btnWish.addEventListener('click', () => {
+                let src = btnWish.getAttribute('src');
+                let click = false;
+
+                if (src == '../img/item/heart-empty.svg') {
+                    btnWish.src = '../img/item/heart-full.svg';
+                    btnWish.classList.toggle('transform_heart');
+                }
+                else if (src == '../img/item/heart-full.svg') {
+                    btnWish.src = '../img/item/heart-empty.svg';
+                    btnWish.classList.remove('transform_heart');
+                }
+
+                else if (src == '../../img/item/heart-empty.svg') {
+                    btnWish.src = '../../img/item/heart-full.svg';
+                    btnWish.classList.toggle('transform_heart');
+                }
+                else if (src == '../../img/item/heart-full.svg') {
+                    btnWish.src = '../../img/item/heart-empty.svg';
+                    btnWish.classList.remove('transform_heart');
+                }
+
+                //dato inviata alla variabile post del php
+                let id = { idGame : element.id, favourite : click, action : 'like' };
 
 
-        btnAdd.addEventListener('click', () => {
-            face1.classList.toggle('flipped_front');
-            face2.classList.toggle('flipped_back');
-        });
+                $.ajax({
+                    url:"listPS.php",
+                    method: "post",
+                    data: id,
+                    success: function(res) {
+                        console.log("Inviato", res);
+                    }
+                })
 
-        btnSubmit.addEventListener('click', () => {
+            });
 
-            face2.classList.toggle('flipped_back');
-            face2.style.display = 'none !important';
+            
+        }
 
-            face1.classList.toggle('flipped_front');
-            element.classList.add('transform_card');
-            void element.offsetWidth;
-            element.classList.remove('transform_card');
-        });
+
+        if(btnAdd != null) {
+            btnAdd.addEventListener('click', () => {
+                turn();
+                face1.classList.toggle('flipped_front');
+                face2.classList.toggle('flipped_back');
+            });
+        }
+
+        if(btnSubmit != null) {
+            btnSubmit.addEventListener('click', () => {
+
+                face2.classList.toggle('flipped_back');
+                face2.style.display = 'none !important';
+
+                face1.classList.toggle('flipped_front');
+                element.classList.add('transform_card');
+                void element.offsetWidth;
+                element.classList.remove('transform_card');
+            });
+        }
 
     });
 });
