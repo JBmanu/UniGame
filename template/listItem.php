@@ -10,12 +10,10 @@
         <link rel="stylesheet" href="../../css/manuStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/effectStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/fontColorStyle.css" type="text/css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" defer="defer"></script>
+        <link rel="stylesheet" href="../../css/toastr.min.css">
+
+        <script src="../../js/jquery-3.4.1.min.js"></script>
+        <script src="../../js/toastr.min.js"></script>
         <script src="../../js/notify.js" type="text/javascript" defer="defer"></script>
         <script src="../../js/click.js" type="text/javascript" defer="defer"></script>
         <script src="../../js/flipCard.js"  type="text/javascript" defer="defer"></script>
