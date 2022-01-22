@@ -1,8 +1,15 @@
 <?php
     require_once("../connection.php");
-    unset($_SESSION["Email"]);
-    $_SESSION["notifica-login-inviata"]=0;
-    $params = session_get_cookie_params();
-    setcookie(session_name(), '', time()-42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
+    $_SESSION["logout-fatto"]=0;
+
+    if(isset($_SESSION["Email"])){
+        unset($_SESSION["Email"]);
+
+        $_SESSION["login-fatto"]=0;
+        $_SESSION["notifica-login-inviata"]=0;
+
+        $_SESSION["logout-fatto"]=1;
+    }
+
     header("Location: ../index.php");
 ?>

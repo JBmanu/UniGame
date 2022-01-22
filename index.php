@@ -20,4 +20,17 @@
         toastr.info(stringa);
         </script>";
     }
+
+    if(isset($_SESSION["logout-fatto"]) && $_SESSION["logout-fatto"]==1 && $_SESSION["notifica-logout-inviata"]==0){
+        $_SESSION["notifica-logout-inviata"]=1;
+        var_dump("CI SONOO");
+        $idNotifica=getIdNotification("logout");
+        $testo = $dbh -> getNotifybyID($idNotifica);
+        $testo=$testo[0]["Testo"];
+
+        echo "<script>
+        let stringa='$testo';
+        toastr.info(stringa);
+        </script>";
+    }
 ?>
