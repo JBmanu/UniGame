@@ -14,7 +14,7 @@
         'NavSearch' => $myLocation.'/template/nav/baseNavSearch.php'];
 
 
-    $allProducts["items"] = $dbh->getAllItems();
+    $allProducts["items"] = $dbh->getAllItemsWithLikeBy();
 
     //Presentazione
     require_once("../../template/listItem.php");

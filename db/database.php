@@ -36,6 +36,50 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function getWishListBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Id_utente, Prodotto.*
+                FROM Utente, Wishlist, Prodotto
+                WHERE Utente.Email = Wishlist.Id_utente 
+                AND Wishlist.Id_utente = '$emailUtente' 
+                AND Wishlist.Id_prodotto = Prodotto.Id_prodotto");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function addItemInWishList($emailUtente = 'gek5800@gmail.com', $idProdotto) {
+            $sql = "INSERT INTO Wishlist(Id_utente, Id_prodotto, Piace)
+            VALUES ('$emailUtente', '$idProdotto', 1)";
+            return $this->db->query($sql);
+        }
+
+        public function removeItemInWishList($emailUtente = 'gek5800@gmail.com', $idProdotto) {
+            $query = "DELETE FROM Wishlist WHERE Wishlist.Id_utente = ? AND Wishlist.Id_prodotto = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ii',$emailUtente, $idProdotto);
+            return $stmt->execute();
+        }
+
+        public function getAllItemWithLike() {
+            $stmt = $this->db->prepare("SELECT *, Piace
+            FROM Prodotto, Wish ");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getAllItemsWithLikeBy($emailUtente = 'gek5800@gmail.com'){
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace
+                FROM Prodotto LEFT JOIN Wishlist 
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto 
+                AND Wishlist.Id_utente = '$emailUtente'");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
         public function getAllItems() {
             $stmt = $this->db->prepare("SELECT * FROM Prodotto ");
             $stmt->execute();

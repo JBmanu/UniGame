@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
-<<<<<<< HEAD
 -- Creato il: Gen 21, 2022 alle 16:14
-=======
--- Creato il: Gen 22, 2022 alle 15:44
->>>>>>> manu
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.12
 

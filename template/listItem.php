@@ -63,10 +63,13 @@
                     <div class="front_card_flip  curve_obj_h20">
                         <a href="../item/itemPC.html"><img class="curve_obj_h20" src="<?php echo $myLocation."img/game/".$item["Url_immagine"]; ?>" alt="<?php echo $item["Nome"]; ?>" /></a>
                         <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"> <?php echo $item["Prezzo"]."$"; ?> </strong>
-
-                        <?php  ?>
-
-                        <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../../img/item/heart-empty.svg"  alt="heart" />
+                        <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="
+                        <?php
+                            if ($item["piace"] != null) {
+                                echo $myLocation."img/item/heart-full.svg";
+                            } else {
+                                echo $myLocation."img/item/heart-empty.svg";
+                            }?>" alt="heart" />
                         <img class="btn_overlay_bottom_right  circle_obj  bg_third" src="<?php echo $myLocation?>img/item/add.svg" alt="add" />
                     </div>
 

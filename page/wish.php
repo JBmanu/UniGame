@@ -1,5 +1,6 @@
 <?php
     require_once("../connection.php");
+    require("../manager/evetItem.php");
 
     $titleUser = 'UniGame';
     $myLocation = '../';
@@ -25,7 +26,7 @@
         $myLocation.'template/core/coreSearch.php' => false
     ];
 
-    $allProducts["items"] = $dbh->getAllItems();
+    $allProducts["wish"] = $dbh->getWishListBy();
 
     //Presentazione
     require_once($myLocation."template/basePage.php");
