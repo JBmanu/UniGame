@@ -54,7 +54,6 @@
         <div class="cntnr_scritta_prodotti2">
             <div class="cntnr_column_type">
                 <p>Nome Prodotto</p>
-                <p>Usato/Nuovo</p>
                 <p>Sconto</p>
             </div>
             <div class="cntnr_column_type">
@@ -69,7 +68,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">
@@ -83,7 +81,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">
@@ -97,7 +94,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">
@@ -111,7 +107,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">
@@ -125,7 +120,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">
@@ -139,7 +133,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">
@@ -153,7 +146,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">
@@ -167,7 +159,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">
@@ -181,7 +172,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">
@@ -195,7 +185,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">
@@ -209,76 +198,6 @@
             <section class="cntnr_prodotti  curve_obj_h8">
                 <section class="cntnr_column_type  font_primary">
                     <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
-                    <p class="force_flex_center fg_text_primary">100%</p>
-                </section>
-                <section class="cntnr_column_type">
-                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
-                        <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo">
-                    </section>
-                    <p class="force_flex_center  font_primary  fg_text_accent">32342424</p>
-                </section>
-            </section>
-            <section class="cntnr_prodotti  curve_obj_h8">
-                <section class="cntnr_column_type  font_primary">
-                    <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
-                    <p class="force_flex_center fg_text_primary">100%</p>
-                </section>
-                <section class="cntnr_column_type">
-                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
-                        <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo">
-                    </section>
-                    <p class="force_flex_center  font_primary  fg_text_accent">32342424</p>
-                </section>
-            </section>
-
-            <section class="cntnr_prodotti  curve_obj_h8">
-                <section class="cntnr_column_type  font_primary">
-                    <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
-                    <p class="force_flex_center fg_text_primary">100%</p>
-                </section>
-                <section class="cntnr_column_type">
-                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
-                        <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo">
-                    </section>
-                    <p class="force_flex_center  font_primary  fg_text_accent">32342424</p>
-                </section>
-            </section>
-
-            <section class="cntnr_prodotti  curve_obj_h8">
-                <section class="cntnr_column_type  font_primary">
-                    <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
-                    <p class="force_flex_center fg_text_primary">100%</p>
-                </section>
-                <section class="cntnr_column_type">
-                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
-                        <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo">
-                    </section>
-                    <p class="force_flex_center  font_primary  fg_text_accent">32342424</p>
-                </section>
-            </section>
-
-            <section class="cntnr_prodotti  curve_obj_h8">
-                <section class="cntnr_column_type  font_primary">
-                    <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
-                    <p class="force_flex_center fg_text_primary">100%</p>
-                </section>
-                <section class="cntnr_column_type">
-                    <section class="cntnr_typegame  force_flex_center circle_obj  bg_light_theme_SWITCH">
-                        <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo">
-                    </section>
-                    <p class="force_flex_center  font_primary  fg_text_accent">32342424</p>
-                </section>
-            </section>
-
-            <section class="cntnr_prodotti  curve_obj_h8">
-                <section class="cntnr_column_type  font_primary">
-                    <p class="force_flex_center fg_text_accent">Nome Prodotto</p>
-                    <strong class="cntnr_icon_used_list bg_new  fg_text_white force_flex_center  curve_obj_h15">Nuovo</strong>
                     <p class="force_flex_center fg_text_primary">100%</p>
                 </section>
                 <section class="cntnr_column_type">

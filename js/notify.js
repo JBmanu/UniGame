@@ -15,11 +15,7 @@ toastr.options = {
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
 }
-  
-function notify(){
-    toastr.info("Controllare pagina notifiche per info","L'ordine #2345 e' stato spedito!");
-}
 
-$(document).ready(function(){
-    setInterval("notify()", 8000);
-});
+function notify(){
+    toastr.info("testo");
+}

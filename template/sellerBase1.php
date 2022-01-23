@@ -28,12 +28,20 @@
 
         <div class="container_seller  margin_top_big">
             <div class="cntnr_whole  curve_obj_h15">
-                <p class="force_flex_center  seller_bigtext_black">385 €</p>
+                <p class="force_flex_center  seller_bigtext_black"> 
+                    <?php
+                        
+                    ?> 
+                </p>
                 <p class="force_flex_center  cntnr_text_btn" >Guadagno Giornaliero</p>
             </div>
 
             <div class="cntnr_whole  curve_obj_h15">
-                <p class="force_flex_center  seller_bigtext_black">31999</p>
+                <p class="force_flex_center  seller_bigtext_black">
+                    <?php
+                        echo $templateParams["totaleUtenti"][0]["NumeroUtenti"];
+                    ?>
+                </p>
                 <p class="force_flex_center  cntnr_text_btn" >Persone Registrate</p>
             </div>
 
@@ -106,19 +114,10 @@
                 </section>
                 
                 <div class="cntnr_bottom_btn  margin_bottom_medium  margin_top_small ">
-                    <form class="" action="#" method="post">
+                    <form class="" action="add_game" method="post">
                         <div class="insert_name_product">
                             <label class="force_flex_center" for="product_1">Nome prodotto</label>
                             <input name="name_product" id="product_1" type="text" placeholder="Nome" required>
-                        </div>
-
-                        <div class="margin_top_small">
-                            <label for="add_nuovo">
-                            <input type="radio" id="add_nuovo" name="type_used" value="Nuovo">Nuovo
-                            </label>
-                            <label for="add_usato">
-                            <input type="radio" id="add_usato" name="type_used" value="Usato">Usato
-                            </label>
                         </div>
 
                         <div class="cntnr_checkbox  checkbox_font  margin_top_small">
@@ -173,19 +172,10 @@
             </section>
 
             <div class="cntnr_bottom_btn  margin_bottom_medium  margin_top_small">
-                <form action="#" method="post">
+                <form action="" method="post">
                     <div class="insert_name_product  margin_top_small">
                         <label class="label_name_product  force_flex_center" for="product_3">Id prodotto</label>
                         <input name="id_product" id="product_3" type="text" placeholder="Id" required>
-                    </div>
-
-                    <div class="margin_top_small">
-                        <label for="del_nuovo">
-                        <input type="radio" id="del_nuovo" name="type_used" value="Nuovo">Nuovo
-                        </label>
-                        <label for="del_usato">
-                        <input type="radio" id="del_usato" name="type_used" value="Usato">Usato
-                        </label>
                     </div>
 
                     <div class="cntnr_checkbox  checkbox_font  margin_top_small">
@@ -212,7 +202,7 @@
                             <input type="checkbox" id="6_3" name="categoria_6">PC
                         </label>
                     </div>
-                    <button class="conferma_button  margin_top_medium">Conferma</button>
+                    <input class="conferma_button  margin_top_medium" type="submit" value="Conferma"></input>
                 </form>
             </div>
             </section>

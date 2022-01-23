@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Gen 23, 2022 alle 14:02
+-- Creato il: Gen 21, 2022 alle 16:14
 -- Versione del server: 10.4.21-MariaDB
--- Versione PHP: 8.1.1
+-- Versione PHP: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -284,11 +284,11 @@ CREATE TABLE `Prodotto` (
 --
 
 INSERT INTO `Prodotto` (`Id_prodotto`, `Nome`, `Url_immagine`, `Id_venditore`, `Unità`, `Prezzo`, `Sconto`, `Id_magazzino`, `Id_sottocategoria`, `Id_pegi`, `Data_rilascio`, `prezzo_scontato`, `Nuovo`) VALUES
-(1, 'Far Cry 5', 'FarCry5ps4.png', 'info@unigame.it', 15, '24.99', '0.00', 1, 1, 1, '2020-01-14', '24.99', 1),
+(1, 'Far Cry 5', 'FarCry5ps4.jpeg', 'info@unigame.it', 15, '24.99', '0.00', 1, 1, 1, '2020-01-14', '24.99', 1),
 (2, 'The Last of Us II', 'TheLastOfUs2pc.jpeg', 'info@unigame.it', 10, '19.99', '0.20', 1, 5, 1, '2017-11-18', '15.99', 1),
-(3, 'Call of Duty Black Ops II', 'BO2ps4.png', 'info@unigame.it', 5, '19.99', '0.00', 1, 1, 1, '2014-07-19', '19.99', 1),
+(3, 'Call of Duty Black Ops II', 'BO2ps4.jpeg', 'info@unigame.it', 5, '19.99', '0.00', 1, 1, 1, '2014-07-19', '19.99', 1),
 (4, 'Fifa 22', 'Fifa22ps4.jpeg', 'info@unigame.it', 20, '49.99', '0.30', 1, 1, 1, '2021-09-24', '34.99', 0),
-(5, 'GTA V', 'GTAVps4.png', 'info@unigame.it', 7, '29.99', '0.00', 1, 1, 1, '2016-10-21', '29.99', 1);
+(5, 'GTA V', 'GTAVps4.jpg', 'info@unigame.it', 7, '29.99', '0.00', 1, 1, 1, '2016-10-21', '29.99', 1);
 
 -- --------------------------------------------------------
 
@@ -395,6 +395,13 @@ CREATE TABLE `Wishlist` (
   `Id_prodotto` int(11) NOT NULL,
   `Piace` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `Wishlist`
+--
+
+INSERT INTO `Wishlist` (`Id_utente`, `Id_prodotto`, `Piace`) VALUES
+('gek5800@gmail.com', 1, 1);
 
 --
 -- Indici per le tabelle scaricate
