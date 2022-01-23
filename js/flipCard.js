@@ -47,7 +47,6 @@ $(document).ready(function(){
                     btnWish.src = '../../img/item/heart-empty.svg';
                     btnWish.classList.remove('transform_heart');
                 }
-                window.location.reload();
                 
                 let data = {idGame:element.id, favourite:"click", action:"like"};
 
@@ -60,7 +59,7 @@ $(document).ready(function(){
                         console.log(res);
                     }
                 });
-
+                window.location.reload();
             });
         }
 
