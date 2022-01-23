@@ -7,8 +7,7 @@
     $altIcon = "iconPlaystation";
     $colorPage = 'bg_light_theme_PS';
     $iconTypePage = $myLocation.'img/typeGame/ps.svg';
-
-    $json = json_encode($altIcon);
+    $itemPagePath = 'itemPS.php';
 
     $srcPageBase = [
         'NavBar' => $myLocation.'template/nav/baseNavBar.php',

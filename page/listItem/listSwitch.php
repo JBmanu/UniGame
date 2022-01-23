@@ -7,6 +7,7 @@
     $altIcon = "iconSwitch";
     $colorPage = 'bg_light_theme_SWITCH';
     $iconTypePage = $myLocation.'img/typeGame/nintendo.svg';
+    $itemPagePath = 'itemSwitch.php';
 
     $srcPageBase = [ 
         'NavBar' => $myLocation.'template/nav/baseNavBar.php', 

@@ -137,7 +137,7 @@
         }
 
         public function getSpecificDataItemByName($name) {
-            $stmt = $this->db->prepare("SELECT Prodotto.Nome, Prodotto.Nuovo, Sotto_categoria.Descrizione as tipo, Categoria.Nome as categoria
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Sotto_categoria.Descrizione as tipo, Categoria.Nome as categoria
             FROM Prodotto LEFT JOIN Sotto_categoria 
             ON Prodotto.Id_sottocategoria = Sotto_categoria.Id_sottocategoria 
             LEFT JOIN Categoria ON Categoria.Id_categoria = Sotto_categoria.Id_categoria 
@@ -145,9 +145,16 @@
 
             $stmt->execute();
             $result = $stmt->get_result();
-
             return $result->fetch_all(MYSQLI_ASSOC);
         }
+
+        public function getAllDataItem($idGame) {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Pegi.Url_immagine as pegi FROM Prodotto LEFT JOIN Pegi ON Prodotto.Id_pegi = Pegi.Id_pegi WHERE Prodotto.Id_prodotto = '$idGame';");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
 
         public function checkLoginUserCRIPTATO($email, $password) {
             $query = "SELECT Email, Password, Salt From Utente WHERE Email = ?";
