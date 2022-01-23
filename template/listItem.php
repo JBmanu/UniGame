@@ -79,7 +79,7 @@
 
                             <?php
 
-                                if( $typeGame == 'xbox' || $typeGame == 'ps') {
+                                if($typeGame == 'xbox' || $typeGame == 'ps') {
                                     require($myLocation."template/form/listItem/double.php");
                                 } else {
                                     require($myLocation."template/form/listItem/simple.php");

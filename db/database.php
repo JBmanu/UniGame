@@ -61,14 +61,6 @@
             return $stmt->execute();
         }
 
-        public function getAllItemWithLike() {
-            $stmt = $this->db->prepare("SELECT *, Piace
-            FROM Prodotto, Wish ");
-            $stmt->execute();
-            $result = $stmt->get_result();
-            return $result->fetch_all(MYSQLI_ASSOC);
-        }
-
         public function getAllItemsWithLikeBy($emailUtente = 'gek5800@gmail.com'){
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace
                 FROM Prodotto LEFT JOIN Wishlist 
@@ -79,26 +71,85 @@
             $result = $stmt->get_result();
             return $result->fetch_all(MYSQLI_ASSOC);
         }
-
-        public function getAllItems() {
-            $stmt = $this->db->prepare("SELECT * FROM Prodotto ");
-            $stmt->execute();
-            $result = $stmt->get_result();
-            return $result->fetch_all(MYSQLI_ASSOC);
-        }
         
-        public function getItemPS() {
-            $stmt = $this->db->prepare("SELECT Prodotto.*, Categoria.Nome, Sotto_categoria.Descrizione
-                FROM Prodotto 
-                INNER JOIN Prodotto ON Prodotto.Id_sottocategoria = Sotto_categoria.Descrizione
-                INNER JOIN Sotto_categoria ON Sotto_categoria.Id_categoria = Categoria.Id_categoria");
+        public function getItemPSBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
+                FROM Prodotto LEFT JOIN Wishlist
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
+                LEFT JOIN Sotto_categoria 
+                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                LEFT JOIN Categoria 
+                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                WHERE Categoria.Id_categoria = 1
+                GROUP BY Prodotto.Nome;");
+
             $stmt->execute();
             $result = $stmt->get_result();
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function getItemPCBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
+                FROM Prodotto LEFT JOIN Wishlist
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
+                LEFT JOIN Sotto_categoria 
+                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                LEFT JOIN Categoria 
+                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                WHERE Categoria.Id_categoria = 4
+                GROUP BY Prodotto.Nome;");
 
-        public function checkLoginUserCRIPTATO($email, $password){
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getItemXboxBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
+                FROM Prodotto LEFT JOIN Wishlist
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
+                LEFT JOIN Sotto_categoria 
+                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                LEFT JOIN Categoria 
+                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                WHERE Categoria.Id_categoria = 2
+                GROUP BY Prodotto.Nome;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getItemSwitchBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
+                FROM Prodotto LEFT JOIN Wishlist
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
+                LEFT JOIN Sotto_categoria 
+                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                LEFT JOIN Categoria 
+                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                WHERE Categoria.Id_categoria = 3
+                GROUP BY Prodotto.Nome;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getSpecificDataItemByName($name) {
+            $stmt = $this->db->prepare("SELECT Prodotto.Nome, Prodotto.Nuovo, Sotto_categoria.Descrizione as tipo, Categoria.Nome as categoria
+            FROM Prodotto LEFT JOIN Sotto_categoria 
+            ON Prodotto.Id_sottocategoria = Sotto_categoria.Id_sottocategoria 
+            LEFT JOIN Categoria ON Categoria.Id_categoria = Sotto_categoria.Id_categoria 
+            WHERE Prodotto.Nome = '$name';");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function checkLoginUserCRIPTATO($email, $password) {
             $query = "SELECT Email, Password, Salt From Utente WHERE Email = ?";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param("s", $email);

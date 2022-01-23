@@ -30,10 +30,6 @@ $(document).ready(function(){
             btnWish.addEventListener('click', () => {
                 let src = btnWish.getAttribute('src');
                 
-                let like = 0;
-                //dato inviaTa alla variabile post del php
-                let item = { idGame : element.id, favourite : "click", action : 'like', like : 0 };
-
                 if (src == '../img/item/heart-empty.svg') {
                     btnWish.src = '../img/item/heart-full.svg';
                     btnWish.classList.toggle('transform_heart');
@@ -51,19 +47,17 @@ $(document).ready(function(){
                     btnWish.src = '../../img/item/heart-empty.svg';
                     btnWish.classList.remove('transform_heart');
                 }
+                window.location.reload();
                 
-                let data = {};
-                data['idGame'] = element.id;
-                data['favourite'] = "click";
-                data['action'] = "like";
+                let data = {idGame:element.id, favourite:"click", action:"like"};
 
                 $.ajax({
                     url:"http://localhost/UniGame/manager/evetItem.php",
                     method: "post",
                     data: data,
                     success: function(res) {
-                        // window.location.reload();
-                        console.log("Item", res);
+                        window.location.reload();
+                        console.log(res);
                     }
                 });
 

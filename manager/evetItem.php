@@ -1,34 +1,26 @@
-<?php 
+<?php
     require_once("../connection.php");
+    require_once("serverResponse.php");
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_POST)) { // se esiste
             switch ($_POST["action"]) {
-                case 'like': 
+                case 'like':
 
-                    foreach ($dbh->getAllItemsWithLikeBy() as $key => $value) {
+                    foreach ($dbh->getAllItemsWithLikeBy() as $item) {
                         if($item["Id_prodotto"] == $_POST["idGame"]) {
-                            // if ($item["piace"] != null) {
-                            //     $err = $dbh->addItemInWishList("gek5800@gmail.com" , $_POST["idGame"]);
-                            //     print json_encode($err . "inserito nella wish list");
-                            //     exit();
-                            //     // echo $myLocation."img/item/heart-full.svg";
-                            // } else {
-                            //     $err = $dbh->removeItemInWishList("gek5800@gmail.com" , $_POST["idGame"]);
-                            //     print json_encode($err."eliminato dalla wish list");
-                            //     exit();
-                            //     // echo $myLocation."img/item/heart-empty.svg";
-                            // }
-                            print json_encode("trovato");
-                            exit();
+                            if ($item["piace"] == 1) {
+                                $err = $dbh->removeItemInWishList("gek5800@gmail.com" , $_POST["idGame"]);
+                                responseLike($err);
+                            } else {
+                                $err = $dbh->addItemInWishList("gek5800@gmail.com" , $_POST["idGame"]);
+                                responseLike($err);
+                            }
                         }
-                        print json_encode("trovato");
-                    exit();
                     }
-                    
                     break;
             }
-    
+
         }
     }
 

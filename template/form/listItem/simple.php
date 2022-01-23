@@ -1,3 +1,11 @@
+<?php 
+    $specific = $dbh->getSpecificDataItemByName($item["Nome"]);
+
+    
+
+
+
+?>
 
 <label class="radio_btn_card " for="<?php echo $item["Nome"]; ?>usedItem">
     <input class="circle_obj  radio_circle_card" type="radio" id="<?php echo $item["Nome"]; ?>usedItem" name="used" value="used"/>

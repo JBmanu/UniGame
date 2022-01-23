@@ -13,7 +13,7 @@
         'NavBtn' => $myLocation.'template/nav/baseNavBtn.php', 
         'NavSearch' => $myLocation.'template/nav/baseNavSearch.php'];
 
-    $allProducts["items"] = $dbh->getAllItemsWithLikeBy();
+    $allProducts["items"] = $dbh->getItemSwitchBy();
 
     //Presentazione
     require_once("../../template/listItem.php");
