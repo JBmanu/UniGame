@@ -8,6 +8,7 @@
     $colorPage = 'bg_light_theme_XBOX';
     $iconTypePage = $myLocation.'img/typeGame/xbox.svg';
     $itemPagePath = 'itemXbox.php';
+    $specificPage = 'listXbox.php';
 
     $srcPageBase = [ 
         'NavBar' => '../../template/nav/baseNavBar.php', 

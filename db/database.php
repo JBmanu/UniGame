@@ -72,7 +72,7 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
         
-        public function getItemPSBy($emailUtente = 'gek5800@gmail.com') {
+        public function getItemPSAscBy($emailUtente = 'gek5800@gmail.com') {
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
                 FROM Prodotto LEFT JOIN Wishlist
                 ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
@@ -81,7 +81,25 @@
                 LEFT JOIN Categoria 
                 ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
                 WHERE Categoria.Id_categoria = 1
-                GROUP BY Prodotto.Nome;");
+                GROUP BY Prodotto.Nome
+                ORDER BY Prodotto.Prezzo ASC;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getItemPSDescBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
+                FROM Prodotto LEFT JOIN Wishlist
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
+                LEFT JOIN Sotto_categoria 
+                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                LEFT JOIN Categoria 
+                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                WHERE Categoria.Id_categoria = 1
+                GROUP BY Prodotto.Nome
+                ORDER BY Prodotto.Prezzo DESC;");
 
             $stmt->execute();
             $result = $stmt->get_result();
@@ -97,7 +115,8 @@
                 LEFT JOIN Categoria 
                 ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
                 WHERE Categoria.Id_categoria = 4
-                GROUP BY Prodotto.Nome;");
+                GROUP BY Prodotto.Nome
+                ORDER BY Prodotto.Prezzo ASC;");
 
             $stmt->execute();
             $result = $stmt->get_result();
@@ -113,7 +132,8 @@
                 LEFT JOIN Categoria 
                 ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
                 WHERE Categoria.Id_categoria = 2
-                GROUP BY Prodotto.Nome;");
+                GROUP BY Prodotto.Nome
+                ORDER BY Prodotto.Prezzo ASC;");
 
             $stmt->execute();
             $result = $stmt->get_result();
@@ -129,7 +149,8 @@
                 LEFT JOIN Categoria 
                 ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
                 WHERE Categoria.Id_categoria = 3
-                GROUP BY Prodotto.Nome;");
+                GROUP BY Prodotto.Nome
+                ORDER BY Prodotto.Prezzo ASC;");
 
             $stmt->execute();
             $result = $stmt->get_result();

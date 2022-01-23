@@ -17,6 +17,7 @@
         <script src="../../js/notify.js" type="text/javascript" defer="defer"></script>
         <script src="../../js/click.js" type="text/javascript" defer="defer"></script>
         <script src="../../js/flipCard.js"  type="text/javascript" defer="defer"></script>
+        <script src="../../js/selctionList.js"  type="text/javascript" defer="defer"></script>
     </head>
 
 
@@ -29,13 +30,11 @@
 
         <section class="cntnr_bar_list_card  space_top_margin_small <?php echo $colorPage; ?>">
             <div class="bar_obj_left  curve_obj_h15 ">
-                <form action="order" method="post">
-                    <label for="order">
-                        <select class="minimal" name="order" id="order">
-                            <option value="crescente">Prezzo Crescente</option>
-                            <option value="decrescente">Prezzo Decrescente</option>
-                        </select>
-                    </label>
+                <form action="listPS.php" method="post" id="formOrder">
+                    <select class="minimal" name="order" id="order">
+                        <option id="cres" value="cres">Prezzo Crescente</option>
+                        <option id="desc" value="desc">Prezzo Decrescente</option>
+                    </select>
                 </form>
             </div>
 
@@ -44,9 +43,9 @@
             </div>
 
             <div class="bar_obj_right  force_flex_center  curve_obj_h15">
-                <form action="filter" method="post">
-                    <label for="order1">
-                        <select class="minimal" name="order" id="order1">
+                <form action="listPS.php" method="post" id="formFilter">
+                    <label for="filter">
+                        <select class="minimal" name="filter" id="filter">
                             <option value="crescente">Tutti</option>
                             <option value="crescente">Da €10 a €50</option>
                             <option value="decrescente">Da €50 a €100</option>
@@ -57,33 +56,10 @@
         </section>
 
         <main class="cntnr_list_card  space_top_margin_medium">
-            <?php foreach($allProducts["items"] as $item) : ?>
-                
-                <section class="card_simple  curve_obj_h20  space_bottom_margin_card"  id="<?php echo $item["Id_prodotto"];?>">
-                    <div class="front_card_flip  curve_obj_h20">
-                        <a href="../item/<?php echo $itemPagePath; ?>?idItem=<?php echo $item["Id_prodotto"] ?>"><img class="curve_obj_h20" src="<?php echo $myLocation."img/game/".$item["Url_immagine"]; ?>" alt="<?php echo $item["Nome"]; ?>"/></a>
-                        <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"> <?php echo $item["Prezzo"]."$"; ?> </strong>
-                        <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="
-                        <?php
-                            if ($item["piace"] != null) {
-                                echo $myLocation."img/item/heart-full.svg";
-                            } else {
-                                echo $myLocation."img/item/heart-empty.svg";
-                            }?>" alt="heart" />
-                        <img class="btn_overlay_bottom_right  circle_obj  bg_third" src="<?php echo $myLocation?>img/item/add.svg" alt="add" />
-                    </div>
-
-                    <form class="back_card_flip  force_flex_center  form_2_by_list  curve_obj_h20  bg_third  fg_text_primary" action="#" method="post">
-                        <fieldset class="fieldset_form">
-                            <legend><?php echo $item["Nome"]; ?></legend>
-
-                            <?php require($myLocation."template/form/double.php"); ?>
-                            <input class="btn_submit_card  space_top_margin_big  curve_obj_h15  bg_primary  font_primary  fg_text_white" type="submit" value="Aggiungi"/>
-                        </fieldset>
-                    </form>
-                </section>
-
-            <?php endforeach; ?>
+            
+            <?php 
+                require($myLocation."template/core/coreItemList.php");
+            ?>
         </main>
 
     </body> 

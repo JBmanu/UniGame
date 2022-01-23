@@ -8,6 +8,8 @@
     $colorPage = 'bg_light_theme_PC';
     $iconTypePage = $myLocation.'img/typeGame/pc.svg';
     $itemPagePath = 'itemPC.php';
+    $specificPage = 'listPC.php';
+
 
     $srcPageBase = [ 
         'NavBar' => $myLocation.'template/nav/baseNavBar.php', 

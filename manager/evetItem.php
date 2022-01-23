@@ -12,14 +12,22 @@
                             if ($item["piace"] == 1) {
                                 $err = $dbh->removeItemInWishList("gek5800@gmail.com" , $_POST["idGame"]);
                                 responseLike($err);
+                                header('Refresh: 0');
+
                             } else {
                                 $err = $dbh->addItemInWishList("gek5800@gmail.com" , $_POST["idGame"]);
                                 responseLike($err);
+                                header('Refresh: 0');
+
                             }
                         }
                     }
                     break;
+                
+                case 'order': 
 
+                    
+                    break;
                 
             }
 
