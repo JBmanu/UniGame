@@ -1,3 +1,4 @@
+<?php $counte=0; ?>
 <main class="cntnr_all_order  force_flex_center  margin_top_medium  margin_bottom_medium">  
     <?php if(isset($templateParams["erroreOrdini"])): ?>
         <h4><?php echo $templateParams["erroreOrdini"]; ?></h4>
@@ -11,7 +12,7 @@
                         <img src="../img/ordini/clock.png" alt="Data" title="Data">
                         <p><?php echo $ordine["Data_consegna"]; ?> </p>
                     </div>
-                    <a href="./dettagliOrdini.php?Id_ordine=<?php echo $ordine["Id_ordine"]; ?>" class="button_order curve_obj_h8" id="buttonOrder">Visualizza</a>
+                    <a href="./dettagliOrdini.php?Id_ordine=<?php echo $ordine["Id_ordine"]; ?>" class="button_order curve_obj_h8" id="buttonOrder<?php echo $counter; $counter++; ?>">Visualizza</a>
                 </div>
             </article>
         <?php endforeach; ?>

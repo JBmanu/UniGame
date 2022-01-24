@@ -3,11 +3,11 @@
         <p><?php echo $templateParams["erroreRegister"]; ?></p>
     <?php endif; ?>
                 <div>
-                    <label for="nome">Inserire Nome</label>
+                    <label for="nome">Inserire nome</label>
                     <input name="nome" id="nome" class="form_input" type="text" placeholder="Nome" required/>
                 </div>
                 <div>
-                    <label for="cognome">Inserire Cognome</label>
+                    <label for="cognome">Inserire cognome</label>
                     <input name="cognome" id="cognome" class="form_input" type="text" placeholder="Cognome" required/>
                 </div>
                 <div>

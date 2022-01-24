@@ -175,22 +175,22 @@
             const divs = document.querySelectorAll("section.status > div > div.image_right");
             const paragraf = document.querySelectorAll("p.right_text");
             
-            if(stato<7 && stato>1){
+            if(stato<8 && stato>1){
                 for(let i=0; i<2; i++){
                     let img = divs[i].children[0];
                     img.setAttribute("src", "../img/ordini/bigTick.png");
                 }
                 switch (stato){
-                    case 3:
+                    case 4:
                         paragraf[0].innerText = data;
                         break;
-                    case 4:
+                    case 5:
                         paragraf[1].innerText = data;
                         break;
-                    case 5:
+                    case 6:
                         paragraf[2].innerText = data;
                         break;
-                    case 6:
+                    case 7:
                         paragraf[3].innerText = data;
                         break;
                 }

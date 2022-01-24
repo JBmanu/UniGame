@@ -8,11 +8,11 @@
         <link rel="stylesheet" href="../css/style.css" type="text/css"/>
         <link rel="stylesheet" href="../css/orderStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../css/animation.css" type="text/css"/>
-        <link rel="stylesheet" href="../css/toastr.min.css">
+        <link rel="stylesheet" href="../css/toastr.min.css" type="text/css">
 
-        <script src="../js/toastr.min.js"></script>
         <script src="../js/jquery-3.4.1.min.js"></script>
-        <script src="../js/notify.js" type="text/javascript"></script>
+        <script src="../js/toastr.min.js"></script>
+        <script src="../js/notify.js"></script>
         <script src="../js/click.js" type="text/javascript"></script>
         <script src="../js/traking.js" type="text/javascript"></script>
     </head>

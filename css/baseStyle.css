@@ -124,6 +124,12 @@ body, h1, h2, h3, p, ul {
     justify-content: space-between;
 }
 
+.aggiusto-btn-search{
+    border: 0px;
+    cursor: pointer;
+    background-color: white;
+}
+
 .label_search {
     padding: 0% 4% 0% 0%;
     display: flex;

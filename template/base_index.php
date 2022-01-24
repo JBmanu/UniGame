@@ -36,12 +36,16 @@
             </div>
         </header>
 
-        <section class="cntnr_search  curve_obj_h50  bg_color_third margin_top_big">
-            <input class="input_search" id="Search" type="text" placeholder="Search"/>
-            <label class="label_search" for="Search">
-                <img class="icon_big" src="./img/menu/search.svg" alt="search" />
-            </label>
-        </section>
+        <form action="./page/listSearch.php" method="post">
+            <section class="cntnr_search  curve_obj_h50  bg_color_third margin_top_big">
+                <label class="label_search" for="Search">
+                    <input name="Search" class="input_search" id="Search" type="text" placeholder="Search"/>
+                </label>
+                <label for="imm_search">
+                    <button id="imm_search" name="imm_search" class="aggiusto-btn-search" type="submit"><img class="icon_big" src="./img/menu/search.svg" alt="search" /></button>
+                </label>
+            </section>
+        </form>
 
         <div class="cntnr_scroll_horizontal_item margin_top_medium">
             <?php foreach($templateParams["giochi_scontati"] as $gioco_scontato): ?>
@@ -58,15 +62,7 @@
                     <p class="real_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo"]; ?>€</p>
                     <strong class="discount_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo_scontato"]; ?>€</strong>
                     <div class="cntnr_info_used curve_obj_h15  bg_new force_flex_center">
-                        <p class="fg_text_white  font_primary">
-                            <?php 
-                                if($gioco_scontato["Nuovo"]==1):
-                                    echo "Nuovo";
-                                else:
-                                    echo "Usato";
-                                endif;
-                            ?>
-                        </p>
+                        <p class="fg_text_white  font_primary">Nuovo</p>
                     </div>
                     <div class="cntnr_info_type  circle_obj bg_light_theme_<?php echo $array[0]["Nome"] ?> force_flex_center">
                         <img class="icon_info_type" src="

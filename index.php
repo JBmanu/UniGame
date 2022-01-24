@@ -6,23 +6,7 @@
     $templateParams["categorie"]=$dbh->getAllCategories();
     $templateParams["css"]=array("css/baseStyle.css", "css/effectStyle.css", "css/fontColorStyle.css", "css/listItemStyle.css", "css/index.css", "css/style.css", "css/toastr.min.css");
 
-
-
     require_once("template/base_index.php");
-
-
-    if(isset($_SESSION["tempo"])){
-        $notifica_da_inviare=checkNotifica();
-
-        if($notifica_da_inviare){
-            echo "<script>
-            let stringa='PROVAAA';
-            toastr.info(stringa);
-            </script>";
-        }
-    }
-
-
 
     if(isset($_SESSION["login-fatto"]) && $_SESSION["login-fatto"]==1 && $_SESSION["notifica-login-inviata"]==0){
         $_SESSION["notifica-login-inviata"]=1;
@@ -47,4 +31,27 @@
         toastr.info(stringa);
         </script>";
     }
+
+    if(isset($_SESSION["tempo"])){
+        $notifica_da_inviare=checkNotifica($dbh);
+
+        if($notifica_da_inviare){
+            if(isset($_SESSION["ordine_per_notifica"])){
+
+                $id_ordine=$_SESSION["ordine_per_notifica"]["Id_ordine"];
+                $id_status=$_SESSION["ordine_per_notifica"]["Id_status"];
+                $stato=$dbh->getNotifybyID($id_status+1);
+
+                $stato=$stato[0]["Testo"];
+
+                echo "<script>
+                let stato='$stato';
+                let id_ordine='$id_ordine';
+                let stringa_finale='Ordine #'+id_ordine+' '+stato;
+                toastr.info(stringa_finale);
+                </script>";
+            }
+        }
+    }
+
 ?>
