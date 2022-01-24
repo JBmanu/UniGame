@@ -26,7 +26,8 @@
         $myLocation.'template/core/coreSearch.php' => false
     ];
 
-    // $allProducts["items"] = $dbh->getAllItems();
+    $allProducts["items"] = $dbh->allItemInCartBy('gek5800@gmail.com');
+    $cost = $dbh->totalCost('gek5800@gmail.com');
 
     //Presentazione
     require_once($myLocation."template/basePage.php");

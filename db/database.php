@@ -171,7 +171,36 @@
                 VALUES ('$utente','$idItem','$quantity')";
                 return $this->db->query($sql);
             }
+        }
 
+        public function allItemInCartBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Carrello.Id_utente, Carrello.Quantità, Sotto_categoria.Descrizione as tipo, Categoria.Nome as categoria, Prodotto.*
+                FROM Carrello, Prodotto, Sotto_categoria, Categoria
+                WHERE Carrello.Id_prodotto = Prodotto.Id_prodotto
+                AND Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                AND Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                AND Carrello.Id_utente = '$emailUtente';");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function totalCost($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Carrello.Quantità, Prodotto.prezzo_scontato
+                FROM Carrello, Prodotto
+                WHERE Carrello.Id_prodotto = Prodotto.Id_prodotto
+                AND Carrello.Id_utente = '$emailUtente';");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $items = $result->fetch_all(MYSQLI_ASSOC);
+
+            $pay = 0;
+            foreach ($items as $item) {
+                $pay += ($item["Quantità"] * $item["prezzo_scontato"]);
+            }
+            return $pay;
         }
 
         public function getSpecificDataItemByName($name) {
