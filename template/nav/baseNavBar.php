@@ -1,5 +1,3 @@
-
-
 <header class="navbar_info_menu">
     <div class="topnav" id="myTopnav">
         <a href="<?php echo $myLocation; ?>index.php" class="active"> <?php echo $titleUser; ?> </a>
@@ -14,3 +12,4 @@
         </a>
     </div>
 </header>
+

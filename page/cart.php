@@ -26,7 +26,31 @@
         $myLocation.'template/core/coreSearch.php' => false
     ];
 
-    $allProducts["items"] = $dbh->getAllItems();
+    $payMethod = $dbh->payMethod();
+
+    $allProducts["items"] = $dbh->allItemInCartBy('gek5800@gmail.com');
+    $cost = $dbh->totalCost('gek5800@gmail.com');
+
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(isset($_POST["meno"])) {
+            header("refresh:0");
+            $idGame = $_POST["meno"];
+            $dbh->removeItemInCart('gek5800@gmail.com', $idGame);
+        }
+
+        if(isset($_POST["piu"])) {
+            header("refresh:0");
+            $idGame = $_POST["piu"];
+            $dbh->addItemInCart('gek5800@gmail.com', $idGame);
+        }
+
+        if(isset($_POST["pay"])) {
+            // header("refresh:0");
+            $dbh->removeUnitInWarehouse('gek5800@gmail.com');
+            $dbh->resetCart();
+        }
+    }
+
 
     //Presentazione
     require_once($myLocation."template/basePage.php");

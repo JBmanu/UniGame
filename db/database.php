@@ -53,25 +53,261 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function getAllItems() {
-            $stmt = $this->db->prepare("SELECT * FROM Prodotto ");
+        public function getWishListBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Id_utente, Prodotto.*, Sotto_categoria.path as icon 
+                FROM Utente, Wishlist, Prodotto, Sotto_categoria 
+                WHERE Utente.Email = Wishlist.Id_utente 
+                AND Wishlist.Id_utente = '$emailUtente' 
+                AND Wishlist.Id_prodotto = Prodotto.Id_prodotto 
+                AND Prodotto.Id_sottocategoria = Sotto_categoria.Id_sottocategoria");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function addItemInWishList($emailUtente = 'gek5800@gmail.com', $idProdotto) {
+            $sql = "INSERT INTO Wishlist(Id_utente, Id_prodotto, Piace)
+            VALUES ('$emailUtente', '$idProdotto', 1)";
+            return $this->db->query($sql);
+        }
+
+        public function removeItemInWishList($emailUtente = 'gek5800@gmail.com', $idProdotto) {
+            $query = "DELETE FROM Wishlist WHERE Wishlist.Id_utente = ? AND Wishlist.Id_prodotto = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ii',$emailUtente, $idProdotto);
+            return $stmt->execute();
+        }
+
+        public function getAllItemsWithLikeBy($emailUtente = 'gek5800@gmail.com'){
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace
+                FROM Prodotto LEFT JOIN Wishlist 
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto 
+                AND Wishlist.Id_utente = '$emailUtente'");
+
             $stmt->execute();
             $result = $stmt->get_result();
             return $result->fetch_all(MYSQLI_ASSOC);
         }
         
-        public function getItemPS() {
-            $stmt = $this->db->prepare("SELECT Prodotto.*, Categoria.Nome, Sotto_categoria.Descrizione
-                FROM Prodotto 
-                INNER JOIN Prodotto ON Prodotto.Id_sottocategoria = Sotto_categoria.Descrizione
-                INNER JOIN Sotto_categoria ON Sotto_categoria.Id_categoria = Categoria.Id_categoria");
+        public function getItemPSBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
+                FROM Prodotto LEFT JOIN Wishlist
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
+                LEFT JOIN Sotto_categoria 
+                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                LEFT JOIN Categoria 
+                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                WHERE Categoria.Id_categoria = 1
+                GROUP BY Prodotto.Nome
+                ORDER BY Prodotto.Prezzo ASC;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getItemPCBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
+                FROM Prodotto LEFT JOIN Wishlist
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
+                LEFT JOIN Sotto_categoria 
+                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                LEFT JOIN Categoria 
+                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                WHERE Categoria.Id_categoria = 4
+                GROUP BY Prodotto.Nome
+                ORDER BY Prodotto.Prezzo ASC;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getItemXboxBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
+                FROM Prodotto LEFT JOIN Wishlist
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
+                LEFT JOIN Sotto_categoria 
+                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                LEFT JOIN Categoria 
+                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                WHERE Categoria.Id_categoria = 2
+                GROUP BY Prodotto.Nome
+                ORDER BY Prodotto.Prezzo ASC;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getItemSwitchBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
+                FROM Prodotto LEFT JOIN Wishlist
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
+                LEFT JOIN Sotto_categoria 
+                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                LEFT JOIN Categoria 
+                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                WHERE Categoria.Id_categoria = 3
+                GROUP BY Prodotto.Nome
+                ORDER BY Prodotto.Prezzo ASC;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function pickItemBySottoCategory($nameGame, $sottoCateogori) {
+            $stmt = $this->db->prepare("SELECT * 
+                FROM Prodotto
+                WHERE Prodotto.Nome = '$nameGame'
+                AND Prodotto.Id_sottocategoria = $sottoCateogori;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function unitItemBy($utente, $idItem) {
+            $stmt = $this->db->prepare("SELECT Prodotto.Unità, Carrello.Quantità
+                FROM Carrello, Prodotto
+                WHERE Carrello.Id_prodotto = Prodotto.Id_prodotto
+                AND Carrello.Id_utente = '$utente'
+                AND Prodotto.Id_prodotto = $idItem;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC)[0];
+        }
+
+        public function addItemInCart($utente, $idItem, $quantity=1) {
+            $isExist = $this->db->prepare("SELECT * 
+                FROM Carrello
+                WHERE Carrello.Id_utente = '$utente'
+                AND Carrello.Id_prodotto = $idItem; ");
+            $isExist->execute();
+            $result = $isExist->get_result();
+           
+            $unitItem = self::unitItemBy($utente, $idItem)["Unità"];
+            $buyItem = self::unitItemBy($utente, $idItem)["Quantità"];
+
+            if($buyItem + 1 <= $unitItem && $result->num_rows > 0) {
+                $update = "UPDATE `Carrello` 
+                    SET Carrello.Quantità = Carrello.Quantità+$quantity
+                    WHERE Carrello.Id_utente='$utente' AND Carrello.Id_prodotto=$idItem;";
+                
+                return $this->db->query($update);
+            } else {
+                $sql = "INSERT INTO `Carrello`(`Id_utente`, `Id_prodotto`, `Quantità`) 
+                VALUES ('$utente','$idItem','$quantity')";
+                return $this->db->query($sql);
+            }
+        }
+
+        public function removeItemInCart($utente, $idItem, $quantity=1) {
+            $isExist = $this->db->prepare("SELECT * 
+                FROM Carrello
+                WHERE Carrello.Id_utente = '$utente'
+                AND Carrello.Id_prodotto = $idItem; ");
+            $isExist->execute();
+            $result = $isExist->get_result();
+
+            $buyItem = self::unitItemBy($utente, $idItem)["Quantità"];
+
+            if($buyItem - 1 == 0) {
+                $delet = "DELETE FROM Carrello 
+                WHERE Carrello.Id_utente='$utente' AND Carrello.Id_prodotto=$idItem;";
+                return $this->db->query($delet);
+            } 
+            else if($result->num_rows > 0) {
+                $update = "UPDATE `Carrello` 
+                    SET Carrello.Quantità = Carrello.Quantità-$quantity
+                    WHERE Carrello.Id_utente='$utente' AND Carrello.Id_prodotto=$idItem;";
+                return $this->db->query($update);
+            }
+        }
+
+        public function resetCart() {
+            $update = "TRUNCATE TABLE Carrello";
+                return $this->db->query($update);
+        }
+
+        public function payMethod() {
+            $stmt = $this->db->prepare("SELECT * FROM Metodo_pagamento ");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function allItemInCartBy($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Carrello.Id_utente, Carrello.Quantità, Sotto_categoria.Descrizione as tipo, Categoria.Nome as categoria, Prodotto.*
+                FROM Carrello, Prodotto, Sotto_categoria, Categoria
+                WHERE Carrello.Id_prodotto = Prodotto.Id_prodotto
+                AND Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                AND Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                AND Carrello.Id_utente = '$emailUtente';");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function removeUnitInWarehouse($emailUtente = 'gek5800@gmail.com') {
+            $cartItems = self::allItemInCartBy($emailUtente);
+
+            foreach ($cartItems as $item) {
+                $idItem = $item["Id_prodotto"];
+                $quantity = $item["Quantità"];
+                $update = "UPDATE Prodotto
+                    SET Prodotto.Unità = Prodotto.Unità-$quantity
+                    WHERE Prodotto.Id_prodotto = $idItem;";
+                return $this->db->query($update);
+            }
+
+            $delet = "DELETE FROM Prodotto WHERE Prodotto.Unità=0";
+            return $this->db->query($delet);
+        }        
+
+        public function totalCost($emailUtente = 'gek5800@gmail.com') {
+            $stmt = $this->db->prepare("SELECT Carrello.Quantità, Prodotto.prezzo_scontato
+                FROM Carrello, Prodotto
+                WHERE Carrello.Id_prodotto = Prodotto.Id_prodotto
+                AND Carrello.Id_utente = '$emailUtente';");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $items = $result->fetch_all(MYSQLI_ASSOC);
+
+            $pay = 0;
+            foreach ($items as $item) {
+                $pay += ($item["Quantità"] * $item["prezzo_scontato"]);
+            }
+            return $pay;
+        }
+
+        public function getSpecificDataItemByName($name) {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Sotto_categoria.Descrizione as tipo, Categoria.Nome as categoria, Sotto_categoria.Id_sottocategoria as chooseIdSottoCat
+            FROM Prodotto LEFT JOIN Sotto_categoria 
+            ON Prodotto.Id_sottocategoria = Sotto_categoria.Id_sottocategoria 
+            LEFT JOIN Categoria ON Categoria.Id_categoria = Sotto_categoria.Id_categoria 
+            WHERE Prodotto.Nome = '$name';");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getAllDataItem($idGame) {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Pegi.Url_immagine as pegi FROM Prodotto LEFT JOIN Pegi ON Prodotto.Id_pegi = Pegi.Id_pegi WHERE Prodotto.Id_prodotto = '$idGame';");
             $stmt->execute();
             $result = $stmt->get_result();
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
 
-        public function checkLoginUserCRIPTATO($email, $password){
+        public function checkLoginUserCRIPTATO($email, $password) {
             $query = "SELECT Email, Password, Salt From Utente WHERE Email = ?";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param("s", $email);

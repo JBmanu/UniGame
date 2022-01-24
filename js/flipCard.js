@@ -6,6 +6,9 @@ function turn(){
         face2.classList.remove('flipped_back');
         face1.classList.remove('flipped_front');
     });
+}
+
+function msgAja() {
 
 }
 
@@ -24,8 +27,7 @@ $(document).ready(function(){
 
             btnWish.addEventListener('click', () => {
                 let src = btnWish.getAttribute('src');
-                let click = false;
-
+                
                 if (src == '../img/item/heart-empty.svg') {
                     btnWish.src = '../img/item/heart-full.svg';
                     btnWish.classList.toggle('transform_heart');
@@ -34,7 +36,7 @@ $(document).ready(function(){
                     btnWish.src = '../img/item/heart-empty.svg';
                     btnWish.classList.remove('transform_heart');
                 }
-
+                
                 else if (src == '../../img/item/heart-empty.svg') {
                     btnWish.src = '../../img/item/heart-full.svg';
                     btnWish.classList.toggle('transform_heart');
@@ -43,23 +45,20 @@ $(document).ready(function(){
                     btnWish.src = '../../img/item/heart-empty.svg';
                     btnWish.classList.remove('transform_heart');
                 }
-
-                //dato inviata alla variabile post del php
-                let id = { idGame : element.id, favourite : click, action : 'like' };
-
+                
+                let data = {idGame:element.id, favourite:"click", action:"like"};
 
                 $.ajax({
-                    url:"listPS.php",
+                    url:"http://localhost/UniGame/manager/evetItem.php",
                     method: "post",
-                    data: id,
+                    data: data,
                     success: function(res) {
-                        console.log("Inviato", res);
+                        window.location.reload();
+                        console.log(res);
                     }
-                })
-
+                });
+                window.location.reload();
             });
-
-            
         }
 
 
@@ -81,6 +80,8 @@ $(document).ready(function(){
                 element.classList.add('transform_card');
                 void element.offsetWidth;
                 element.classList.remove('transform_card');
+
+                console.log("submit list item");
             });
         }
 

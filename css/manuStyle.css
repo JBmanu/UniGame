@@ -71,7 +71,7 @@ img {
     font-size: 150%;
     padding: 4% 20%;
     margin: 0% -30% 0%;
-    background: linear-gradient(180deg, rgba(46,59,102,0.95) 100%, rgba(228,235,245,0.5) 153.03%);
+    background: linear-gradient(180deg, rgba(0,150,136,0.99) 100%, rgba(228,235,245,0.5) 153.03%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: none;
 }
@@ -181,7 +181,7 @@ img {
 }.radio_circle_card:focus {
     outline: none;
 }.radio_circle_card:checked {
-    box-shadow: inset 0px 0px 0 4px #2e3b66;
+    box-shadow: inset 0px 0px 0 4px #009688;
 }
 .btn_submit_card {
     transition: all 0.1s ease-in-out;
@@ -225,8 +225,8 @@ img {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: absolute;
     padding: 0.5% 8%;
-    top: 25%;
-    right: 10%;
+    top: 5%;
+    right: 5%;
 }
 .title_right_card_composed {
     transition: font-size 200ms ease-in-out;
@@ -248,13 +248,13 @@ img {
 .less_cmd_card_composed {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);
     padding: 0% 8%;
-    border: 3px solid #2e3b66;
-
+    border: 3px solid #009688;
+    font-size: 100%;
 }
 .plus_cmd_card_composed {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);
     padding: 0% 8%;
-
+    font-size: 100%;
 }
 .quantity_card_composed {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -265,9 +265,9 @@ img {
 
 .cntnr_down_btn {
     transition: all 200ms ease-in-out;
-    background: linear-gradient(180deg, rgba(46,59,102,0.99) 95%,  rgba(228,235,245,0.5) 153.03%);
+    background: linear-gradient(180deg, rgba(0,150,136,0.99) 95%,  rgba(228,235,245,0.5) 153.03%);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    width: 84%;
+    width: 89%;
     padding: 3% 3%;
     font-size: 180%;
     position: fixed;
@@ -363,7 +363,7 @@ img {
 }.radio_circle:focus {
     outline: none;
 }.radio_circle:checked {
-    box-shadow: inset 0px 0px 0 6px #2e3b66;
+    box-shadow: inset 0px 0px 0 6px #009688;
 }
 .cntnr_description {
     margin: 6% 4% 0;
@@ -429,7 +429,7 @@ img {
         height: 25px;
     }
     .radio_circle_card:checked {
-        box-shadow: inset 0px 0px 0 5px #2e3b66;
+        box-shadow: inset 0px 0px 0 5px #009688;
     }
 
     .cntnr_pay {
@@ -475,7 +475,7 @@ img {
         height: 30px;
     }
     .radio_circle_card:checked {
-        box-shadow: inset 0px 0px 0 6px #2e3b66;
+        box-shadow: inset 0px 0px 0 6px #009688;
     }
     .cntnr_pay {
         left: 20%;
@@ -495,7 +495,7 @@ img {
     .price_right_card_composed { font-size: 120%; }
     .cntnr_cmd_card_cart { font-size: 200%; }
     .cntnr_down_btn {
-        width: 70%;
+        width: 76%;
         padding: 2% 2%;
         left: 12%;
     }
