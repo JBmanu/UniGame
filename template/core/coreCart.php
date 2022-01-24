@@ -30,7 +30,7 @@
             
             <?php foreach($payMethod as $method) : ?>
                 <label class="radio_btn_pay " for="<?php echo $method["Descrizione"]; ?>">
-                    <input class="circle_obj  space_bottom_margin_card  radio_circle" type="radio" id="<?php echo $method["Descrizione"]; ?>" name="pay" value="used" checked/>
+                    <input class="circle_obj  space_bottom_margin_card  radio_circle" type="radio" id="<?php echo $method["Descrizione"]; ?>" name="methodPay" value="<?php echo $method["Id_metodo"]; ?>" checked/>
                     <span><?php echo $method["Descrizione"]; ?></span> 
                 </label>
             <?php endforeach; ?>
@@ -40,7 +40,7 @@
 </div>
 
 
-<button type="submit" name="pay" value="<?php echo $cost." €"; ?>" class="cntnr_down_btn  curve_obj_h20  font_primary  fg_text_white">
+<button name="pay" value="<?php echo $cost." €"; ?>" class="cntnr_down_btn  curve_obj_h20  font_primary  fg_text_white">
     <p>Paga ora</p>
     <strong><?php echo $cost." €"; ?> </strong>
 </button>

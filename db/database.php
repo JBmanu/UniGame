@@ -200,13 +200,15 @@
             $unitItem = self::unitItemBy($utente, $idItem)["Unità"];
             $buyItem = self::unitItemBy($utente, $idItem)["Quantità"];
 
+            
             if($buyItem + 1 <= $unitItem && $result->num_rows > 0) {
                 $update = "UPDATE `Carrello` 
                     SET Carrello.Quantità = Carrello.Quantità+$quantity
                     WHERE Carrello.Id_utente='$utente' AND Carrello.Id_prodotto=$idItem;";
-                
                 return $this->db->query($update);
-            } else {
+            } 
+            
+            if($result->num_rows == 0) {
                 $sql = "INSERT INTO `Carrello`(`Id_utente`, `Id_prodotto`, `Quantità`) 
                 VALUES ('$utente','$idItem','$quantity')";
                 return $this->db->query($sql);
@@ -271,12 +273,41 @@
                 $update = "UPDATE Prodotto
                     SET Prodotto.Unità = Prodotto.Unità-$quantity
                     WHERE Prodotto.Id_prodotto = $idItem;";
-                return $this->db->query($update);
+                $this->db->query($update);
             }
 
             $delet = "DELETE FROM Prodotto WHERE Prodotto.Unità=0";
             return $this->db->query($delet);
         }        
+
+        public function createOrder($utente = 'gek5800@gmail.com', $idPay) {
+            $currentData = date('y-m-d');
+            $update = "INSERT INTO `Ordine` 
+            (`Id_ordine`, `Data_ordine`, `Id_utente`, `Id_corriere`, `Id_metodo`, 
+            `Id_status`, `Data_consegna`, `Data_agg_status`) 
+            VALUES (NULL, '$currentData', '$utente', 1, $idPay, 1, '$currentData', '$currentData') ";
+                return $this->db->query($update);
+        }
+
+        public function createDetailOrder($utente = 'gek5800@gmail.com', $idOrdine) {
+            $cartItems = self::allItemInCartBy($utente);
+
+            foreach ($cartItems as $item) {
+                $idItem = $item["Id_prodotto"];
+                $quantity = $item["Quantità"];
+                $cost = $item["prezzo_scontato"];
+                $update = "INSERT INTO Dettagli_ordine(Id_ordine, Id_prodotto, Quantità, Prezzo) 
+                VALUES ($idOrdine,$idItem,$quantity,$cost)";
+                $this->db->query($update);
+            }
+        }
+
+        public function lastOrderCreate() {
+            $stmt = $this->db->prepare("SELECT Ordine.Id_ordine FROM Ordine ORDER BY Ordine.Id_ordine DESC LIMIT 1;");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC)[0];
+        }
 
         public function totalCost($emailUtente = 'gek5800@gmail.com') {
             $stmt = $this->db->prepare("SELECT Carrello.Quantità, Prodotto.prezzo_scontato
