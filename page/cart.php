@@ -44,11 +44,16 @@
             $dbh->addItemInCart('gek5800@gmail.com', $idGame);
         }
 
-        if(isset($_POST["pay"])) {
-            // header("refresh:0");
+        if(isset($_POST["methodPay"])){
             $dbh->removeUnitInWarehouse('gek5800@gmail.com');
+            $dbh->createOrder('gek5800@gmail.com', $_POST["methodPay"]);
+            $idOrder = $dbh->lastOrderCreate()["Id_ordine"];
+            $dbh->createDetailOrder('gek5800@gmail.com', $idOrder);
+
             $dbh->resetCart();
+            header("refresh:0");
         }
+
     }
 
 
