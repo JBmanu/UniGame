@@ -152,6 +152,18 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function unitItemBy($utente, $idItem) {
+            $stmt = $this->db->prepare("SELECT Prodotto.Unità, Carrello.Quantità
+                FROM Carrello, Prodotto
+                WHERE Carrello.Id_prodotto = Prodotto.Id_prodotto
+                AND Carrello.Id_utente = '$utente'
+                AND Prodotto.Id_prodotto = $idItem;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC)[0];
+        }
+
         public function addItemInCart($utente, $idItem, $quantity=1) {
             $isExist = $this->db->prepare("SELECT * 
                 FROM Carrello
@@ -159,8 +171,11 @@
                 AND Carrello.Id_prodotto = $idItem; ");
             $isExist->execute();
             $result = $isExist->get_result();
+           
+            $unitItem = self::unitItemBy($utente, $idItem)["Unità"];
+            $buyItem = self::unitItemBy($utente, $idItem)["Quantità"];
 
-            if($result->num_rows > 0) {
+            if($buyItem + 1 <= $unitItem && $result->num_rows > 0) {
                 $update = "UPDATE `Carrello` 
                     SET Carrello.Quantità = Carrello.Quantità+$quantity
                     WHERE Carrello.Id_utente='$utente' AND Carrello.Id_prodotto=$idItem;";
@@ -171,6 +186,42 @@
                 VALUES ('$utente','$idItem','$quantity')";
                 return $this->db->query($sql);
             }
+        }
+
+        public function removeItemInCart($utente, $idItem, $quantity=1) {
+            $isExist = $this->db->prepare("SELECT * 
+                FROM Carrello
+                WHERE Carrello.Id_utente = '$utente'
+                AND Carrello.Id_prodotto = $idItem; ");
+            $isExist->execute();
+            $result = $isExist->get_result();
+
+            $buyItem = self::unitItemBy($utente, $idItem)["Quantità"];
+
+            if($buyItem - 1 == 0) {
+                $delet = "DELETE FROM Carrello 
+                WHERE Carrello.Id_utente='$utente' AND Carrello.Id_prodotto=$idItem;";
+                return $this->db->query($delet);
+            } 
+            else if($result->num_rows > 0) {
+                $update = "UPDATE `Carrello` 
+                    SET Carrello.Quantità = Carrello.Quantità-$quantity
+                    WHERE Carrello.Id_utente='$utente' AND Carrello.Id_prodotto=$idItem;";
+                return $this->db->query($update);
+            }
+        }
+
+        public function resetCart() {
+            $update = "TRUNCATE TABLE Carrello";
+                return $this->db->query($update);
+        }
+
+        public function payMethod() {
+            $stmt = $this->db->prepare("SELECT * FROM Metodo_pagamento ");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
         }
 
         public function allItemInCartBy($emailUtente = 'gek5800@gmail.com') {
@@ -185,6 +236,22 @@
             $result = $stmt->get_result();
             return $result->fetch_all(MYSQLI_ASSOC);
         }
+
+        public function removeUnitInWarehouse($emailUtente = 'gek5800@gmail.com') {
+            $cartItems = self::allItemInCartBy($emailUtente);
+
+            foreach ($cartItems as $item) {
+                $idItem = $item["Id_prodotto"];
+                $quantity = $item["Quantità"];
+                $update = "UPDATE Prodotto
+                    SET Prodotto.Unità = Prodotto.Unità-$quantity
+                    WHERE Prodotto.Id_prodotto = $idItem;";
+                return $this->db->query($update);
+            }
+
+            $delet = "DELETE FROM Prodotto WHERE Prodotto.Unità=0";
+            return $this->db->query($delet);
+        }        
 
         public function totalCost($emailUtente = 'gek5800@gmail.com') {
             $stmt = $this->db->prepare("SELECT Carrello.Quantità, Prodotto.prezzo_scontato

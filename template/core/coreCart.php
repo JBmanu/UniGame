@@ -10,11 +10,11 @@
             <div class="cntnr_right_card_composed">
                 <h2 class="title_right_card_composed  font_primary  fg_text_primary"><strong><?php echo $item["Nome"]?></strong></h2>
                 <strong class="price_right_card_composed  curve_obj_h15  font_secondary  bg_third  fg_text_primary"><?php echo $item["prezzo_scontato"]?></strong>
-                <div class="cntnr_cmd_card_cart"> 
-                    <p class="less_cmd_card_composed  force_flex_center  curve_obj_h20  fg_text_primary">-</p>
+                <form action="#" method="post" class="cntnr_cmd_card_cart"> 
+                    <button type="submit" name="meno" value="<?php echo $item["Id_prodotto"]?>" class="less_cmd_card_composed  force_flex_center  curve_obj_h20  fg_text_accent" >-</button>
                     <p class="quantity_card_composed  force_flex_center  curve_obj_h20  bg_third  fg_text_primary"><?php echo $item["Quantità"]; ?></p>
-                    <p class="plus_cmd_card_composed  force_flex_center  curve_obj_h20  bg_primary  fg_text_white">+</p>
-                </div>
+                    <button type="submit" name="piu" value="<?php echo $item["Id_prodotto"]?>" class="plus_cmd_card_composed  force_flex_center  curve_obj_h20  bg_primary  fg_text_white">+</button>
+                </form>
             </div>
         </section>
     <?php endforeach; ?>
@@ -27,29 +27,20 @@
     <form class="cntnr_form_method_pay  space_top_margin_big  font_secondary  fg_text_primary" action="#" method="post">
         <fieldset  class="">
             <legend>Pagamento:</legend>
-            <label class="radio_btn_pay " for="mastercard">
-                <input class="circle_obj  space_bottom_margin_card  radio_circle" type="radio" id="mastercard" name="pay" value="used"/>
-                <span>MasterCard</span> 
-            </label>
-            <label class="radio_btn_pay" for="paypal">
-                <input class="circle_obj  space_bottom_margin_card  radio_circle" type="radio" id="paypal" name="pay" value="new" />
-                <span>PayPal</span> 
-            </label>
-            <label class="radio_btn_pay" for="bancomat">
-                <input class="circle_obj  space_bottom_margin_card  radio_circle" type="radio" id="bancomat" name="pay" value="ps4"/>
-                <span>Bancomat</span> 
-            </label>
-            <label class="radio_btn_pay" for="american">
-                <input class="circle_obj  space_bottom_margin_card  radio_circle" type="radio" id="american" name="pay" value="ps5" checked="checked"/>
-                <span>American Express</span> 
-            </label>
+            
+            <?php foreach($payMethod as $method) : ?>
+                <label class="radio_btn_pay " for="<?php echo $method["Descrizione"]; ?>">
+                    <input class="circle_obj  space_bottom_margin_card  radio_circle" type="radio" id="<?php echo $method["Descrizione"]; ?>" name="pay" value="used" checked/>
+                    <span><?php echo $method["Descrizione"]; ?></span> 
+                </label>
+            <?php endforeach; ?>
             <input class="submit_method_pay  space_top_margin_big  curve_obj_h15  font_primary  fg_text_white" type="submit" value="Conferma"/>
         </fieldset>
     </form>
 </div>
 
 
-<section class="cntnr_down_btn  curve_obj_h20  font_primary  fg_text_white">
+<button type="submit" name="pay" value="<?php echo $cost." €"; ?>" class="cntnr_down_btn  curve_obj_h20  font_primary  fg_text_white">
     <p>Paga ora</p>
     <strong><?php echo $cost." €"; ?> </strong>
-</section>
+</button>
