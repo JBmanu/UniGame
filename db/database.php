@@ -153,9 +153,25 @@
         }
 
         public function addItemInCart($utente, $idItem, $quantity=1) {
-            $sql = "INSERT INTO `Carrello`(`Id_utente`, `Id_prodotto`, `Quantità`) 
+            $isExist = $this->db->prepare("SELECT * 
+                FROM Carrello
+                WHERE Carrello.Id_utente = '$utente'
+                AND Carrello.Id_prodotto = $idItem; ");
+            $isExist->execute();
+            $result = $isExist->get_result();
+
+            if($result->num_rows > 0) {
+                $update = "UPDATE `Carrello` 
+                    SET Carrello.Quantità = Carrello.Quantità+$quantity
+                    WHERE Carrello.Id_utente='$utente' AND Carrello.Id_prodotto=$idItem;";
+                
+                return $this->db->query($update);
+            } else {
+                $sql = "INSERT INTO `Carrello`(`Id_utente`, `Id_prodotto`, `Quantità`) 
                 VALUES ('$utente','$idItem','$quantity')";
-            return $this->db->query($sql);
+                return $this->db->query($sql);
+            }
+
         }
 
         public function getSpecificDataItemByName($name) {

@@ -20,11 +20,9 @@
         <script src="../js/flipCard.js"  type="text/javascript" defer="defer"></script>
         <script src="../js/cardCart.js"  type="text/javascript" defer="defer"></script>
         <script src="../js/methoWindow.js"  type="text/javascript" defer="defer"></script>
-        
     </head>
 
     <body>
-
         <?php
             foreach ($hasNav as $key => $value){
                 if ($value) {

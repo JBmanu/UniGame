@@ -16,7 +16,7 @@
         </div>
 
         <form class="back_card_flip  force_flex_center  form_2_by_list  curve_obj_h20  bg_third  fg_text_primary" 
-            action="listPS.php?idItem=<?php echo $item["Nome"]; ?>" method="post">
+            action="<?php echo $specificPage; ?>?idItem=<?php echo $item["Nome"]; ?>" method="post">
             <fieldset class="fieldset_form">
                 <legend ><?php echo $item["Nome"]; ?></legend>
                 <?php require($myLocation."template/form/double.php"); ?>

@@ -1,4 +1,6 @@
 <main class="cntnr_list_card  space_top_margin_medium">
+    
+
     <section class="card_composed  curve_obj_h20  space_bottom_margin_card">
         <div class="cntnr_left_card_composed">
             <p class="info_used_left_card_composed  curve_obj_h20  bg_highlights  font_secondary  fg_text_primary">used</p>
@@ -15,6 +17,8 @@
             </div>
         </div>
     </section>
+
+
 </main>
 
 

@@ -27,16 +27,6 @@
                 $id_utente = "gek5800@gmail.com";
                 $dbh->addItemInCart($id_utente, $idItem);
             }
-            if($_POST["XBOX"]){
-
-            }
-
-            if($_POST["SWITCH"]){
-
-            }
-
-            if($_POST["PC"]){
-            }
         }
 
     }

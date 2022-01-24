@@ -181,7 +181,7 @@ img {
 }.radio_circle_card:focus {
     outline: none;
 }.radio_circle_card:checked {
-    box-shadow: inset 0px 0px 0 4px #2e3b66;
+    box-shadow: inset 0px 0px 0 4px #009688;
 }
 .btn_submit_card {
     transition: all 0.1s ease-in-out;
@@ -429,7 +429,7 @@ img {
         height: 25px;
     }
     .radio_circle_card:checked {
-        box-shadow: inset 0px 0px 0 5px #2e3b66;
+        box-shadow: inset 0px 0px 0 5px #009688;
     }
 
     .cntnr_pay {
@@ -475,7 +475,7 @@ img {
         height: 30px;
     }
     .radio_circle_card:checked {
-        box-shadow: inset 0px 0px 0 6px #2e3b66;
+        box-shadow: inset 0px 0px 0 6px #009688;
     }
     .cntnr_pay {
         left: 20%;

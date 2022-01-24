@@ -17,6 +17,19 @@
 
     $allProducts["items"] = $dbh->getItemXboxBy();
 
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(isset($_POST)){
+            if($_POST["XBOX"]){
+                $sotto_categoria = $_POST["PS"];
+                $nameGame = $_GET["idItem"];
+                $idItem = $dbh->pickItemBySottoCategory($nameGame, $sotto_categoria)[0]["Id_prodotto"];
+                $id_utente = "gek5800@gmail.com";
+                $dbh->addItemInCart($id_utente, $idItem);
+            }
+        }
+
+    }
+
     //Presentazione
     require_once("../../template/listItem.php");
 ?>

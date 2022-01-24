@@ -26,7 +26,7 @@
         $myLocation.'template/core/coreSearch.php' => false
     ];
 
-    $allProducts["items"] = $dbh->getAllItems();
+    // $allProducts["items"] = $dbh->getAllItems();
 
     //Presentazione
     require_once($myLocation."template/basePage.php");
