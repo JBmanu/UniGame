@@ -5,7 +5,7 @@
                         echo $array[0]["Nome"]; 
                     else: 
                         echo ucfirst(strtolower($array[0]["Nome"])); 
-                    endif; ?>.php?Id_prodotto=<?php echo $prodotto["Id_prodotto"]; ?> "><img class="img_item_scroll  curve_obj_h20" src="<?php echo UPLOAD_DIR_DETAILS_ORDINE.$prodotto["Url_immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" /></a>
+                    endif; ?>.php?idItem=<?php echo $prodotto["Id_prodotto"]; ?> "><img class="img_item_scroll  curve_obj_h20" src="<?php echo UPLOAD_DIR_DETAILS_ORDINE.$prodotto["Url_immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" /></a>
         <div class="cntnr_info_type  circle_obj  bg_light_theme_<?php echo $array[0]["Nome"] ?>  force_flex_center">
             <img class="icon_info_type" src="<?php
                                 echo UPLOAD_DIR_TIPO_DEVIDE_LOG_REGISTER.$array[0]["Icona"];

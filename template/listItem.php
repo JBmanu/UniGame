@@ -5,12 +5,12 @@
         <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
         <title><?php echo $titleUser; ?></title>
         <link rel="stylesheet" href="../../css/baseStyle.css" type="text/css"/>
-        <link rel="icon" href="../../img/unigame.jpeg" type="image/jpeg">
         <link rel="stylesheet" href="../../css/style.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/manuStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/effectStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/fontColorStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../../css/toastr.min.css">
+        <link rel="icon" href="../../img/unigame.jpeg" type="image/jpeg">
 
         <script src="../../js/jquery-3.4.1.min.js" defer="defer"></script>
         <script src="../../js/toastr.min.js" defer="defer"></script>

@@ -58,7 +58,7 @@
                         echo $array[0]["Nome"]; 
                     else: 
                         echo ucfirst(strtolower($array[0]["Nome"])); 
-                    endif; ?>.php?Id_prodotto=<?php echo $gioco_scontato["Id_prodotto"]; ?>"><img class="img_item_scroll  curve_obj_h20" src="<?php echo UPLOAD_DIR_INDEX.$gioco_scontato["Url_immagine"]; ?>" alt="TLOU2" /></a>
+                    endif; ?>.php?idItem=<?php echo $gioco_scontato["Id_prodotto"]; ?>"><img class="img_item_scroll  curve_obj_h20" src="<?php echo UPLOAD_DIR_INDEX.$gioco_scontato["Url_immagine"]; ?>" alt="TLOU2" /></a>
                     <p class="real_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo"]; ?>€</p>
                     <strong class="discount_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo_scontato"]; ?>€</strong>
                     <div class="cntnr_info_used curve_obj_h15  bg_new force_flex_center">

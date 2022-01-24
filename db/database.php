@@ -89,6 +89,14 @@
             $result = $stmt->get_result();
             return $result->fetch_all(MYSQLI_ASSOC);
         }
+
+        public function getAllItems(){
+            $stmt = $this->db->prepare("SELECT * FROM Prodotto");
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
         
         public function getItemPSBy($emailUtente = 'gek5800@gmail.com') {
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
