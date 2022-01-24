@@ -80,6 +80,8 @@ $(document).ready(function(){
                 element.classList.add('transform_card');
                 void element.offsetWidth;
                 element.classList.remove('transform_card');
+
+                console.log("submit list item");
             });
         }
 

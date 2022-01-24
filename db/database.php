@@ -37,11 +37,12 @@
         }
 
         public function getWishListBy($emailUtente = 'gek5800@gmail.com') {
-            $stmt = $this->db->prepare("SELECT Id_utente, Prodotto.*
-                FROM Utente, Wishlist, Prodotto
+            $stmt = $this->db->prepare("SELECT Id_utente, Prodotto.*, Sotto_categoria.path as icon 
+                FROM Utente, Wishlist, Prodotto, Sotto_categoria 
                 WHERE Utente.Email = Wishlist.Id_utente 
                 AND Wishlist.Id_utente = '$emailUtente' 
-                AND Wishlist.Id_prodotto = Prodotto.Id_prodotto");
+                AND Wishlist.Id_prodotto = Prodotto.Id_prodotto 
+                AND Prodotto.Id_sottocategoria = Sotto_categoria.Id_sottocategoria");
 
             $stmt->execute();
             $result = $stmt->get_result();
@@ -72,7 +73,7 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
         
-        public function getItemPSAscBy($emailUtente = 'gek5800@gmail.com') {
+        public function getItemPSBy($emailUtente = 'gek5800@gmail.com') {
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
                 FROM Prodotto LEFT JOIN Wishlist
                 ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
@@ -83,23 +84,6 @@
                 WHERE Categoria.Id_categoria = 1
                 GROUP BY Prodotto.Nome
                 ORDER BY Prodotto.Prezzo ASC;");
-
-            $stmt->execute();
-            $result = $stmt->get_result();
-            return $result->fetch_all(MYSQLI_ASSOC);
-        }
-
-        public function getItemPSDescBy($emailUtente = 'gek5800@gmail.com') {
-            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
-                FROM Prodotto LEFT JOIN Wishlist
-                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
-                LEFT JOIN Sotto_categoria 
-                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
-                LEFT JOIN Categoria 
-                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
-                WHERE Categoria.Id_categoria = 1
-                GROUP BY Prodotto.Nome
-                ORDER BY Prodotto.Prezzo DESC;");
 
             $stmt->execute();
             $result = $stmt->get_result();
@@ -157,8 +141,25 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function pickItemBySottoCategory($nameGame, $sottoCateogori) {
+            $stmt = $this->db->prepare("SELECT * 
+                FROM Prodotto
+                WHERE Prodotto.Nome = '$nameGame'
+                AND Prodotto.Id_sottocategoria = $sottoCateogori;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function addItemInCart($utente, $idItem, $quantity=1) {
+            $sql = "INSERT INTO `Carrello`(`Id_utente`, `Id_prodotto`, `Quantità`) 
+                VALUES ('$utente','$idItem','$quantity')";
+            return $this->db->query($sql);
+        }
+
         public function getSpecificDataItemByName($name) {
-            $stmt = $this->db->prepare("SELECT Prodotto.*, Sotto_categoria.Descrizione as tipo, Categoria.Nome as categoria
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Sotto_categoria.Descrizione as tipo, Categoria.Nome as categoria, Sotto_categoria.Id_sottocategoria as chooseIdSottoCat
             FROM Prodotto LEFT JOIN Sotto_categoria 
             ON Prodotto.Id_sottocategoria = Sotto_categoria.Id_sottocategoria 
             LEFT JOIN Categoria ON Categoria.Id_categoria = Sotto_categoria.Id_categoria 

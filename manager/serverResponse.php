@@ -5,5 +5,10 @@
         exit();
     }
 
+    function responseTEST($msg) {
+        print json_encode("Messaggio di test: ".$msg);
+        exit();
+    }
+
 
 ?>

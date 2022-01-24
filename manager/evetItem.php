@@ -22,16 +22,15 @@
                             }
                         }
                     }
-                    break;
-                
-                case 'order': 
-
-                    
-                    break;
-                
+                    break;                
             }
-
         }
     }
 
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(isset($_POST) && $_POST["PS"]){
+            var_dump($allProducts["items"]);
+        }
+
+    }
 ?>

@@ -28,6 +28,33 @@
 
     $allProducts["wish"] = $dbh->getWishListBy();
 
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(isset($_POST)){
+            $sotto_categoria ="ciao";
+            
+            if($_POST["PS"]){
+                $sotto_categoria = $_POST["PS"];
+            }
+            if($_POST["XBOX"]){
+                $sotto_categoria = $_POST["XBOX"];
+            }
+
+            if($_POST["SWITCH"]){
+                $sotto_categoria = $_POST["SWITCH"];
+            }
+
+            if($_POST["PC"]){
+                $sotto_categoria = $_POST["PC"];
+            }
+
+            $nameGame = $_GET["idItem"];
+            $idItem = $dbh->pickItemBySottoCategory($nameGame, $sotto_categoria)[0]["Id_prodotto"];
+            $id_utente = "gek5800@gmail.com";
+            $dbh->addItemInCart($id_utente, $idItem);
+        }
+
+    }
+
     //Presentazione
     require_once($myLocation."template/basePage.php");
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
     require_once("../../connection.php");
 
     $titleUser = 'UniGame';
@@ -10,6 +10,19 @@
     $backPage = '../listItem/listPS.php';
 
     $item = $dbh->getAllDataItem($_GET["idItem"])[0];
+
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(isset($_POST)){
+
+            if($_POST["PS"]){
+                $sotto_categoria = $_POST["PS"];
+                $nameGame = $item["Nome"];
+                $idItem = $dbh->pickItemBySottoCategory($nameGame, $sotto_categoria)[0]["Id_prodotto"];
+                $id_utente = "gek5800@gmail.com";
+                $dbh->addItemInCart($id_utente, $idItem);
+            }
+        }
+    }
 
     require_once($myLocation."template/core/coreItem.php");
 ?>

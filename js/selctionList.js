@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     let selectOrder = document.querySelector("#order");
 
     $.fn.reverseChildren = function() {
@@ -12,15 +13,27 @@ $(document).ready(function(){
         $('.cntnr_list_card').reverseChildren();
     });
 
-    // let selectFilter = document.querySelector("#filter");
-    // let filter = true;
 
-    // selectFilter.addEventListener("change", () => {
-    //     console.log("change select");
-    //     cres = !cres;
-    //     document.querySelector(".cntnr_list_card").style.flexDirection = 
-    //         cres ? 'row' : 'row-reverse';
-    // });
+    let selectFilter = document.querySelector("#formFilter");
+
+    selectFilter.addEventListener("change", () => {
+
+        if(selectFilter.value == "all"){
+            console.log("tutti");
+        }
+
+        if(selectFilter.value == "10to50"){
+            console.log("10to50");
+
+        }
+
+        if(selectFilter.value == "50to100"){
+            console.log("50to100");
+
+        }
+
+
+    });
     
 
     

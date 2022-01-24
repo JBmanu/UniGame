@@ -15,25 +15,31 @@
         'NavBtn' => $myLocation.'template/nav/baseNavBtn.php',
         'NavSearch' => $myLocation.'template/nav/baseNavSearch.php'];
 
-    $allProducts["items"] = $dbh->getItemPSAscBy();
+    $allProducts["items"] = $dbh->getItemPSBy();
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-        if(isset($_POST)) {
-    
-            switch ($_POST["order"]){
-                case 'desc':
-                    $allProducts["items"] = $dbh->getItemPSDescBy();
-                    header('Refresh: 0');
-                    break;
-                case 'cres':
-                    $allProducts["items"] = $dbh->getItemPSAscBy();
-                    header('Refresh: 0');
-                    break;
+        if(isset($_POST)){
+
+            if($_POST["PS"]){
+                $sotto_categoria = $_POST["PS"];
+                $nameGame = $_GET["idItem"];
+                $idItem = $dbh->pickItemBySottoCategory($nameGame, $sotto_categoria)[0]["Id_prodotto"];
+                $id_utente = "gek5800@gmail.com";
+                $dbh->addItemInCart($id_utente, $idItem);
+            }
+            if($_POST["XBOX"]){
+
+            }
+
+            if($_POST["SWITCH"]){
+
+            }
+
+            if($_POST["PC"]){
             }
         }
-    }
 
-    //<?php echo $myLocation."page/listItem/".$specificPage;
+    }
 
     //Presentazione
     require_once($myLocation."template/listItem.php");

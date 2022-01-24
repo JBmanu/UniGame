@@ -49,7 +49,8 @@
                     </div>
                 </div>
 
-                <form class="cntnr_form  force_flex_center  space_top_margin_big  fg_text_white" action="#" method="post">
+                <form class="cntnr_form  force_flex_center  space_top_margin_big  fg_text_white" 
+                    action="#" method="post">
                     <fieldset class="fieldset_radio_form">
                         <legend class="legend_fieldset font_legend"><?php echo $item["Nome"]; ?></legend>
                         <?php require($myLocation."template/form/formItem.php"); ?>

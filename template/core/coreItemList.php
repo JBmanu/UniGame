@@ -15,12 +15,12 @@
             <img class="btn_overlay_bottom_right  circle_obj  bg_third" src="<?php echo $myLocation?>img/item/add.svg" alt="add" />
         </div>
 
-        <form class="back_card_flip  force_flex_center  form_2_by_list  curve_obj_h20  bg_third  fg_text_primary" action="#" method="post">
+        <form class="back_card_flip  force_flex_center  form_2_by_list  curve_obj_h20  bg_third  fg_text_primary" 
+            action="listPS.php?idItem=<?php echo $item["Nome"]; ?>" method="post">
             <fieldset class="fieldset_form">
-                <legend><?php echo $item["Nome"]; ?></legend>
-
+                <legend ><?php echo $item["Nome"]; ?></legend>
                 <?php require($myLocation."template/form/double.php"); ?>
-                <input class="btn_submit_card  space_top_margin_big  curve_obj_h15  bg_primary  font_primary  fg_text_white" type="submit" value="Aggiungi"/>
+                <input class="btn_submit_card  space_top_margin_big  curve_obj_h15  bg_primary  font_primary  fg_text_white" type="submit" name="submit" value="Aggiungi"/>
             </fieldset>
         </form>
     </section>
