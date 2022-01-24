@@ -89,14 +89,6 @@
             $result = $stmt->get_result();
             return $result->fetch_all(MYSQLI_ASSOC);
         }
-
-        public function getAllItems(){
-            $stmt = $this->db->prepare("SELECT * FROM Prodotto");
-            $stmt->execute();
-            $result = $stmt->get_result();
-
-            return $result->fetch_all(MYSQLI_ASSOC);
-        }
         
         public function getItemPSBy($emailUtente = 'gek5800@gmail.com') {
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
@@ -275,10 +267,17 @@
                     WHERE Prodotto.Id_prodotto = $idItem;";
                 $this->db->query($update);
             }
+            return true;
+        }
 
-            $delet = "DELETE FROM Prodotto WHERE Prodotto.Unità=0";
-            return $this->db->query($delet);
-        }        
+        public function checkZeroUnits(){
+            $query = "SELECT * FROM Prodotto WHERE Unità = 0";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
 
         public function createOrder($utente = 'gek5800@gmail.com', $idPay) {
             $currentData = date('y-m-d');
@@ -607,7 +606,7 @@
         }
 
         public function getAllProduct(){
-            $query="SELECT Id_prodotto, Nome, Sconto, Id_sottocategoria, prezzo_scontato FROM Prodotto";
+            $query="SELECT * FROM Prodotto";
             $stmt = $this->db->prepare($query);
             $stmt->execute();
             $result = $stmt->get_result();

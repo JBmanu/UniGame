@@ -6,7 +6,7 @@
     $counter=0;
 
     if(isset($_POST["Search"])){
-        $templateParams["prodotti_totali"] = $dbh->getAllItems();
+        $templateParams["prodotti_totali"] = $dbh->getAllProduct();
         for($i=0; $i<count($templateParams["prodotti_totali"]); $i++){
 
             $templateParams["prodotti_totali"][$i]["Nome"]=strtolower($templateParams["prodotti_totali"][$i]["Nome"]);

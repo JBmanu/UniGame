@@ -44,6 +44,19 @@
 
         if(isset($_POST["methodPay"])){
             $dbh->removeUnitInWarehouse('gek5800@gmail.com');
+
+
+            $numProductZero=$dbh->checkZeroUnits();
+            if($numProductZero->num_rows>0){
+                for($i=0; $i<count($numProductZero); $i++){
+                    $nome_prodotto=$numProductZero[$i]["Nome"];
+                    mail('info@unigame.it', 'Prodotto terminato !', $nome_prodotto.' è terminato !!');
+                    $id=$dbh->deleteProduct($numProductZero[$i]["Id_prodotto"]);
+                }
+            }
+
+
+
             $dbh->createOrder('gek5800@gmail.com', $_POST["methodPay"]);
             $idOrder = $dbh->lastOrderCreate()["Id_ordine"];
             $dbh->createDetailOrder('gek5800@gmail.com', $idOrder);
@@ -52,7 +65,6 @@
         }
 
     }
-
 
     //Presentazione
     require_once($myLocation."template/basePage.php");
