@@ -33,22 +33,24 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_POST["meno"])) {
+            header("refresh:0");
             $idGame = $_POST["meno"];
             $dbh->removeItemInCart('gek5800@gmail.com', $idGame);
         }
 
         if(isset($_POST["piu"])) {
+            header("refresh:0");
             $idGame = $_POST["piu"];
             $dbh->addItemInCart('gek5800@gmail.com', $idGame);
         }
 
         if(isset($_POST["methodPay"])){
+            header("refresh:0");
             $dbh->removeUnitInWarehouse('gek5800@gmail.com');
             $dbh->createOrder('gek5800@gmail.com', $_POST["methodPay"]);
             $idOrder = $dbh->lastOrderCreate()["Id_ordine"];
             $dbh->createDetailOrder('gek5800@gmail.com', $idOrder);
             $dbh->resetCart();
-            header("refresh:0");
         }
 
     }

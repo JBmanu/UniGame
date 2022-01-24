@@ -562,12 +562,8 @@ img {
 
     .icon_theme{ width: 2.5%; }
 
-    /* .radio_btn { align-items: center; } */
     .cntnr_form {
         font-size: 280%;
-    }
-    .info_game_left_card_composed {
-        top: 30%;
     }
     .cntnr_pay {
         left: 30%;
