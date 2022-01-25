@@ -31,7 +31,7 @@
 
             <div class="ctnr_top_card">
                 <img class="" src="<?php echo $myLocation."img/game/".$item["Url_immagine"]; ?>" alt="<?php echo $item["Nome"]; ?>" />
-                <p class="price_singol_item  curve_obj_h20  font_secondary  bg_third  fg_text_primary"><strong><?php echo $item["prezzo_scontato"]."€"; ?></strong></p>
+                <span class="price_singol_item  curve_obj_h20  font_secondary  bg_third  fg_text_primary"><strong><?php echo $item["prezzo_scontato"]."€"; ?></strong></span>
             </div>
 
             <div class="ctnr_down_card  <?php echo $gbColorOpacity; ?>">
@@ -61,9 +61,9 @@
                 </form>
 
                 <div class="cntnr_description  font_secondary  fg_text_white">
-                    <p class="text_description"><?php echo $item["Descrizione"]; ?></p>
+                    <span class="text_description"><?php echo $item["Descrizione"]; ?></span>
                     <div class="cntnr_footer_description  space_top_margin_big">
-                        <p>Data rilascio: <?php echo $item["Data_rilascio"]; ?></p>
+                        <span>Data rilascio: <?php echo $item["Data_rilascio"]; ?></span>
                     </div>
                 </div>
             </div>

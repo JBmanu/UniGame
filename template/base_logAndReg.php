@@ -29,7 +29,7 @@
             </div>
         </header>
         <div class="div-login">
-            <p><?php echo $templateParams["intro"]; ?></p>
+            <span><?php echo $templateParams["intro"]; ?></span>
         </div>
         <nav class = "nav-rotondo">
             <ul>

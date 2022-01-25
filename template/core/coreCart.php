@@ -4,7 +4,7 @@
 
         <section class="card_composed  curve_obj_h20  space_bottom_margin_card">
             <div class="cntnr_left_card_composed">
-                <p class="info_game_left_card_composed  curve_obj_h20  bg_opacity_theme_<?php echo $item["categoria"]; ?>  font_secondary  fg_text_white"><?php echo $item["tipo"]; ?></p>
+                <span class="info_game_left_card_composed  curve_obj_h20  bg_opacity_theme_<?php echo $item["categoria"]; ?>  font_secondary  fg_text_white"><?php echo $item["tipo"]; ?></span>
                 <img class="curve_obj_h20" src="<?php echo $myLocation."img/game/".$item["Url_immagine"]; ?>" alt="<?php echo $item["Nome"]; ?>" />
             </div>
             <div class="cntnr_right_card_composed">
@@ -12,7 +12,7 @@
                 <strong class="price_right_card_composed  curve_obj_h15  font_secondary  bg_third  fg_text_primary"><?php echo $item["prezzo_scontato"]."€";?></strong>
                 <form action="#" method="post" class="cntnr_cmd_card_cart"> 
                     <button type="submit" name="meno" value="<?php echo $item["Id_prodotto"]?>" class="less_cmd_card_composed  force_flex_center  curve_obj_h20  fg_text_accent" >-</button>
-                    <p class="quantity_card_composed  force_flex_center  curve_obj_h20  bg_third  fg_text_primary"><?php echo $item["Quantità"]; ?></p>
+                    <span class="quantity_card_composed  force_flex_center  curve_obj_h20  bg_third  fg_text_primary"><?php echo $item["Quantità"]; ?></span>
                     <button type="submit" name="piu" value="<?php echo $item["Id_prodotto"]?>" class="plus_cmd_card_composed  force_flex_center  curve_obj_h20  bg_primary  fg_text_white">+</button>
                 </form>
             </div>

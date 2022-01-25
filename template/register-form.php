@@ -1,6 +1,6 @@
 <form action="#" method="post" class="form">
 <?php if(isset($templateParams["erroreRegister"])): ?>
-        <p><?php echo $templateParams["erroreRegister"]; ?></p>
+        <span><?php echo $templateParams["erroreRegister"]; ?></span>
     <?php endif; ?>
                 <div>
                     <label for="nome">Inserire nome</label>

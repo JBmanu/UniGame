@@ -362,7 +362,7 @@ a {
     flex-flow: row wrap;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    height: 288px;
+    height: 531px;
     justify-content: center;
     align-items: flex-start;
 }

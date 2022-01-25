@@ -1,6 +1,6 @@
 <form action="#" method="post" class="form">
     <?php if(isset($templateParams["erroreLogin"])): ?>
-        <p><?php echo $templateParams["erroreLogin"]; ?></p>
+        <span><?php echo $templateParams["erroreLogin"]; ?></span>
     <?php endif; ?>
                 <div>
                     <label for="email">Inserire mail</label>

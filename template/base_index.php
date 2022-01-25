@@ -58,10 +58,10 @@
                     else: 
                         echo ucfirst(strtolower($array[0]["Nome"])); 
                     endif; ?>.php?idItem=<?php echo $gioco_scontato["Id_prodotto"]; ?>"><img class="img_item_scroll  curve_obj_h20" src="<?php echo UPLOAD_DIR_INDEX.$gioco_scontato["Url_immagine"]; ?>" alt="TLOU2" /></a>
-                    <p class="real_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo"]; ?>€</p>
+                    <span class="real_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo"]; ?>€</span>
                     <strong class="discount_price_item  force_flex_center  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $gioco_scontato["Prezzo_scontato"]; ?>€</strong>
                     <div class="cntnr_info_used curve_obj_h15  bg_new force_flex_center">
-                        <p class="fg_text_white  font_primary">Nuovo</p>
+                        <span class="fg_text_white  font_primary">Nuovo</span>
                     </div>
                     <div class="cntnr_info_type  circle_obj bg_light_theme_<?php echo $array[0]["Nome"] ?> force_flex_center">
                         <img class="icon_info_type" src="

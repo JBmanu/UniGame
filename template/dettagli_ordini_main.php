@@ -6,10 +6,10 @@
 
             <section class="cntnr_top_details  margin_bottom_medium">
                 <h2 class="top_row  top_row_text" >Ordine #<?php echo $templateParams["Id_ordine"]; ?> | <?php echo $dbh->getNumProductbyIdOrdine($templateParams["Id_ordine"])[0]["NumProduct"]; ?> oggetti</h2>
-                <p class="middle_row  middle_row_text_big">Consegna prevista</p>
+                <span class="middle_row  middle_row_text_big">Consegna prevista</span>
                 <section class="top_row  lower_row_text_big">
                     <img src="../img/ordini/clock.png" alt="Data" title="Data" />
-                    <p><?php echo $templateParams["ordine"][0]["Data_consegna"]; ?> </p>
+                    <span><?php echo $templateParams["ordine"][0]["Data_consegna"]; ?> </span>
                 </section>
             </section>
 
@@ -17,19 +17,19 @@
 
             <section class="cntnr_top_details  margin_top_medium margin_bottom_medium">
                 <h2 class="top_row  top_row_text_big">Lista Ordine</h2>
-                <p class="middle_row  middle_row_text_big">Oggetti</p>
+                <span class="middle_row  middle_row_text_big">Oggetti</span>
 
                 <?php for($i = 0; $i < count($templateParams["prodotti"]); $i++): 
                         foreach($templateParams["prodotti"][$i] as $prodotto): ?>
 
                     <div class=" top_row  lower_row_text_big_bold">
                         <img class="game_left_img" src="<?php echo UPLOAD_DIR_DETAILS_ORDINE.$prodotto["Url_immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" title="<?php echo $prodotto["Nome"]; ?>" />
-                        <p class="force_flex_center"><?php echo $prodotto["Nome"]; ?></p>
+                        <span class="force_flex_center"><?php echo $prodotto["Nome"]; ?></span>
                     </div>
 
                 <?php endforeach; endfor; ?>
 
-                <p class="top_row  lower_row_text_big_bold">Totale <?php echo $templateParams["prezzo_totale_prodotti_ordine"]; ?> €</p>
+                <span class="top_row  lower_row_text_big_bold">Totale <?php echo $templateParams["prezzo_totale_prodotti_ordine"]; ?> €</span>
             </section>
 
             <div class="divisore"></div>
@@ -42,11 +42,10 @@
                         <div class="img_cntnr  force_flex_center">
                             <img src="../img/ordini/info1.png" alt="Ordini" title="Ordini" />
                         </div>
-                        <p class="force_flex_center">Ordine effettuato</p>
+                        <span class="force_flex_center">Ordine effettuato</span>
                     </div>
                     <div class="image_right">
                         <img src="../img/ordini/track1.png" alt="Done" title="Ordine fatto" />
-                        <!-- <img src="../img/ordini/bigTick.png" alt="Done" /> -->
                     </div>
                 </div>
 
@@ -59,11 +58,10 @@
                         <div class="img_cntnr  force_flex_center">
                             <img src="../img/ordini/info2.png" alt="Ordini" title="Ordini" />
                         </div>
-                        <p class="force_flex_center">L'ordine e' in lavorazione</p>
+                        <span class="force_flex_center">L'ordine e' in lavorazione</span>
                     </div>
                     <div class="image_right">
                         <img src="../img/ordini/track1.png" alt="Done" title="Ordine in lavorazione" />
-                        <!-- <img src="../img/ordini/bigTick.png" alt="Done" /> -->
                     </div>
                 </div>
 
@@ -76,7 +74,7 @@
                         <div class="img_cntnr  force_flex_center">
                             <img src="../img/ordini/info3.png" alt="Ordini" title="Ordini" />
                         </div>
-                        <p class="force_flex_center">Il tuo ordine e' in arrivo</p>
+                        <span class="force_flex_center">Il tuo ordine e' in arrivo</span>
                     </div>
                     <button type="button" class="button_tracking  circle_obj">
                         <img src="../img/ordini/truck.png" alt="Tracking" title="Tracking" /> 
@@ -92,11 +90,10 @@
                         <div class="img_cntnr4  force_flex_center">
                             <img src="../img/ordini/bigTick.png" alt="Ordini" title="Ordini" />
                         </div>
-                        <p class="force_flex_center">Ordine ricevuto</p>
+                        <span class="force_flex_center">Ordine ricevuto</span>
                     </div>
                     <div class="image_right">
                         <img src="../img/ordini/track1.png" alt="Done" title="Ordine ricevuto" />
-                        <!-- <img src="../img/ordini/bigTick.png" alt="Done" /> -->
                     </div>
                 </div>
             </section>
@@ -108,10 +105,10 @@
                         <div class="img_tracking_cntnr force_flex_center">
                             <img src="../img/ordini/track1.png" alt="Tracking" title="Tracking" />
                         </div>
-                        <p class="force_flex_center">Pacco spedito</p>
+                        <span class="force_flex_center">Pacco spedito</span>
                     </div>
 
-                    <p class="right_text"><!--06/01/2022--></p>
+                    <span class="right_text"></span>
                 </div>
 
                 <div class="divisore_linea_tracking">
@@ -123,9 +120,9 @@
                         <div class="img_tracking_cntnr force_flex_center">
                             <img src="../img/ordini/track1.png" alt="Tracking" title="Tracking" />
                         </div>
-                        <p class="force_flex_center">Pacco in transito</p>
+                        <span class="force_flex_center">Pacco in transito</span>
                     </div>
-                    <p class="right_text"><!--07/01/2022--></p>
+                    <span class="right_text"></span>
                 </div>
 
                 <div class="divisore_linea_tracking">
@@ -137,9 +134,9 @@
                         <div class="img_tracking_cntnr2  force_flex_center">
                             <img src="../img/ordini/track1.png" alt="Tracking" title="Tracking" />
                         </div>
-                        <p class="force_flex_center">Pacco arrivato<br/>allo stabilimento</p>
+                        <span class="force_flex_center">Pacco arrivato<br/>allo stabilimento</span>
                     </div>
-                    <p class="right_text"><!--10/01/2022--></p>
+                    <span class="right_text"></span>
                 </div>
 
                 <div class="divisore_linea_tracking">
@@ -151,9 +148,9 @@
                         <div class="img_tracking_cntnr  force_flex_center">
                             <img src="../img/ordini/track3.png" alt="Tracking" title="Tracking" />
                         </div>
-                        <p class="force_flex_center">In consegna</p>
+                        <span class="force_flex_center">In consegna</span>
                     </div>
-                    <p class="right_text force_flex_center"><!--11/01/2022--></p>
+                    <span class="right_text force_flex_center"></span>
                 </div>
 
                 <div class="right_text">

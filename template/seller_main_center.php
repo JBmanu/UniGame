@@ -1,25 +1,25 @@
 <div class="container_seller  margin_top_big">
             <div class="cntnr_whole  curve_obj_h15">
-                <p class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["guadagno"][0]["guadagno"]; ?> €</p>
-                <p class="force_flex_center  cntnr_text_btn" >Guadagno</p>
+                <span class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["guadagno"][0]["guadagno"]; ?> €</span>
+                <span class="force_flex_center  cntnr_text_btn" >Guadagno</span>
             </div>
 
             <div class="cntnr_whole  curve_obj_h15">
-                <p class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["persone_registrate"][0]["NumPersone"]; ?></p>
-                <p class="force_flex_center  cntnr_text_btn" >Persone Registrate</p>
+                <span class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["persone_registrate"][0]["NumPersone"]; ?></span>
+                <span class="force_flex_center  cntnr_text_btn" >Persone Registrate</span>
             </div>
 
             <div class="cntnr_whole  curve_obj_h15">
-                <p class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["unita_vendute"][0]["NumUnita"]; ?></p>
-                <p class="force_flex_center  cntnr_text_btn" >Unità vendute</p>
+                <span class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["unita_vendute"][0]["NumUnita"]; ?></span>
+                <span class="force_flex_center  cntnr_text_btn" >Unità vendute</span>
             </div>
         </div>
 
         <div class="container_seller  margin_top_small">
             <div class="cntnr_whole  curve_obj_h15">
-                <p class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["venditePS"][0]["NumVendite"]; ?></p>
+                <span class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["venditePS"][0]["NumVendite"]; ?></span>
                 <div class="cntnr_seller  seller_undertext_green  force_flex_center">
-                    <p class="force_flex_center">Vendite PS</p>
+                    <span class="force_flex_center">Vendite PS</span>
                     <div class="cntnr_icon_theme force_flex_center  bg_light_theme_PS">
                         <img src="../../img/typeGame/ps.svg" alt="Playstation" title="Playstation" /> 
                     </div>
@@ -27,9 +27,9 @@
             </div>
 
             <div class="cntnr_whole  curve_obj_h15">
-                <p class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["venditeXbox"][0]["NumVendite"]; ?></p>
+                <span class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["venditeXbox"][0]["NumVendite"]; ?></span>
                 <div class="cntnr_seller  seller_undertext_green  force_flex_center">
-                    <p class="force_flex_center">Vendite Xbox</p>
+                    <span class="force_flex_center">Vendite Xbox</span>
                     <div class="cntnr_icon_theme force_flex_center  bg_light_theme_XBOX">
                         <img src="../../img/typeGame/xbox.svg" alt="Xbox" title="Xbox" /> 
                     </div>
@@ -37,9 +37,9 @@
             </div>
 
             <div class="cntnr_whole  curve_obj_h15">
-                <p class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["venditeNintendo"][0]["NumVendite"]; ?></p>
+                <span class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["venditeNintendo"][0]["NumVendite"]; ?></span>
                 <div class="cntnr_seller  seller_undertext_green  force_flex_center">
-                    <p class="force_flex_center">Vendite Switch</p>
+                    <span class="force_flex_center">Vendite Switch</span>
                     <div class="cntnr_icon_theme force_flex_center  bg_light_theme_SWITCH">
                         <img src="../../img/typeGame/nintendo.svg" alt="Nintendo" title="Nintendo" /> 
                     </div>
@@ -47,9 +47,9 @@
             </div>
 
             <div class="cntnr_whole  curve_obj_h15">
-                <p class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["venditePC"][0]["NumVendite"]; ?></p>
+                <span class="force_flex_center  seller_bigtext_black"><?php echo $templateParams["venditePC"][0]["NumVendite"]; ?></span>
                 <div class="cntnr_seller  seller_undertext_green  force_flex_center">
-                    <p class="force_flex_center">Vendite PC</p>
+                    <span class="force_flex_center">Vendite PC</span>
                     <div class="cntnr_icon_theme force_flex_center  bg_light_theme_PC">
                         <img src="../../img/typeGame/pc.svg" alt="PC" title="PC" /> 
                     </div>
@@ -63,7 +63,7 @@
             </a>
         </div>
         <?php if(isset($templateParams["formsg"])):?>
-            <p class="force_flex_center margin_top_medium"><?php echo $templateParams["formsg"]; ?></p>
+            <span class="force_flex_center margin_top_medium"><?php echo $templateParams["formsg"]; ?></span>
         <?php endif; ?>
         <main class="container_seller accordion  margin_top_medium">
 
@@ -72,7 +72,7 @@
                 <section class="cntnr_long_buttons  curve_obj_h15" id="longButtons_1">
                     <div class="left_long_button">
                         <img src="../../img/menu_seller/add.svg" alt="Add Product" title="Add Product" />
-                        <p>Aggiungi un prodotto</p>
+                        <span>Aggiungi un prodotto</span>
                     </div>
                     <div class="expand_button">
                         <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
@@ -153,7 +153,7 @@
             <section class="cntnr_long_buttons  curve_obj_h15" id="longButtons_2">
                 <div class="left_long_button">
                     <img src="../../img/menu_seller/add.svg" alt="Add Product" title="Add Product" />
-                    <p>Elimina un prodotto</p>
+                    <span>Elimina un prodotto</span>
                 </div>
                 <div class="expand_button">
                     <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
@@ -176,7 +176,7 @@
             <section class="cntnr_long_buttons  curve_obj_h15" id="longButtons_3">
                 <div class="left_long_button">
                     <img src="../../img/menu_seller/offers.svg" alt="Add Product" title="Add Product" />
-                    <p>Inserisci offerta</p>
+                    <span>Inserisci offerta</span>
                 </div>
                 <div class="expand_button">
                     <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
@@ -204,7 +204,7 @@
             <section class="cntnr_long_buttons curve_obj_h15 " id="longButtons_4">
                 <div class="left_long_button">
                     <img src="../../img/menu_seller/inventory.svg" alt="Add Product" title="Add Product" />
-                    <p>Allerte di inventario</p>
+                    <span>Allerte di inventario</span>
                 </div>
                 <div class="expand_button">
                     <img src="../../img/menu_seller/vector.svg" alt="Expand Element" title="Expand Element" />
@@ -214,7 +214,7 @@
             <div class="cntn_all_allert cntnr_bottom_btn  margin_bottom_medium  margin_top_small">
             <?php foreach($templateParams["prodottiAllerta"] as $prodotto): ?>
                 <div class="cntnr_allert  margin_bottom_small  curve_obj_h15">
-                    <p class="nameGame"><?php echo $prodotto["Nome"]; ?></p>
+                    <span class="nameGame"><?php echo $prodotto["Nome"]; ?></span>
                     <div class="cntnr_typeIcons"> 
                     <strong  class="cntnr_icon_used bg_new  fg_text_white force_flex_center  curve_obj_h15"><?php echo $dbh->getSubcategorybyId($prodotto["Id_sottocategoria"])[0]["Descrizione"];  ?></strong>
                         <div class="cntnr_icon  force_flex_center  circle_obj bg_light_theme_<?php echo $dbh->getCategorybySub($prodotto["Id_sottocategoria"])[0]["Nome"]; ?>">
@@ -233,6 +233,6 @@
                 <div class="icon_big  force_flex_center">
                     <img src="../../img/menu_seller/exit.svg" alt="Exit" title="Exit" />
                 </div>
-                <p>Exit</p>
+                <span>Exit</span>
             </a> 
         </div>
