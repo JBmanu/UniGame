@@ -645,7 +645,7 @@
         }
 
         public function getAllProductForSearch(){
-            $query="SELECT * FROM Prodotto GROUP BY Prodotto.Nome
+            $query="SELECT * FROM Prodotto WHERE Prodotto.Unità > 0 GROUP BY Prodotto.Nome
             ORDER BY Prodotto.Prezzo ASC; ";
             $stmt = $this->db->prepare($query);
             $stmt->execute();

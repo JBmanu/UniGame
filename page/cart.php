@@ -44,12 +44,15 @@
             }
 
             if(isset($_POST["methodPay"])){
-                header("refresh:0");
+                header("location: ../index.php");
                 $dbh->removeUnitInWarehouse($_SESSION["Email"]);
                 $dbh->createOrder($_SESSION["Email"], $_POST["methodPay"]);
                 $idOrder = $dbh->lastOrderCreate()["Id_ordine"];
                 $dbh->createDetailOrder($_SESSION["Email"], $idOrder);
                 $dbh->resetCart($_SESSION["Email"]);
+
+                $_SESSION["ordine_effettuato"]["Notifica"]=1;
+                $_SESSION["ordine_effettuato"]["id_ordine"]=$idOrder;
 
                 $numProductZero=$dbh->checkZeroUnits();
                 if(count($numProductZero) > 0){
@@ -71,7 +74,6 @@
         $payMethod = "";
         $cost = "----";
     }
-
 
     //Presentazione
     require_once($myLocation."template/basePage.php");
