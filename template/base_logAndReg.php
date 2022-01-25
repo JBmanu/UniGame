@@ -28,7 +28,7 @@
                 </a>
             </div>
         </header>
-        <div class="div-login">
+        <div class="div-login force_flex_center margin_top_big">
             <span><?php echo $templateParams["intro"]; ?></span>
         </div>
         <nav class = "nav-rotondo">
