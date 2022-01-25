@@ -1,4 +1,4 @@
-<div class="div-notifiche">
+<div class="div-notifiche margin_top_medium">
     <?php if(isset($templateParams["erroreNotifica"])): ?>
         <h3 class="force_flex_center"><?php echo $templateParams["erroreNotifica"]; ?></h3>
     <?php else: ?>

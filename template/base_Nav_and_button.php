@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="../css/style.css" type="text/css"/>
         <link rel="stylesheet" href="../css/orderStyle.css" type="text/css"/>
         <link rel="stylesheet" href="../css/animation.css" type="text/css"/>
-        <link rel="stylesheet" href="../css/toastr.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/toastr.min.css" type="text/css"/>
 
         <script src="../js/jquery-3.4.1.min.js"></script>
         <script src="../js/toastr.min.js"></script>
