@@ -10,7 +10,6 @@
     $itemPagePath = 'itemPC.php';
     $specificPage = 'listPC.php';
 
-
     $srcPageBase = [ 
         'NavBar' => $myLocation.'template/nav/baseNavBar.php', 
         'NavBtn' => $myLocation.'template/nav/baseNavBtn.php', 

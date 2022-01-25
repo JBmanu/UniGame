@@ -318,12 +318,13 @@
             return $pay;
         }
 
-        public function getSpecificDataItemByName($name) {
+        public function getSpecificDataItemByName($name, $category) {
             $stmt = $this->db->prepare("SELECT Prodotto.*, Sotto_categoria.Descrizione as tipo, Categoria.Nome as categoria, Sotto_categoria.Id_sottocategoria as chooseIdSottoCat
             FROM Prodotto LEFT JOIN Sotto_categoria 
             ON Prodotto.Id_sottocategoria = Sotto_categoria.Id_sottocategoria 
             LEFT JOIN Categoria ON Categoria.Id_categoria = Sotto_categoria.Id_categoria 
-            WHERE Prodotto.Nome = '$name';");
+            WHERE Prodotto.Nome = '$name'
+            AND Categoria.Id_categoria = $category;");
 
             $stmt->execute();
             $result = $stmt->get_result();
@@ -337,6 +338,17 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function getCategoryByItem($idItem) {
+            $stmt = $this->db->prepare("SELECT Prodotto.Nome, Categoria.Id_categoria
+                FROM Prodotto, Sotto_categoria, Categoria
+                WHERE Prodotto.Id_sottocategoria = Sotto_categoria.Id_sottocategoria
+                AND Sotto_categoria.Id_categoria = Categoria.Id_categoria
+                AND Prodotto.Id_prodotto = $idItem;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC)[0];
+        }
 
         public function checkLoginUserCRIPTATO($email, $password) {
             $query = "SELECT Email, Password, Salt From Utente WHERE Email = ?";
