@@ -20,7 +20,7 @@
         if($_SERVER["REQUEST_METHOD"] == "POST") {
             if(isset($_POST)){
                 if($_POST["XBOX"]){
-                    $sotto_categoria = $_POST["PS"];
+                    $sotto_categoria = $_POST["XBOX"];
                     $nameGame = $_POST["idItem"];
                     $idItem = $dbh->pickItemBySottoCategory($nameGame, $sotto_categoria)[0]["Id_prodotto"];
                     $dbh->addItemInCart($_SESSION["Email"], $idItem);

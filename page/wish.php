@@ -45,7 +45,7 @@
                     $sotto_categoria = $_POST["PC"];
                 }
                 
-                $nameGame = $_GET["idItem"];
+                $nameGame = $_POST["idItem"];
                 $idItem = $dbh->pickItemBySottoCategory($nameGame, $sotto_categoria)[0]["Id_prodotto"];
                 $dbh->addItemInCart($_SESSION["Email"], $idItem);
             }
