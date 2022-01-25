@@ -16,9 +16,10 @@
         </div>
 
         <form class="back_card_flip  force_flex_center  form_2_by_list  curve_obj_h20  bg_third  fg_text_primary" 
-            action="<?php echo $specificPage; ?>?idItem=<?php echo $item["Nome"]; ?>" method="post">
+            action="#" method="post">
             <fieldset class="fieldset_form">
                 <legend ><?php echo $item["Nome"]; ?></legend>
+                <input type="hidden" name="idItem" value="<?php echo $item["Nome"]; ?>">
                 <?php require($myLocation."template/form/double.php"); ?>
                 <input class="btn_submit_card  space_top_margin_big  curve_obj_h15  bg_primary  font_primary  fg_text_white" type="submit" name="submit" value="Aggiungi"/>
             </fieldset>

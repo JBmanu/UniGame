@@ -41,6 +41,6 @@
 
 
 <button name="pay" value="<?php echo $cost." €"; ?>" class="cntnr_down_btn  curve_obj_h20  font_primary  fg_text_white">
-    <p>Paga ora</p>
+    <span>Paga ora</span>
     <strong><?php echo $cost." €"; ?> </strong>
 </button>

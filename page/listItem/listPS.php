@@ -24,7 +24,7 @@
             if(isset($_POST)){
                 if($_POST["PS"]){
                     $sotto_categoria = $_POST["PS"];
-                    $nameGame = $_GET["idItem"];
+                    $nameGame = $_POST["idItem"];
                     $idItem = $dbh->pickItemBySottoCategory($nameGame, $sotto_categoria)[0]["Id_prodotto"];
                     $dbh->addItemInCart($_SESSION["Email"], $idItem);
                 }

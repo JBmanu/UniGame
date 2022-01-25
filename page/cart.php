@@ -27,6 +27,7 @@
         $payMethod = $dbh->payMethod();
 
         $allProducts["items"] = $dbh->allItemInCartBy($_SESSION["Email"]);
+
         $cost = $dbh->totalCost($_SESSION["Email"]);
 
         if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -64,12 +65,13 @@
                     }
                 }
             }
-        } else {
-            $allProducts["items"] = [];
-            $payMethod = "";
-            $cost = "---";
         }
+    } else {
+        $allProducts["items"] = [];
+        $payMethod = "";
+        $cost = "----";
     }
+
 
     //Presentazione
     require_once($myLocation."template/basePage.php");
