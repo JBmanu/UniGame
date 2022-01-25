@@ -1,6 +1,6 @@
 <div class="div-notifiche">
     <?php if(isset($templateParams["erroreNotifica"])): ?>
-        <h3><?php echo $templateParams["erroreNotifica"]; ?></h3>
+        <h3 class="force_flex_center"><?php echo $templateParams["erroreNotifica"]; ?></h3>
     <?php else: ?>
         <?php foreach($templateParams["notifiche"] as $notifica): ?>
             <div class="notifica">

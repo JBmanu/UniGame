@@ -28,9 +28,13 @@
                 if ($value) {
                     require($srcPageBase[$key]);
                 }
-            }
+            } ?>
+            
+            <?php if(!isUserLoggedIn()): ?>
+                <h3 class="force_flex_center margin_top_medium"><?php echo "Effettuare l'accesso !"; ?></h3>
+            <?php endif;?>
 
-            foreach ($hasCore as $key => $value){
+            <?php foreach ($hasCore as $key => $value){
                 if ($value) {
                     require($key);
                 }

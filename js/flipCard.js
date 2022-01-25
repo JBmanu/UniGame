@@ -8,9 +8,6 @@ function turn(){
     });
 }
 
-function msgAja() {
-
-}
 
 $(document).ready(function(){
     let listCard = document.querySelectorAll('.card_simple');

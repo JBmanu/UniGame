@@ -1,7 +1,7 @@
 <?php $counte=0; ?>
 <main class="cntnr_all_order  force_flex_center  margin_top_medium  margin_bottom_medium">  
     <?php if(isset($templateParams["erroreOrdini"])): ?>
-        <h4><?php echo $templateParams["erroreOrdini"]; ?></h4>
+        <h3><?php echo $templateParams["erroreOrdini"]; ?></h3>
     <?php else: ?>
         <?php foreach($templateParams["ordini"] as $ordine): ?>
             <article class="cntnr_order  curve_obj_h8">

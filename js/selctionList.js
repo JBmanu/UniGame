@@ -1,5 +1,18 @@
-$(document).ready(function(){
+function filterByMinMax(items, min, max) { 
+    items.forEach(item => {
+        let price = item.querySelector('.btn_overlay_top_right').innerHTML.replace('€', '');
+        let cost = parseFloat(price);
+        
+        if(cost < min || cost > max) {
+            item.style.display = "none";
+        } else {
+            item.style.display = "flex";
+        }
+    });
+}
 
+
+$(document).ready(function(){
     let selectOrder = document.querySelector("#order");
 
     $.fn.reverseChildren = function() {
@@ -17,26 +30,16 @@ $(document).ready(function(){
     let selectFilter = document.querySelector("#formFilter");
 
     selectFilter.addEventListener("change", () => {
+        let items = document.querySelectorAll('.card_simple');
+        let limit = selectFilter.value.split('to');
+
+        console.log(selectFilter.value);
 
         if(selectFilter.value == "all"){
-            console.log("tutti");
+            items.forEach(item => item.style.display = "flex");
+        } else {
+            filterByMinMax(items, parseFloat(limit[0]), parseFloat(limit[1]));
         }
-
-        if(selectFilter.value == "10to50"){
-            console.log("10to50");
-
-        }
-
-        if(selectFilter.value == "50to100"){
-            console.log("50to100");
-
-        }
-
-
     });
     
-
-    
-
-
 });

@@ -26,42 +26,51 @@
         $myLocation.'template/core/coreSearch.php' => false
     ];
 
-    $payMethod = $dbh->payMethod();
+    if (isUserLoggedIn()) {
+        $payMethod = $dbh->payMethod();
 
-    $allProducts["items"] = $dbh->allItemInCartBy('gek5800@gmail.com');
-    $cost = $dbh->totalCost('gek5800@gmail.com');
+        $allProducts["items"] = $dbh->allItemInCartBy($_SESSION["Email"]);
+        $cost = $dbh->totalCost($_SESSION["Email"]);
 
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
-        if(isset($_POST["meno"])) {
-            $idGame = $_POST["meno"];
-            $dbh->removeItemInCart('gek5800@gmail.com', $idGame);
-        }
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(isset($_POST["meno"])) {
+                header("refresh:0");
+                $idGame = $_POST["meno"];
+                $dbh->removeItemInCart($_SESSION["Email"], $idGame);
+            }
 
-        if(isset($_POST["piu"])) {
-            $idGame = $_POST["piu"];
-            $dbh->addItemInCart('gek5800@gmail.com', $idGame);
-        }
+            if(isset($_POST["piu"])) {
+                header("refresh:0");
+                $idGame = $_POST["piu"];
+                $dbh->addItemInCart($_SESSION["Email"], $idGame);
+            }
 
-        if(isset($_POST["methodPay"])){
-            header("refresh:0");
-            $dbh->removeUnitInWarehouse('gek5800@gmail.com');
-            $dbh->createOrder('gek5800@gmail.com', $_POST["methodPay"]);
-            $idOrder = $dbh->lastOrderCreate()["Id_ordine"];
-            $dbh->createDetailOrder('gek5800@gmail.com', $idOrder);
-            $dbh->resetCart();
+            if(isset($_POST["methodPay"])){
+                header("refresh:0");
+                $dbh->removeUnitInWarehouse($_SESSION["Email"]);
+                $dbh->createOrder($_SESSION["Email"], $_POST["methodPay"]);
+                $idOrder = $dbh->lastOrderCreate()["Id_ordine"];
+                $dbh->createDetailOrder($_SESSION["Email"], $idOrder);
+                $dbh->resetCart($_SESSION["Email"]);
 
-            $numProductZero=$dbh->checkZeroUnits();
-            if(count($numProductZero) > 0){
-                for($i=0; $i<count($numProductZero); $i++){
-                    $nome_prodotto=$numProductZero[$i]["Nome"];
+                $numProductZero=$dbh->checkZeroUnits();
+                if(count($numProductZero) > 0){
+                    for($i=0; $i<count($numProductZero); $i++){
+                        $nome_prodotto=$numProductZero[$i]["Nome"];
 
-                    $mail_headers = "From: Server <server@unigame.it>\r\n";
-                    $mail_headers .= "Reply-To: server@unigame.it \r\n";
-                    $mail_headers .= "X-Mailer: PHP/" . phpversion();
 
-                    mail('info@unigame.it', 'Prodotto terminato !', $nome_prodotto.' è terminato !!', $mail_headers);
+                        $mail_headers = "From: Server <server@unigame.it>\r\n";
+                        $mail_headers .= "Reply-To: server@unigame.it \r\n";
+                        $mail_headers .= "X-Mailer: PHP/" . phpversion();
+
+                        mail('info@unigame.it', 'Prodotto terminato !', $nome_prodotto.' è terminato !!', $mail_headers);
+                    }
                 }
             }
+        } else {
+            $allProducts["items"] = [];
+            $payMethod = "";
+            $cost = "---";
         }
     }
 

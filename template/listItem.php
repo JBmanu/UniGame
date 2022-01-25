@@ -46,8 +46,8 @@
                 <form action="listPS.php" method="post">
                     <select class="minimal" name="filter" id="formFilter">
                         <option value="all">Tutti</option>
-                        <option value="10to50">Da €10 a €50</option>
-                        <option value="50to100">Da €50 a €100</option>
+                        <option value="10to30">Da €10 a €30</option>
+                        <option value="30to100">Da €30 a €100</option>
                     </select>
                 </form>
             </div>

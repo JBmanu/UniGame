@@ -6,7 +6,7 @@
         <a href="<?php echo $myLocation; ?>page/wish.php"><img src="<?php echo $myLocation; ?>img/menu/wishlist.svg" alt="Wishlist" /> Wishlist</a>
         <a href="<?php echo $myLocation; ?>page/Ordini.php"><img src="<?php echo $myLocation; ?>img/menu/ordini.svg" alt="Ordini" /> Ordini</a>
         <a href="<?php echo $myLocation; ?>page/notification.php"><img src="<?php echo $myLocation; ?>img/menu/notifiche.svg" alt="Notifiche" /> Notifiche</a>
-        <a href="<?php echo $myLocation; ?>index.php"><img src="<?php echo $myLocation; ?>img/menu/logout.svg" alt="Logout" /> Logout</a>
+        <a href="<?php echo $myLocation; ?>page/logout.php"><img src="<?php echo $myLocation; ?>img/menu/logout.svg" alt="Logout" /> Logout</a>
         <a href="#" class="icon">
             <img src="<?php echo $myLocation; ?>img/menu/menu.svg" alt="Menu" />
         </a>

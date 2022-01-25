@@ -1,5 +1,6 @@
 <?php 
-    $specific = $dbh->getSpecificDataItemByName($item["Nome"]);
+    $category = $dbh->getCategoryByItem($item["Id_prodotto"])["Id_categoria"];
+    $specific = $dbh->getSpecificDataItemByName($item["Nome"], $category);
     foreach ($specific as $data): ?>
     <label class="radio_btn_card force_flex_center" for="<?php echo $item["Id_prodotto"].$data["tipo"]; ?>">
         <input class="circle_obj bg_third radio_circle_card" type="radio" id="<?php echo $item["Id_prodotto"].$data["tipo"]; ?>" 
