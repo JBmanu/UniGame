@@ -15,20 +15,23 @@
         'NavBtn' => $myLocation.'template/nav/baseNavBtn.php',
         'NavSearch' => $myLocation.'template/nav/baseNavSearch.php'];
 
-    $allProducts["items"] = $dbh->getItemPSBy();
+    
+    
+    if (isUserLoggedIn()) {
 
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
-        if(isset($_POST)){
-
-            if($_POST["PS"]){
-                $sotto_categoria = $_POST["PS"];
-                $nameGame = $_GET["idItem"];
-                $idItem = $dbh->pickItemBySottoCategory($nameGame, $sotto_categoria)[0]["Id_prodotto"];
-                $id_utente = "gek5800@gmail.com";
-                $dbh->addItemInCart($id_utente, $idItem);
+        $allProducts["items"] = $dbh->getItemPSBy($_SESSION["Email"]);
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(isset($_POST)){
+                if($_POST["PS"]){
+                    $sotto_categoria = $_POST["PS"];
+                    $nameGame = $_GET["idItem"];
+                    $idItem = $dbh->pickItemBySottoCategory($nameGame, $sotto_categoria)[0]["Id_prodotto"];
+                    $dbh->addItemInCart($_SESSION["Email"], $idItem);
+                }
             }
         }
-
+    } else {
+        $allProducts["items"] = $dbh->getItemsNoLog(1);
     }
 
     //Presentazione

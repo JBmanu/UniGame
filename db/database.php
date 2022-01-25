@@ -36,11 +36,11 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function getWishListBy($emailUtente = 'gek5800@gmail.com') {
+        public function getWishListBy($utente) {
             $stmt = $this->db->prepare("SELECT Id_utente, Prodotto.*, Sotto_categoria.path as icon 
                 FROM Utente, Wishlist, Prodotto, Sotto_categoria 
                 WHERE Utente.Email = Wishlist.Id_utente 
-                AND Wishlist.Id_utente = '$emailUtente' 
+                AND Wishlist.Id_utente = '$utente' 
                 AND Wishlist.Id_prodotto = Prodotto.Id_prodotto 
                 AND Prodotto.Id_sottocategoria = Sotto_categoria.Id_sottocategoria");
 
@@ -49,20 +49,21 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function addItemInWishList($emailUtente = 'gek5800@gmail.com', $idProdotto) {
+        //da quiiii
+        public function addItemInWishList($emailUtente, $idProdotto) {
             $sql = "INSERT INTO Wishlist(Id_utente, Id_prodotto, Piace)
             VALUES ('$emailUtente', '$idProdotto', 1)";
             return $this->db->query($sql);
         }
 
-        public function removeItemInWishList($emailUtente = 'gek5800@gmail.com', $idProdotto) {
+        public function removeItemInWishList($emailUtente, $idProdotto) {
             $query = "DELETE FROM Wishlist WHERE Wishlist.Id_utente = ? AND Wishlist.Id_prodotto = ?";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('ii',$emailUtente, $idProdotto);
             return $stmt->execute();
         }
 
-        public function getAllItemsWithLikeBy($emailUtente = 'gek5800@gmail.com'){
+        public function getAllItemsWithLikeBy($emailUtente){
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace
                 FROM Prodotto LEFT JOIN Wishlist 
                 ON Prodotto.Id_prodotto = Wishlist.Id_prodotto 
@@ -73,7 +74,24 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
         
-        public function getItemPSBy($emailUtente = 'gek5800@gmail.com') {
+        public function getItemsNoLog($category) {
+            $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
+                FROM Prodotto LEFT JOIN Wishlist
+                ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '' 
+                LEFT JOIN Sotto_categoria 
+                ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
+                LEFT JOIN Categoria 
+                ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
+                WHERE Categoria.Id_categoria = $category
+                GROUP BY Prodotto.Nome
+                ORDER BY Prodotto.Prezzo ASC;");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getItemPSBy($emailUtente) {
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
                 FROM Prodotto LEFT JOIN Wishlist
                 ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
@@ -90,7 +108,7 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function getItemPCBy($emailUtente = 'gek5800@gmail.com') {
+        public function getItemPCBy($emailUtente) {
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
                 FROM Prodotto LEFT JOIN Wishlist
                 ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
@@ -107,7 +125,7 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function getItemXboxBy($emailUtente = 'gek5800@gmail.com') {
+        public function getItemXboxBy($emailUtente) {
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
                 FROM Prodotto LEFT JOIN Wishlist
                 ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
@@ -124,7 +142,7 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function getItemSwitchBy($emailUtente = 'gek5800@gmail.com') {
+        public function getItemSwitchBy($emailUtente) {
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace, Sotto_categoria.Descrizione, Categoria.Nome as catNome
                 FROM Prodotto LEFT JOIN Wishlist
                 ON Prodotto.Id_prodotto = Wishlist.Id_prodotto AND Wishlist.Id_utente = '$emailUtente' 
@@ -213,9 +231,10 @@
             }
         }
 
-        public function resetCart() {
-            $update = "TRUNCATE TABLE Carrello";
-                return $this->db->query($update);
+        public function resetCart($utente) {
+            $delet = "DELETE FROM Carrello 
+                WHERE Carrello.Id_utente='$utente';";
+                return $this->db->query($delet);
         }
 
         public function payMethod() {
@@ -226,7 +245,7 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function allItemInCartBy($emailUtente = 'gek5800@gmail.com') {
+        public function allItemInCartBy($emailUtente) {
             $stmt = $this->db->prepare("SELECT Carrello.Id_utente, Carrello.Quantità, Sotto_categoria.Descrizione as tipo, Categoria.Nome as categoria, Prodotto.*
                 FROM Carrello, Prodotto, Sotto_categoria, Categoria
                 WHERE Carrello.Id_prodotto = Prodotto.Id_prodotto
@@ -239,8 +258,8 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function removeUnitInWarehouse($emailUtente = 'gek5800@gmail.com') {
-            $cartItems = self::allItemInCartBy($emailUtente);
+        public function removeUnitInWarehouse($utente) {
+            $cartItems = self::allItemInCartBy($utente);
 
             foreach ($cartItems as $item) {
                 $idItem = $item["Id_prodotto"];
@@ -250,12 +269,10 @@
                     WHERE Prodotto.Id_prodotto = $idItem;";
                 $this->db->query($update);
             }
-
-            $delet = "DELETE FROM Prodotto WHERE Prodotto.Unità=0";
-            return $this->db->query($delet);
+            return true;
         }        
 
-        public function createOrder($utente = 'gek5800@gmail.com', $idPay) {
+        public function createOrder($utente, $idPay) {
             $currentData = date('y-m-d');
             $update = "INSERT INTO `Ordine` 
             (`Id_ordine`, `Data_ordine`, `Id_utente`, `Id_corriere`, `Id_metodo`, 
@@ -264,7 +281,7 @@
                 return $this->db->query($update);
         }
 
-        public function createDetailOrder($utente = 'gek5800@gmail.com', $idOrdine) {
+        public function createDetailOrder($utente, $idOrdine) {
             $cartItems = self::allItemInCartBy($utente);
 
             foreach ($cartItems as $item) {
@@ -284,7 +301,7 @@
             return $result->fetch_all(MYSQLI_ASSOC)[0];
         }
 
-        public function totalCost($emailUtente = 'gek5800@gmail.com') {
+        public function totalCost($emailUtente) {
             $stmt = $this->db->prepare("SELECT Carrello.Quantità, Prodotto.prezzo_scontato
                 FROM Carrello, Prodotto
                 WHERE Carrello.Id_prodotto = Prodotto.Id_prodotto
