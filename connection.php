@@ -13,7 +13,7 @@
     define("UPLOAD_DIR_GIOCO_SELLER", "../../img/game/");
     define("UPLOAD_DIR_TIPO_DEVICE_SELLER", "../../img/typeGame/");
 
-    require_once("utilityTotti/functions.php");
+    require_once("utility/functions.php");
     require_once("db/database.php");
     $dbh = new DatabaseHelper("localhost", "root", "", "UniGameDB", 3306);
 
