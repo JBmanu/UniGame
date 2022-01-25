@@ -67,7 +67,7 @@
             $stmt = $this->db->prepare("SELECT Prodotto.*, Wishlist.Piace as piace
                 FROM Prodotto LEFT JOIN Wishlist 
                 ON Prodotto.Id_prodotto = Wishlist.Id_prodotto 
-                AND Wishlist.Id_utente = '$emailUtente'");
+                AND Wishlist.Id_utente = '$emailUtente' AND Prodotto.Unità > 0");
 
             $stmt->execute();
             $result = $stmt->get_result();
@@ -82,7 +82,7 @@
                 ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
                 LEFT JOIN Categoria 
                 ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
-                WHERE Categoria.Id_categoria = $category
+                WHERE Categoria.Id_categoria = $category AND Prodotto.Unità > 0
                 GROUP BY Prodotto.Nome
                 ORDER BY Prodotto.Prezzo ASC;");
 
@@ -99,7 +99,7 @@
                 ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
                 LEFT JOIN Categoria 
                 ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
-                WHERE Categoria.Id_categoria = 1
+                WHERE Categoria.Id_categoria = 1 AND Prodotto.Unità > 0
                 GROUP BY Prodotto.Nome
                 ORDER BY Prodotto.Prezzo ASC;");
 
@@ -116,7 +116,7 @@
                 ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
                 LEFT JOIN Categoria 
                 ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
-                WHERE Categoria.Id_categoria = 4
+                WHERE Categoria.Id_categoria = 4 AND Prodotto.Unità > 0
                 GROUP BY Prodotto.Nome
                 ORDER BY Prodotto.Prezzo ASC;");
 
@@ -133,7 +133,7 @@
                 ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
                 LEFT JOIN Categoria 
                 ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
-                WHERE Categoria.Id_categoria = 2
+                WHERE Categoria.Id_categoria = 2 AND Prodotto.Unità > 0
                 GROUP BY Prodotto.Nome
                 ORDER BY Prodotto.Prezzo ASC;");
 
@@ -150,7 +150,7 @@
                 ON Sotto_categoria.Id_sottocategoria = Prodotto.Id_sottocategoria
                 LEFT JOIN Categoria 
                 ON Categoria.Id_categoria = Sotto_categoria.Id_categoria
-                WHERE Categoria.Id_categoria = 3
+                WHERE Categoria.Id_categoria = 3 AND Prodotto.Unità > 0
                 GROUP BY Prodotto.Nome
                 ORDER BY Prodotto.Prezzo ASC;");
 
