@@ -664,5 +664,15 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function getQuantityby($id_order, $id_prodotto){
+            $query="SELECT Quantità FROM Dettagli_ordine WHERE Id_prodotto=? AND Id_ordine=?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("ii", $id_prodotto, $id_order);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
     }
 ?>
