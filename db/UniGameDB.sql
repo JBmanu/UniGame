@@ -275,6 +275,7 @@ CREATE TABLE `Prodotto` (
   `Id_sottocategoria` int(11) NOT NULL,
   `Id_pegi` int(11) NOT NULL,
   `Data_rilascio` date NOT NULL,
+  `Descrizione` varchar(300) CHARACTER SET utf8 NOT NULL,
   `prezzo_scontato` decimal(10,2) NOT NULL,
   `Nuovo` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

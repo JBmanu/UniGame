@@ -36,6 +36,14 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function getAllSubCategories(){
+            $stmt = $this->db->prepare("SELECT Id_sottocategoria, Descrizione FROM Sotto_categoria");
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
         public function getWishListBy($emailUtente = 'gek5800@gmail.com') {
             $stmt = $this->db->prepare("SELECT Id_utente, Prodotto.*
                 FROM Utente, Wishlist, Prodotto
@@ -268,9 +276,214 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function addGame($name) {
-            $sql = "INSERT INTO prodotto (Nome) VALUES ('$name')";
+        public function getGameCategoryListSabba($c1, $c2, $c3, $c4, $c5, $c6) {
+            $result = array(
+                "c1" => 1,
+                "c2" => 2,
+                "c3" => 3,
+                "c4" => 4,
+                "c5" => 5,
+                "c6" => 6);
+
+            return $result;
+        }
+
+        public function addGame($name, $img, $unita, $price, $id_sottocategoria, $releasedate, $descrizione) {
+            $sconto = floatval(0.00);
+            $sql = "INSERT INTO Prodotto (Nome, Url_immagine, Id_venditore, Unità, Prezzo, Sconto, Id_sottocategoria, Id_pegi, Data_rilascio, prezzo_scontato, Descrizione, Id_magazzino)
+            VALUES ('$name', '$img', 'info@unigame.it', $unita, $price, $sconto, $id_sottocategoria, 1, '$releasedate', $price, '$descrizione', 1)";
             return $this->db->query($sql);
+        }
+
+        public function insertOffer($id_prodotto, $sconto, $prezzo) {
+            $prezzo_scontato = $prezzo*(1-$sconto);
+            $prezzo_scontato = number_format($prezzo_scontato, 2, '.', '');
+            $sconto = number_format($sconto, 2, '.', '');
+            
+            $query = "UPDATE Prodotto
+            SET Sconto = ?, prezzo_scontato = ?
+            WHERE Id_prodotto = ?";
+            
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ddi', $sconto, $prezzo_scontato, $id_prodotto);
+            echo $query;
+            return $stmt->execute();
+        }
+
+        public function deleteGame($id_prodotto) {
+            $sql = "DELETE FROM prodotto WHERE id_prodotto = '$id_prodotto'";
+            return $this->db->query($sql);
+        }
+
+        public function getTotalSellCountForPSsabba() {
+            $stmt = $this->db->prepare("SELECT SUM(det.Quantità) AS Result
+            FROM dettagli_ordine as det
+            INNER JOIN prodotto as prod ON
+            (det.Id_prodotto = prod.Id_prodotto)
+            WHERE prod.Id_sottocategoria IN (1, 2)");
+
+            $stmt = $this->db->prepare("SELECT IFNULL(SUM(det.Quantità), 0) AS Result
+            FROM dettagli_ordine as det
+            INNER JOIN prodotto as prod ON
+            (det.Id_prodotto = prod.Id_prodotto)
+            WHERE prod.Id_sottocategoria IN (1, 2)");
+            
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getTotalSellCountForXBOXsabba() {
+            $stmt = $this->db->prepare("SELECT SUM(det.Quantità) AS Result
+            FROM dettagli_ordine as det
+            INNER JOIN prodotto as prod ON
+            (det.Id_prodotto = prod.Id_prodotto)
+            WHERE prod.Id_sottocategoria IN (3, 4)");
+            
+            $stmt = $this->db->prepare("SELECT IFNULL(SUM(det.Quantità), 0) AS Result
+            FROM dettagli_ordine as det
+            INNER JOIN prodotto as prod ON
+            (det.Id_prodotto = prod.Id_prodotto)
+            WHERE prod.Id_sottocategoria IN (3, 4)");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getTotalSellCountForNINTENDOsabba() {
+            $stmt = $this->db->prepare("SELECT SUM(det.Quantità) AS Result
+            FROM dettagli_ordine as det
+            INNER JOIN prodotto as prod ON
+            (det.Id_prodotto = prod.Id_prodotto)
+            WHERE prod.Id_sottocategoria = 6"); 
+
+            $stmt = $this->db->prepare("SELECT IFNULL(SUM(det.Quantità), 0) AS Result
+            FROM dettagli_ordine as det
+            INNER JOIN prodotto as prod ON
+            (det.Id_prodotto = prod.Id_prodotto)
+            WHERE prod.Id_sottocategoria IN (6)");
+            
+            
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getTotalSellCountForPCsabba() {
+            $stmt = $this->db->prepare("SELECT SUM(det.Quantità) AS Result
+            FROM dettagli_ordine as det
+            INNER JOIN prodotto as prod ON
+            (det.Id_prodotto = prod.Id_prodotto)
+            WHERE prod.Id_sottocategoria = 5"); 
+
+            $stmt = $this->db->prepare("SELECT IFNULL(SUM(det.Quantità), 0) AS Result
+            FROM dettagli_ordine as det
+            INNER JOIN prodotto as prod ON
+            (det.Id_prodotto = prod.Id_prodotto)
+            WHERE prod.Id_sottocategoria IN (5)");
+            
+            
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getTotalSellCountAllsabba() {
+            $stmt = $this->db->prepare("SELECT SUM(det.Quantità) AS Result
+            FROM dettagli_ordine as det
+            INNER JOIN prodotto as prod ON
+            (det.Id_prodotto = prod.Id_prodotto)
+            WHERE prod.Id_sottocategoria IN (1, 2, 3, 4, 5, 6)");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getTotalEarnings() {
+            $stmt = $this->db->prepare("SELECT SUM(Prezzo*Quantità) AS Result
+            FROM dettagli_ordine");
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getAllertProducts() {
+            $query = "SELECT Nome, Id_sottocategoria from Prodotto where Unità <= 3";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getEveryProduct() {
+            $query = "SELECT Id_prodotto, Nome, Sconto, Id_sottocategoria, prezzo_scontato FROM Prodotto";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function productExists($nome, $id_sottocategoria){
+            $query="SELECT Id_prodotto FROM Prodotto WHERE Nome = ? AND Id_sottocategoria = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("si", $nome, $id_sottocategoria);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getProductUnits($id_prodotto){
+            $query="SELECT Unità FROM Prodotto WHERE Id_prodotto = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("i", $id_prodotto);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getProductPrice($id_prodotto){
+            $query="SELECT Prezzo FROM Prodotto WHERE Id_prodotto = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("i", $id_prodotto);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function incrementUnits($id_prodotto, $unita_before, $unita_after){
+            $unita_all = $unita_before+$unita_after;
+            $query = "UPDATE Prodotto Set Unità = ? WHERE Id_prodotto = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ii', $unita_all, $id_prodotto);
+
+            return $stmt->execute();
+        }
+
+        public function ricercaId($nome){
+            $query="SELECT Id_prodotto, Id_sottocategoria FROM Prodotto WHERE Nome=?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("s", $nome);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getSottocategoriaId($id_sub){
+            $stmt = $this->db->prepare("SELECT Descrizione FROM Sotto_categoria WHERE Id_sottocategoria=?");
+            $stmt->bind_param("i", $id_sub);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
         }
     }
 ?>
