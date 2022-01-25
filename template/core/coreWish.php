@@ -5,7 +5,7 @@
     <section class="card_simple  curve_obj_h20  space_bottom_margin_card" id="<?php echo $item["Id_prodotto"];?>">
         <div class="front_card_flip  curve_obj_h20">
             <a href="<?php echo "item/item".$item["icon"].".php"; ?>?idItem=<?php echo $item["Id_prodotto"] ?>"><img class="curve_obj_h20" src="<?php echo $myLocation."img/game/".$item["Url_immagine"]; ?>" alt="<?php echo $item["Nome"]; ?>"/></a>
-            <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary">55.00$</strong>
+            <strong class="btn_overlay_top_right  font_secondary  curve_obj_h20  force_flex_center  bg_third  fg_text_primary"><?php echo $item["prezzo_scontato"]."€"; ?></strong>
             <img class="btn_overlay_bottom_left  heart_icon  circle_obj " src="../img/item/heart-full.svg"  alt="heart" />
             <img class="btn_overlay_bottom_right  circle_obj  bg_third" src="../img/item/add.svg" alt="add" />
         </div>

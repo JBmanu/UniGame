@@ -31,7 +31,7 @@
 
             <div class="ctnr_top_card">
                 <img class="" src="<?php echo $myLocation."img/game/".$item["Url_immagine"]; ?>" alt="<?php echo $item["Nome"]; ?>" />
-                <p class="price_singol_item  curve_obj_h20  font_secondary  bg_third  fg_text_primary"><strong><?php echo $item["prezzo_scontato"]; ?></strong></p>
+                <p class="price_singol_item  curve_obj_h20  font_secondary  bg_third  fg_text_primary"><strong><?php echo $item["prezzo_scontato"]."€"; ?></strong></p>
             </div>
 
             <div class="ctnr_down_card  <?php echo $gbColorOpacity; ?>">
