@@ -11,7 +11,7 @@
         }
 
         for($i = 0; $i < count($templateParams["prodotti"]); $i++){
-            $templateParams["prezzo_totale_prodotti_ordine"]+=(intval($templateParams["prodotti"][$i][0]["prezzo_scontato"])* ($dbh->getQuantityby(intval($templateParams["Id_ordine"]), $templateParams["Numprodotti"][$i]["Id_prodotto"]))[0]["Quantità"]);
+            $templateParams["prezzo_totale_prodotti_ordine"]+=(floatval($templateParams["prodotti"][$i][0]["prezzo_scontato"])* ($dbh->getQuantityby(intval($templateParams["Id_ordine"]), $templateParams["Numprodotti"][$i]["Id_prodotto"]))[0]["Quantità"]);
         }
         $templateParams["prezzo_totale_prodotti_ordine"]=number_format($templateParams["prezzo_totale_prodotti_ordine"], 2, '.', '');
 
