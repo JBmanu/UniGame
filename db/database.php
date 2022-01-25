@@ -66,7 +66,6 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        //da quiiii
         public function addItemInWishList($emailUtente, $idProdotto) {
             $sql = "INSERT INTO Wishlist(Id_utente, Id_prodotto, Piace)
             VALUES ('$emailUtente', '$idProdotto', 1)";
@@ -630,7 +629,7 @@
             $prezzo_scontato=number_format($prezzo_scontato, 2, '.', '');
             $sconto=number_format($sconto, 2, '.', '');
 
-            $query = "UPDATE Prodotto Set Sconto = ?, prezzo_scontato=? WHERE Id_prodotto = ?";
+            $query = "UPDATE Prodotto Set Sconto = ?, prezzo_scontato=?F WHERE Id_prodotto = ?";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('ddi', $sconto, $prezzo_scontato, $id_product);
             return $stmt->execute();
@@ -638,6 +637,16 @@
 
         public function getAllProduct(){
             $query="SELECT * FROM Prodotto";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getAllProductForSearch(){
+            $query="SELECT * FROM Prodotto GROUP BY Prodotto.Nome
+            ORDER BY Prodotto.Prezzo ASC; ";
             $stmt = $this->db->prepare($query);
             $stmt->execute();
             $result = $stmt->get_result();

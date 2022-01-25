@@ -131,9 +131,9 @@ body, h1, h2, h3, p, ul {
 }
 
 .label_search {
-    padding: 0% 4% 0% 0%;
+    padding: 0% 0% 0% 0%;
     display: flex;
-
+    width: 100%;
     justify-content: end;
 }
 .input_search {

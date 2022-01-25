@@ -25,7 +25,6 @@
         <?php 
             require($srcPageBase["NavBar"]); 
             require($srcPageBase["NavBtn"]);
-            require($srcPageBase["NavSearch"]);
         ?>
 
         <section class="cntnr_bar_list_card  space_top_margin_small <?php echo $colorPage; ?>">

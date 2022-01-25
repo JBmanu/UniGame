@@ -18,7 +18,6 @@
         <script src="./js/toastr.min.js"></script>
         <script src="./js/notify.js"></script>
         <script src="./js/click.js" type="text/javascript"></script>
-        <script src="./js/autoScroll.js" type="text/javascript" defer="defer"></script>
     </head>
     <body class="body-home">
         <header>
@@ -41,7 +40,7 @@
                 <label class="label_search" for="Search">
                     <input name="Search" class="input_search" id="Search" type="text" placeholder="Search"/>
                 </label>
-                <label for="imm_search">
+                <label class="force_flex_center" for="imm_search">
                     <button id="imm_search" name="imm_search" class="aggiusto-btn-search" type="submit"><img class="icon_big" src="./img/menu/search.svg" alt="search" /></button>
                 </label>
             </section>
