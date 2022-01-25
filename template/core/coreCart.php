@@ -8,8 +8,8 @@
                 <img class="curve_obj_h20" src="<?php echo $myLocation."img/game/".$item["Url_immagine"]; ?>" alt="<?php echo $item["Nome"]; ?>" />
             </div>
             <div class="cntnr_right_card_composed">
-                <h2 class="title_right_card_composed  font_primary  fg_text_primary"><strong><?php echo $item["Nome"]?></strong></h2>
-                <strong class="price_right_card_composed  curve_obj_h15  font_secondary  bg_third  fg_text_primary"><?php echo $item["prezzo_scontato"]?></strong>
+                <h2 class="title_right_card_composed  force_flex_center  font_primary  fg_text_primary"><strong><?php echo $item["Nome"]?></strong></h2>
+                <strong class="price_right_card_composed  curve_obj_h15  font_secondary  bg_third  fg_text_primary"><?php echo $item["prezzo_scontato"]."€";?></strong>
                 <form action="#" method="post" class="cntnr_cmd_card_cart"> 
                     <button type="submit" name="meno" value="<?php echo $item["Id_prodotto"]?>" class="less_cmd_card_composed  force_flex_center  curve_obj_h20  fg_text_accent" >-</button>
                     <p class="quantity_card_composed  force_flex_center  curve_obj_h20  bg_third  fg_text_primary"><?php echo $item["Quantità"]; ?></p>
