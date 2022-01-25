@@ -43,27 +43,26 @@
         }
 
         if(isset($_POST["methodPay"])){
+            header("refresh:0");
             $dbh->removeUnitInWarehouse('gek5800@gmail.com');
-
-
-            $numProductZero=$dbh->checkZeroUnits();
-            if($numProductZero->num_rows>0){
-                for($i=0; $i<count($numProductZero); $i++){
-                    $nome_prodotto=$numProductZero[$i]["Nome"];
-                    mail('info@unigame.it', 'Prodotto terminato !', $nome_prodotto.' è terminato !!');
-                    $id=$dbh->deleteProduct($numProductZero[$i]["Id_prodotto"]);
-                }
-            }
-
-
-
             $dbh->createOrder('gek5800@gmail.com', $_POST["methodPay"]);
             $idOrder = $dbh->lastOrderCreate()["Id_ordine"];
             $dbh->createDetailOrder('gek5800@gmail.com', $idOrder);
             $dbh->resetCart();
-            header("refresh:0");
-        }
 
+            $numProductZero=$dbh->checkZeroUnits();
+            if(count($numProductZero) > 0){
+                for($i=0; $i<count($numProductZero); $i++){
+                    $nome_prodotto=$numProductZero[$i]["Nome"];
+
+                    $mail_headers = "From: Server <server@unigame.it>\r\n";
+                    $mail_headers .= "Reply-To: server@unigame.it \r\n";
+                    $mail_headers .= "X-Mailer: PHP/" . phpversion();
+
+                    mail('info@unigame.it', 'Prodotto terminato !', $nome_prodotto.' è terminato !!', $mail_headers);
+                }
+            }
+        }
     }
 
     //Presentazione

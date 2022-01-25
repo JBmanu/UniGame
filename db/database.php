@@ -282,9 +282,9 @@
         public function createOrder($utente = 'gek5800@gmail.com', $idPay) {
             $currentData = date('y-m-d');
             $update = "INSERT INTO `Ordine` 
-            (`Id_ordine`, `Data_ordine`, `Id_utente`, `Id_corriere`, `Id_metodo`, 
+            (`Id_ordine`, `Data_ordine`, `Id_utente`, `Id_metodo`, 
             `Id_status`, `Data_consegna`, `Data_agg_status`) 
-            VALUES (NULL, '$currentData', '$utente', 1, $idPay, 1, '$currentData', '$currentData') ";
+            VALUES (NULL, '$currentData', '$utente', $idPay, 1, '$currentData', '$currentData') ";
                 return $this->db->query($update);
         }
 
