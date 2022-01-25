@@ -54,4 +54,21 @@
         }
     }
 
+    if($_SESSION["ordine_effettuato"]["Notifica"]==1){
+        $_SESSION["ordine_effettuato"]["Notifica"]=0;
+        $idNotifica=getIdNotification("effettuato");
+        $stato = $dbh -> getNotifybyID($idNotifica);
+        $stato=$stato[0]["Testo"];
+
+        $id_ordine=$_SESSION["ordine_effettuato"]["id_ordine"];
+        $dbh->insertNotifyinNotifyListOfOrder($_SESSION["Email"], 1, $id_ordine);
+
+        echo "<script>
+        let stato='$stato';
+        let id_ordine='$id_ordine';
+        let stringa_finale='Ordine #'+id_ordine+' '+stato;
+        toastr.info(stringa_finale);
+        </script>";
+    }
+
 ?>

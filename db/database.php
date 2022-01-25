@@ -629,7 +629,7 @@
             $prezzo_scontato=number_format($prezzo_scontato, 2, '.', '');
             $sconto=number_format($sconto, 2, '.', '');
 
-            $query = "UPDATE Prodotto Set Sconto = ?, prezzo_scontato=?F WHERE Id_prodotto = ?";
+            $query = "UPDATE Prodotto Set Sconto = ?, prezzo_scontato=? WHERE Id_prodotto = ?";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('ddi', $sconto, $prezzo_scontato, $id_product);
             return $stmt->execute();
@@ -645,7 +645,7 @@
         }
 
         public function getAllProductForSearch(){
-            $query="SELECT * FROM Prodotto GROUP BY Prodotto.Nome
+            $query="SELECT * FROM Prodotto WHERE Prodotto.Unità > 0 GROUP BY Prodotto.Nome
             ORDER BY Prodotto.Prezzo ASC; ";
             $stmt = $this->db->prepare($query);
             $stmt->execute();

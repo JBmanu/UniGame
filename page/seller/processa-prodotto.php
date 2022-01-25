@@ -61,9 +61,9 @@ if($_GET["action"]==2){
 }
 
 if($_GET["action"]==3){
-    //Insserimento sconto di un prodotto
+    //Inserimento sconto di un prodotto
     $id_prodotto=$_POST["sconto_id_product"];
-    $sconto=floatval($_POST["sconto_product"]);
+    $sconto=$_POST["sconto_product"];
     $prezzo=$dbh->getPricebyIdProduct($id_prodotto);
     $id = $dbh->updateDiscountProduct($id_prodotto, $sconto, floatval($prezzo[0]["Prezzo"]));
     if($id!=false){

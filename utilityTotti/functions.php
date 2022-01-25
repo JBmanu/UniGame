@@ -16,7 +16,7 @@ function checkNotifica($dbh){
 function nice_time($time, $dbh) {
     $delta = time() - $time;
     unset($_SESSION["ordine_per_notifica"]);
-    if($delta > 60 && $delta < 100) {
+    if($delta > 60 && $delta < 300) {
         $_SESSION["tempo"]=time();
         $ordini_cliente = $dbh->getAllOrdersByEmail($_SESSION["Email"]);
 
@@ -38,6 +38,9 @@ function nice_time($time, $dbh) {
 function getIdNotification($text){
     $idNotifica = 0;
     switch($text){
+        case "effettuato":
+            $idNotifica = 1;
+            break;
         case "login":
             $idNotifica = 9;
             break;
