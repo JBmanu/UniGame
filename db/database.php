@@ -629,7 +629,7 @@
             $prezzo_scontato=number_format($prezzo_scontato, 2, '.', '');
             $sconto=number_format($sconto, 2, '.', '');
 
-            $query = "UPDATE Prodotto Set Sconto = ?, prezzo_scontato=?F WHERE Id_prodotto = ?";
+            $query = "UPDATE Prodotto Set Sconto = ?, prezzo_scontato=? WHERE Id_prodotto = ?";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('ddi', $sconto, $prezzo_scontato, $id_product);
             return $stmt->execute();
