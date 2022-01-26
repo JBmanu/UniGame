@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Gen 25, 2022 alle 16:11
+-- Creato il: Gen 26, 2022 alle 10:31
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.12
 
@@ -32,6 +32,15 @@ CREATE TABLE `Carrello` (
   `Id_prodotto` int(11) NOT NULL,
   `Quantità` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `Carrello`
+--
+
+INSERT INTO `Carrello` (`Id_utente`, `Id_prodotto`, `Quantità`) VALUES
+('gek5800@gmail.com', 1, 1),
+('gek5800@gmail.com', 5, 1),
+('gek5800@gmail.com', 14, 1);
 
 -- --------------------------------------------------------
 
@@ -168,8 +177,8 @@ CREATE TABLE `Ordine` (
 --
 
 INSERT INTO `Ordine` (`Id_ordine`, `Data_ordine`, `Id_utente`, `Id_metodo`, `Id_status`, `Data_consegna`, `Data_agg_status`) VALUES
-(1, '2021-12-08', 'gek5800@gmail.com', 1, 5, '2022-02-16', '2022-01-20'),
-(2, '2022-01-17', 'gek5800@gmail.com', 1, 3, '2022-01-31', '2022-01-19');
+(1, '2021-12-08', 'gek5800@gmail.com', 1, 1, '2022-02-16', '2022-01-20'),
+(2, '2022-01-17', 'gek5800@gmail.com', 1, 2, '2022-01-31', '2022-01-19');
 
 -- --------------------------------------------------------
 
@@ -484,7 +493,7 @@ ALTER TABLE `Notifica`
 -- AUTO_INCREMENT per la tabella `Ordine`
 --
 ALTER TABLE `Ordine`
-  MODIFY `Id_ordine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Id_ordine` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT per la tabella `Pegi`
